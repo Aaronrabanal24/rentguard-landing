@@ -78,6 +78,29 @@ const HOW_IT_WORKS = [
   { icon: "🔓", title: "Move in with confidence", description: "Checklists track keys, condition, and approvals before releasing funds." },
 ];
 
+const LANDLORD_VALUE_STACK = [
+  {
+    title: "Base Layer: Escrow",
+    description: "Neutral third-party deposit holding prevents disputes and instantly builds tenant trust.",
+  },
+  {
+    title: "Layer 2: Compliance-in-a-Box",
+    description: "California-standard lease templates, automatic reminders about deposit caps and deduction rules, plus a digital audit trail of every message.",
+  },
+  {
+    title: "Layer 3: Trust Signal",
+    description: "Display the RentGuard badge so your listings read: 'Deposits protected by licensed escrow' and stand out to high-quality renters.",
+  },
+  {
+    title: "Layer 4: Time and Admin Savings",
+    description: "Run the entire workflow from one dashboard—verify tenants, collect deposits, sign leases, store documents, and export clean records for tax season.",
+  },
+  {
+    title: "Layer 5: Extra Revenue Tools",
+    description: "Turn on optional upgrades like screening, renters insurance offers, and maintenance tracking when you're ready to grow.",
+  },
+];
+
 export default function ValueAndForm() {
   const [activeTab, setActiveTab] = useState<"renter" | "landlord">("renter");
 
@@ -204,6 +227,26 @@ export default function ValueAndForm() {
               </li>
             ))}
           </ol>
+        </div>
+
+        <div className="mt-16 grid gap-8 lg:grid-cols-[minmax(0,0.65fr)_minmax(0,1fr)]">
+          <div className="space-y-4">
+            <span className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-orange-600">
+              For serious landlords
+            </span>
+            <h3 className="text-3xl font-semibold text-slate-900">RentGuard landlord value stack</h3>
+            <p className="text-base text-slate-600">
+              Build trust layer by layer. Start with neutral escrow, add compliance guardrails, and finish with tools that make you look like a pro even if you manage a single duplex.
+            </p>
+          </div>
+          <ul className="space-y-4 text-sm text-slate-600">
+            {LANDLORD_VALUE_STACK.map((layer) => (
+              <li key={layer.title} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                <h4 className="text-base font-semibold text-slate-900">{layer.title}</h4>
+                <p className="mt-2 leading-relaxed">{layer.description}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
