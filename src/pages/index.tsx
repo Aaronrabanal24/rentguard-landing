@@ -1,4 +1,17 @@
-import { Footer, Hero, HomeCTA } from "@/components";
+import {
+  Footer,
+  Hero,
+  HomeCTA,
+  TrustSignals,
+  ProblemPain,
+  CoreBenefits,
+  ValueAndForm,
+  CompetitiveEdge,
+  ProfessionalBenefits,
+  SocialProof,
+  MarketOpportunity,
+  FAQSection,
+} from "@/components";
 import StoryArc from "@/components/sections/StoryArc";
 import { motion } from "@/lib/motion";
 
@@ -8,7 +21,16 @@ export default function Home() {
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4 }}>
         <Hero />
       </motion.div>
+      <TrustSignals />
+      <ProblemPain />
+      <CoreBenefits />
+      <ValueAndForm />
       <StoryArc />
+      <CompetitiveEdge />
+      <ProfessionalBenefits />
+      <SocialProof />
+      <MarketOpportunity />
+      <FAQSection />
       <HomeCTA />
       <Footer />
     </div>
