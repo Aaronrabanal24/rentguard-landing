@@ -39,8 +39,8 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       {isProduction && (
         <Script
-          strategy="lazyOnload"
-          data-domain="rentguard-landing.vercel.app"
+          strategy="afterInteractive"
+          data-domain="rentguard-landing-git-main-aaron-rabanals-projects.vercel.app"
           src="https://plausible.io/js/script.js"
         />
       )}
