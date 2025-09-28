@@ -43,7 +43,21 @@ export function HeroContent() {
         {heroContent.subheadline}
       </p>
 
-      <div className="mb-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mb-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        {quickHits.map((item) => (
+          <div key={item.label} className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white/90 p-4 shadow-sm backdrop-blur">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-sky-100 text-sky-600">
+              {item.icon}
+            </div>
+            <div>
+              <p className="text-sm font-semibold text-slate-900">{item.label}</p>
+              <p className="text-xs text-slate-500">{item.detail}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="mb-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
         {heroContent.value_props.map((value, index) => (
           <div
             key={value.title}
@@ -89,6 +103,53 @@ const trustIndicators: Array<{ label: string; color: string }> = [
   { label: "Listing Assist badge for any listing", color: "bg-purple-500" },
 ];
 
+const quickHits = [
+  {
+    label: "Profile",
+    detail: "SEO marketing page",
+    icon: (
+      <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 2l-6 3-6-3v10h12V5z" />
+      </svg>
+    ),
+  },
+  {
+    label: "Lease + Escrow",
+    detail: "Verified funds flow",
+    icon: (
+      <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+        <path
+          fillRule="evenodd"
+          d="M10 2a4 4 0 00-4 4v2H5a1 1 0 000 2h1v4H5a1 1 0 100 2h1v2a1 1 0 102 0v-2h4v2a1 1 0 102 0v-2h1a1 1 0 100-2h-1v-4h1a1 1 0 100-2h-1V6a4 4 0 00-4-4zm2 6V6a2 2 0 00-4 0v2h4zm0 2h-4v4h4v-4z"
+          clipRule="evenodd"
+        />
+      </svg>
+    ),
+  },
+  {
+    label: "Communication",
+    detail: "Shared timeline",
+    icon: (
+      <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M2 5a2 2 0 012-2h12a2 2 0 012 2v9a2 2 0 01-2 2H8l-4 4v-4H4a2 2 0 01-2-2V5z" />
+      </svg>
+    ),
+  },
+  {
+    label: "Release",
+    detail: "21-day checklist",
+    icon: (
+      <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+        <path
+          fillRule="evenodd"
+          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.707a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 10-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+          clipRule="evenodd"
+        />
+      </svg>
+    ),
+  },
+];
+
 function splitHeadline(headline: string): [string, string] {
   if (!headline.includes(" ")) {
     return [headline, ""];
@@ -123,6 +184,11 @@ function getValuePropIcon(index: number): ReactNode {
           d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
           clipRule="evenodd"
         />
+      </svg>
+    ),
+    (
+      <svg key="spark" className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M10 2l1.5 4.5L16 8l-4.5 1.5L10 14l-1.5-4.5L4 8l4.5-1.5L10 2z" />
       </svg>
     ),
   ];

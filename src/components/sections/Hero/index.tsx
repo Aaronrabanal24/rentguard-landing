@@ -28,7 +28,7 @@ export default function Hero() {
           <div className="relative">
             <div className="relative">
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-sky-100/50 via-white to-teal-100/50 blur-2xl" />
-              <div className="relative overflow-hidden rounded-3xl border border-white/60 bg-white/80 p-8 shadow-2xl shadow-sky-200/40 backdrop-blur-xl">
+              <div className="relative overflow-hidden rounded-3xl border border-white/60 bg-white/85 p-8 shadow-2xl shadow-sky-200/40 backdrop-blur-xl">
                 <Image
                   src="/visuals/hero-dashboard.svg"
                   alt="Fairvia landlord dashboard"
@@ -38,22 +38,19 @@ export default function Hero() {
                   className="h-auto w-full"
                 />
 
-                <div className="animate-float absolute -right-4 top-1/4 w-48 rounded-xl border border-white/80 bg-white/90 p-4 shadow-lg backdrop-blur-sm">
-                  <div className="flex items-center gap-2 text-xs text-green-600">
-                    <div className="h-2 w-2 rounded-full bg-green-500" />
-                    <span className="font-medium">Escrow Active</span>
-                  </div>
-                  <p className="mt-1 text-sm font-semibold text-slate-800">$2,400</p>
-                  <p className="text-xs text-slate-500">Unit 2B • Move-in pending</p>
-                </div>
-
-                <div className="animate-float-delayed absolute -left-4 bottom-1/4 w-44 rounded-xl border border-white/80 bg-white/90 p-4 shadow-lg backdrop-blur-sm">
-                  <div className="flex items-center gap-2 text-xs text-orange-600">
-                    <div className="h-2 w-2 rounded-full bg-orange-500" />
-                    <span className="font-medium">Due in 3 days</span>
-                  </div>
-                  <p className="mt-1 text-sm font-semibold text-slate-800">AB 2801 Photos</p>
-                  <p className="text-xs text-slate-500">Unit 1A • Move-out</p>
+                <div className="pointer-events-none">
+                  {overlayBadges.map((badge) => (
+                    <div
+                      key={badge.label}
+                      className={`animate-float absolute ${badge.position} flex items-center gap-2 rounded-full border border-white/70 bg-white/95 px-3 py-1 text-xs font-medium text-slate-700 shadow-lg backdrop-blur`}
+                      aria-hidden
+                    >
+                      <span className={`flex h-6 w-6 items-center justify-center rounded-full ${badge.color} text-[11px] text-white`}>
+                        {badge.icon}
+                      </span>
+                      {badge.label}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -69,3 +66,30 @@ export default function Hero() {
     </section>
   );
 }
+
+const overlayBadges = [
+  {
+    label: "SEO profile live",
+    position: "-right-4 top-6",
+    color: "bg-sky-500",
+    icon: "P",
+  },
+  {
+    label: "Escrow verified",
+    position: "left-8 top-10",
+    color: "bg-teal-500",
+    icon: "E",
+  },
+  {
+    label: "Timeline shared",
+    position: "-left-4 bottom-16",
+    color: "bg-indigo-500",
+    icon: "C",
+  },
+  {
+    label: "Release queued",
+    position: "right-6 bottom-12",
+    color: "bg-orange-500",
+    icon: "R",
+  },
+] as const;

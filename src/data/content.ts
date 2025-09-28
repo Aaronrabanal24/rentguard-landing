@@ -1,20 +1,24 @@
 export const heroContent = {
-  badge: "Fairvia Pilot • California deposits",
-  headline: "Independent landlords close deposits with certainty.",
+  badge: "Fairvia Pilot • California",
+  headline: "Stay compliant. Attract renters. Save hours.",
   subheadline:
-    "Fairvia guides every move-in, move-out, and release with neutral escrow, California paperwork, and renter-facing updates.",
+    "Fairvia gives California landlords a complete deposit workflow—SEO property profiles, escrow with verified leases, clear landlord-renter communication, and a guided 21-day release.",
   value_props: [
     {
-      title: "Guided escrow workflow",
-      description: "Licensed partners hold funds while Fairvia walks landlords from setup to release step by step.",
+      title: "SEO-ready property profiles",
+      description: "Showcase compliance and trust signals on a public page that links renters back to your existing listings.",
     },
     {
-      title: "California compliance engine",
-      description: "Templates, timers, and nudges keep AB 12, AB 2801, and §1950.5 duties on track without extra software.",
+      title: "Escrow + lease automation",
+      description: "DFPI partners, verified IDs, and California lease packs keep funds neutral and contracts airtight.",
     },
     {
-      title: "Listing Assist badge",
-      description: "Overlay a Fairvia trust badge on Zillow, Craigslist, or Facebook listings to prove deposits stay protected.",
+      title: "Guided communication",
+      description: "Templates, receipts, and one-click confirmations align landlords and renters in real time.",
+    },
+    {
+      title: "21-day release certainty",
+      description: "Auto timers, deduction helpers, and archives ensure every release hits the legal deadline with proof attached.",
     },
   ],
 } as const;

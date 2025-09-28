@@ -1,4 +1,5 @@
-import { CoreBenefits, Footer, Hero, HomeCTA, SocialProof, TrustSignals } from "@/components";
+import { Footer, Hero, HomeCTA, SocialProof, TrustSignals } from "@/components";
+import StoryArc from "@/components/sections/StoryArc";
 import { motion } from "@/lib/motion";
 
 export default function Home() {
@@ -8,7 +9,7 @@ export default function Home() {
         <Hero />
       </motion.div>
       <TrustSignals />
-      <CoreBenefits />
+      <StoryArc />
       <SocialProof />
       <HomeCTA />
       <Footer />
