@@ -53,7 +53,7 @@ export default function WaitlistForm({
           </svg>
         </div>
         <h3 className="mb-2 text-2xl font-bold text-slate-900">You're on the list</h3>
-        <p className="mb-4 text-slate-600">We'll let you know as soon as RentGuard rolls into your city.</p>
+        <p className="mb-4 text-slate-600">We’ll let you know as soon as Novatra rolls into your city.</p>
         <p className="text-sm text-slate-500">Keep an eye on your inbox for confirmation.</p>
       </div>
     );

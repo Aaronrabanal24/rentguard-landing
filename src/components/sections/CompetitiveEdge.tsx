@@ -1,19 +1,19 @@
 const FEATURES = [
   {
     title: "21-day deadline management",
-    detail: "Automated reminders and progress tracking keep every refund window on schedule.",
+    detail: "Smart reminders keep every refund window on schedule.",
   },
   {
     title: "Photo documentation workflows",
-    detail: "Guided move-in/out checklists capture evidence that satisfies AB 2801 in a couple of taps.",
+    detail: "Guided checklists capture AB 2801 proof in a couple of taps.",
   },
   {
     title: "Professional tenant communication",
-    detail: "Ready-to-send templates cover deposit updates, itemized statements, and handovers without rewriting emails.",
+    detail: "Ready-to-send templates keep deposit updates clean and consistent.",
   },
   {
     title: "Portfolio-friendly dashboard",
-    detail: "Manage 1–50+ units from a single view with statuses, reminders, and neutral deposit holding built in.",
+    detail: "Manage 1–50+ units from one view with statuses, reminders, and escrow built in.",
   },
 ];
 
@@ -27,7 +27,7 @@ export default function CompetitiveEdge() {
           </span>
           <h2 className="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl">Run deposits like a pro without adding headcount</h2>
           <p className="mt-3 max-w-3xl text-sm text-slate-600 sm:text-base">
-            These built-in workflows cover the operational heavy lifting so you stay responsive, compliant, and tenant-friendly across every property.
+            Built-in workflows handle the busywork so you stay responsive, compliant, and tenant-friendly across every property.
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             {FEATURES.map((item) => (

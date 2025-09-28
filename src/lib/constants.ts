@@ -1,13 +1,13 @@
 export const COMPANY = {
-  name: "RentGuard",
-  description: "Stay compliant with California's new deposit laws",
-  url: "https://rentguard.com",
+  name: "Novatra",
+  description: "Professional deposit management for California landlords",
+  url: "https://novatra.com",
 } as const;
 
 export const FEATURES = {
-  escrowProtection: "True escrow, not insurance",
-  complianceAutomation: "Compliance automation",
-  smallPortfolios: "Built for small portfolios",
+  escrowProtection: "Neutral deposit holding",
+  complianceAutomation: "Compliance built in",
+  smallPortfolios: "Made for small portfolios",
 } as const;
 
 export const FAQ_DATA = [

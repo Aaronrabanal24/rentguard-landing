@@ -1,9 +1,9 @@
 import { opportunities } from "@/data/opportunities";
 
 const SUBPOINTS = [
-  "Automated timelines keep every 21-day clock on schedule.",
-  "Photo checklists cover AB 2801 without extra apps.",
-  "Templates and talking points make tenant updates effortless.",
+  "Auto-track every 21-day clock.",
+  "Capture AB 2801 photos without extra apps.",
+  "Send clear tenant updates in seconds.",
 ];
 
 export default function MarketOpportunity() {
@@ -16,7 +16,7 @@ export default function MarketOpportunity() {
           </span>
           <h2 className="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl">Deposit management doesn&apos;t have to be a headache</h2>
           <p className="mt-3 max-w-3xl text-sm text-slate-600 sm:text-base">
-            Independent landlords juggle timelines, documentation, and tenant updates across multiple doors. Novatra keeps everything tidy so you stay professional without extra staff.
+            Independent landlords juggle timelines, receipts, and tenant updates. Novatra keeps every moving part tidy without extra staff.
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {opportunities.map((item) => (

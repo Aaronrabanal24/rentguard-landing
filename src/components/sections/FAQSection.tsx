@@ -33,12 +33,10 @@ export default function FAQSection() {
         <div className="mx-auto max-w-5xl px-4">
           <div className="mb-12 text-center">
             <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-orange-100 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-orange-600">
-              Questions & answers
+              FAQ
             </span>
-            <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">Common questions about rental protection</h2>
-            <p className="mt-4 text-base text-slate-600">
-              Everything about escrow, verification, and pricing so you can rent with confidence.
-            </p>
+            <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">Quick answers for landlords</h2>
+            <p className="mt-4 text-base text-slate-600">How Novatra handles deposits, tenants, and rollout.</p>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
             {faqItems.map((faq, index) => (
@@ -69,13 +67,13 @@ export default function FAQSection() {
           </div>
           <div className="mt-12 text-center">
             <div className="rounded-2xl border border-orange-200 bg-orange-50 p-6">
-              <h3 className="text-lg font-semibold text-orange-900 mb-2">Ready to eliminate rental fears?</h3>
-              <p className="text-orange-700 mb-4">Join thousands who've protected their deposits with RentGuard escrow.</p>
+              <h3 className="mb-2 text-lg font-semibold text-orange-900">Need a deeper walkthrough?</h3>
+              <p className="mb-4 text-orange-700">Hop on a call and we’ll show how Novatra fits your portfolio.</p>
               <button
                 onClick={() => document.getElementById("signup")?.scrollIntoView({ behavior: "smooth" })}
                 className="inline-flex items-center rounded-full bg-orange-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-700"
               >
-                Get protected now
+                Talk to the team
               </button>
             </div>
           </div>

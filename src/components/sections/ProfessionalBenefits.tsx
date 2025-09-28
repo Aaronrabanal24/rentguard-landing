@@ -9,9 +9,9 @@ export default function ProfessionalBenefits() {
         <span className="inline-flex items-center gap-2 rounded-full bg-orange-100 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-orange-600">
           Benefits for landlords
         </span>
-        <h2 className="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl">Operate efficiently, grow confidently, stand out</h2>
+        <h2 className="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl">Operate smarter with less effort</h2>
         <p className="mt-3 max-w-3xl text-sm text-slate-600 sm:text-base">
-          Novatra centralizes deposit management so independent landlords get enterprise-level tools without the enterprise price tag.
+          Novatra centralizes deposits so small portfolios feel as polished as the big players.
         </p>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {categories.map(([key, category]) => (

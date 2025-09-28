@@ -17,9 +17,9 @@ export default function ProblemPain() {
           <span className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-white">
             Positioning snapshot
           </span>
-          <h2 className="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl">Built for the landlords who do it all</h2>
+          <h2 className="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl">Built for landlords who wear every hat</h2>
           <p className="mt-3 max-w-3xl text-sm text-slate-600 sm:text-base">
-            Novatra gives independent owners enterprise polish: clear tenant communication, compliant documentation, and automated reminders—without hiring extra staff.
+            Novatra delivers enterprise polish in a lightweight package—clean communication, compliant records, and on-time releases.
           </p>
 
           <dl className="mt-8 grid gap-6 sm:grid-cols-2">

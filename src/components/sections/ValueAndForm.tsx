@@ -1,26 +1,26 @@
 const STEPS = [
   {
     title: "Onboard your properties",
-    description: "Import your current tenants or add new units. Novatra creates a single landlord dashboard for every deposit.",
+    description: "Import tenants or add units—Novatra builds one dashboard for every deposit.",
   },
   {
     title: "Open neutral deposit holding",
-    description: "Licensed California partners safeguard funds while you and tenants stay synced on status.",
+    description: "Licensed California partners safeguard funds while everyone stays synced on status.",
   },
   {
     title: "Capture photo documentation",
-    description: "Move-in/move-out checklists collect timestamped photos that meet AB 2801 with no extra apps.",
+    description: "Move-in/out checklists collect timestamped photos that satisfy AB 2801.",
   },
   {
     title: "Send statements & release on time",
-    description: "Itemized summaries go out automatically and deposits release within the 21-day window.",
+    description: "Itemized summaries send automatically and deposits release inside the 21-day window.",
   },
 ];
 
 const MOBILE_TIPS = [
-  "Tap a unit to see status, notes, and required actions at a glance.",
-  "Upload photos from your phone—Novatra compresses and timestamps them automatically.",
-  "Swipe through upcoming deadlines to prioritize the day’s work in seconds.",
+  "Tap a unit to see status, notes, and next actions.",
+  "Snap photos on your phone—Novatra compresses and timestamps instantly.",
+  "Swipe upcoming deadlines to plan the day in seconds.",
 ];
 
 export default function ValueAndForm() {
@@ -31,9 +31,9 @@ export default function ValueAndForm() {
           <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em]">
             How it works
           </span>
-          <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">Simple workflows built for independent landlords</h2>
+          <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">Simple workflows for busy operators</h2>
           <p className="mt-3 text-sm text-slate-300 sm:text-base">
-            Each step is designed for mobile and desktop so you can keep deposits organized between showings, during turnovers, or from the couch at night.
+            Toggle between desktop and phone without losing context—everything updates in real time.
           </p>
         </div>
 

@@ -11,7 +11,7 @@ export default function ConversionBlocks() {
           </span>
           <h3 className="mt-4 text-3xl font-semibold text-slate-900">Request a demo</h3>
           <p className="mt-3 text-sm text-slate-600">
-            Get the California Deposit Compliance Playbook and a walkthrough of the dashboard. First 100 leases are free during the pilot.
+            Download the California Deposit Playbook and see the dashboard in action. First 100 leases are free during the pilot.
           </p>
           <button
             onClick={() => {
@@ -34,7 +34,7 @@ export default function ConversionBlocks() {
           </span>
           <h3 className="mt-4 text-3xl font-semibold text-slate-900">Enroll in the pilot</h3>
           <p className="mt-3 text-sm text-slate-600">
-            We will send you the Move-Out Rights & Deposit Checklist for California renters and invite you as soon as escrow coverage is available in your city.
+            Grab the Move-Out Rights checklist and get notified the moment escrow coverage hits your city.
           </p>
           <button
             onClick={() => {

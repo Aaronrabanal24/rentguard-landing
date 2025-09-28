@@ -35,13 +35,13 @@ export function HeroComplianceCard() {
           </div>
         </div>
         <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-5 text-sm text-slate-600">
-          <p className="mb-3 font-semibold text-slate-800">RentGuard keeps tabs on</p>
+          <p className="mb-3 font-semibold text-slate-800">Novatra keeps tabs on</p>
           <ul className="space-y-2">
             <li className="flex items-center gap-2">
-              <span className="text-sm">🔒</span> Deposit stays locked until you approve release
+              <span className="text-sm">🔒</span> Deposits stay locked until you approve release
             </li>
             <li className="flex items-center gap-2">
-              <span className="text-sm">🪪</span> Identity and fraud checks running in the background
+              <span className="text-sm">🪪</span> Identity checks run quietly in the background
             </li>
             <li className="flex items-center gap-2">
               <span className="text-sm">📝</span> CA-compliant lease templates ready to send

@@ -23,7 +23,7 @@ export function HeroContent() {
       <h1 className="mb-3 text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">{heroContent.headline}</h1>
       <p className="mb-6 max-w-xl text-base text-slate-600 sm:text-lg">{heroContent.subheadline}</p>
 
-      <div className="mb-8 grid gap-3 sm:grid-cols-2">
+      <div className="mb-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {heroContent.value_props.map((value) => (
           <div key={value.title} className="rounded-xl border border-slate-200 bg-white/80 p-4 shadow-sm backdrop-blur">
             <h3 className="text-sm font-semibold text-slate-900">{value.title}</h3>
@@ -43,9 +43,7 @@ export function HeroContent() {
         </Button>
       </div>
 
-      <p className="mt-6 text-xs text-slate-500">
-        RentGuard is a technology platform—not a bank or law firm. Escrow is provided by licensed California partners.
-      </p>
+      <p className="mt-6 text-xs text-slate-500">Novatra partners with licensed California escrow providers. We’re a technology platform, not a bank or law firm.</p>
     </div>
   );
 }
