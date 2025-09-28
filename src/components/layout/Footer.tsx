@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandLogo } from "@/components/ui";
 import { COMPANY } from "@/lib/constants";
 
 export default function Footer() {
@@ -8,12 +9,9 @@ export default function Footer() {
       <div className="relative mx-auto max-w-6xl px-4 py-16">
         <div className="grid gap-12 md:grid-cols-[1.25fr_1fr_1fr_1fr]">
           <div>
-            <div className="mb-6 flex items-center gap-3">
-              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-indigo-400 via-indigo-500 to-blue-500 text-lg font-semibold text-white shadow-lg shadow-indigo-500/40">
-                FV
-              </span>
-              <span className="text-xl font-semibold text-white">{COMPANY.name}</span>
-            </div>
+            <Link href="/" aria-label="Fairvia home" className="mb-6 inline-flex items-center">
+              <BrandLogo size="lg" className="drop-shadow-lg" />
+            </Link>
             <p className="mb-6 max-w-sm text-sm leading-relaxed text-slate-300">
               We bring transparency, verification, and speed to every rental interaction so trustworthy people can find each other faster.
             </p>

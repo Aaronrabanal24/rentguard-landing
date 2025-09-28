@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { BrandLogo } from "@/components/ui";
 import { track } from "@/lib/tracking";
 
 interface NavLink {
@@ -31,19 +31,9 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/60 bg-white/80 backdrop-blur-lg shadow-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
-        <div className="flex items-center gap-3">
-          <Image
-            src="/fairvia-logo.svg"
-            alt="Fairvia logo"
-          width={44}
-          height={44}
-          priority
-          className="h-11 w-11 rounded-xl shadow-lg shadow-sky-200/60"
-        />
-        <Link href="/" className="text-lg font-semibold tracking-tight text-slate-900">
-          Fairvia
+        <Link href="/" aria-label="Fairvia home" className="inline-flex items-center">
+          <BrandLogo priority className="drop-shadow-sm" />
         </Link>
-      </div>
       <nav className="hidden items-center gap-4 text-sm font-medium text-slate-600 md:flex">
         {navLinks.map((item) => (
           <Link
