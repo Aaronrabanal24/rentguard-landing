@@ -1,4 +1,5 @@
 import { track } from "@/lib/tracking";
+import { Button } from "@/components/ui";
 
 export default function Pricing() {
   return (
@@ -40,15 +41,16 @@ export default function Pricing() {
         </div>
 
         <div className="mt-12 text-center">
-          <button
+          <Button
+            size="lg"
             onClick={() => {
               track("click_cta", { role: "general", location: "pricing", label: "protect_next_lease" });
               document.getElementById("signup")?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="inline-flex items-center justify-center rounded-full bg-sky-500 px-8 py-3 text-sm font-semibold text-white transition hover:bg-sky-600"
+            className="px-8 text-sm font-semibold"
           >
             Protect your next lease today
-          </button>
+          </Button>
         </div>
       </div>
     </section>

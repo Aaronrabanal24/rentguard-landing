@@ -34,7 +34,10 @@ export default function Modal({ isOpen, onClose, title, children }: ModalProps) 
       <div className="relative mx-4 w-full max-w-md transform rounded-xl bg-white p-6 shadow-2xl transition-all">
         <div className="mb-4 flex items-center justify-between">
           <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
-          <button onClick={onClose} className="text-gray-400 transition-colors hover:text-gray-600">
+          <button
+            onClick={onClose}
+            className="rounded-full p-1 text-gray-400 transition-all hover:-translate-y-[1px] hover:text-gray-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
+          >
             <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>

@@ -33,7 +33,7 @@ export default function ConversionBlocks() {
               track("click_cta", { role: "manager", location: "manager_block", label: "download_playbook" });
               document.getElementById("manager-form")?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="mt-4 inline-flex items-center gap-2 text-xs font-semibold text-sky-600"
+            className="mt-4 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold text-sky-600 transition-all hover:-translate-y-[1px] hover:bg-sky-100/60 hover:text-sky-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
           >
             Download playbook (email required)
           </button>
@@ -63,7 +63,7 @@ export default function ConversionBlocks() {
               track("click_cta", { role: "renter", location: "renter_block", label: "download_checklist" });
               document.getElementById("renter-form")?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="mt-4 inline-flex items-center gap-2 text-xs font-semibold text-orange-600"
+            className="mt-4 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold text-orange-600 transition-all hover:-translate-y-[1px] hover:bg-orange-100/60 hover:text-orange-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-300"
           >
             Get the checklist (email required)
           </button>

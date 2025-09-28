@@ -89,7 +89,7 @@ export default function FAQSection() {
                     /* noop */
                   });
                 }}
-                className="inline-flex items-center rounded-full bg-orange-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-700"
+                className="inline-flex items-center rounded-full bg-orange-600 px-6 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-[1px] hover:bg-orange-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-300"
               >
                 Talk to the team
               </button>

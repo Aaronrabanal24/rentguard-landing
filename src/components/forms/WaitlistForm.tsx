@@ -149,7 +149,7 @@ export default function WaitlistForm({
         disabled={isSubmitting}
         className={cn(
           "group relative w-full overflow-hidden rounded-full py-3 px-6 text-base font-semibold text-white transition-all",
-          "focus:outline-none focus:ring-4 focus:ring-sky-200 focus:ring-offset-0",
+          "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300",
           isSubmitting
             ? "cursor-not-allowed bg-slate-400"
             : "bg-gradient-to-r from-sky-400 via-sky-500 to-teal-500 shadow-lg shadow-sky-200/60 hover:scale-105 hover:shadow-2xl"
