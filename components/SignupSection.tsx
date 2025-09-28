@@ -9,13 +9,11 @@ export default function SignupSection() {
           <span className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-sky-700">
             California pilot
           </span>
-          <h2 className="mt-5 text-3xl font-semibold text-slate-900 sm:text-4xl">Protect the next lease in minutes</h2>
+          <h2 className="mt-5 text-3xl font-semibold text-slate-900 sm:text-4xl">Join the California pilot</h2>
           <p className="mt-2 inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-orange-600">
             Currently available in California only • First 100 rentals are free during the pilot
           </p>
-          <p className="mt-4 max-w-xl text-base text-slate-600">
-            Drop your details below and we'll send you the dashboard that keeps deposits in escrow, paperwork tidy, and your reputation spotless. No heavy setup - just a guided flow on any device.
-          </p>
+          <p className="mt-4 max-w-xl text-base text-slate-600">Drop your details and we’ll keep you posted as the pilot rolls out new markets.</p>
 
           <dl className="mt-8 grid gap-4 text-sm text-slate-600 sm:grid-cols-2">
             <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">

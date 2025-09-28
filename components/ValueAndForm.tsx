@@ -4,9 +4,8 @@ import { track } from "../lib/track";
 const PERSONA_CONTENT = {
   renter: {
     badge: "For renters",
-    heading: "A calmer way to hand over your deposit",
-    description:
-      "Keep savings in escrow, see every step at a glance, and arrive on move-in day with the money still protected.",
+    heading: "Renter benefits",
+    description: "Keep your savings in escrow and only release when the keys are in hand.",
     ctaLabel: "I'm a renter",
     ctaId: "btn_renter_protect_deposit",
     role: "renter",
@@ -33,9 +32,8 @@ const PERSONA_CONTENT = {
   },
   landlord: {
     badge: "For landlords",
-    heading: "Protect your good name while filling units",
-    description:
-      "See verified tenants, keep payments out of personal accounts, and show a clean history when the next renter checks you out.",
+    heading: "Landlord benefits",
+    description: "Collect deposits in neutral escrow, share compliant leases, and show renters you run a fair operation.",
     ctaLabel: "I'm a landlord",
     ctaId: "btn_landlord_trust_badge",
     role: "landlord",
@@ -80,23 +78,23 @@ const HOW_IT_WORKS = [
 
 const LANDLORD_VALUE_STACK = [
   {
-    title: "Base Layer: Escrow",
+    title: "Escrow foundation",
     description: "Neutral third-party deposit holding prevents disputes and instantly builds tenant trust.",
   },
   {
-    title: "Layer 2: Compliance-in-a-Box",
+    title: "Compliance-in-a-box",
     description: "California-standard lease templates, automatic reminders about deposit caps and deduction rules, plus a digital audit trail of every message.",
   },
   {
-    title: "Layer 3: Trust Signal",
+    title: "Trust badge",
     description: "Display the RentGuard badge so your listings read: 'Deposits protected by licensed escrow' and stand out to high-quality renters.",
   },
   {
-    title: "Layer 4: Time and Admin Savings",
+    title: "Time saved",
     description: "Run the entire workflow from one dashboard—verify tenants, collect deposits, sign leases, store documents, and export clean records for tax season.",
   },
   {
-    title: "Layer 5: Extra Revenue Tools",
+    title: "Revenue boosters",
     description: "Turn on optional upgrades like screening, renters insurance offers, and maintenance tracking when you're ready to grow.",
   },
 ];
@@ -234,10 +232,8 @@ export default function ValueAndForm() {
             <span className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-orange-600">
               For serious landlords
             </span>
-            <h3 className="text-3xl font-semibold text-slate-900">RentGuard landlord value stack</h3>
-            <p className="text-base text-slate-600">
-              Build trust layer by layer. Start with neutral escrow, add compliance guardrails, and finish with tools that make you look like a pro even if you manage a single duplex.
-            </p>
+            <h3 className="text-3xl font-semibold text-slate-900">Landlord value stack</h3>
+          <p className="text-base text-slate-600">Start with neutral escrow, add compliance guardrails, and bring in extras only when you need them.</p>
           </div>
           <ul className="space-y-4 text-sm text-slate-600">
             {LANDLORD_VALUE_STACK.map((layer) => (

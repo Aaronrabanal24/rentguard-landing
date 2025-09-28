@@ -3,15 +3,15 @@ import { useState, useEffect } from "react";
 import { track } from "../lib/track";
 
 const HEADLINE_VARIANTS: Record<"A" | "B" | "C", string> = {
-  A: "Safe deposits. Verified leases. California pilot now open.",
-  B: "California pilot for neutral rental escrow now enrolling.",
-  C: "California renters and landlords: safeguard deposits with licensed escrow partners.",
+  A: "California rental escrow made easy",
+  B: "Hold deposits safely in California escrow",
+  C: "Neutral escrow for California rentals",
 };
 
 const SUBHEADLINE_VARIANTS: Record<"A" | "B" | "C", string> = {
-  A: "RentGuard partners with licensed escrow agents and California-compliant leases to protect both renters and landlords.",
-  B: "Hold deposits with licensed California escrow agents and sign compliant leases without extra back-and-forth.",
-  C: "Join the California pilot that keeps deposits neutral and paperwork compliant for every move-in.",
+  A: "Licensed escrow partners + CA compliant leases in one simple workflow.",
+  B: "Lock the deposit, sign the lease, and move in with confidence.",
+  C: "One dashboard to verify tenants, hold funds, and release on your approval.",
 };
 
 export default function Hero() {
@@ -73,16 +73,13 @@ export default function Hero() {
 
         <div className="mx-auto grid max-w-6xl items-center gap-16 px-4 pb-20 pt-12 md:grid-cols-[minmax(0,1fr)_minmax(0,420px)] md:pt-16">
           <div>
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-sky-400/40 bg-sky-100 px-4 py-2 text-sm font-medium text-sky-700 shadow-sm shadow-sky-200/60">
-              <span className="inline-flex h-2 w-2 rounded-full bg-sky-400" />
+            <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-sky-400/40 bg-sky-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.3em] text-sky-700 shadow-sm shadow-sky-200/60">
               California pilot • Licensed escrow partners
-            </div>
-            <h1 className="mb-6 text-4xl font-semibold leading-tight text-slate-900 sm:text-5xl md:text-6xl">
+            </span>
+            <h1 className="mb-4 text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
               {HEADLINE_VARIANTS[variant]}
             </h1>
-            <p className="mb-10 max-w-2xl text-lg leading-relaxed text-slate-600 sm:text-xl">
-              {SUBHEADLINE_VARIANTS[variant]}
-            </p>
+            <p className="mb-8 max-w-xl text-base text-slate-600 sm:text-lg">{SUBHEADLINE_VARIANTS[variant]}</p>
 
             <div className="flex flex-col items-start gap-4 sm:flex-row">
               <button
