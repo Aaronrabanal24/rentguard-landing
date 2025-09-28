@@ -1,8 +1,11 @@
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import Script from "next/script";
 import "../styles/globals.css";
 
 export default function App({ Component, pageProps }: AppProps) {
+  const isProduction = process.env.NODE_ENV === "production";
+
   return (
     <>
       <Head>
@@ -33,22 +36,28 @@ export default function App({ Component, pageProps }: AppProps) {
           content="Connect directly with verified renters and landlords. No fees, no middlemen, just seamless rental experiences."
         />
         <meta name="twitter:image" content="https://rentguard-landing.vercel.app/og-image.jpg" />
-
-        {/* Plausible Analytics — replace domain if needed */}
-        <script defer data-domain="rentguard-landing.vercel.app" src="https://plausible.io/js/script.js" />
-        {/* GA4 optional:
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-XXXXXXX');
-            `,
-          }}
-        /> */}
       </Head>
+      {isProduction && (
+        <Script
+          strategy="lazyOnload"
+          data-domain="rentguard-landing.vercel.app"
+          src="https://plausible.io/js/script.js"
+        />
+      )}
+      {/* GA4 optional:
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX" />
+      <Script
+        id="ga4-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XXXXXXX');
+          `,
+        }}
+      /> */}
       <Component {...pageProps} />
     </>
   );
