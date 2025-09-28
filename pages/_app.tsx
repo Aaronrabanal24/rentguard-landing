@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>RentMatch Transform Your Rental Experience</title>
+        <title>RentGuard — Trusted Rentals, Verified Matches</title>
         <meta
           name="description"
           content="Connect directly with verified renters and landlords. No fees, no middlemen, just seamless rental experiences."
@@ -20,7 +20,7 @@ export default function App({ Component, pageProps }: AppProps) {
         {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://rentguard-landing.vercel.app/" />
-        <meta property="og:title" content="RentMatch Transform Your Rental Experience" />
+        <meta property="og:title" content="RentGuard — Trusted Rentals, Verified Matches" />
         <meta
           property="og:description"
           content="Connect directly with verified renters and landlords. No fees, no middlemen, just seamless rental experiences."
@@ -30,7 +30,7 @@ export default function App({ Component, pageProps }: AppProps) {
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://rentguard-landing.vercel.app/" />
-        <meta name="twitter:title" content="RentMatch Transform Your Rental Experience" />
+        <meta name="twitter:title" content="RentGuard — Trusted Rentals, Verified Matches" />
         <meta
           name="twitter:description"
           content="Connect directly with verified renters and landlords. No fees, no middlemen, just seamless rental experiences."

@@ -68,14 +68,14 @@ export default function WaitlistForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mx-auto max-w-md space-y-4">
+    <form onSubmit={handleSubmit} className="mx-auto max-w-md space-y-4 text-left">
       <div>
         <input
           type="text"
-          placeholder="Your Name"
+          placeholder="Your name"
           value={formData.name}
           onChange={(e) => handleInputChange("name", e.target.value)}
-          className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          className="w-full rounded-xl border border-white/10 bg-white/90 px-4 py-3 text-slate-900 shadow-sm focus:border-transparent focus:outline-none focus:ring-4 focus:ring-indigo-500/30"
           required
         />
       </div>
@@ -83,10 +83,10 @@ export default function WaitlistForm() {
       <div>
         <input
           type="email"
-          placeholder="Email Address"
+          placeholder="Work email"
           value={formData.email}
           onChange={(e) => handleInputChange("email", e.target.value)}
-          className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          className="w-full rounded-xl border border-white/10 bg-white/90 px-4 py-3 text-slate-900 shadow-sm focus:border-transparent focus:outline-none focus:ring-4 focus:ring-indigo-500/30"
           required
         />
       </div>
@@ -95,12 +95,12 @@ export default function WaitlistForm() {
         <select
           value={formData.userType}
           onChange={(e) => handleInputChange("userType", e.target.value)}
-          className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          className="w-full rounded-xl border border-white/10 bg-white/90 px-4 py-3 text-slate-900 shadow-sm focus:border-transparent focus:outline-none focus:ring-4 focus:ring-indigo-500/30"
           required
         >
           <option value="">I am a...</option>
-          <option value="renter">Renter looking for a place</option>
-          <option value="landlord">Landlord with properties</option>
+          <option value="renter">Renter searching</option>
+          <option value="landlord">Landlord leasing units</option>
         </select>
       </div>
 
@@ -110,22 +110,22 @@ export default function WaitlistForm() {
           placeholder="City, State"
           value={formData.location}
           onChange={(e) => handleInputChange("location", e.target.value)}
-          className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          className="w-full rounded-xl border border-white/10 bg-white/90 px-4 py-3 text-slate-900 shadow-sm focus:border-transparent focus:outline-none focus:ring-4 focus:ring-indigo-500/30"
           required
         />
       </div>
 
-      {error && <div className="text-center text-sm text-red-600">{error}</div>}
+      {error && <div className="rounded-lg bg-red-500/10 p-3 text-center text-sm text-red-200">{error}</div>}
 
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full rounded-lg bg-indigo-600 py-3 px-6 font-semibold text-white transition-colors hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+        className="w-full rounded-full bg-gradient-to-r from-indigo-400 via-indigo-500 to-blue-500 py-3 px-6 text-base font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-indigo-500/40 focus:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-60"
       >
-        {isSubmitting ? "Joining..." : "Join the Waitlist"}
+        {isSubmitting ? "Joining..." : "Join the waitlist"}
       </button>
 
-      <p className="text-center text-xs text-gray-500">We respect your privacy. Unsubscribe at any time.</p>
+      <p className="text-center text-xs text-slate-300/80">We respect your privacy. Unsubscribe at any time.</p>
     </form>
   );
 }
