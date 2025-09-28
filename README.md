@@ -14,7 +14,7 @@ Next.js (Pages Router) + Tailwind landing with:
 4. Optional: configure Resend for emails in `pages/api/waitlist.ts`.
 
 ## Environment (optional for email)
-- `RESEND_API_KEY` — if you enable email sending
+- `RESEND_API_KEY` - if you enable email sending
 
 ## Notes
 - Replace social proof text in `Hero.tsx` with real data before launch.

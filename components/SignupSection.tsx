@@ -11,7 +11,7 @@ export default function SignupSection() {
           </span>
           <h2 className="mt-5 text-3xl font-semibold text-slate-900 sm:text-4xl">Protect the next lease in minutes</h2>
           <p className="mt-4 max-w-xl text-base text-slate-600">
-            Drop your details below and we’ll send you the dashboard that keeps deposits in escrow, paperwork tidy, and your reputation spotless. No heavy setup—just a guided flow on any device.
+            Drop your details below and we'll send you the dashboard that keeps deposits in escrow, paperwork tidy, and your reputation spotless. No heavy setup - just a guided flow on any device.
           </p>
 
           <dl className="mt-8 grid gap-4 text-sm text-slate-600 sm:grid-cols-2">
@@ -36,7 +36,7 @@ export default function SignupSection() {
 
         <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl shadow-sky-100/80">
           <h3 className="mb-4 text-xl font-semibold text-slate-900">Get on the list</h3>
-          <p className="mb-6 text-sm text-slate-600">We’ll send a friendly invite when your market opens. No spam—just escrow peace of mind.</p>
+          <p className="mb-6 text-sm text-slate-600">We'll send a friendly invite when your market opens. No spam - just escrow peace of mind.</p>
           <WaitlistForm />
         </div>
       </div>

@@ -115,7 +115,7 @@ export default function Hero() {
               </div>
               <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
                 <p className="text-sm font-semibold text-orange-600">Reputation boost</p>
-                <p className="mt-2 text-base text-slate-600">Show tenants you’re verified and dispute-free.</p>
+                <p className="mt-2 text-base text-slate-600">Show tenants you're verified and dispute-free.</p>
               </div>
             </div>
           </div>

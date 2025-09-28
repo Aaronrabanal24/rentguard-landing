@@ -47,7 +47,7 @@ const PERSONA_CONTENT = {
       },
     ],
     highlights: [
-      { icon: "🔍", text: "No more blind meetups—see verifications first." },
+      { icon: "🔍", text: "No more blind meetups - see verifications first." },
       { icon: "⚖️", text: "Lease templates stay compliant by city." },
       { icon: "👍", text: "Show dispute-free history to future tenants." },
     ],

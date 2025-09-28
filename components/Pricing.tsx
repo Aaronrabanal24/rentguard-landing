@@ -15,7 +15,7 @@ export default function Pricing() {
         <div className="mt-12 grid gap-8 lg:grid-cols-2">
           <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
             <h3 className="text-xl font-semibold text-slate-900">Renters</h3>
-            <p className="mt-2 text-sm text-slate-600">Join for free, keep the deposit safe, and share a small escrow fee only when you’re ready to move in.</p>
+            <p className="mt-2 text-sm text-slate-600">Join for free, keep the deposit safe, and share a small escrow fee only when you're ready to move in.</p>
             <ul className="mt-6 space-y-3 text-sm text-slate-600">
               <li className="flex gap-2"><span className="text-sky-600">✓</span>No monthly commitment</li>
               <li className="flex gap-2"><span className="text-sky-600">✓</span>Escrow releases funds after keys change hands</li>
