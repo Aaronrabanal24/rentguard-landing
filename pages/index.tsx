@@ -1,5 +1,6 @@
 import Hero from "../components/Hero";
 import ValueAndForm from "../components/ValueAndForm";
+import Pricing from "../components/Pricing";
 import FAQSchema from "../components/FAQSchema";
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
     <div className="min-h-screen">
       <Hero />
       <ValueAndForm />
+      <Pricing />
       <FAQSchema />
 
       {/* Footer */}
