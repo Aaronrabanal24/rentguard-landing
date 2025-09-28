@@ -1,5 +1,5 @@
-import WaitlistForm from "./WaitlistForm";
-import { track } from "../lib/track";
+import WaitlistForm from "@/components/forms/WaitlistForm";
+import { track } from "@/lib/tracking";
 
 export default function ConversionBlocks() {
   return (

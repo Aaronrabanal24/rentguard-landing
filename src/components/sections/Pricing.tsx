@@ -1,4 +1,4 @@
-import { track } from "../lib/track";
+import { track } from "@/lib/tracking";
 
 export default function Pricing() {
   return (

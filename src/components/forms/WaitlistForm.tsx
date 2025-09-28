@@ -1,12 +1,9 @@
 import { useState } from "react";
-import { track } from "../lib/track";
+import { useWaitlist } from "@/hooks/useWaitlist";
+import type { WaitlistData } from "@/lib/types";
+import { track } from "@/lib/tracking";
 
-interface FormData {
-  email: string;
-  name: string;
-  userType: "renter" | "landlord" | "";
-  location: string;
-}
+type FormState = Omit<WaitlistData, "userType"> & { userType: WaitlistData["userType"] | "" };
 
 interface WaitlistFormProps {
   defaultRole?: "renter" | "landlord";
@@ -21,48 +18,28 @@ export default function WaitlistForm({
   source = "signup_section",
   ctaLabel = "Join the waitlist",
 }: WaitlistFormProps) {
-  const [formData, setFormData] = useState<FormData>({
+  const [formData, setFormData] = useState<FormState>({
     email: "",
     name: "",
     userType: defaultRole || "",
     location: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [error, setError] = useState("");
+
+  const { isSubmitting, isSubmitted, error, submitWaitlist } = useWaitlist({ source });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setError("");
+    if (!formData.userType) return;
 
-    try {
-      const response = await fetch("/api/waitlist", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      if (!response.ok) throw new Error("Failed to join waitlist");
-
-      const payload = {
-        userType: formData.userType,
-        location: formData.location,
-      };
-
-      track("waitlist_signup_completed", payload);
-      track("submit_signup", { role: formData.userType || "unknown", source, ...payload });
-
-      setIsSubmitted(true);
-    } catch (err: any) {
-      setError("Something went wrong. Please try again.");
-      track("waitlist_signup_failed", { error: err?.message || "Unknown error" });
-    } finally {
-      setIsSubmitting(false);
-    }
+    await submitWaitlist({
+      email: formData.email,
+      name: formData.name,
+      userType: formData.userType,
+      location: formData.location,
+    });
   };
 
-  const handleInputChange = (field: keyof FormData, value: string) => {
+  const handleInputChange = (field: keyof FormState, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
     track("waitlist_field_interaction", { field, hasValue: value.length > 0 });
   };

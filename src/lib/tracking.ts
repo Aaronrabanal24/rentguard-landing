@@ -1,8 +1,6 @@
 // Analytics tracking utility that works with Plausible or GA4
 
-interface TrackingEvent {
-  [key: string]: string | number | boolean | undefined;
-}
+import type { TrackingEvent } from "./types";
 
 export function track(eventName: string, properties?: TrackingEvent) {
   try {

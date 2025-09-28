@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { track } from "../lib/track";
+import { track } from "@/lib/tracking";
+import { Button } from "@/components/ui";
 
 const PERSONA_CONTENT = {
   renter: {
@@ -169,7 +170,7 @@ export default function ValueAndForm() {
           </div>
         </div>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2" id="platform">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2">
           {SHARED_FEATURES.map((feature) => (
             <div key={feature.text} className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-white p-5 text-sm text-slate-600 shadow-sm">
               <span className="text-base">{feature.icon}</span>
@@ -202,17 +203,17 @@ export default function ValueAndForm() {
               ))}
             </ol>
 
-            <button
+            <Button
               id={content.ctaId}
               onClick={() => {
                 track("click_cta", { role: content.role, location: "split_paths", label: content.ctaId });
                 const anchor = content.role === "landlord" ? "manager-conversion" : "renter-conversion";
                 document.getElementById(anchor)?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="mt-8 inline-flex items-center justify-center rounded-full bg-sky-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-sky-600"
+              className="mt-8"
             >
               {content.ctaLabel}
-            </button>
+            </Button>
           </div>
 
           <div className="space-y-6">

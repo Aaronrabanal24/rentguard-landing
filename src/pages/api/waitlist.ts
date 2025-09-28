@@ -1,15 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from "next";
+import type { WaitlistData } from "@/lib/types";
 
 // If you want emails, install Resend and uncomment below:
 // import { Resend } from "resend";
 // const resend = new Resend(process.env.RESEND_API_KEY);
-
-interface WaitlistData {
-  email: string;
-  name: string;
-  userType: "renter" | "landlord";
-  location: string;
-}
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "POST") return res.status(405).json({ message: "Method not allowed" });

@@ -1,37 +1,18 @@
 import Head from "next/head";
 import { useState } from "react";
-import { track } from "../lib/track";
+import { FAQ_DATA } from "@/lib/constants";
+import type { FAQItem } from "@/lib/types";
+import { track } from "@/lib/tracking";
 
-const FAQ_DATA = [
-  {
-    question: "Who holds the money?",
-    answer:
-      "RentGuard routes deposits to licensed escrow partners. Neither renter nor landlord can touch the funds until both approve the release.",
-  },
-  {
-    question: "What if there is a dispute?",
-    answer:
-      "Every deposit includes an audit trail. If something goes sideways, our licensed mediators step in while the funds stay locked.",
-  },
-  {
-    question: "Where is RentGuard available?",
-    answer:
-      "The pilot is live in California and New York metro areas, with more regions coming soon.",
-  },
-  {
-    question: "How much does it cost?",
-    answer:
-      "Renters join free and share a small escrow fee with the landlord when the move-in is confirmed. Landlords pick a simple monthly plan that scales with their units.",
-  },
-];
+const faqItems: FAQItem[] = FAQ_DATA;
 
-export default function FAQSchema() {
+export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: FAQ_DATA.map((faq) => ({
+    mainEntity: faqItems.map((faq) => ({
       "@type": "Question",
       name: faq.question,
       acceptedAnswer: { "@type": "Answer", text: faq.answer },
@@ -61,7 +42,7 @@ export default function FAQSchema() {
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
-            {FAQ_DATA.map((faq, index) => (
+            {faqItems.map((faq, index) => (
               <button
                 type="button"
                 key={faq.question}
