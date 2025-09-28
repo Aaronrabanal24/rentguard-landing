@@ -3,7 +3,7 @@ import SignupSection from "@/components/sections/SignupSection";
 
 export default function SignupPage() {
   return (
-    <PageContainer title="Novatra — Sign Up for Pilot Access">
+    <PageContainer title="Fairvia — Sign Up for Pilot Access">
       <SignupSection />
     </PageContainer>
   );

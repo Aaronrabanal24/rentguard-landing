@@ -7,20 +7,17 @@ export default function Header() {
   const router = useRouter();
 
   const navLinks = [
-    { href: "/market", label: "Why now" },
-    { href: "/workflows", label: "Workflows" },
-    { href: "/benefits", label: "Benefits" },
+    { href: "/why-fairvia", label: "Why Fairvia" },
+    { href: "/how-it-works", label: "How It Works" },
+    { href: "/features", label: "Features" },
     { href: "/trust", label: "Trust" },
-    { href: "/legal", label: "Legal" },
-    { href: "/positioning", label: "Positioning" },
-    { href: "/how-it-works", label: "How it works" },
-    { href: "/conversion", label: "Get started" },
+    { href: "/get-started", label: "Get Started" },
     { href: "/faq", label: "FAQ" },
   ];
 
   const handleCTA = () => {
     track("click_cta", { role: "general", location: "hero", label: "nav" });
-    router.push("/conversion").catch(() => {
+    router.push("/get-started").catch(() => {
       /* noop */
     });
   };
@@ -30,13 +27,15 @@ export default function Header() {
       <div className="flex items-center gap-3">
         <Image
           src="/rentguard-mark.svg"
-          alt="Novatra logo"
+          alt="Fairvia logo"
           width={44}
           height={44}
           priority
           className="h-11 w-11 rounded-xl shadow-lg shadow-sky-200/60"
         />
-        <span className="text-lg font-semibold tracking-tight text-slate-900">Novatra</span>
+        <Link href="/" className="text-lg font-semibold tracking-tight text-slate-900">
+          Fairvia
+        </Link>
       </div>
       <nav className="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
         {navLinks.map((item) => (

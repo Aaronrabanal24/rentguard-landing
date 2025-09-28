@@ -46,7 +46,7 @@ export default function FAQSection() {
               FAQ
             </span>
             <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">Quick answers for landlords</h2>
-            <p className="mt-4 text-base text-slate-600">How Novatra handles deposits, tenants, and rollout.</p>
+            <p className="mt-4 text-base text-slate-600">How Fairvia handles deposits, tenants, and rollout.</p>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
             {faqItems.map((faq, index) => (
@@ -82,7 +82,7 @@ export default function FAQSection() {
           <div className="mt-12 text-center">
             <div className="rounded-2xl border border-orange-200 bg-orange-50 p-6">
               <h3 className="mb-2 text-lg font-semibold text-orange-900">Need a deeper walkthrough?</h3>
-              <p className="mb-4 text-orange-700">Hop on a call and we’ll show how Novatra fits your portfolio.</p>
+              <p className="mb-4 text-orange-700">Hop on a call and we’ll show how Fairvia fits your portfolio.</p>
               <button
                 onClick={() => {
                   router.push("/signup").catch(() => {

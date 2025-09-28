@@ -3,7 +3,7 @@ import FAQSection from "@/components/sections/FAQSection";
 
 export default function FAQPage() {
   return (
-    <PageContainer title="Novatra — Landlord FAQ">
+    <PageContainer title="Fairvia — Landlord FAQ">
       <FAQSection />
     </PageContainer>
   );

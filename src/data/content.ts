@@ -1,7 +1,7 @@
 export const heroContent = {
   badge: "For California landlords",
   headline: "Run deposits like a pro",
-  subheadline: "Novatra syncs compliance, tenant updates, and payouts in one clean dashboard.",
+  subheadline: "Fairvia syncs compliance, tenant updates, and payouts in one clean dashboard.",
   value_props: [
     {
       title: "Stay compliant",
@@ -25,10 +25,10 @@ export const lawPoints = [
   },
   {
     title: "Deposit caps (AB 12)",
-    detail: "Caps land in July 2024. Novatra surfaces the limits for every unit automatically.",
+    detail: "Caps land in July 2024. Fairvia surfaces the limits for every unit automatically.",
   },
   {
     title: "Photo documentation (AB 2801)",
-    detail: "Starting 2025, deductions need photo proof. Novatra stores and shares them for you.",
+    detail: "Starting 2025, deductions need photo proof. Fairvia stores and shares them for you.",
   },
 ];

@@ -13,7 +13,7 @@ interface PageContainerProps {
 
 export function PageContainer({
   title,
-  description = "Novatra keeps California security deposits neutral, compliant, and transparent.",
+  description = "Fairvia keeps California security deposits neutral, compliant, and transparent.",
   includeHeader = true,
   includeFooter = true,
   children,

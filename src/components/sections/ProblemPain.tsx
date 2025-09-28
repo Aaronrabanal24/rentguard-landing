@@ -8,7 +8,7 @@ const SNAPSHOT = {
     "Tenant-friendly transparency that reduces conflict",
     "Automation that frees up hours each move-out",
   ],
-  socialProof: "California landlords are adopting Novatra to streamline deposits",
+  socialProof: "California landlords are adopting Fairvia to streamline deposits",
 };
 
 export default function ProblemPain() {
@@ -34,7 +34,7 @@ export default function ProblemPain() {
           </span>
           <h2 className="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl">Built for landlords who wear every hat</h2>
           <p className="mt-3 max-w-3xl text-sm text-slate-600 sm:text-base">
-            Novatra delivers enterprise polish in a lightweight package—clean communication, compliant records, and on-time releases.
+            Fairvia delivers enterprise polish in a lightweight package—clean communication, compliant records, and on-time releases.
           </p>
 
           <dl className="mt-8 grid gap-6 sm:grid-cols-2">

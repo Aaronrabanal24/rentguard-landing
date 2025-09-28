@@ -16,7 +16,7 @@ const LAW_POINTS = [
 ];
 
 const SAFEGUARDS = [
-  "Novatra timestamps inspections, deductions, and messages for audit-ready records.",
+  "Fairvia timestamps inspections, deductions, and messages for audit-ready records.",
   "Smart nudges alert you before the 21-day window closes.",
   "Itemized statements and photo galleries send to tenants automatically.",
 ];
@@ -34,7 +34,7 @@ export default function LegalCompliance() {
       <div className="mx-auto max-w-5xl px-4">
         <h2 className="text-3xl font-semibold text-slate-900">California compliance, baked in</h2>
         <p className="mt-3 text-sm text-slate-600">
-          Novatra keeps every requirement clear so your portfolio stays transparent, timely, and documented.
+          Fairvia keeps every requirement clear so your portfolio stays transparent, timely, and documented.
         </p>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {LAW_POINTS.map((point, index) => (
@@ -58,7 +58,7 @@ export default function LegalCompliance() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
         >
-          <h3 className="text-base font-semibold text-slate-900">How Novatra has your back</h3>
+          <h3 className="text-base font-semibold text-slate-900">How Fairvia has your back</h3>
           <ul className="mt-3 space-y-2 text-sm text-slate-600">
             {SAFEGUARDS.map((item) => (
               <li key={item} className="flex items-start gap-2">
@@ -68,7 +68,7 @@ export default function LegalCompliance() {
             ))}
           </ul>
           <p className="mt-4 text-xs text-slate-500">
-            Novatra is a technology platform, not a bank or law firm. Escrow is provided by licensed California partners. For legal advice, consult your attorney.
+            Fairvia is a technology platform, not a bank or law firm. Escrow is provided by licensed California partners. For legal advice, consult your attorney.
           </p>
         </motion.div>
       </div>

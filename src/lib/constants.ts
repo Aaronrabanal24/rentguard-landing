@@ -1,7 +1,7 @@
 export const COMPANY = {
-  name: "Novatra",
+  name: "Fairvia",
   description: "Professional deposit management for California landlords",
-  url: "https://novatra.com",
+  url: "https://fairvia.com",
 } as const;
 
 export const FEATURES = {
@@ -14,7 +14,7 @@ export const FAQ_DATA = [
   {
     question: "Will this work for my duplex or small portfolio?",
     answer:
-      "Absolutely. Novatra is built for independent landlords managing 1–50 units. You get the same professional tools larger operators use, sized for your workflow.",
+      "Absolutely. Fairvia is built for independent landlords managing 1–50 units. You get the same professional tools larger operators use, sized for your workflow.",
   },
   {
     question: "How do I explain it to tenants?",
@@ -24,7 +24,7 @@ export const FAQ_DATA = [
   {
     question: "Does it work with traditional deposits?",
     answer:
-      "Yes. Novatra supports both standard security deposits and alternative arrangements while keeping every transaction documented.",
+      "Yes. Fairvia supports both standard security deposits and alternative arrangements while keeping every transaction documented.",
   },
   {
     question: "How quickly can I start?",

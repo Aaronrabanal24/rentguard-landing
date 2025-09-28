@@ -9,7 +9,7 @@ export function HeroContent() {
 
   const handleManagerClick = () => {
     track("click_cta", { role: "manager", location: "hero", label: "request_demo" });
-    router.push("/conversion").catch(() => {
+    router.push("/get-started").catch(() => {
       /* noop */
     });
   };
@@ -49,7 +49,7 @@ export function HeroContent() {
         </Button>
       </div>
 
-      <p className="mt-6 text-xs text-slate-500">Novatra partners with licensed California escrow providers. We’re a technology platform, not a bank or law firm.</p>
+      <p className="mt-6 text-xs text-slate-500">Fairvia partners with licensed California escrow providers. We’re a technology platform, not a bank or law firm.</p>
     </div>
   );
 }

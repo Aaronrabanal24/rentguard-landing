@@ -8,10 +8,10 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Novatra — Professional Deposit Management</title>
+        <title>Fairvia — Professional Deposit Management</title>
         <meta
           name="description"
-          content="Novatra gives California landlords a professional, tenant-friendly deposit workflow."
+          content="Fairvia gives California landlords a professional, tenant-friendly deposit workflow."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -19,20 +19,20 @@ export default function App({ Component, pageProps }: AppProps) {
         {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://rentguard-landing.vercel.app/" />
-        <meta property="og:title" content="Novatra — Professional Deposit Management" />
+        <meta property="og:title" content="Fairvia — Professional Deposit Management" />
         <meta
           property="og:description"
-          content="Novatra keeps deposits neutral, compliant, and transparent for California rentals."
+          content="Fairvia keeps deposits neutral, compliant, and transparent for California rentals."
         />
         <meta property="og:image" content="https://rentguard-landing.vercel.app/og-image.jpg" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://rentguard-landing.vercel.app/" />
-        <meta name="twitter:title" content="Novatra — Professional Deposit Management" />
+        <meta name="twitter:title" content="Fairvia — Professional Deposit Management" />
         <meta
           name="twitter:description"
-          content="Novatra keeps deposits neutral, compliant, and transparent for California rentals."
+          content="Fairvia keeps deposits neutral, compliant, and transparent for California rentals."
         />
         <meta name="twitter:image" content="https://rentguard-landing.vercel.app/og-image.jpg" />
         {isProduction && (

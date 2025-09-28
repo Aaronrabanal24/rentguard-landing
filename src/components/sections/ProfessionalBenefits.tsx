@@ -19,7 +19,7 @@ export default function ProfessionalBenefits() {
         </span>
         <h2 className="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl">Operate smarter with less effort</h2>
         <p className="mt-3 max-w-3xl text-sm text-slate-600 sm:text-base">
-          Novatra centralizes deposits so small portfolios feel as polished as the big players.
+          Fairvia centralizes deposits so small portfolios feel as polished as the big players.
         </p>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {categories.map(([key, category], index) => (

@@ -3,7 +3,7 @@ import { motion } from "@/lib/motion";
 const STEPS = [
   {
     title: "Onboard your properties",
-    description: "Import tenants or add units—Novatra builds one dashboard for every deposit.",
+    description: "Import tenants or add units—Fairvia builds one dashboard for every deposit.",
   },
   {
     title: "Open neutral deposit holding",
@@ -21,7 +21,7 @@ const STEPS = [
 
 const MOBILE_TIPS = [
   "Tap a unit to see status, notes, and next actions.",
-  "Snap photos on your phone—Novatra compresses and timestamps instantly.",
+  "Snap photos on your phone—Fairvia compresses and timestamps instantly.",
   "Swipe upcoming deadlines to plan the day in seconds.",
 ];
 

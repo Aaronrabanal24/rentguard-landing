@@ -21,12 +21,12 @@ export default function TrustSignals() {
           <div className="max-w-xl space-y-3">
             <h2 className="text-2xl font-semibold text-slate-900">Trust the compliance layer</h2>
             <p className="text-sm text-slate-600">
-              Novatra works with licensed DFPI partners and FDIC-insured escrow banks, so every deposit stays neutral and audit-ready.
+              Fairvia works with licensed DFPI partners and FDIC-insured escrow banks, so every deposit stays neutral and audit-ready.
             </p>
             <ul className="space-y-2 text-sm text-slate-600">
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-sky-500">•</span>
-                <span>Escrow stays with licensed California partners—Novatra never touches client funds.</span>
+                <span>Escrow stays with licensed California partners—Fairvia never touches client funds.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-sky-500">•</span>

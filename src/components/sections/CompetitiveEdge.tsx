@@ -38,7 +38,7 @@ export default function CompetitiveEdge() {
           transition={{ duration: 0.45, ease: "easeOut" }}
         >
           <span className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-white">
-            Why Novatra works
+            Why Fairvia works
           </span>
           <h2 className="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl">Run deposits like a pro without adding headcount</h2>
           <p className="mt-3 max-w-3xl text-sm text-slate-600 sm:text-base">
