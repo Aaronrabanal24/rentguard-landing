@@ -7,7 +7,7 @@ const LAW_POINTS = [
   },
   {
     title: "Allowed deduction proof",
-    detail: "Only unpaid rent, damage, or cleaning qualify. Fairvia packages itemizations tenants can&apos;t dispute.",
+    detail: "Only unpaid rent, damage, or cleaning qualify. Fairvia packages itemizations tenants can't dispute.",
   },
   {
     title: "AB 2801 photo evidence",

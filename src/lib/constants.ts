@@ -19,7 +19,7 @@ export const FAQ_DATA = [
   {
     question: "How do I explain it to tenants?",
     answer:
-      "We give you email and text templates that explain neutral escrow in plain language. Once renters learn their deposit sits with a licensed third party and they can see status updates, resistance disappears—92% of pilot tenants rated the process “more fair” than their last move-out.",
+      "We give you email and text templates that explain neutral escrow in plain language. Once renters learn their deposit sits with a licensed third party and they can see status updates, resistance disappears—92% of pilot tenants rated the process \"more fair\" than their last move-out.",
   },
   {
     question: "Does it work with traditional deposits?",
@@ -29,6 +29,6 @@ export const FAQ_DATA = [
   {
     question: "How quickly can I start?",
     answer:
-      "Most landlords import their units and invite tenants in under 30 minutes. We&apos;ll walk you through your first move-out, and by the second one the automation handles timers, photo logs, and statements without you lifting a finger.",
+      "Most landlords import their units and invite tenants in under 30 minutes. We'll walk you through your first move-out, and by the second one the automation handles timers, photo logs, and statements without you lifting a finger.",
   },
 ] as const;

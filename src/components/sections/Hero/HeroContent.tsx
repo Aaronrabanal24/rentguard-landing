@@ -63,10 +63,10 @@ export function HeroContent() {
       <div className="space-y-6">
         <div className="flex flex-col items-start gap-4 sm:flex-row">
           <Button onClick={handlePrimaryClick} size="lg">
-            Request landlord demo
+            Request a landlord demo
           </Button>
           <Button onClick={handleSecondaryClick} variant="secondary" size="lg" className="border-2 border-slate-300">
-            See landlord workflow
+            View the landlord workflow
           </Button>
         </div>
 

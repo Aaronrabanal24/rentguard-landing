@@ -26,7 +26,7 @@ export default function SignupSection() {
           <p className="mt-2 inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-orange-600">
             Currently available in California • Pilot access is limited while we onboard landlords
           </p>
-          <p className="mt-4 max-w-xl text-base text-slate-600">Share your info and we’ll ping you as new metros turn on.</p>
+          <p className="mt-4 max-w-xl text-base text-slate-600">Share your info and we'll ping you as new metros turn on.</p>
 
           <dl className="mt-8 grid gap-4 text-sm text-slate-600 sm:grid-cols-2">
             <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
@@ -56,7 +56,7 @@ export default function SignupSection() {
           transition={{ duration: 0.35, ease: "easeOut", delay: 0.05 }}
         >
           <h3 className="mb-4 text-xl font-semibold text-slate-900">Get on the list</h3>
-          <p className="mb-6 text-sm text-slate-600">We’ll send the invite when your market lights up. No spam—just escrow peace of mind.</p>
+          <p className="mb-6 text-sm text-slate-600">We'll send the invite when your market lights up. No spam—just escrow peace of mind.</p>
           <WaitlistForm />
         </motion.div>
       </div>

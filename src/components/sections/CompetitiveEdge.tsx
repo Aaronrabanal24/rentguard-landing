@@ -11,7 +11,7 @@ const FEATURES = [
   },
   {
     title: "Tenant-ready messaging",
-    detail: "Pre-built texts and emails answer “Where’s my deposit?” before it escalates, boosting reviews and renewals.",
+    detail: "Pre-built texts and emails answer \"Where's my deposit?\" before it escalates, boosting reviews and renewals.",
   },
   {
     title: "Portfolio command center",
@@ -40,9 +40,9 @@ export default function CompetitiveEdge() {
           <span className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-white">
             Why Fairvia works
           </span>
-          <h2 className="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl">Operate like a pro shop—even if it&apos;s just you</h2>
+          <h2 className="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl">Operate like a pro shop—even if it's just you</h2>
           <p className="mt-3 max-w-3xl text-sm text-slate-600 sm:text-base">
-            Fairvia turns manual landlord chores into “set and forget” workflows so you can spend your time on rent-ready units and new acquisitions.
+            Fairvia turns manual landlord chores into "set and forget" workflows so you can spend your time on rent-ready units and new acquisitions.
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             {FEATURES.map((item, index) => (

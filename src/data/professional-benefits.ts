@@ -18,7 +18,7 @@ export const professionalBenefits = {
   competitive_advantage: {
     title: "Stand out from DIY landlords",
     benefits: [
-      "Offer neutral escrow most competitors can&apos;t",
+      "Offer neutral escrow most competitors can't",
       "Deliver professional updates that win reviews and referrals",
       "Prove compliance to owners and partners with one link",
     ],

@@ -12,7 +12,7 @@ export default function ContactPage() {
             </span>
             <h1 className="mt-4 text-3xl font-semibold sm:text-4xl">Talk to the Fairvia team within one business day</h1>
             <p className="mt-3 text-sm text-slate-600 sm:text-base">
-              Need pilot access, compliance guidance, or partnership info? You will hear from a Fairvia specialist—not a generic support bot.
+              Need pilot access, compliance guidance, or partnership info? A Fairvia specialist—not a generic support bot—will respond within one business day.
             </p>
           </div>
           <motion.div
@@ -30,14 +30,14 @@ export default function ContactPage() {
               </li>
               <li>
                 <span className="font-semibold text-slate-800">Compliance & workflow questions:</span> <a className="text-sky-600" href="mailto:hello@fairvia.com">hello@fairvia.com</a>
-                <p className="mt-1 text-xs text-slate-500">Ask anything about 21-day deadlines, AB 2801 readiness, or tenant communication. We&apos;ll share the templates other landlords use.</p>
+                <p className="mt-1 text-xs text-slate-500">Ask anything about 21-day deadlines, AB 2801 readiness, or tenant communication. We'll share the templates other landlords use.</p>
               </li>
               <li>
                 <span className="font-semibold text-slate-800">Partners, media, investors:</span> <a className="text-sky-600" href="mailto:partners@fairvia.com">partners@fairvia.com</a>
                 <p className="mt-1 text-xs text-slate-500">Expect a tailored response within two business days from our leadership team.</p>
               </li>
             </ul>
-            <p className="mt-6 text-xs text-slate-500">Prefer a quick intro call? Mention your availability and we will send a calendar link with your pilot next steps.</p>
+            <p className="mt-6 text-xs text-slate-500">Prefer a quick intro call? Mention your availability and we'll send a calendar link with your pilot next steps.</p>
           </motion.div>
         </div>
       </section>

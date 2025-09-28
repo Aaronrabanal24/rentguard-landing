@@ -54,8 +54,8 @@ export default function WaitlistForm({
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="mb-2 text-2xl font-bold text-slate-900">You&apos;re on the list</h3>
-        <p className="mb-4 text-slate-600">We’ll let you know as soon as Fairvia rolls into your city.</p>
+        <h3 className="mb-2 text-2xl font-bold text-slate-900">You're on the list</h3>
+        <p className="mb-4 text-slate-600">We'll let you know as soon as Fairvia rolls into your city.</p>
         <p className="text-sm text-slate-500">Keep an eye on your inbox for confirmation.</p>
       </div>
     );
@@ -110,7 +110,7 @@ export default function WaitlistForm({
             required
             disabled={lockRole}
           >
-            <option value="">I&apos;m a...</option>
+            <option value="">I'm a...</option>
             <option value="renter">Renter looking for a home</option>
             <option value="landlord">Landlord with available units</option>
           </select>

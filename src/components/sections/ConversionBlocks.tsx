@@ -26,7 +26,7 @@ export default function ConversionBlocks() {
           </span>
           <h3 className="mt-4 text-3xl font-semibold text-slate-900">See 21-day compliance run itself</h3>
           <p className="mt-3 text-sm text-slate-600">
-            We’ll audit one of your recent move-outs, show where Fairvia saves time, and hand you the California Deposit Playbook so you stop gambling with penalties.
+            We'll audit one of your recent move-outs, show where Fairvia saves time, and hand you the California Deposit Playbook so you stop gambling with penalties.
           </p>
           <button
             onClick={() => {
@@ -35,11 +35,11 @@ export default function ConversionBlocks() {
             }}
             className="mt-4 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold text-sky-600 transition-all hover:-translate-y-[1px] hover:bg-sky-100/60 hover:text-sky-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
           >
-            Download the playbook & schedule demo
+            Download the playbook & schedule a demo
           </button>
           <div id="manager-form" className="mt-6 space-y-3">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Step 1 of 3</p>
-            <WaitlistForm defaultRole="landlord" lockRole source="manager_demo" ctaLabel="Request demo" />
+            <WaitlistForm defaultRole="landlord" lockRole source="manager_demo" ctaLabel="Request a demo" />
           </div>
         </motion.div>
 

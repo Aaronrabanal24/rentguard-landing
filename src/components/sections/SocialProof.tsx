@@ -34,7 +34,7 @@ export default function SocialProof() {
           transition={{ duration: 0.4, ease: "easeOut" }}
         >
           <h2 className="text-3xl font-semibold text-slate-900">Proof that Fairvia keeps landlords ahead</h2>
-          <p className="mt-2 text-sm text-slate-600">We track outcomes, not vanity metrics—here&apos;s what current operators experience.</p>
+          <p className="mt-2 text-sm text-slate-600">We track outcomes, not vanity metrics—here's what current operators experience.</p>
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
             {SIGNALS.map((signal, index) => (
               <motion.div

@@ -7,7 +7,7 @@ export default function TermsPage() {
         <div className="mx-auto max-w-4xl px-4">
           <h1 className="text-3xl font-semibold sm:text-4xl">Terms of Service</h1>
           <p className="mt-4 text-sm text-slate-600 sm:text-base">
-            These terms govern your use of Fairvia&apos;s pilot escrow workflow platform. By requesting access, you agree to operate in compliance with California landlord-tenant regulations and to provide accurate information during onboarding.
+            These terms govern your use of Fairvia's pilot escrow workflow platform. By requesting access, you agree to operate in compliance with California landlord-tenant regulations and to provide accurate information during onboarding.
           </p>
           <div className="mt-8 space-y-4 text-sm text-slate-600 sm:text-base">
             <p>

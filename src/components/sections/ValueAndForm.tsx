@@ -42,7 +42,7 @@ export default function ValueAndForm() {
           </span>
           <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">Finally, a workflow that keeps pace with move-out season</h2>
           <p className="mt-3 text-sm text-slate-300 sm:text-base">
-            Before Fairvia you were juggling clipboards, texts, and spreadsheets. Now every step is automated and synced so you can compete with full-service PM teams.
+            Before Fairvia, you were juggling clipboards, texts, and spreadsheets. Now every step is automated and synced so you can compete with full-service PM teams.
           </p>
         </div>
 
@@ -77,7 +77,7 @@ export default function ValueAndForm() {
           <div>
             <h3 className="text-lg font-semibold text-white">Designed for peak chaos days</h3>
             <p className="mt-2">
-              Whether you&apos;re turning units back-to-back or meeting contractors, Fairvia keeps the compliance layer running quietly in the background.
+              Whether you're turning units back-to-back or meeting contractors, Fairvia keeps the compliance layer running quietly in the background.
             </p>
           </div>
           <ul className="space-y-3">
