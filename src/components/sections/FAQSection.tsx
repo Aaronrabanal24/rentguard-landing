@@ -1,10 +1,9 @@
 import Head from "next/head";
 import { useState } from "react";
 import { FAQ_DATA } from "@/lib/constants";
-import type { FAQItem } from "@/lib/types";
 import { track } from "@/lib/tracking";
 
-const faqItems: FAQItem[] = FAQ_DATA;
+const faqItems = FAQ_DATA;
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
