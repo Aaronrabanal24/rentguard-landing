@@ -4,7 +4,7 @@ const nextConfig = {
   trailingSlash: false,
   images: {
     unoptimized: false,
-    domains: [],
+    domains: ["images.unsplash.com"],
   },
   async redirects() {
     return [
