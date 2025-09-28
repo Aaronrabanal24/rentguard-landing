@@ -1,0 +1,14 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">RentGuard icon</title>
+  <desc id="desc">Rounded orange square containing a house and shield.</desc>
+  <rect width="128" height="128" rx="24" fill="#f0643b" />
+  <g fill="#f7f4ef" transform="translate(20 20)">
+    <path d="M36 36h-12V18l18-14 18 14v18H48V24H36z" />
+    <path d="M18 60h60V18L48 0 18 18v42zm52-6H24V22l24-16 24 16v32z" />
+    <rect x="36" y="34" width="9" height="9" rx="1.8" />
+    <rect x="47" y="34" width="9" height="9" rx="1.8" />
+    <rect x="36" y="45" width="9" height="9" rx="1.8" />
+    <rect x="47" y="45" width="9" height="9" rx="1.8" />
+    <path d="M82 33c12.3 0 22 9.7 22 22s-9.7 22-22 22c-7.5 0-13.9-3.6-18-9-4-5.5-4.5-11-4.5-13s0.5-7.5 4.5-13c4.1-5.4 10.5-9 18-9zm0 36c8 0 14.4-6.4 14.4-14.4S90 40.2 82 40.2c-10 0-14.4 10.4-14.4 14.4S72 69 82 69z" />
+  </g>
+</svg>

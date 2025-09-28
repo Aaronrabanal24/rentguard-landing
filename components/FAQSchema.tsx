@@ -55,10 +55,10 @@ export default function FAQSchema() {
       </Head>
 
       <section className="relative overflow-hidden bg-slate-100 py-20" id="faq">
-        <div className="absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full bg-emerald-300/30 blur-3xl" aria-hidden="true" />
+        <div className="absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full bg-orange-300/25 blur-3xl" aria-hidden="true" />
         <div className="mx-auto max-w-5xl px-4">
           <div className="mb-12 text-center">
-            <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-emerald-100 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-emerald-600">
+            <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-orange-100 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-orange-600">
               Questions & answers
             </span>
             <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">Common questions about rental protection</h2>
@@ -70,10 +70,10 @@ export default function FAQSchema() {
             {FAQ_DATA.map((faq, index) => (
               <div
                 key={faq.question}
-                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg hover:border-emerald-200"
+                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg hover:border-orange-200"
               >
-                <div className="mb-3 flex items-center gap-3 text-emerald-600">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-100 text-sm font-semibold">{index + 1}</span>
+                <div className="mb-3 flex items-center gap-3 text-orange-600">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-orange-100 text-sm font-semibold">{index + 1}</span>
                   <h3 className="text-base font-semibold text-slate-900">{faq.question}</h3>
                 </div>
                 <p className="text-sm leading-relaxed text-slate-600">{faq.answer}</p>
@@ -81,12 +81,12 @@ export default function FAQSchema() {
             ))}
           </div>
           <div className="mt-12 text-center">
-            <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-6">
-              <h3 className="text-lg font-semibold text-emerald-900 mb-2">Ready to eliminate rental fears?</h3>
-              <p className="text-emerald-700 mb-4">Join thousands who've protected their deposits with RentGuard escrow.</p>
+            <div className="rounded-2xl border border-orange-200 bg-orange-50 p-6">
+              <h3 className="text-lg font-semibold text-orange-900 mb-2">Ready to eliminate rental fears?</h3>
+              <p className="text-orange-700 mb-4">Join thousands who've protected their deposits with RentGuard escrow.</p>
               <button
                 onClick={() => document.getElementById("waitlist-form")?.scrollIntoView({ behavior: "smooth" })}
-                className="inline-flex items-center rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-emerald-700"
+                className="inline-flex items-center rounded-full bg-orange-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-700"
               >
                 Get protected now
               </button>

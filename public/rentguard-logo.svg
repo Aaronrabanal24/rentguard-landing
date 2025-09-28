@@ -1,0 +1,21 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">RentGuard logo</title>
+  <desc id="desc">Rounded orange square containing a house with a shield and the RentGuard wordmark.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f47044" />
+      <stop offset="100%" stop-color="#e9583b" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="88" fill="url(#bg)" />
+  <g fill="#f6f0e9" transform="translate(78 92)">
+    <path d="M144 160h-48v-72l72-54 72 54v72h-48v-56h-48v56z" />
+    <path d="M72 240h240v-160l-120-92-120 92v160zm206-16H98v-123l94-72 94 72v123z" />
+    <rect x="144" y="152" width="36" height="36" rx="6" />
+    <rect x="194" y="152" width="36" height="36" rx="6" />
+    <rect x="144" y="202" width="36" height="36" rx="6" />
+    <rect x="194" y="202" width="36" height="36" rx="6" />
+    <path d="M324 146c48 0 88 39 88 88s-40 88-88 88c-30 0-56-14-72-36-16-22-18-44-18-52s2-30 18-52c16-22 42-36 72-36zm0 144c32 0 58-26 58-58s-26-58-58-58c-40 0-58 42-58 58s18 58 58 58z" />
+  </g>
+  <text x="256" y="444" font-family="'Inter', 'Segoe UI', sans-serif" font-size="82" font-weight="700" text-anchor="middle" fill="#f6f0e9">RentGuard</text>
+</svg>

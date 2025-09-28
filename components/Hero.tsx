@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { track } from "../lib/track";
 
@@ -26,17 +27,22 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-slate-950 text-slate-50">
       <div className="pointer-events-none absolute inset-0 opacity-70" aria-hidden="true">
-        <div className="absolute left-1/2 top-[-12rem] h-[32rem] w-[32rem] -translate-x-1/2 rounded-full bg-emerald-500/40 blur-3xl" />
-        <div className="absolute right-[-12rem] top-1/3 h-[28rem] w-[28rem] rounded-full bg-blue-500/30 blur-3xl" />
-        <div className="absolute bottom-[-10rem] left-[-8rem] h-[26rem] w-[26rem] rounded-full bg-green-400/25 blur-3xl" />
+        <div className="absolute left-1/2 top-[-12rem] h-[32rem] w-[32rem] -translate-x-1/2 rounded-full bg-orange-500/35 blur-3xl" />
+        <div className="absolute right-[-12rem] top-1/3 h-[28rem] w-[28rem] rounded-full bg-amber-400/25 blur-3xl" />
+        <div className="absolute bottom-[-10rem] left-[-8rem] h-[26rem] w-[26rem] rounded-full bg-rose-400/25 blur-3xl" />
       </div>
 
       <div className="relative">
         <header className="mx-auto flex max-w-6xl items-center justify-between px-4 py-6">
           <div className="flex items-center gap-3">
-            <span className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-emerald-400 via-emerald-500 to-green-500 text-lg font-semibold text-white shadow-lg shadow-emerald-500/40">
-              🛡️
-            </span>
+            <Image
+              src="/rentguard-mark.svg"
+              alt="RentGuard logo"
+              width={44}
+              height={44}
+              priority
+              className="h-11 w-11 rounded-xl shadow-lg shadow-orange-600/30"
+            />
             <span className="text-lg font-semibold tracking-tight text-white">RentGuard</span>
           </div>
           <nav className="hidden items-center gap-8 text-sm font-medium text-slate-200 md:flex">
@@ -66,8 +72,8 @@ export default function Hero() {
 
         <div className="mx-auto grid max-w-6xl items-center gap-16 px-4 pb-20 pt-12 md:grid-cols-[minmax(0,1fr)_minmax(0,420px)] md:pt-16">
           <div>
-            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/10 px-4 py-2 text-sm font-medium text-emerald-200 shadow-sm shadow-emerald-400/20">
-              <span className="inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-orange-400/30 bg-orange-500/15 px-4 py-2 text-sm font-medium text-orange-100 shadow-sm shadow-orange-500/25">
+              <span className="inline-flex h-2 w-2 rounded-full bg-orange-400" />
               Licensed escrow partners • NYC, LA, SF
             </div>
             <h1 className="mb-6 text-4xl font-semibold leading-tight text-white sm:text-5xl md:text-6xl">
@@ -83,7 +89,7 @@ export default function Hero() {
                   track("hero_cta_clicked", { variant, button: "primary" });
                   document.getElementById("waitlist-form")?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-emerald-400 via-emerald-500 to-green-500 px-7 py-3 text-base font-semibold text-white shadow-lg shadow-emerald-500/40 transition hover:scale-[1.01] hover:shadow-xl"
+                className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-orange-400 via-orange-500 to-rose-500 px-7 py-3 text-base font-semibold text-white shadow-lg shadow-orange-500/40 transition hover:scale-[1.01] hover:shadow-xl"
               >
                 Start protected rental
               </button>
@@ -100,31 +106,31 @@ export default function Hero() {
 
             <div className="mt-12 grid gap-6 text-left sm:grid-cols-3">
               <div className="rounded-2xl border border-white/5 bg-white/5 p-5">
-                <p className="text-2xl font-semibold text-emerald-400">$0</p>
+                <p className="text-2xl font-semibold text-orange-300">$0</p>
                 <p className="text-sm text-slate-300">upfront costs for renters • pay only when protected</p>
               </div>
               <div className="rounded-2xl border border-white/5 bg-white/5 p-5">
-                <p className="text-2xl font-semibold text-emerald-400">1-2%</p>
+                <p className="text-2xl font-semibold text-orange-300">1-2%</p>
                 <p className="text-sm text-slate-300">deposit fee • split between both parties</p>
               </div>
               <div className="rounded-2xl border border-white/5 bg-white/5 p-5">
-                <p className="text-2xl font-semibold text-emerald-400">Licensed</p>
+                <p className="text-2xl font-semibold text-orange-300">Licensed</p>
                 <p className="text-sm text-slate-300">escrow partners in major metro areas</p>
               </div>
             </div>
           </div>
 
           <div className="relative">
-            <div className="absolute inset-0 rounded-[32px] bg-gradient-to-br from-emerald-500/40 via-slate-900/40 to-green-500/40 blur-2xl" aria-hidden="true" />
-            <div className="relative rounded-[28px] border border-white/10 bg-white/5 p-6 backdrop-blur-lg shadow-2xl shadow-emerald-500/30">
+            <div className="absolute inset-0 rounded-[32px] bg-gradient-to-br from-orange-500/35 via-slate-900/45 to-rose-500/35 blur-2xl" aria-hidden="true" />
+            <div className="relative rounded-[28px] border border-white/10 bg-white/5 p-6 backdrop-blur-lg shadow-2xl shadow-orange-600/30">
               <div className="mb-6 flex items-center justify-between text-xs text-slate-200">
-                <span className="rounded-full bg-white/10 px-3 py-1 font-medium">Escrow Protection</span>
-                <span className="rounded-full bg-emerald-400/20 px-2 py-1 text-emerald-300">Active</span>
+                <span className="rounded-full bg-white/15 px-3 py-1 font-medium">Escrow Protection</span>
+                <span className="rounded-full bg-orange-400/20 px-2 py-1 text-orange-200">Active</span>
               </div>
               <div className="rounded-2xl bg-slate-900/60 p-5">
                 <div className="mb-4 flex items-center justify-between text-sm text-slate-200">
                   <span className="font-semibold">Deposit Status</span>
-                  <span className="rounded-full bg-emerald-400/10 px-2 py-1 text-xs text-emerald-300">Secured</span>
+                  <span className="rounded-full bg-orange-400/10 px-2 py-1 text-xs text-orange-200">Secured</span>
                 </div>
                 <div className="space-y-4">
                   {[
@@ -137,7 +143,7 @@ export default function Hero() {
                         <p className="text-sm font-semibold text-white">{item.label}</p>
                         <p className="text-xs text-slate-300">{item.amount}</p>
                       </div>
-                      <div className="h-10 w-10 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 text-center text-lg font-semibold leading-10 text-white">
+                      <div className="h-10 w-10 rounded-full bg-gradient-to-br from-orange-400 to-rose-500 text-center text-lg font-semibold leading-10 text-white">
                         ✓
                       </div>
                     </div>
@@ -148,15 +154,15 @@ export default function Hero() {
                 <p className="mb-3 font-semibold text-white">RentGuard Protection</p>
                 <ul className="space-y-2">
                   <li className="flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-orange-400" />
                     Deposit held until move-in approved
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-orange-400" />
                     Identity & fraud verification
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-orange-400" />
                     Compliant digital lease templates
                   </li>
                 </ul>
@@ -170,7 +176,7 @@ export default function Hero() {
             <div className="flex items-center gap-3 text-white">
               <div className="flex -space-x-2">
                 {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="h-9 w-9 rounded-full border border-white/30 bg-gradient-to-br from-emerald-400 to-green-500" />
+                  <div key={i} className="h-9 w-9 rounded-full border border-white/30 bg-gradient-to-br from-orange-400 to-rose-500" />
                 ))}
               </div>
               <p className="font-medium">Join early renters and landlords who've eliminated deposit fears</p>

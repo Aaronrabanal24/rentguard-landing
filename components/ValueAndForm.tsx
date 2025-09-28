@@ -102,7 +102,7 @@ export default function ValueAndForm() {
               onClick={() => handleTabClick("renter")}
               className={`rounded-full px-7 py-2.5 transition ${
                 activeTab === "renter"
-                  ? "bg-white text-slate-900 shadow-[0_12px_42px_-22px_rgba(16,185,129,0.65)]"
+                  ? "bg-white text-slate-900 shadow-[0_12px_42px_-22px_rgba(245,119,57,0.55)]"
                   : "hover:text-white"
               }`}
             >
@@ -112,7 +112,7 @@ export default function ValueAndForm() {
               onClick={() => handleTabClick("landlord")}
               className={`rounded-full px-7 py-2.5 transition ${
                 activeTab === "landlord"
-                  ? "bg-white text-slate-900 shadow-[0_12px_42px_-22px_rgba(16,185,129,0.65)]"
+                  ? "bg-white text-slate-900 shadow-[0_12px_42px_-22px_rgba(245,119,57,0.55)]"
                   : "hover:text-white"
               }`}
             >
@@ -122,7 +122,7 @@ export default function ValueAndForm() {
         </div>
         <div className="grid gap-12 md:gap-16 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)]" id="features">
           <div className="rounded-3xl border border-white/10 bg-white/5 p-8 sm:p-10 text-slate-100">
-            <span className="inline-flex items-center rounded-full bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-emerald-200">
+            <span className="inline-flex items-center rounded-full bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-orange-200">
               {content.badge}
             </span>
             <h3 className="mt-5 text-3xl font-semibold text-white sm:text-4xl">{content.heading}</h3>
@@ -132,7 +132,7 @@ export default function ValueAndForm() {
               {content.steps.map((step, index) => (
                 <li key={step.title} className="rounded-2xl border border-white/10 bg-white/5 p-5">
                   <div className="flex items-center gap-4">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 text-base font-semibold text-emerald-200">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-orange-500/20 text-base font-semibold text-orange-100">
                       {index + 1}
                     </span>
                     <div>
@@ -157,21 +157,21 @@ export default function ValueAndForm() {
                 ))}
               </ul>
             </div>
-            <div className="rounded-3xl border border-emerald-400/20 bg-emerald-500/10 p-8 text-slate-100">
-              <h4 className="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-200">Fast facts</h4>
+            <div className="rounded-3xl border border-orange-400/30 bg-orange-500/10 p-8 text-slate-100">
+              <h4 className="text-sm font-semibold uppercase tracking-[0.3em] text-orange-200">Fast facts</h4>
               <div className="mt-5 grid gap-6 sm:grid-cols-2">
                 {content.stats.map((stat) => (
                   <div key={stat.label} className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                    <p className="text-2xl font-semibold text-emerald-200">{stat.value}</p>
-                    <p className="mt-2 text-xs uppercase tracking-wide text-emerald-100/80">{stat.label}</p>
+                    <p className="text-2xl font-semibold text-orange-100">{stat.value}</p>
+                    <p className="mt-2 text-xs uppercase tracking-wide text-orange-100/80">{stat.label}</p>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="relative rounded-3xl border border-white/10 bg-gradient-to-br from-emerald-500/30 via-emerald-500/15 to-slate-900/40 p-[1px] shadow-2xl shadow-emerald-500/30" id="waitlist-form">
+            <div className="relative rounded-3xl border border-white/10 bg-gradient-to-br from-orange-500/30 via-orange-500/15 to-slate-900/40 p-[1px] shadow-2xl shadow-orange-600/30" id="waitlist-form">
               <div className="rounded-3xl bg-slate-950/80 p-8 backdrop-blur">
                 <div className="mb-6 text-center text-slate-100">
-                  <span className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-emerald-200">
+                  <span className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-orange-200">
                     Early access
                   </span>
                   <h3 className="text-2xl font-semibold text-white sm:text-3xl">Join the protected rental waitlist</h3>
