@@ -62,7 +62,7 @@ export default function Hero() {
             <button
               onClick={() => {
                 track("click_cta", { role: "general", location: "hero", label: "nav" });
-                document.getElementById("signup")?.scrollIntoView({ behavior: "smooth" });
+                document.getElementById("conversion")?.scrollIntoView({ behavior: "smooth" });
               }}
               className="rounded-full bg-sky-500/10 px-5 py-2 text-sm font-semibold text-sky-700 transition hover:bg-sky-500/20"
             >
@@ -73,54 +73,49 @@ export default function Hero() {
 
         <div className="mx-auto grid max-w-6xl items-center gap-16 px-4 pb-20 pt-12 md:grid-cols-[minmax(0,1fr)_minmax(0,420px)] md:pt-16">
           <div>
-            <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-sky-400/40 bg-sky-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.3em] text-sky-700 shadow-sm shadow-sky-200/60">
+            <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-sky-400/40 bg-sky-100 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-sky-700 shadow-sm shadow-sky-200/60">
               California pilot • Licensed escrow partners
             </span>
-            <h1 className="mb-4 text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
+            <h1 className="mb-3 text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
               {HEADLINE_VARIANTS[variant]}
             </h1>
-            <p className="mb-8 max-w-xl text-base text-slate-600 sm:text-lg">{SUBHEADLINE_VARIANTS[variant]}</p>
+            <p className="mb-6 max-w-xl text-base text-slate-600 sm:text-lg">{SUBHEADLINE_VARIANTS[variant]}</p>
+
+            <div className="mb-6 grid gap-4 text-sm text-slate-600 sm:grid-cols-3">
+              <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                <p className="font-semibold text-slate-900">CA Civil Code §1950.5</p>
+                <p className="mt-1">Deposits must be returned within 21 days. RentGuard logs deadlines and reminders automatically.</p>
+              </div>
+              <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                <p className="font-semibold text-slate-900">AB 2801 compliance</p>
+                <p className="mt-1">Inspection photos, videos, and notes are stored for deduction evidence.</p>
+              </div>
+              <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                <p className="font-semibold text-slate-900">Neutral escrow only</p>
+                <p className="mt-1">Deposits stay with licensed California escrow agents. RentGuard never holds client funds.</p>
+              </div>
+            </div>
 
             <div className="flex flex-col items-start gap-4 sm:flex-row">
               <button
                 onClick={() => {
-                  track("click_cta", { role: "general", location: "hero", label: "primary" });
-                  document.getElementById("signup")?.scrollIntoView({ behavior: "smooth" });
+                  track("click_cta", { role: "manager", location: "hero", label: "request_demo" });
+                  document.getElementById("manager-conversion")?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-sky-400 via-sky-500 to-teal-500 px-7 py-3 text-base font-semibold text-white shadow-lg shadow-sky-300/50 transition hover:scale-[1.01] hover:shadow-xl"
+                className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-sky-500 via-sky-600 to-teal-500 px-7 py-3 text-base font-semibold text-white shadow-lg shadow-sky-300/50 transition hover:scale-[1.01] hover:shadow-xl"
               >
-                Join the Pilot
+                For managers → Request demo
               </button>
               <button
                 onClick={() => {
-                  track("click_cta", { role: "general", location: "hero", label: "secondary" });
-                  document.getElementById("how-it-works")?.scrollIntoView({ behavior: "smooth" });
+                  track("click_cta", { role: "renter", location: "hero", label: "join_pilot" });
+                  document.getElementById("renter-conversion")?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className="inline-flex items-center justify-center rounded-full border border-slate-300 px-7 py-3 text-base font-semibold text-slate-700 transition hover:border-slate-400"
               >
-                See how escrow works
+                For renters → Join pilot
               </button>
             </div>
-
-            <div className="mt-6 flex items-center gap-4 text-sm text-slate-600">
-              <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1">
-                <span role="img" aria-label="lock">
-                  🔒
-                </span>
-                Deposits held by licensed CA escrow partners
-              </span>
-              <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1">
-                <span role="img" aria-label="shield">
-                  🛡️
-                </span>
-                CA-compliant leases ready to send
-              </span>
-            </div>
-
-            <p className="mt-6 text-sm font-medium text-slate-700">
-              RentGuard is a technology platform and not a bank. Deposits are held by licensed California escrow partners.
-            </p>
-            <p className="mt-2 text-sm text-slate-600">Pilot currently enrolling the first 100 landlords and tenants in California.</p>
 
             <div className="mt-12 grid gap-6 text-left sm:grid-cols-3">
               <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">

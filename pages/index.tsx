@@ -1,16 +1,22 @@
 import Hero from "../components/Hero";
-import SignupSection from "../components/SignupSection";
+import TrustSignals from "../components/TrustSignals";
+import ProblemPain from "../components/ProblemPain";
 import ValueAndForm from "../components/ValueAndForm";
-import Pricing from "../components/Pricing";
+import LegalCompliance from "../components/LegalCompliance";
+import SocialProof from "../components/SocialProof";
+import ConversionBlocks from "../components/ConversionBlocks";
 import FAQSchema from "../components/FAQSchema";
 
 export default function Home() {
   return (
     <div className="min-h-screen">
       <Hero />
-      <SignupSection />
+      <TrustSignals />
+      <ProblemPain />
       <ValueAndForm />
-      <Pricing />
+      <LegalCompliance />
+      <SocialProof />
+      <ConversionBlocks />
       <FAQSchema />
 
       {/* Footer */}

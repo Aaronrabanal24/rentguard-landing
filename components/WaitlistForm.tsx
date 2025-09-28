@@ -8,11 +8,23 @@ interface FormData {
   location: string;
 }
 
-export default function WaitlistForm() {
+interface WaitlistFormProps {
+  defaultRole?: "renter" | "landlord";
+  lockRole?: boolean;
+  source?: string;
+  ctaLabel?: string;
+}
+
+export default function WaitlistForm({
+  defaultRole,
+  lockRole = false,
+  source = "signup_section",
+  ctaLabel = "Join the waitlist",
+}: WaitlistFormProps) {
   const [formData, setFormData] = useState<FormData>({
     email: "",
     name: "",
-    userType: "",
+    userType: defaultRole || "",
     location: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -39,7 +51,7 @@ export default function WaitlistForm() {
       };
 
       track("waitlist_signup_completed", payload);
-      track("submit_signup", { role: formData.userType || "unknown", source: "signup_section", ...payload });
+      track("submit_signup", { role: formData.userType || "unknown", source, ...payload });
 
       setIsSubmitted(true);
     } catch (err: any) {
@@ -100,6 +112,7 @@ export default function WaitlistForm() {
           onChange={(e) => handleInputChange("userType", e.target.value)}
           className="w-full rounded-xl border border-slate-200 px-4 py-3 text-slate-900 shadow-sm focus:border-sky-400 focus:outline-none focus:ring-4 focus:ring-sky-200"
           required
+          disabled={lockRole}
         >
           <option value="">I'm a...</option>
           <option value="renter">Renter looking for a home</option>
@@ -125,7 +138,7 @@ export default function WaitlistForm() {
         disabled={isSubmitting}
         className="w-full rounded-full bg-gradient-to-r from-sky-400 via-sky-500 to-teal-500 py-3 px-6 text-base font-semibold text-white shadow-lg shadow-sky-200/60 transition hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-sky-200 focus:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-60"
       >
-        {isSubmitting ? "Joining..." : "Join the waitlist"}
+        {isSubmitting ? "Joining..." : ctaLabel}
       </button>
 
       <p className="text-center text-xs text-slate-500">We respect your privacy. Unsubscribe any time.</p>

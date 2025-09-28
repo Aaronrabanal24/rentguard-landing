@@ -99,6 +99,32 @@ const LANDLORD_VALUE_STACK = [
   },
 ];
 
+const SHARED_FEATURES = [
+  { icon: "🤝", text: "Neutral escrow so neither side holds the deposit." },
+  { icon: "🖼️", text: "Inspection and photo workflows that meet AB 2801 documentation rules." },
+  { icon: "🧮", text: "Itemized deduction logic and receipts that mirror California limits." },
+  { icon: "⚙️", text: "Compliance engine checking timelines, caps, and refund triggers automatically." },
+];
+
+const RENTER_VALUE_STACK = [
+  {
+    title: "Secure escrow",
+    description: "Deposits stay in neutral hands until you approve the release.",
+  },
+  {
+    title: "Transparent deductions",
+    description: "Every charge comes with photos, receipts, and statutory explanations.",
+  },
+  {
+    title: "Response rights",
+    description: "Flag a dispute, add evidence, and keep everything in the shared record.",
+  },
+  {
+    title: "Faster clarity",
+    description: "Automated alerts show when funds are released or if more info is needed.",
+  },
+];
+
 export default function ValueAndForm() {
   const [activeTab, setActiveTab] = useState<"renter" | "landlord">("renter");
 
@@ -122,7 +148,7 @@ export default function ValueAndForm() {
           </p>
         </div>
 
-        <div className="mx-auto mt-12 flex justify-center">
+        <div className="mx-auto mt-10 flex justify-center">
           <div className="flex rounded-full border border-slate-200 bg-white p-1 text-sm font-medium text-slate-600 shadow-sm">
             <button
               onClick={() => handleTabClick("renter")}
@@ -141,6 +167,15 @@ export default function ValueAndForm() {
               Landlord view
             </button>
           </div>
+        </div>
+
+        <div className="mt-10 grid gap-6 sm:grid-cols-2" id="platform">
+          {SHARED_FEATURES.map((feature) => (
+            <div key={feature.text} className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-white p-5 text-sm text-slate-600 shadow-sm">
+              <span className="text-base">{feature.icon}</span>
+              <span>{feature.text}</span>
+            </div>
+          ))}
         </div>
 
         <div className="mt-12 grid gap-10 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
@@ -171,7 +206,8 @@ export default function ValueAndForm() {
               id={content.ctaId}
               onClick={() => {
                 track("click_cta", { role: content.role, location: "split_paths", label: content.ctaId });
-                document.getElementById("signup")?.scrollIntoView({ behavior: "smooth" });
+                const anchor = content.role === "landlord" ? "manager-conversion" : "renter-conversion";
+                document.getElementById(anchor)?.scrollIntoView({ behavior: "smooth" });
               }}
               className="mt-8 inline-flex items-center justify-center rounded-full bg-sky-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-sky-600"
             >
@@ -227,22 +263,37 @@ export default function ValueAndForm() {
           </ol>
         </div>
 
-        <div className="mt-16 grid gap-8 lg:grid-cols-[minmax(0,0.65fr)_minmax(0,1fr)]">
+        <div className="mt-16 grid gap-8 lg:grid-cols-2" id="value-stacks">
           <div className="space-y-4">
             <span className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-orange-600">
-              For serious landlords
+              Managers & owners
             </span>
             <h3 className="text-3xl font-semibold text-slate-900">Landlord value stack</h3>
-          <p className="text-base text-slate-600">Start with neutral escrow, add compliance guardrails, and bring in extras only when you need them.</p>
+            <p className="text-base text-slate-600">Stack compliance and trust so every refund stays defensible.</p>
+            <ul className="space-y-4 text-sm text-slate-600">
+              {LANDLORD_VALUE_STACK.map((layer) => (
+                <li key={layer.title} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                  <h4 className="text-base font-semibold text-slate-900">{layer.title}</h4>
+                  <p className="mt-2 leading-relaxed">{layer.description}</p>
+                </li>
+              ))}
+            </ul>
           </div>
-          <ul className="space-y-4 text-sm text-slate-600">
-            {LANDLORD_VALUE_STACK.map((layer) => (
-              <li key={layer.title} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                <h4 className="text-base font-semibold text-slate-900">{layer.title}</h4>
-                <p className="mt-2 leading-relaxed">{layer.description}</p>
-              </li>
-            ))}
-          </ul>
+          <div className="space-y-4">
+            <span className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-sky-700">
+              Renters & tenants
+            </span>
+            <h3 className="text-3xl font-semibold text-slate-900">Renter value stack</h3>
+            <p className="text-base text-slate-600">Know where your deposit lives, how it is used, and when it comes back.</p>
+            <ul className="space-y-4 text-sm text-slate-600">
+              {RENTER_VALUE_STACK.map((layer) => (
+                <li key={layer.title} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                  <h4 className="text-base font-semibold text-slate-900">{layer.title}</h4>
+                  <p className="mt-2 leading-relaxed">{layer.description}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>
