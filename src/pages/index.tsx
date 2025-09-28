@@ -1,4 +1,4 @@
-import { Footer, Hero, HomeCTA, SocialProof, TrustSignals } from "@/components";
+import { Footer, Hero, HomeCTA } from "@/components";
 import StoryArc from "@/components/sections/StoryArc";
 import { motion } from "@/lib/motion";
 
@@ -8,9 +8,7 @@ export default function Home() {
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4 }}>
         <Hero />
       </motion.div>
-      <TrustSignals />
       <StoryArc />
-      <SocialProof />
       <HomeCTA />
       <Footer />
     </div>

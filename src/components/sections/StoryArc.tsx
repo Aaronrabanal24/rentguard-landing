@@ -6,7 +6,6 @@ interface StoryStep {
   eyebrow: string;
   intro: string;
   bullets: readonly string[];
-  visualLabel: string;
 }
 
 const STORY_STEPS: StoryStep[] = [
@@ -18,9 +17,8 @@ const STORY_STEPS: StoryStep[] = [
     bullets: [
       "SEO property profile with compliance highlights and FAQs",
       "Fairvia trust badge with unique token and QR code",
-      "Badge overlay and copy blocks for Zillow, Craigslist, and Facebook",
+      "Overlay copy for Zillow, Craigslist, and Facebook",
     ],
-    visualLabel: "SEO profile & badge preview",
   },
   {
     id: 2,
@@ -32,7 +30,6 @@ const STORY_STEPS: StoryStep[] = [
       "Identity checks and e-signature-ready lease templates",
       "Neutral status screen both landlord and renter can see",
     ],
-    visualLabel: "Escrow + lease dashboard",
   },
   {
     id: 3,
@@ -44,7 +41,6 @@ const STORY_STEPS: StoryStep[] = [
       "Attach receipts, estimates, and photos to each message",
       "One-click renter confirmations that appear in the case record",
     ],
-    visualLabel: "Guided chat timeline",
   },
   {
     id: 4,
@@ -56,7 +52,6 @@ const STORY_STEPS: StoryStep[] = [
       "Deductions helper with categorized line items and proof",
       "Archive-ready packet with receipts, photos, and release notes",
     ],
-    visualLabel: "Deduction letter + receipts",
   },
 ];
 
@@ -73,11 +68,11 @@ export default function StoryArc() {
       <div className="mx-auto max-w-6xl px-4">
         <div className="max-w-3xl">
           <span className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-white">
-            The Fairvia arc
+            Four-part workflow
           </span>
-          <h2 className="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl">Walk prospects through the same workflow you deliver</h2>
+          <h2 className="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl">Show the exact path every Fairvia deposit follows</h2>
           <p className="mt-3 text-sm text-slate-600 sm:text-base">
-            Each step mirrors what your renters experience, proving Fairvia handles marketing, onboarding, communication, and compliant release without extra software.
+            Nothing extra—just the four steps that move a renter from SEO discovery to a compliant release.
           </p>
         </div>
 
@@ -117,12 +112,18 @@ export default function StoryArc() {
                 <div className="relative h-full w-full max-w-md rounded-3xl border border-white/60 bg-gradient-to-br from-slate-100 via-white to-slate-50 p-8 shadow-xl shadow-slate-200">
                   <div className="mb-4 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
                     <span className="flex h-8 w-8 items-center justify-center rounded-full bg-sky-100 text-sky-600">{step.id}</span>
-                    <span>{step.visualLabel}</span>
+                    <span>{step.title}</span>
                   </div>
-                  <div className="rounded-2xl border border-slate-200 bg-white/90 p-6 text-sm text-slate-500 shadow-inner">
-                    <p>
-                      Visual placeholder for <span className="font-semibold text-slate-800">{step.visualLabel}</span>. Swap with your mockup showing {step.title.toLowerCase()}.
-                    </p>
+                  <div className="space-y-2">
+                    {step.bullets.map((bullet) => (
+                      <div
+                        key={bullet}
+                        className="flex items-start gap-2 rounded-2xl border border-slate-200 bg-white/90 px-4 py-3 text-xs text-slate-500 shadow-sm"
+                      >
+                        <span className="mt-0.5 text-sky-500">✓</span>
+                        <span>{bullet}</span>
+                      </div>
+                    ))}
                   </div>
                   <div className="absolute -right-6 -top-6 hidden h-20 w-20 rounded-full bg-gradient-to-br from-sky-400 to-teal-400 opacity-60 blur-2xl md:block" aria-hidden />
                   <div className="absolute -left-6 bottom-6 hidden h-16 w-16 rounded-full bg-gradient-to-br from-purple-400 to-sky-400 opacity-50 blur-xl md:block" aria-hidden />
