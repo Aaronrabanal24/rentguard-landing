@@ -1,0 +1,1660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RentGuard — Fair Deposits. Verified Leases. Rentals You Can Actually Trust.</title>
+
+  <!-- SEO -->
+  <meta name="description" content="RentGuard holds deposits in escrow, generates compliant leases, and verifies landlords and tenants. Rentals you can actually trust."/>
+  <link rel="canonical" href="https://rentguard.example/"/>
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="RentGuard — Fair Deposits. Verified Leases."/>
+  <meta property="og:description" content="Escrowed deposits, standardized leases, verified users."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://rentguard.example/"/>
+  <meta property="og:image" content="https://rentguard.example/og-image.jpg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"RentGuard",
+    "url":"https://rentguard.example/",
+    "sameAs": [],
+    "logo":"https://rentguard.example/logo.png"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"RentGuard",
+    "url":"https://rentguard.example/",
+    "potentialAction":{
+      "@type":"SearchAction",
+      "target":"https://rentguard.example/?q={search_term_string}",
+      "query-input":"required name=search_term_string"
+    }
+  }
+  </script>
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box }
+    :root{
+      --brand:#5a67d8;
+      --brand2:#4c51bf;
+      --brand-light:#667eea;
+      --ok:#48bb78;
+      --ok2:#38a169;
+      --text:#2d3748;
+      --muted:#718096;
+      --bg:#ffffff;
+      --card:#f7fafc;
+      --danger:#e53e3e;
+      --blue1:#4299e1;
+      --warning:#f6ad55;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    html { scroll-behavior:smooth }
+    body {
+      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;
+      line-height:1.6; color:#333;
+      background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+    }
+    .container { max-width:1120px; margin:0 auto; padding:0 20px }
+
+    /* Skip link and focus */
+    .skip-link{ position:absolute; left:-999px; top:auto; z-index:9999 }
+    .skip-link:focus{ left:12px; top:12px; background:#fff; padding:.5rem 1rem; border-radius:8px; z-index:2000 }
+    :focus-visible{ outline:3px solid var(--brand); outline-offset:2px }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    .animate-fade-in-up { animation: fadeInUp 0.6s ease-out; }
+    .animate-pulse { animation: pulse 2s infinite; }
+    .animate-slide-in-right { animation: slideInRight 0.5s ease-out; }
+
+    /* Enhanced button styles */
+    .btn-enhanced {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateY(0);
+    }
+    .btn-enhanced::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+    .btn-enhanced:hover::before {
+      left: 100%;
+    }
+    .btn-enhanced:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Header */
+    header {
+      background:rgba(255,255,255,.95);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      padding:1rem 0; position:fixed; width:100%; top:0; z-index:1000;
+      box-shadow:var(--shadow-md);
+      transition: all 0.3s ease;
+    }
+    nav { display:flex; justify-content:space-between; align-items:center }
+    .logo{ 
+      font-size:1.8rem; font-weight:700; color:var(--brand);
+      transition: color 0.3s ease;
+    }
+    .logo:hover { color: var(--brand2); }
+    .menu-right{ display:flex; align-items:center; gap:1rem }
+    .nav-links { display:flex; gap:2rem; list-style:none }
+    .nav-links a{ 
+      text-decoration:none; color:#4a5568; font-weight:500; 
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: var(--brand);
+      transition: width 0.3s ease;
+    }
+    .nav-links a:hover::after,
+    .nav-links a:focus-visible::after {
+      width: 100%;
+    }
+    .nav-links a:hover, .nav-links a:focus-visible{ color: var(--brand); text-decoration: none; }
+    .cta-nav{ 
+      background:var(--brand); color:#fff; padding:.5rem 1.25rem; 
+      border-radius:25px; text-decoration:none; font-weight:700;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-nav:hover, .cta-nav:focus-visible{ 
+      background:var(--brand2); 
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+    .menu-btn{ display:none }
+
+    /* Hero */
+    .hero{
+      padding:120px 0 60px; text-align:center; color:#fff; min-height:100vh; 
+      display:flex; align-items:center; position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+      opacity: 0.3;
+    }
+    .hero-content { position: relative; z-index: 1; }
+    .hero h1{ 
+      font-size:3.5rem; font-weight:800; margin-bottom:1rem; 
+      text-shadow:2px 2px 4px rgba(0,0,0,.3);
+      background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.8) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p{ 
+      font-size:1.3rem; margin-bottom:2rem; max-width:680px; 
+      margin-inline:auto; opacity:.95; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+    .hero-cta{ display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-bottom:2rem }
+    .btn{ 
+      display:inline-block; border:none; border-radius:30px; font-size:1.05rem; 
+      font-weight:700; cursor:pointer; text-decoration:none; padding:1rem 1.8rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .btn-primary{ 
+      background:linear-gradient(135deg, var(--ok) 0%, var(--ok2) 100%); 
+      color:#fff; box-shadow: var(--shadow-md);
+    }
+    .btn-primary:hover, .btn-primary:focus-visible{ 
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-xl);
+    }
+    .btn-secondary{ 
+      background:rgba(255,255,255,.15); color:#fff; 
+      border:2px solid rgba(255,255,255,.5);
+      backdrop-filter: blur(10px);
+    }
+    .btn-secondary:hover, .btn-secondary:focus-visible{ 
+      background:rgba(255,255,255,.25);
+      border-color: rgba(255,255,255,.8);
+      transform: translateY(-1px);
+    }
+    .trust-indicators{ 
+      display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; 
+      margin-top:1rem; 
+    }
+    .trust-item{ 
+      display:flex; align-items:center; gap:.5rem; 
+      background:rgba(255,255,255,.15); padding:.6rem 1.2rem; 
+      border-radius:25px; backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255,255,255,.2);
+    }
+    .trust-item:hover {
+      background:rgba(255,255,255,.25);
+      transform: translateY(-2px);
+    }
+
+    /* Social proof section */
+    .social-proof {
+      background: rgba(255,255,255,.1);
+      padding: 2rem 0;
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255,255,255,.2);
+      border-bottom: 1px solid rgba(255,255,255,.2);
+    }
+    .social-proof-content {
+      text-align: center;
+      color: white;
+    }
+    .social-proof h3 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+    .stat-item {
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: 800;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    .stat-label {
+      font-size: 0.95rem;
+      opacity: 0.8;
+    }
+
+    /* Sections shared */
+    section{ scroll-margin-top:90px }
+    .section-header{ text-align:center; margin-bottom:3rem }
+    .section-header h2{ 
+      font-size:2.5rem; color:var(--text); margin-bottom:1rem;
+      position: relative;
+    }
+    .section-header h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--brand), var(--ok));
+      border-radius: 2px;
+    }
+    .section-header p{ color:var(--muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+    /* Problem */
+    .problem{ background:#fff; padding:80px 0; position: relative; }
+    .problem::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: linear-gradient(180deg, rgba(102,126,234,0.1) 0%, transparent 100%);
+    }
+    .problem-grid{ 
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); 
+      gap:2rem; margin-top:3rem 
+    }
+    .problem-card{ 
+      background:var(--card); padding:2rem; border-radius:16px; 
+      border-left:4px solid var(--danger); box-shadow:var(--shadow-md);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .problem-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--danger), #ff6b6b);
+    }
+    .problem-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    .problem-card h3{ 
+      color:var(--danger); margin-bottom:1rem; font-size:1.25rem;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .problem-card h3::before {
+      content: '⚠️';
+      font-size: 1.2rem;
+    }
+    .problem-list{ list-style:none }
+    .problem-list li{ 
+      margin-bottom:.75rem; padding-left:1.5rem; position:relative;
+      transition: all 0.2s ease;
+    }
+    .problem-list li::before{ 
+      content:"✗"; color:var(--danger); font-weight:700; 
+      position:absolute; left:0; font-size: 1.1rem;
+    }
+    .problem-list li:hover {
+      padding-left: 1.75rem;
+    }
+
+    /* Solution */
+    .solution{ 
+      background:linear-gradient(135deg,var(--blue1) 0%, var(--brand) 100%); 
+      color:#fff; padding:80px 0; position: relative;
+    }
+    .solution::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="60" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+      opacity: 0.3;
+    }
+    .solution-content { position: relative; z-index: 1; }
+    .solution-grid{ 
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); 
+      gap:1.5rem; margin-top:3rem 
+    }
+    .solution-card{ 
+      background:rgba(255,255,255,.12); padding:2rem; border-radius:16px; 
+      text-align:center; backdrop-filter:blur(15px);
+      border: 1px solid rgba(255,255,255,.2);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .solution-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      transition: left 0.6s;
+    }
+    .solution-card:hover::before {
+      left: 100%;
+    }
+    .solution-card:hover {
+      transform: translateY(-6px);
+      background: rgba(255,255,255,.18);
+      box-shadow: 0 20px 40px rgba(0,0,0,.2);
+    }
+    .solution-icon{ 
+      font-size:2.5rem; margin-bottom:1rem;
+      transition: transform 0.3s ease;
+    }
+    .solution-card:hover .solution-icon {
+      transform: scale(1.1);
+    }
+    .solution-card h3 {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    /* How it works */
+    .how-it-works{ background:#fff; padding:80px 0; position: relative; }
+    .steps{ 
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); 
+      gap:2rem; margin-top:3rem 
+    }
+    .step{
+      text-align:center; position: relative;
+      padding: 1.5rem;
+      border-radius: 16px;
+      transition: all 0.3s ease;
+    }
+    .step:hover {
+      background: rgba(90, 103, 216, 0.05);
+      transform: translateY(-2px);
+    }
+    .step-number{ 
+      background:linear-gradient(135deg, var(--brand), var(--brand2)); 
+      color:#fff; width:60px; height:60px; border-radius:50%; 
+      display:flex; align-items:center; justify-content:center; 
+      margin:0 auto 1rem; font-weight:800; font-size: 1.5rem;
+      box-shadow: var(--shadow-md);
+      transition: all 0.3s ease;
+    }
+    .step:hover .step-number {
+      transform: scale(1.1);
+      box-shadow: var(--shadow-lg);
+    }
+    .step h3 {
+      margin-bottom: 1rem;
+      color: var(--text);
+      font-size: 1.2rem;
+    }
+    .step p {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* Timeline connector for steps */
+    .steps-container {
+      position: relative;
+    }
+    .steps-container::before {
+      content: '';
+      position: absolute;
+      top: 80px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--brand), var(--ok));
+      opacity: 0.3;
+      z-index: 0;
+    }
+
+    /* FAQ */
+    .faq{ background:rgba(247, 250, 252, 0.8); padding:80px 0; }
+    .faq details{ 
+      background:#fff; border-radius:16px; padding:1.5rem 2rem; 
+      margin:1rem 0; box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(90, 103, 216, 0.1);
+    }
+    .faq details:hover {
+      box-shadow: var(--shadow-md);
+      border-color: rgba(90, 103, 216, 0.2);
+    }
+    .faq details[open] {
+      background: rgba(90, 103, 216, 0.02);
+      border-color: var(--brand);
+    }
+    .faq summary{ 
+      cursor:pointer; font-weight:700; color:var(--text);
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .faq summary::before {
+      content: '+';
+      color: var(--brand);
+      font-size: 1.5rem;
+      font-weight: 800;
+      transition: transform 0.3s ease;
+    }
+    .faq details[open] summary::before {
+      transform: rotate(45deg);
+    }
+    .faq summary::-webkit-details-marker {
+      display: none;
+    }
+    .faq p{ margin-top:1rem; color:#4a5568; line-height: 1.7; }
+
+    /* Testimonials section */
+    .testimonials {
+      background: linear-gradient(135deg, #f8f9ff 0%, #e8f0ff 100%);
+      padding: 80px 0;
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .testimonial-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      font-size: 4rem;
+      color: var(--brand);
+      opacity: 0.3;
+    }
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+    .testimonial-author {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    /* Signup */
+    .signup{ 
+      background:linear-gradient(135deg,var(--ok) 0%, var(--ok2) 100%); 
+      color:#fff; padding:80px 0; text-align:center; position: relative;
+    }
+    .signup::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><polygon points="0,100 100,0 100,100" fill="rgba(255,255,255,0.05)"/></svg>');
+    }
+    .signup-content { position: relative; z-index: 1; }
+    .signup-form{ 
+      background:rgba(255,255,255,.15); padding:3rem; border-radius:24px; 
+      max-width:540px; margin:0 auto; backdrop-filter:blur(20px);
+      border: 1px solid rgba(255,255,255,.3);
+      box-shadow: var(--shadow-xl);
+    }
+    .user-type-selector{ 
+      display:flex; gap:1rem; margin-bottom:2rem; justify-content:center; flex-wrap:wrap 
+    }
+    .user-type-btn{ 
+      padding:.8rem 1.5rem; border:2px solid rgba(255,255,255,.6); 
+      background:transparent; color:#fff; border-radius:25px; cursor:pointer; 
+      font-weight:700; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .user-type-btn.active, .user-type-btn:hover, .user-type-btn:focus-visible{ 
+      background:rgba(255,255,255,.25); border-color:#fff;
+      transform: translateY(-1px);
+    }
+    .form-group{ margin:1.5rem 0; text-align:left }
+    .form-group label{ 
+      display:block; margin-bottom:.6rem; font-weight:700;
+      color: rgba(255,255,255,0.95);
+    }
+    .form-group input{ 
+      width:100%; padding:1rem 1.25rem; border:none; border-radius:12px; 
+      font-size:1rem; background:rgba(255,255,255,.95);
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+    .form-group input:focus{ 
+      outline:none; 
+      box-shadow:0 0 0 3px rgba(255,255,255,.3);
+      border-color: rgba(255,255,255,0.8);
+      background: rgba(255,255,255,1);
+    }
+    .form-group input::placeholder {
+      color: #9ca3af;
+    }
+    .checkbox-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin: 1.5rem 0;
+    }
+    .checkbox-group input[type="checkbox"] {
+      width: auto;
+      margin: 0;
+      transform: scale(1.2);
+    }
+    .checkbox-group label {
+      margin: 0;
+      font-weight: 500;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .checkbox-group a {
+      color: rgba(255,255,255,0.9);
+      text-decoration: underline;
+    }
+    .muted{ color:rgba(255,255,255,.9); font-size:.95rem; margin-top:.75rem }
+
+    /* Enhanced progress indicator */
+    .progress-bar {
+      height: 4px;
+      background: rgba(255,255,255,0.3);
+      border-radius: 2px;
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, rgba(255,255,255,0.8), rgba(255,255,255,1));
+      border-radius: 2px;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    /* Messages */
+    .msg{ 
+      padding:1rem 1.5rem; border-radius:12px; margin-bottom:1rem; display:none;
+      font-weight: 600; position: relative;
+    }
+    .msg.show{ display:block; animation: slideInRight 0.3s ease; }
+    .success-message{ 
+      background:#2f855a; color:#fff; border-left: 4px solid #68d391;
+    }
+    .error-message{ 
+      background:#c53030; color:#fff; border-left: 4px solid #fc8181;
+    }
+    .msg::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 12px;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+    .success-message::before {
+      background: #68d391;
+    }
+    .error-message::before {
+      background: #fc8181;
+    }
+
+    /* Footer */
+    footer{ background:#2d3748; color:#fff; padding:80px 0 40px; position: relative; }
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: linear-gradient(180deg, rgba(72,187,120,0.1) 0%, transparent 100%);
+    }
+    .footer-content{ 
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); 
+      gap:2rem; margin-bottom:3rem; position: relative; z-index: 1;
+    }
+    .footer-section h3{ 
+      margin-bottom:1rem; color:var(--brand);
+      font-size: 1.1rem;
+    }
+    .footer-section ul{ list-style:none }
+    .footer-section ul li {
+      margin-bottom: 0.75rem;
+    }
+    .footer-section a{ 
+      color:#a0aec0; text-decoration:none;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .footer-section a:hover, .footer-section a:focus-visible{ 
+      color:#fff; text-decoration:none;
+      padding-left: 4px;
+    }
+    .footer-bottom{ 
+      text-align:center; padding-top:2rem; border-top:1px solid #4a5568; 
+      color:#a0aec0; position: relative; z-index: 1;
+    }
+
+    /* Loading spinner */
+    .spinner {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 1s ease-in-out infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Responsive */
+    @media (max-width:768px){
+      .nav-links{ display:none }
+      .menu-btn{ 
+        display:inline-block; background:#fff; border:1px solid #e2e8f0; 
+        border-radius:8px; padding:.5rem .8rem; font-weight:700;
+        transition: all 0.3s ease;
+      }
+      .menu-btn:hover {
+        background: #f7fafc;
+      }
+      .nav-drawer{ 
+        position:absolute; top:64px; right:20px; background:#fff; 
+        padding:1rem 1.25rem; border-radius:12px; 
+        box-shadow:var(--shadow-xl); z-index: 1001;
+        animation: slideInRight 0.3s ease;
+      }
+      .nav-drawer a{ 
+        display:block; padding:.6rem 0; color:#4a5568; 
+        text-decoration:none; transition: all 0.3s ease;
+      }
+      .nav-drawer a:hover{ 
+        text-decoration:none; color: var(--brand);
+        padding-left: 8px;
+      }
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+      .hero p {
+        font-size: 1.1rem;
+      }
+      .hero-cta {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      .btn {
+        width: 100%;
+        max-width: 280px;
+      }
+      .trust-indicators {
+        gap: 0.75rem;
+      }
+      .trust-item {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+      }
+      .section-header h2 {
+        font-size: 2rem;
+      }
+      .problem-grid,
+      .solution-grid,
+      .steps,
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+      .user-type-selector {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      .user-type-btn {
+        width: 100%;
+      }
+      .signup-form {
+        padding: 2rem 1.5rem;
+        margin: 0 1rem;
+      }
+      .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 15px;
+      }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+      .stat-number {
+        font-size: 1.8rem;
+      }
+    }
+
+    /* Scroll margin so anchors do not hide behind header */
+    [id]{ scroll-margin-top:90px }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      *{ 
+        scroll-behavior:auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* High contrast mode support */
+    @media (prefers-contrast: high) {
+      .btn-secondary {
+        border-width: 3px;
+      }
+      .trust-item,
+      .solution-card,
+      .signup-form {
+        border: 2px solid rgba(255,255,255,0.5);
+      }
+    }
+
+    /* Dark mode support */
+    @media (prefers-color-scheme: dark) {
+      .problem {
+        background: #1a202c;
+      }
+      .problem-card {
+        background: #2d3748;
+        color: #e2e8f0;
+      }
+      .how-it-works {
+        background: #1a202c;
+      }
+      .step h3 {
+        color: #e2e8f0;
+      }
+      .step p {
+        color: #a0aec0;
+      }
+      .faq {
+        background: #1a202c;
+      }
+      .faq details {
+        background: #2d3748;
+        color: #e2e8f0;
+      }
+      .testimonials {
+        background: #1a202c;
+      }
+      .testimonial-card {
+        background: #2d3748;
+        color: #e2e8f0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <nav class="container" aria-label="Primary">
+      <div class="logo">RentGuard</div>
+      <div class="menu-right">
+        <button class="menu-btn" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+        <ul id="nav" class="nav-links" role="menubar">
+          <li role="none"><a role="menuitem" href="#problem">Problem</a></li>
+          <li role="none"><a role="menuitem" href="#solution">Solution</a></li>
+          <li role="none"><a role="menuitem" href="#how-it-works">How It Works</a></li>
+          <li role="none"><a role="menuitem" href="#faq">FAQ</a></li>
+          <li role="none"><a role="menuitem" href="#signup">Join Waitlist</a></li>
+        </ul>
+        <a href="#signup" class="cta-nav btn-enhanced">Get Early Access</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-content animate-fade-in-up">
+          <h1 id="hero-title">Rent without risk.</h1>
+          <p>Deposits in escrow. Leases that stand up. Landlords and tenants verified. Rentals you can actually trust.</p>
+          <div class="hero-cta">
+            <a href="#signup" class="btn btn-primary btn-enhanced animate-pulse">Join the Waitlist</a>
+            <a href="#how-it-works" class="btn btn-secondary btn-enhanced">Learn More</a>
+          </div>
+
+          <ul class="trust-indicators" aria-label="Why people trust RentGuard">
+            <li class="trust-item animate-slide-in-right" aria-label="Licensed escrow partners" style="animation-delay: 0.1s;">🏛️ Licensed Escrow</li>
+            <li class="trust-item animate-slide-in-right" aria-label="Local law compliant" style="animation-delay: 0.2s;">📚 State Law Templates</li>
+            <li class="trust-item animate-slide-in-right" aria-label="Neutral dispute mediation" style="animation-delay: 0.3s;">🧑‍⚖️ Neutral Mediation</li>
+          </ul>
+          <p class="muted" style="margin-top:.75rem">
+            Deposits safeguarded via <a href="#" rel="noopener" style="color: rgba(255,255,255,0.9); text-decoration: underline;">[Escrow Partner]</a>. Lease templates maintained by <a href="#" rel="noopener" style="color: rgba(255,255,255,0.9); text-decoration: underline;">[Legal Provider]</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="social-proof">
+      <div class="container">
+        <div class="social-proof-content">
+          <h3>Join thousands already interested in fair rentals</h3>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <span class="stat-number">44M</span>
+              <span class="stat-label">Renter households in US</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">$45B+</span>
+              <span class="stat-label">Deposits held annually</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">500K+</span>
+              <span class="stat-label">Deposit disputes yearly</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">73%</span>
+              <span class="stat-label">Want escrow protection</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem" id="problem" aria-labelledby="problem-title">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="problem-title">The rental market is broken</h2>
+          <p>Renters lose deposits. Landlords carry risk. Paperwork drags everyone down.</p>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-card">
+            <h3>For tenants</h3>
+            <ul class="problem-list">
+              <li>Deposits held hostage by unscrupulous landlords</li>
+              <li>Scam or duplicate listings waste time and money</li>
+              <li>Unclear lease terms and hidden fees</li>
+              <li>No neutral protection during disputes</li>
+              <li>Hard to prove payments and lease compliance</li>
+            </ul>
+          </div>
+          <div class="problem-card">
+            <h3>For landlords</h3>
+            <ul class="problem-list">
+              <li>Non-payment risk from unvetted tenants</li>
+              <li>Expensive damage and lengthy dispute costs</li>
+              <li>Complex legal compliance headaches</li>
+              <li>Few modern digital tools available</li>
+              <li>Time-consuming manual tenant screening</li>
+            </ul>
+          </div>
+          <div class="problem-card">
+            <h3>Market reality</h3>
+            <ul class="problem-list">
+              <li>Billions in deposits mismanaged every year</li>
+              <li>Millions of households affected by unfair practices</li>
+              <li>No trusted neutral broker in most markets</li>
+              <li>Platforms list properties but don't protect transactions</li>
+              <li>Analog processes in an increasingly digital world</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="solution" id="solution" aria-labelledby="solution-title">
+      <div class="container solution-content">
+        <div class="section-header">
+          <h2 id="solution-title">A trusted rental brokerage</h2>
+          <p>We act as the neutral middle so both sides are safe and clear.</p>
+        </div>
+        <div class="solution-grid" role="list">
+          <article class="solution-card" role="listitem">
+            <div class="solution-icon">🔐</div>
+            <h3>Escrowed deposits</h3>
+            <p>Funds are held by licensed partners and released only when lease conditions are met.</p>
+          </article>
+          <article class="solution-card" role="listitem">
+            <div class="solution-icon">📋</div>
+            <h3>Standardized leases</h3>
+            <p>Digital contracts built for your state's laws and easy to sign electronically.</p>
+          </article>
+          <article class="solution-card" role="listitem">
+            <div class="solution-icon">✅</div>
+            <h3>Complete verification</h3>
+            <p>Identity verification for tenants, ownership and license verification for landlords.</p>
+          </article>
+          <article class="solution-card" role="listitem">
+            <div class="solution-icon">💳</div>
+            <h3>Secure payments</h3>
+            <p>Automated rent collection with clear receipts, reminders, and payment history.</p>
+          </article>
+          <article class="solution-card" role="listitem">
+            <div class="solution-icon">🔧</div>
+            <h3>Maintenance workflow</h3>
+            <p>Repair requests tracked transparently with pre-approved, verified vendor network.</p>
+          </article>
+          <article class="solution-card" role="listitem">
+            <div class="solution-icon">⚖️</div>
+            <h3>Fair disputes</h3>
+            <p>Evidence-based mediation with clear timelines and neutral arbitration.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-it-works" id="how-it-works" aria-labelledby="how-title">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="how-title">How RentGuard works</h2>
+          <p>Simple and safe from search to move out</p>
+        </div>
+        <div class="steps-container">
+          <div class="steps">
+            <div class="step">
+              <div class="step-number">1</div>
+              <h3>List or search</h3>
+              <p>Landlords list verified properties with transparent pricing. Tenants browse trusted listings with clear terms and no hidden fees.</p>
+            </div>
+            <div class="step">
+              <div class="step-number">2</div>
+              <h3>Get verified</h3>
+              <p>Both sides complete comprehensive background checks. Ownership, identity, and financial qualification verified before any agreements.</p>
+            </div>
+            <div class="step">
+              <div class="step-number">3</div>
+              <h3>Secure transaction</h3>
+              <p>Digital lease signing with deposit held in licensed escrow. All funds protected by comprehensive insurance policy.</p>
+            </div>
+            <div class="step">
+              <div class="step-number">4</div>
+              <h3>Ongoing protection</h3>
+              <p>Automated rent payments, maintenance request tracking, and fair dispute resolution throughout the entire lease term.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials" aria-labelledby="testimonials-title">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="testimonials-title">What early users say</h2>
+          <p>Real feedback from our pilot program participants</p>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <p class="testimonial-text">"Finally, a platform that actually protects tenants. Knowing my deposit was in escrow gave me peace of mind throughout the entire process."</p>
+            <p class="testimonial-author">— Sarah M., Austin Renter</p>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-text">"The standardized lease saved me hours of legal review. Everything was clear, compliant, and digitally signed in minutes."</p>
+            <p class="testimonial-author">— Mike Chen, Property Owner</p>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-text">"When we had a maintenance dispute, the neutral mediation process was fair and fast. Both sides felt heard and the issue was resolved quickly."</p>
+            <p class="testimonial-author">— Jennifer K., Denver Landlord</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="faq-title">Common questions</h2>
+          <p>Short answers to help you decide fast</p>
+        </div>
+        <details>
+          <summary>How do you release deposits safely?</summary>
+          <p>Deposits are held by licensed escrow partners and released when both parties approve the move-out checklist, or after neutral mediation if there's a dispute. Our policy ensures fair, timely resolution.</p>
+        </details>
+        <details>
+          <summary>What does RentGuard cost?</summary>
+          <p>Free for tenants during our MVP launch. Landlords pay a small escrow fee per lease (typically 1-2% of deposit value) plus optional subscription for advanced tools.</p>
+        </details>
+        <details>
+          <summary>Is this legal in my state?</summary>
+          <p>Yes. We use state-specific lease templates maintained by legal experts and work with licensed escrow partners in all markets we serve.</p>
+        </details>
+        <details>
+          <summary>How do you verify users?</summary>
+          <p>Tenants provide identity verification and income documentation. Landlords submit ownership proof and business licenses. All verifications use secure, encrypted processes.</p>
+        </details>
+        <details>
+          <summary>What if there's a dispute?</summary>
+          <p>Our neutral mediation team reviews evidence from both parties and makes binding decisions based on lease terms and local law. Most disputes resolve within 5-7 business days.</p>
+        </details>
+        <details>
+          <summary>When will this be available?</summary>
+          <p>We're launching in Austin, Denver, and Raleigh in Q2 2025. Join our waitlist to get early access and updates on expansion to your city.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="signup" id="signup" aria-labelledby="signup-title">
+      <div class="container signup-content">
+        <div class="section-header">
+          <h2 id="signup-title">Join the rental revolution</h2>
+          <p>Be among the first to rent with real protection</p>
+        </div>
+
+        <div class="signup-form" aria-describedby="compliance-note">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+
+          <div id="successMessage" class="msg success-message" role="status" aria-live="polite">
+            ✅ Thank you for joining our waitlist! We'll be in touch with early access details soon.
+          </div>
+          <div id="errorMessage" class="msg error-message" role="alert" aria-live="assertive">
+            ❌ Please fill out all required fields and accept the terms.
+          </div>
+
+          <form id="signupForm" novalidate>
+            <div class="user-type-selector" role="tablist" aria-label="I am">
+              <button type="button" class="user-type-btn active" data-type="tenant" role="tab" aria-selected="true">I am a tenant</button>
+              <button type="button" class="user-type-btn" data-type="landlord" role="tab" aria-selected="false">I am a landlord</button>
+            </div>
+
+            <!-- Honeypot for bot protection -->
+            <input type="text" name="company" id="company" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0"/>
+
+            <div class="form-group">
+              <label for="fullName">Full name *</label>
+              <input id="fullName" name="fullName" autocomplete="name" required placeholder="Enter your full name"/>
+            </div>
+            <div class="form-group">
+              <label for="email">Email address *</label>
+              <input type="email" id="email" name="email" autocomplete="email" required placeholder="your@email.com"/>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone number</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="(555) 123-4567"/>
+            </div>
+            <div class="form-group">
+              <label for="location">City or area of interest *</label>
+              <input id="location" name="location" autocomplete="address-level2" placeholder="e.g., Austin, TX" required/>
+            </div>
+
+            <div class="form-group" id="tenantFields">
+              <label for="moveDate">When are you looking to move?</label>
+              <input id="moveDate" name="moveDate" placeholder="e.g., next 3 months, spring 2025"/>
+            </div>
+
+            <div class="form-group" id="landlordFields" style="display:none">
+              <label for="properties">How many properties do you manage?</label>
+              <input id="properties" name="properties" placeholder="e.g., 1-5, 6-20, 20+"/>
+            </div>
+
+            <div class="checkbox-group">
+              <input type="checkbox" id="consent" required/>
+              <label for="consent">
+                I agree to the <a href="/terms.html" target="_blank">Terms of Service</a> and <a href="/privacy.html" target="_blank">Privacy Policy</a>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-enhanced" style="width:100%;margin-top:1rem" id="submitBtn">
+              <span id="submitText">Join Waitlist</span>
+              <span id="submitSpinner" class="spinner" style="display:none;margin-left:0.5rem;"></span>
+            </button>
+            <p id="compliance-note" class="muted">Deposits safeguarded via <a href="#" rel="noopener" style="color: rgba(255,255,255,0.9); text-decoration: underline;">[Escrow Partner]</a>. Lease templates by <a href="#" rel="noopener" style="color: rgba(255,255,255,0.9); text-decoration: underline;">[Legal Provider]</a>.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>RentGuard</h3>
+          <p>Transforming the rental experience with secure, fair, and transparent transactions for tenants and landlords nationwide.</p>
+          <div style="margin-top: 1rem;">
+            <a href="mailto:hello@rentguard.example" style="color: #a0aec0; margin-right: 1rem;">📧 Contact</a>
+            <a href="tel:+1-555-RENT-GUARD" style="color: #a0aec0;">📞 Support</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>For tenants</h3>
+          <ul>
+            <li><a href="#solution">Secure deposits</a></li>
+            <li><a href="#how-it-works">Search properties</a></li>
+            <li><a href="#faq">Tenant rights</a></li>
+            <li><a href="#faq">Dispute help</a></li>
+            <li><a href="/tenant-guide.html">Rental guide</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>For landlords</h3>
+          <ul>
+            <li><a href="#solution">List properties</a></li>
+            <li><a href="#solution">Screen tenants</a></li>
+            <li><a href="#solution">Collect rent</a></li>
+            <li><a href="#solution">Maintenance tools</a></li>
+            <li><a href="/landlord-tools.html">Property management</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="/about.html">About us</a></li>
+            <li><a href="/careers.html">Careers</a></li>
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/press.html">Press</a></li>
+            <li><a href="/privacy.html">Privacy policy</a></li>
+            <li><a href="/terms.html">Terms of service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 RentGuard. All rights reserved. Making rentals fair, one transaction at a time.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script defer>
+    // Mobile navigation
+    const btn = document.querySelector('.menu-btn');
+    const nav = document.getElementById('nav');
+    btn?.addEventListener('click', ()=>{
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      if(open){
+        const drawer = document.querySelector('.nav-drawer');
+        drawer?.remove();
+      }else{
+        const drawer = document.createElement('div');
+        drawer.className = 'nav-drawer';
+        drawer.innerHTML = `
+          <a href="#problem">Problem</a>
+          <a href="#solution">Solution</a>
+          <a href="#how-it-works">How It Works</a>
+          <a href="#faq">FAQ</a>
+          <a href="#signup">Join Waitlist</a>
+        `;
+        btn.parentElement.appendChild(drawer);
+        
+        // Close drawer when clicking outside
+        setTimeout(() => {
+          document.addEventListener('click', (e) => {
+            if (!drawer.contains(e.target) && !btn.contains(e.target)) {
+              drawer.remove();
+              btn.setAttribute('aria-expanded', 'false');
+            }
+          }, {once: true});
+        }, 100);
+      }
+    });
+
+    // User type toggle with enhanced UX
+    const userTypeButtons = document.querySelectorAll('.user-type-btn');
+    const tenantFields = document.getElementById('tenantFields');
+    const landlordFields = document.getElementById('landlordFields');
+    let selectedUserType = 'tenant';
+    
+    userTypeButtons.forEach(button=>{
+      button.addEventListener('click', ()=>{
+        userTypeButtons.forEach(b=>{ b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+        button.classList.add('active'); button.setAttribute('aria-selected','true');
+        selectedUserType = button.dataset.type;
+        
+        // Smooth transition between field sets
+        if(selectedUserType==='tenant'){ 
+          landlordFields.style.display='none';
+          setTimeout(() => {
+            tenantFields.style.display='block';
+          }, 150);
+        } else { 
+          tenantFields.style.display='none';
+          setTimeout(() => {
+            landlordFields.style.display='block';
+          }, 150);
+        }
+        
+        updateProgress();
+      });
+    });
+
+    // Enhanced form progress tracking
+    const progressFill = document.getElementById('progressFill');
+    const form = document.getElementById('signupForm');
+    const requiredFields = ['fullName', 'email', 'location', 'consent'];
+    
+    function updateProgress() {
+      const filledFields = requiredFields.filter(fieldId => {
+        const field = document.getElementById(fieldId);
+        if (field.type === 'checkbox') {
+          return field.checked;
+        }
+        return field.value.trim() !== '';
+      });
+      
+      const progress = (filledFields.length / requiredFields.length) * 100;
+      progressFill.style.width = progress + '%';
+    }
+
+    // Add progress tracking to form fields
+    requiredFields.forEach(fieldId => {
+      const field = document.getElementById(fieldId);
+      if (field) {
+        field.addEventListener('input', updateProgress);
+        field.addEventListener('change', updateProgress);
+      }
+    });
+
+    // Enhanced form validation and submission
+    const successMessage = document.getElementById('successMessage');
+    const errorMessage = document.getElementById('errorMessage');
+    const submitBtn = document.getElementById('submitBtn');
+    const submitText = document.getElementById('submitText');
+    const submitSpinner = document.getElementById('submitSpinner');
+    
+    const show = el => { el.classList.add('show') };
+    const hide = el => { el.classList.remove('show') };
+
+    // Email validation
+    function isValidEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    // Enhanced form submission with loading states
+    form?.addEventListener('submit', async function(e){
+      e.preventDefault();
+      
+      // Bot protection
+      const honeypot = document.getElementById('company').value.trim();
+      if(honeypot) return;
+      
+      // Show loading state
+      submitText.textContent = 'Joining...';
+      submitSpinner.style.display = 'inline-block';
+      submitBtn.disabled = true;
+      
+      const fd = new FormData(this);
+      const data = {
+        userType: selectedUserType,
+        fullName: fd.get('fullName')?.toString().trim(),
+        email: fd.get('email')?.toString().trim(),
+        phone: fd.get('phone')?.toString().trim(),
+        location: fd.get('location')?.toString().trim(),
+        moveDate: fd.get('moveDate')?.toString().trim(),
+        properties: fd.get('properties')?.toString().trim(),
+        consent: document.getElementById('consent').checked,
+        timestamp: new Date().toISOString(),
+        source: 'landing_page',
+        referrer: document.referrer || 'direct'
+      };
+      
+      // Enhanced validation
+      let errors = [];
+      if(!data.fullName) errors.push('Full name is required');
+      if(!data.email) errors.push('Email is required');
+      else if(!isValidEmail(data.email)) errors.push('Please enter a valid email');
+      if(!data.location) errors.push('Location is required');
+      if(!data.consent) errors.push('You must accept the terms');
+      
+      if(errors.length > 0) {
+        hide(successMessage);
+        errorMessage.innerHTML = '❌ ' + errors.join('<br>• ');
+        show(errorMessage);
+        
+        // Reset button state
+        submitText.textContent = 'Join Waitlist';
+        submitSpinner.style.display = 'none';
+        submitBtn.disabled = false;
+        return;
+      }
+      
+      try{
+        // Simulate API call - replace with your actual endpoint
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        
+        // Replace with your actual API endpoint
+        // const response = await fetch('/api/waitlist', {
+        //   method: 'POST',
+        //   headers: {'Content-Type': 'application/json'},
+        //   body: JSON.stringify(data)
+        // });
+        // if (!response.ok) throw new Error('Network error');
+        
+        console.log('Signup data:', data);
+        
+        // Track conversion (replace with your analytics)
+        // gtag?.('event', 'conversion', { event_category: 'signup', event_label: selectedUserType });
+        // mixpanel?.track('waitlist_joined', data);
+        
+        hide(errorMessage);
+        show(successMessage);
+        
+        // Reset form
+        this.reset();
+        userTypeButtons[0].click();
+        updateProgress();
+        
+        // Scroll to success message
+        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        
+      } catch(err) {
+        console.error('Signup error:', err);
+        hide(successMessage);
+        errorMessage.innerHTML = '❌ Something went wrong. Please try again or contact support.';
+        show(errorMessage);
+      } finally {
+        // Reset button state
+        submitText.textContent = 'Join Waitlist';
+        submitSpinner.style.display = 'none';
+        submitBtn.disabled = false;
+      }
+    });
+
+    // Enhanced header behavior on scroll
+    let lastScrollY = window.scrollY;
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      const currentScrollY = window.scrollY;
+      
+      // Change header opacity based on scroll
+      if (currentScrollY > 100) {
+        header.style.background = 'rgba(255,255,255,.98)';
+        header.style.boxShadow = '0 4px 20px rgba(0,0,0,.15)';
+      } else {
+        header.style.background = 'rgba(255,255,255,.95)';
+        header.style.boxShadow = '0 2px 20px rgba(0,0,0,.1)';
+      }
+      
+      // Hide/show header on scroll direction (optional)
+      if (currentScrollY > lastScrollY && currentScrollY > 200) {
+        header.style.transform = 'translateY(-100%)';
+      } else {
+        header.style.transform = 'translateY(0)';
+      }
+      lastScrollY = currentScrollY;
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+          
+          // Close mobile menu if open
+          const drawer = document.querySelector('.nav-drawer');
+          if (drawer) {
+            drawer.remove();
+            btn?.setAttribute('aria-expanded', 'false');
+          }
+        }
+      });
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Animate elements on scroll
+    document.querySelectorAll('.problem-card, .solution-card, .step, .testimonial-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+
+    // Auto-focus first form field when signup section is visible
+    const signupObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            document.getElementById('fullName')?.focus();
+          }, 500);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    const signupSection = document.getElementById('signup');
+    if (signupSection) {
+      signupObserver.observe(signupSection);
+    }
+
+    // Enhanced FAQ interaction
+    document.querySelectorAll('details').forEach(detail => {
+      detail.addEventListener('toggle', function() {
+        if (this.open) {
+          // Close other details
+          document.querySelectorAll('details').forEach(otherDetail => {
+            if (otherDetail !== this && otherDetail.open) {
+              otherDetail.open = false;
+            }
+          });
+          
+          // Smooth scroll to opened detail
+          setTimeout(() => {
+            this.scrollIntoView({
+              behavior: 'smooth',
+              block: 'nearest'
+            });
+          }, 100);
+        }
+      });
+    });
+
+    // Keyboard navigation improvements
+    document.addEventListener('keydown', (e) => {
+      // Escape key closes mobile menu
+      if (e.key === 'Escape') {
+        const drawer = document.querySelector('.nav-drawer');
+        if (drawer) {
+          drawer.remove();
+          btn?.setAttribute('aria-expanded', 'false');
+          btn?.focus();
+        }
+      }
+    });
+
+    // Form field enhancements
+    document.querySelectorAll('input').forEach(input => {
+      // Add floating label effect
+      input.addEventListener('focus', function() {
+        this.parentElement.classList.add('focused');
+      });
+      
+      input.addEventListener('blur', function() {
+        if (!this.value) {
+          this.parentElement.classList.remove('focused');
+        }
+      });
+      
+      // Real-time validation feedback
+      input.addEventListener('input', function() {
+        this.classList.remove('error');
+        if (this.type === 'email' && this.value && !isValidEmail(this.value)) {
+          this.classList.add('error');
+        }
+      });
+    });
+
+    // Add error styling
+    const style = document.createElement('style');
+    style.textContent = `
+      .form-group.focused label {
+        color: var(--brand);
+        transform: translateY(-2px);
+      }
+      .form-group input.error {
+        border-color: var(--danger) !important;
+        box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.2) !important;
+      }
+      header {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    `;
+    document.head.appendChild(style);
+
+    // Initialize progress on page load
+    updateProgress();
+
+    // Performance optimization: Preload critical images
+    const criticalImages = [
+      '/og-image.jpg',
+      '/logo.png'
+    ];
+    
+    criticalImages.forEach(src => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+      link.href = src;
+      document.head.appendChild(link);
+    });
+
+    // Analytics integration placeholder
+    function trackEvent(eventName, properties = {}) {
+      // Replace with your analytics service
+      console.log('Analytics Event:', eventName, properties);
+      
+      // Google Analytics 4
+      // gtag?.('event', eventName, properties);
+      
+      // Mixpanel
+      // mixpanel?.track(eventName, properties);
+      
+      // Facebook Pixel
+      // fbq?.('track', eventName, properties);
+    }
+
+    // Track key user interactions
+    document.getElementById('signupForm')?.addEventListener('focusin', () => {
+      trackEvent('form_engagement', { section: 'waitlist_signup' });
+    }, { once: true });
+
+    userTypeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        trackEvent('user_type_selected', { type: btn.dataset.type });
+      });
+    });
+
+    // Track scroll depth
+    let maxScrollDepth = 0;
+    window.addEventListener('scroll', () => {
+      const scrollDepth = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+      if (scrollDepth > maxScrollDepth) {
+        maxScrollDepth = scrollDepth;
+        if (maxScrollDepth >= 25 && maxScrollDepth < 50) {
+          trackEvent('scroll_depth', { depth: '25%' });
+        } else if (maxScrollDepth >= 50 && maxScrollDepth < 75) {
+          trackEvent('scroll_depth', { depth: '50%' });
+        } else if (maxScrollDepth >= 75) {
+          trackEvent('scroll_depth', { depth: '75%' });
+        }
+      }
+    });
+
+    // Error reporting
+    window.addEventListener('error', (e) => {
+      console.error('Page Error:', e.error);
+      // Report to error tracking service
+      // Sentry.captureException(e.error);
+    });
+
+    // Service Worker registration for offline support (optional)
+    if ('serviceWorker' in navigator && 'production' === 'production') {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => console.log('SW registered'))
+          .catch(error => console.log('SW registration failed'));
+      });
+    }
+  </script>
+</body>
+</html>
