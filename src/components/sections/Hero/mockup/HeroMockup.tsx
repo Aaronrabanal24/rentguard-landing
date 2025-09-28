@@ -1,54 +1,12 @@
-import { useMemo, useRef, useState, type KeyboardEvent, type ReactElement } from "react";
+import { useMemo, useRef, useState, type KeyboardEvent } from "react";
 import { cn } from "@/lib/utils";
-import { ChatPanel } from "./ChatPanel";
-import { DeductionPanel } from "./DeductionPanel";
-import { EscrowPanel } from "./EscrowPanel";
-import { PropertyProfilePanel } from "./PropertyProfilePanel";
-
-type HeroPanel = {
-  id: string;
-  label: string;
-  summary: string;
-  accent: string;
-  component: () => ReactElement;
-};
-
-const HERO_PANELS: HeroPanel[] = [
-  {
-    id: "property",
-    label: "Property profile",
-    summary: "Fairvia verified listing snapshot",
-    accent: "bg-emerald-400",
-    component: PropertyProfilePanel,
-  },
-  {
-    id: "escrow",
-    label: "Escrow status",
-    summary: "Deposit timer and protections",
-    accent: "bg-sky-400",
-    component: EscrowPanel,
-  },
-  {
-    id: "chat",
-    label: "Communications",
-    summary: "Shared updates with renters",
-    accent: "bg-indigo-400",
-    component: ChatPanel,
-  },
-  {
-    id: "deductions",
-    label: "Final statement",
-    summary: "Itemized deductions and refunds",
-    accent: "bg-teal-400",
-    component: DeductionPanel,
-  },
-];
+import { MOCKUP_PANELS } from "./panels";
 
 export function HeroMockup() {
-  const [activePanel, setActivePanel] = useState<string>(HERO_PANELS[0]?.id ?? "property");
-  const currentPanel = HERO_PANELS.find((panel) => panel.id === activePanel) ?? HERO_PANELS[0];
+  const [activePanel, setActivePanel] = useState<string>(MOCKUP_PANELS[0]?.id ?? "property");
+  const currentPanel = MOCKUP_PANELS.find((panel) => panel.id === activePanel) ?? MOCKUP_PANELS[0];
   const ActiveComponent = currentPanel.component;
-  const activeIndex = useMemo(() => HERO_PANELS.findIndex((panel) => panel.id === currentPanel.id), [currentPanel.id]);
+  const activeIndex = useMemo(() => MOCKUP_PANELS.findIndex((panel) => panel.id === currentPanel.id), [currentPanel.id]);
   const tabRefs = useRef(new Map<string, HTMLButtonElement>());
 
   const focusPanel = (panelId: string) => {
@@ -58,12 +16,12 @@ export function HeroMockup() {
   };
 
   const handleKeyDown = (event: KeyboardEvent<HTMLButtonElement>, index: number) => {
-    const lastIndex = HERO_PANELS.length - 1;
+    const lastIndex = MOCKUP_PANELS.length - 1;
     if (lastIndex < 0) return;
 
     const rotateIndex = (nextIndex: number) => {
-      const normalized = (nextIndex + HERO_PANELS.length) % HERO_PANELS.length;
-      focusPanel(HERO_PANELS[normalized].id);
+      const normalized = (nextIndex + MOCKUP_PANELS.length) % MOCKUP_PANELS.length;
+      focusPanel(MOCKUP_PANELS[normalized].id);
     };
 
     switch (event.key) {
@@ -104,7 +62,7 @@ export function HeroMockup() {
               aria-label="Hero mockup states"
               aria-orientation="vertical"
             >
-              {HERO_PANELS.map((panel, index) => {
+              {MOCKUP_PANELS.map((panel, index) => {
                 const isActive = panel.id === currentPanel.id;
                 return (
                   <button
@@ -156,7 +114,7 @@ export function HeroMockup() {
                     <p className="text-xs text-slate-500 lg:text-sm">{currentPanel.summary}</p>
                   </div>
                   <span className="rounded-full bg-slate-900/90 px-3 py-1 text-xs font-medium text-white">
-                    {activeIndex + 1} of {HERO_PANELS.length}
+                    {activeIndex + 1} of {MOCKUP_PANELS.length}
                   </span>
                 </header>
 
