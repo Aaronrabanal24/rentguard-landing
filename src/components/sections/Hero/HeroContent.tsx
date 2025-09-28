@@ -18,13 +18,22 @@ export function HeroContent() {
   return (
     <div>
       <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-sky-400/40 bg-sky-100 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-sky-700 shadow-sm shadow-sky-200/60">
-        Built for California landlords • Licensed escrow partners
+        {heroContent.badge}
       </span>
       <h1 className="mb-3 text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">{heroContent.headline}</h1>
       <p className="mb-2 max-w-xl text-base text-slate-600 sm:text-lg">{heroContent.subHeadlines.manager}</p>
       <p className="mb-6 max-w-xl text-sm text-slate-500">{heroContent.subHeadlines.renter}</p>
 
       <HeroStats />
+
+      <div className="mb-6 grid gap-4 text-sm text-slate-600 md:grid-cols-3">
+        {heroContent.valueProps.map((prop) => (
+          <div key={prop.title} className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+            <p className="font-semibold text-slate-900">{prop.title}</p>
+            <p className="mt-1">{prop.description}</p>
+          </div>
+        ))}
+      </div>
 
       <div className="flex flex-col items-start gap-4 sm:flex-row">
         <Button onClick={handleManagerClick} size="lg">
