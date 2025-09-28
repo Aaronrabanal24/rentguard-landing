@@ -45,8 +45,8 @@ export default function FAQSection() {
             <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-orange-100 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-orange-600">
               FAQ
             </span>
-            <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">Quick answers for landlords</h2>
-            <p className="mt-4 text-base text-slate-600">How Fairvia handles deposits, tenants, and rollout.</p>
+            <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">Quick answers for California landlords under pressure</h2>
+            <p className="mt-4 text-base text-slate-600">See how Fairvia keeps you compliant, calms renters, and gives you hours back every move-out.</p>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
             {faqItems.map((faq, index) => (
@@ -82,7 +82,7 @@ export default function FAQSection() {
           <div className="mt-12 text-center">
             <div className="rounded-2xl border border-orange-200 bg-orange-50 p-6">
               <h3 className="mb-2 text-lg font-semibold text-orange-900">Need a deeper walkthrough?</h3>
-              <p className="mb-4 text-orange-700">Hop on a call and we’ll show how Fairvia fits your portfolio.</p>
+              <p className="mb-4 text-orange-700">Book a fast session with our compliance team and leave with a customized 21-day action plan.</p>
               <button
                 onClick={() => {
                   router.push("/signup").catch(() => {
@@ -91,7 +91,7 @@ export default function FAQSection() {
                 }}
                 className="inline-flex items-center rounded-full bg-orange-600 px-6 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-[1px] hover:bg-orange-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-300"
               >
-                Talk to the team
+                Schedule my compliance session
               </button>
             </div>
           </div>

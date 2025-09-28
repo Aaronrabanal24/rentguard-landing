@@ -2,27 +2,27 @@ import { motion } from "@/lib/motion";
 
 const STEPS = [
   {
-    title: "Onboard your properties",
-    description: "Import tenants or units—Fairvia builds one dashboard per deposit.",
+    title: "Import your doors in minutes",
+    description: "Upload your spreadsheet or invite tenants and Fairvia builds a per-deposit workspace—no more binders or email spelunking.",
   },
   {
-    title: "Open neutral deposit holding",
-    description: "Licensed partners safeguard funds while everyone sees the status.",
+    title: "Open neutral escrow automatically",
+    description: "Licensed California partners secure funds and Fairvia shows everyone the balance, replacing personal accounts and paper receipts.",
   },
   {
-    title: "Capture photo documentation",
-    description: "Move-in/out checklists capture timestamped AB 2801 photos.",
+    title: "Capture bulletproof evidence",
+    description: "Guided move-in/out checklists walk you through AB 2801 photo logs so deductions hold up when challenged.",
   },
   {
-    title: "Send statements & release on time",
-    description: "Itemized statements send automatically and releases hit the 21-day window.",
+    title: "Deliver statements & release on time",
+    description: "Fairvia assembles itemizations, emails tenants, and schedules payouts so you never miss the 21-day window.",
   },
 ];
 
 const MOBILE_TIPS = [
-  "Tap a unit to see status, notes, and next actions.",
-  "Snap photos on your phone—Fairvia compresses and timestamps instantly.",
-  "Swipe upcoming deadlines to plan the day in seconds.",
+  "Track every deadline from your phone while crews handle turns.",
+  "Snap photos in-app—Fairvia timestamps and uploads without breaking stride.",
+  "Swipe through upcoming releases to plan your week in under a minute.",
 ];
 
 export default function ValueAndForm() {
@@ -40,9 +40,9 @@ export default function ValueAndForm() {
           <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em]">
             How it works
           </span>
-          <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">Simple workflows for busy operators</h2>
+          <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">Finally, a workflow that keeps pace with move-out season</h2>
           <p className="mt-3 text-sm text-slate-300 sm:text-base">
-            Toggle between desktop and phone without losing context—everything updates in real time.
+            Before Fairvia you were juggling clipboards, texts, and spreadsheets. Now every step is automated and synced so you can compete with full-service PM teams.
           </p>
         </div>
 
@@ -75,9 +75,9 @@ export default function ValueAndForm() {
           transition={{ duration: 0.4, ease: "easeOut" }}
         >
           <div>
-            <h3 className="text-lg font-semibold text-white">Designed for busy days</h3>
+            <h3 className="text-lg font-semibold text-white">Designed for peak chaos days</h3>
             <p className="mt-2">
-              Switch between desktop and mobile without losing context. Every action syncs instantly so your team—or just you—can stay coordinated.
+              Whether you&apos;re turning units back-to-back or meeting contractors, Fairvia keeps the compliance layer running quietly in the background.
             </p>
           </div>
           <ul className="space-y-3">

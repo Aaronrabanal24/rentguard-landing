@@ -1,14 +1,14 @@
 import { motion } from "@/lib/motion";
 
 const SNAPSHOT = {
-  target: "Independent landlords • 1–50 units",
-  valueProp: "Enterprise-level deposit management tailored for small portfolios",
+  target: "Independent California landlords • 1–50 doors",
+  valueProp: "Hands-off compliance that helps you compete with full-time management firms",
   differentiators: [
-    "California compliance built in from day one",
-    "Tenant-friendly transparency that reduces conflict",
-    "Automation that frees up hours each move-out",
+    "21-day deadline protection with zero spreadsheets",
+    "AB 2801 photo logs and itemizations ready for disputes",
+    "Neutral escrow messaging that keeps renters calm and referring friends",
   ],
-  socialProof: "California landlords are adopting Fairvia to streamline deposits",
+  socialProof: "Pilot landlords report reclaiming 6+ hours per move-out and zero missed deadlines",
 };
 
 export default function ProblemPain() {
@@ -32,9 +32,9 @@ export default function ProblemPain() {
           <span className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-white">
             Positioning snapshot
           </span>
-          <h2 className="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl">Built for landlords who wear every hat</h2>
+          <h2 className="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl">The landlord who wears every hat finally gets backup</h2>
           <p className="mt-3 max-w-3xl text-sm text-slate-600 sm:text-base">
-            Fairvia delivers enterprise polish in a lightweight package—clean communication, compliant records, and on-time releases.
+            Fairvia helps you look buttoned-up without hiring staff—every inspection, deduction, and tenant update happens on schedule and with proof in hand.
           </p>
 
           <dl className="mt-8 grid gap-6 sm:grid-cols-2">

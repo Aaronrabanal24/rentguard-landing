@@ -5,23 +5,23 @@ const TIERS = [
   {
     name: "Pilot",
     price: "Free",
-    description: "Available to California landlords while we expand the program.",
+    description: "Limited seats for California landlords who want hands-off 21-day compliance before AB 2801 fully hits.",
     features: [
-      "Neutral escrow managed by licensed partners",
-      "Workflow automation for move-in/out",
-      "Tenant transparency portal",
-      "Email support",
+      "Neutral escrow managed by licensed California partners",
+      "21-day timers, AB 2801 photo logs, and auto statements",
+      "Tenant transparency portal with status updates",
+      "Email support plus onboarding audit of one recent move-out",
     ],
   },
   {
     name: "Professional",
     price: "Coming soon",
-    description: "Designed for landlords scaling beyond the pilot cohort.",
+    description: "For landlords scaling beyond 50 doors who want owner reporting and integrations.",
     features: [
-      "Portfolio analytics and owner reporting",
-      "Team permissions and task assignments",
+      "Portfolio analytics and owner-ready reporting",
+      "Team permissions, task routing, and escalations",
       "API & property management integrations",
-      "Priority support",
+      "Priority support with quarterly compliance reviews",
     ],
   },
 ];
@@ -34,9 +34,9 @@ export default function PricingPage() {
           <span className="inline-flex items-center gap-2 rounded-full bg-orange-100 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-orange-600">
             Pricing
           </span>
-          <h1 className="mt-4 text-3xl font-semibold sm:text-4xl">Pilot-friendly today, scalable tomorrow</h1>
+          <h1 className="mt-4 text-3xl font-semibold sm:text-4xl">Avoid one dispute and Fairvia pays for itself</h1>
           <p className="mt-3 text-sm text-slate-600 sm:text-base">
-            Lock in pilot access now and be the first to know when paid plans launch.
+            A single lost deposit can cost $3,000+ in refunds and legal fees. Pilot access is free while we onboard California landlords who want an edge before AB 2801 enforcement ramps up.
           </p>
         </div>
         <div className="mx-auto mt-10 grid max-w-5xl gap-6 px-4 md:grid-cols-2">
@@ -63,6 +63,9 @@ export default function PricingPage() {
             </motion.div>
           ))}
         </div>
+        <p className="mx-auto mt-8 max-w-3xl px-4 text-xs text-slate-500">
+          Still on the fence? Compare the cost of one disputed deposit—lost rent, cleaning, and legal hours often exceed $3,000. Fairvia&apos;s automation keeps that money in your pocket while delivering a professional experience tenants talk about.
+        </p>
       </section>
     </PageContainer>
   );

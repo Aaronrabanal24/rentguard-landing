@@ -13,9 +13,9 @@ export default function WhyFairviaPage() {
             <span className="inline-flex items-center gap-2 rounded-full bg-sky-100 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-sky-600">
               Why Fairvia
             </span>
-            <h1 className="mt-4 text-3xl font-semibold sm:text-4xl">Neutral escrow built for busy California landlords</h1>
+            <h1 className="mt-4 text-3xl font-semibold sm:text-4xl">The California compliance co-pilot for landlords who do it all</h1>
             <p className="mt-3 text-sm text-slate-600 sm:text-base">
-              See the market squeeze, how Fairvia positions small portfolios to win, and the proof from our pilot cohort.
+              Learn how new regulations, tenant expectations, and fierce competition squeeze independent landlords—and how Fairvia puts you back in control.
             </p>
           </div>
           <div className="flex justify-center md:justify-end">

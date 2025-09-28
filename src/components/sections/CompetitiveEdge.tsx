@@ -2,20 +2,20 @@ import { motion } from "@/lib/motion";
 
 const FEATURES = [
   {
-    title: "21-day deadline management",
-    detail: "Smart nudges keep every refund window on schedule.",
+    title: "21-day deadline control",
+    detail: "Hands-off timers and reminders prevent forfeited deposits—customers report $1,200+ kept per busy season.",
   },
   {
-    title: "Photo documentation workflows",
-    detail: "Guided shoots capture AB 2801 proof in a couple taps.",
+    title: "AB 2801 photo evidence",
+    detail: "Guided shoots record timestamped proof in under 8 minutes, cutting dispute prep by 75%.",
   },
   {
-    title: "Professional tenant communication",
-    detail: "Templates keep deposit updates sharp and consistent.",
+    title: "Tenant-ready messaging",
+    detail: "Pre-built texts and emails answer “Where’s my deposit?” before it escalates, boosting reviews and renewals.",
   },
   {
-    title: "Portfolio-friendly dashboard",
-    detail: "See every unit, status, and escrow ledger in one view.",
+    title: "Portfolio command center",
+    detail: "Every unit, balance, and task in one view helps solo landlords compete with full teams.",
   },
 ];
 
@@ -40,9 +40,9 @@ export default function CompetitiveEdge() {
           <span className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-white">
             Why Fairvia works
           </span>
-          <h2 className="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl">Run deposits like a pro without extra staff</h2>
+          <h2 className="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl">Operate like a pro shop—even if it&apos;s just you</h2>
           <p className="mt-3 max-w-3xl text-sm text-slate-600 sm:text-base">
-            Fairvia handles the busywork so you stay responsive, compliant, and tenant-friendly across every property.
+            Fairvia turns manual landlord chores into “set and forget” workflows so you can spend your time on rent-ready units and new acquisitions.
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             {FEATURES.map((item, index) => (

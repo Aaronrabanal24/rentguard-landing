@@ -2,9 +2,9 @@ import { motion } from "@/lib/motion";
 import { opportunities } from "@/data/opportunities";
 
 const SUBPOINTS = [
-  "Auto-track every 21-day clock.",
-  "Capture AB 2801 photos without extra apps.",
-  "Send clear tenant updates in seconds.",
+  "California civil code fines start at $200 per tenant when the 21-day clock is missed.",
+  "AB 2801 photo evidence becomes mandatory for deductions in 2024—Fairvia handles it now.",
+  "Professional updates help you keep high-quality tenants and avoid one-star reviews.",
 ];
 
 export default function MarketOpportunity() {
@@ -28,9 +28,9 @@ export default function MarketOpportunity() {
           <span className="inline-flex items-center gap-2 rounded-full bg-orange-100 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-orange-600">
             The California challenge
           </span>
-          <h2 className="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl">Deposit management doesn&apos;t have to hurt</h2>
+          <h2 className="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl">Stop burning nights on California deposit compliance</h2>
           <p className="mt-3 max-w-3xl text-sm text-slate-600 sm:text-base">
-            Independent landlords juggle 21-day clocks, photo proof, and status emails. Fairvia keeps the workflow tidy without extra staff.
+            Independent landlords juggle inspections, deadlines, and anxious renters. Fairvia gives you a compliance command center that runs in the background while you focus on rent-ready units.
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {opportunities.map((item, index) => (

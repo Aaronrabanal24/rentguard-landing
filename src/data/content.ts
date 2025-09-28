@@ -1,19 +1,20 @@
 export const heroContent = {
-  badge: "For California landlords",
-  headline: "Run deposits like a pro",
-  subheadline: "Fairvia syncs compliance, tenant updates, and payouts in one clean dashboard.",
+  badge: "California compliance, handled",
+  headline: "California deposit compliance without the panic",
+  subheadline:
+    "Fairvia automates 21-day clocks, AB 2801 photo evidence, and tenant updates in minutes so you protect every dollar and look enterprise-level to renters.",
   value_props: [
     {
-      title: "Stay compliant",
-      description: "Auto-track 21-day refunds and AB 2801 photo proof.",
+      title: "21-day deadline protection",
+      description: "Live timers and alerts stop forfeited deposits and last-minute rush refunds.",
     },
     {
-      title: "Tenant clarity",
-      description: "Neutral escrow with clear status updates for renters.",
+      title: "AB 2801 ready",
+      description: "Guided photo logs capture timestamped proof you can send with a tap.",
     },
     {
-      title: "Save time",
-      description: "Workflow automation handles reminders, paperwork, releases.",
+      title: "Tenant-ready transparency",
+      description: "Neutral escrow status texts calm disputes and reinforce your professionalism.",
     },
   ],
 } as const;

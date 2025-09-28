@@ -5,16 +5,16 @@ import { motion } from "@/lib/motion";
 
 const SECURITY_POINTS = [
   {
-    title: "Licensed escrow partners",
-    detail: "Funds stay in bank-grade escrow accounts managed by California DFPI-licensed partners.",
+    title: "Licensed escrow, zero liability",
+    detail: "Deposits live in DFPI-supervised accounts so you never touch tenant money or risk personal funds.",
   },
   {
-    title: "Audit-ready history",
-    detail: "Every inspection, message, and deduction is timestamped, exportable, and easy to share during disputes.",
+    title: "Court-ready evidence",
+    detail: "Every inspection, note, and message is timestamped and exportable for attorneys, owners, or judges.",
   },
   {
-    title: "Data security",
-    detail: "Application data is encrypted in transit and at rest with role-based access controls for your team.",
+    title: "Enterprise-grade safeguards",
+    detail: "Encryption, role-based access, and monitoring give you the same protection larger PM firms rely on.",
   },
 ];
 
@@ -27,9 +27,9 @@ export default function TrustPage() {
             <span className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-white">
               Trust & Security
             </span>
-            <h1 className="mt-4 text-3xl font-semibold sm:text-4xl">Escrow protection and documentation landlords can prove</h1>
+            <h1 className="mt-4 text-3xl font-semibold sm:text-4xl">The compliance partner that keeps tenants and courts on your side</h1>
             <p className="mt-3 text-sm text-slate-600 sm:text-base">
-              Fairvia links licensed escrow partners with timestamped audit trails and guarded tenant data.
+              Fairvia shields funds in licensed escrow, captures every proof point, and gives you the documentation to calm disputes before they escalate.
             </p>
           </div>
           <div className="flex justify-center md:justify-end">
@@ -53,9 +53,9 @@ export default function TrustPage() {
       >
         <div className="mx-auto max-w-5xl px-4">
           <div className="mb-8 text-center">
-            <h2 className="text-3xl font-semibold">Security safeguards you can hand to stakeholders</h2>
+            <h2 className="text-3xl font-semibold">Security talking points for owners, tenants, and attorneys</h2>
             <p className="mt-3 text-sm text-slate-300 sm:text-base">
-              Share this list with owners, tenants, or partners when you need to demonstrate how Fairvia keeps deposits protected.
+              Use these proof points when someone asks, “Why should I trust Fairvia with our deposits?”
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-3">

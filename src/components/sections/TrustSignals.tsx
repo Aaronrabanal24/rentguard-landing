@@ -19,22 +19,22 @@ export default function TrustSignals() {
           transition={{ duration: 0.4, ease: "easeOut" }}
         >
           <div className="max-w-xl space-y-3">
-            <h2 className="text-2xl font-semibold text-slate-900">Trust the compliance layer</h2>
+            <h2 className="text-2xl font-semibold text-slate-900">The liability shield busy landlords need</h2>
             <p className="text-sm text-slate-600">
-              Fairvia works with licensed DFPI partners and FDIC-insured escrow banks, so every deposit stays neutral and audit-ready.
+              Fairvia partners with DFPI-licensed escrow firms and FDIC banks, keeping deposits neutral and proving you did everything by the book.
             </p>
             <ul className="space-y-2 text-sm text-slate-600">
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-sky-500">•</span>
-                <span>Escrow stays with licensed California partners—Fairvia never touches client funds.</span>
+                <span>Escrow stays with licensed California partners—Fairvia never commingles or touches client funds.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-sky-500">•</span>
-                <span>Reminders surface deadlines, deduction limits, and delivery requirements.</span>
+                <span>Automation surfaces 21-day deadlines, deduction limits, and delivery requirements before they lapse.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-sky-500">•</span>
-                <span>Photo logs and itemized statements align with Civil Code §1950.5, AB 12, and AB 2801.</span>
+                <span>Photo logs and itemized statements align with Civil Code §1950.5, AB 12, and AB 2801 so deductions stand up in disputes.</span>
               </li>
             </ul>
           </div>
@@ -47,7 +47,7 @@ export default function TrustSignals() {
               transition={{ duration: 0.3, ease: "easeOut" }}
             >
               <p className="font-semibold text-slate-900">Escrow partner badge</p>
-              <p>Deposits protected by licensed California escrow agents (FDIC partner banks).</p>
+              <p>Deposits protected by DFPI-licensed escrow agents partnered with FDIC banks.</p>
             </motion.div>
             <motion.div
               className="rounded-2xl border border-slate-300 bg-white px-4 py-3 text-center"
@@ -57,7 +57,7 @@ export default function TrustSignals() {
               transition={{ duration: 0.3, ease: "easeOut", delay: 0.05 }}
             >
               <p className="font-semibold text-slate-900">Compliance attestation</p>
-              <p>Built around Civil Code §1950.5, AB 12, and AB 2801 from day one.</p>
+              <p>Designed with California counsel using Civil Code §1950.5, AB 12, and AB 2801 requirements.</p>
             </motion.div>
           </div>
         </motion.div>

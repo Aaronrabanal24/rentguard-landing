@@ -11,9 +11,9 @@ export default function GetStartedPage() {
             <span className="inline-flex items-center gap-2 rounded-full bg-sky-100 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-sky-600">
               Get Started
             </span>
-            <h1 className="mt-4 text-3xl font-semibold sm:text-4xl">Pick the next step for your seat</h1>
+            <h1 className="mt-4 text-3xl font-semibold sm:text-4xl">Choose the path that delivers peace of mind</h1>
             <p className="mt-3 text-sm text-slate-600 sm:text-base">
-              Landlords can book a walkthrough. Renters can join the pilot escrow queue.
+              California landlords can claim a compliance walkthrough before pilot seats fill up. Renters can secure a neutral escrow slot that guarantees transparent updates.
             </p>
           </div>
           <div className="flex justify-center md:justify-end">

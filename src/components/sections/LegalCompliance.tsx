@@ -2,23 +2,23 @@ import { motion } from "@/lib/motion";
 
 const LAW_POINTS = [
   {
-    title: "21-day return clock",
-    detail: "Civil Code §1950.5 demands deposits or itemized deductions within 21 calendar days.",
+    title: "21-day deadline enforcement",
+    detail: "Civil Code §1950.5 fines landlords when refunds land late—Fairvia keeps you on schedule.",
   },
   {
-    title: "Allowed deductions",
-    detail: "Only unpaid rent, true damage, or cleaning back to move-in condition qualify.",
+    title: "Allowed deduction proof",
+    detail: "Only unpaid rent, damage, or cleaning qualify. Fairvia packages itemizations tenants can&apos;t dispute.",
   },
   {
     title: "AB 2801 photo evidence",
-    detail: "Starting 2024, deductions need dated photos or video delivered to tenants.",
+    detail: "Effective 2024, deductions need timestamped visuals. Fairvia delivers compliant galleries automatically.",
   },
 ];
 
 const SAFEGUARDS = [
-  "Fairvia timestamps inspections, deductions, and messages for audit-ready records.",
-  "Smart nudges alert you before the 21-day window closes.",
-  "Itemized statements and photo galleries send to tenants automatically.",
+  "Hands-off timers warn you days before the 21-day window closes.",
+  "Photo and video checklists create legally bulletproof documentation.",
+  "Auto-delivered statements keep tenants informed and appreciative.",
 ];
 
 export default function LegalCompliance() {
@@ -32,9 +32,9 @@ export default function LegalCompliance() {
       transition={{ duration: 0.45, ease: "easeOut" }}
     >
       <div className="mx-auto max-w-5xl px-4">
-        <h2 className="text-3xl font-semibold text-slate-900">California compliance, baked in</h2>
+        <h2 className="text-3xl font-semibold text-slate-900">California compliance, legally bulletproof</h2>
         <p className="mt-3 text-sm text-slate-600">
-          Fairvia keeps every requirement clear so your portfolio stays transparent, timely, and documented.
+          Fairvia keeps your documentation airtight so you can sleep knowing every deposit stands up to scrutiny.
         </p>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {LAW_POINTS.map((point, index) => (

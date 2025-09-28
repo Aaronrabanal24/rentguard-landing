@@ -22,11 +22,11 @@ export default function ConversionBlocks() {
           transition={{ duration: 0.4, ease: "easeOut" }}
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-sky-700">
-            Property managers
+            Landlords & PMs
           </span>
-          <h3 className="mt-4 text-3xl font-semibold text-slate-900">Request a demo</h3>
+          <h3 className="mt-4 text-3xl font-semibold text-slate-900">See 21-day compliance run itself</h3>
           <p className="mt-3 text-sm text-slate-600">
-            Grab the California Deposit Playbook and watch the dashboard flow. Pilot access stays limited to California portfolios for now.
+            We’ll audit one of your recent move-outs, show where Fairvia saves time, and hand you the California Deposit Playbook so you stop gambling with penalties.
           </p>
           <button
             onClick={() => {
@@ -35,7 +35,7 @@ export default function ConversionBlocks() {
             }}
             className="mt-4 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold text-sky-600 transition-all hover:-translate-y-[1px] hover:bg-sky-100/60 hover:text-sky-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
           >
-            Download playbook (email required)
+            Download the playbook & schedule demo
           </button>
           <div id="manager-form" className="mt-6 space-y-3">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Step 1 of 3</p>
@@ -54,9 +54,9 @@ export default function ConversionBlocks() {
           <span className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-orange-600">
             Renters & tenants
           </span>
-          <h3 className="mt-4 text-3xl font-semibold text-slate-900">Enroll in the pilot</h3>
+          <h3 className="mt-4 text-3xl font-semibold text-slate-900">Join escrow that actually protects you</h3>
           <p className="mt-3 text-sm text-slate-600">
-            Download the Move-Out Rights checklist and get the alert when escrow coverage hits your city.
+            Grab our Move-Out Rights checklist and be first in line when Fairvia opens neutral escrow in your city—no more chasing landlords for updates.
           </p>
           <button
             onClick={() => {
@@ -65,7 +65,7 @@ export default function ConversionBlocks() {
             }}
             className="mt-4 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold text-orange-600 transition-all hover:-translate-y-[1px] hover:bg-orange-100/60 hover:text-orange-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-300"
           >
-            Get the checklist (email required)
+            Get the checklist & join the pilot waitlist
           </button>
           <div id="renter-form" className="mt-6 space-y-3">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Step 1 of 3</p>

@@ -90,9 +90,9 @@ export function HeroContent() {
 }
 
 const trustIndicators: Array<{ label: string; color: string }> = [
-  { label: "Licensed CA partners", color: "bg-green-500" },
-  { label: "FDIC protected", color: "bg-blue-500" },
-  { label: "SOC 2 compliant", color: "bg-purple-500" },
+  { label: "0 missed 21-day deadlines", color: "bg-green-500" },
+  { label: "DFPI-licensed escrow partners", color: "bg-blue-500" },
+  { label: "AB 2801 photo-ready", color: "bg-purple-500" },
 ];
 
 function splitHeadline(headline: string): [string, string] {

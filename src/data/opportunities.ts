@@ -1,14 +1,14 @@
 export const opportunities = [
   {
-    challenge: "Deposit deadlines stack up",
-    solution: "Fairvia tracks every door's 21-day clock.",
+    challenge: "Missed 21-day clocks cost real money",
+    solution: "Fairvia runs timers, emails, and text nudges so every deadline is hit without spreadsheets.",
   },
   {
-    challenge: "Photo proof eats time",
-    solution: "Guided shoots cover AB 2801 in minutes.",
+    challenge: "AB 2801 photo proof eats entire afternoons",
+    solution: "Guided move-out shoots capture and store compliant photos in under 10 minutes per unit.",
   },
   {
-    challenge: "Tenant messaging drags",
-    solution: "Templated updates keep renters looped in.",
+    challenge: "Renter updates turn into dispute fuel",
+    solution: "Neutral escrow status updates calm tenants and protect your reputation.",
   },
 ] as const;

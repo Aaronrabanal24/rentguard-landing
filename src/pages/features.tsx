@@ -13,9 +13,9 @@ export default function FeaturesPage() {
             <span className="inline-flex items-center gap-2 rounded-full bg-orange-100 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-orange-600">
               Features
             </span>
-            <h1 className="mt-4 text-3xl font-semibold sm:text-4xl">Automation, landlord benefits, and compliance in one platform</h1>
+            <h1 className="mt-4 text-3xl font-semibold sm:text-4xl">Everything you need to look like a 50-door operator</h1>
             <p className="mt-3 text-sm text-slate-600 sm:text-base">
-              Fairvia bundles neutral escrow workflows, pro landlord tooling, and the California safeguards you need to stay confident.
+              Fairvia connects neutral escrow, California compliance automation, and tenant-ready communication so you stay efficient and dispute-proof.
             </p>
           </div>
           <div className="flex justify-center md:justify-end">
