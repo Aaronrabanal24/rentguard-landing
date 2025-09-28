@@ -1101,7 +1101,7 @@
         </details>
         <details>
           <summary>When will this be available?</summary>
-          <p>We're launching in California! Join our waitlist to get early access and updates on expansion to your city.</p>
+          <p>We're launching in Austin, Denver, and Raleigh in Q2 2025. Join our waitlist to get early access and updates on expansion to your city.</p>
         </details>
       </div>
     </section>
@@ -1162,7 +1162,7 @@
             </div>
 
             <div class="checkbox-group">
-              <input type="checkbox" id="consent" required/>
+              <input type="checkbox" id="consent" name="consent" required/>
               <label for="consent">
                 I agree to the <a href="/terms.html" target="_blank">Terms of Service</a> and <a href="/privacy.html" target="_blank">Privacy Policy</a>
               </label>
@@ -1231,7 +1231,6 @@
   <script defer>
     // Mobile navigation
     const btn = document.querySelector('.menu-btn');
-    const nav = document.getElementById('nav');
     btn?.addEventListener('click', ()=>{
       const open = btn.getAttribute('aria-expanded') === 'true';
       btn.setAttribute('aria-expanded', String(!open));
@@ -1290,6 +1289,20 @@
         updateProgress();
       });
     });
+
+    // Capture UTM parameters for attribution
+    const utms = (() => {
+      const p = new URLSearchParams(location.search);
+      return {
+        utm_source: p.get('utm_source') || null,
+        utm_medium: p.get('utm_medium') || null,
+        utm_campaign: p.get('utm_campaign') || null,
+        utm_content: p.get('utm_content') || null,
+        utm_term: p.get('utm_term') || null,
+        gclid: p.get('gclid') || null,
+        fbclid: p.get('fbclid') || null
+      };
+    })();
 
     // Enhanced form progress tracking
     const progressFill = document.getElementById('progressFill');
@@ -1371,7 +1384,11 @@
       
       if(errors.length > 0) {
         hide(successMessage);
-        errorMessage.innerHTML = '❌ ' + errors.join('<br>• ');
+        errorMessage.innerHTML =
+          '❌ Please fix the following:' +
+          '<ul style="margin:.5rem 0 0 1rem;">' +
+          errors.map(e => `<li>${e}</li>`).join('') +
+          '</ul>';
         show(errorMessage);
         
         // Reset button state
@@ -1382,34 +1399,30 @@
       }
       
       try{
-        // Simulate API call - replace with your actual endpoint
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        
-        // Replace with your actual API endpoint
-        // const response = await fetch('/api/waitlist', {
-        //   method: 'POST',
-        //   headers: {'Content-Type': 'application/json'},
-        //   body: JSON.stringify(data)
-        // });
-        // if (!response.ok) throw new Error('Network error');
-        
-        console.log('Signup data:', data);
-        
+        // Send to your Vercel API route (e.g., /api/waitlist -> forwards to Airtable)
+        const payload = { ...data, ...utms };
+        const response = await fetch('/api/waitlist', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        if (!response.ok) throw new Error('Network error');
+
         // Track conversion (replace with your analytics)
         // gtag?.('event', 'conversion', { event_category: 'signup', event_label: selectedUserType });
-        // mixpanel?.track('waitlist_joined', data);
-        
+        // mixpanel?.track('waitlist_joined', payload);
+
         hide(errorMessage);
         show(successMessage);
-        
+
         // Reset form
         this.reset();
         userTypeButtons[0].click();
         updateProgress();
-        
+
         // Scroll to success message
         successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        
+
       } catch(err) {
         console.error('Signup error:', err);
         hide(successMessage);
@@ -1648,11 +1661,12 @@
     });
 
     // Service Worker registration for offline support (optional)
-    if ('serviceWorker' in navigator && 'production' === 'production') {
+    const isProd = !['localhost', '127.0.0.1'].includes(location.hostname);
+    if ('serviceWorker' in navigator && isProd && location.protocol === 'https:') {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('/sw.js')
-          .then(registration => console.log('SW registered'))
-          .catch(error => console.log('SW registration failed'));
+          .then(() => console.log('SW registered'))
+          .catch(() => console.log('SW registration failed'));
       });
     }
   </script>
