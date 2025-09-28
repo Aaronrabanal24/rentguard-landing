@@ -1,6 +1,7 @@
 // Sections
 export { default as Hero } from "./sections/Hero";
 export { default as TrustSignals } from "./sections/TrustSignals";
+export { default as CoreBenefits } from "./sections/CoreBenefits";
 export { default as ProblemPain } from "./sections/ProblemPain";
 export { default as ValueAndForm } from "./sections/ValueAndForm";
 export { default as LegalCompliance } from "./sections/LegalCompliance";
@@ -10,6 +11,7 @@ export { default as SocialProof } from "./sections/SocialProof";
 export { default as ConversionBlocks } from "./sections/ConversionBlocks";
 export { default as MarketOpportunity } from "./sections/MarketOpportunity";
 export { default as FAQSection } from "./sections/FAQSection";
+export { default as HomeCTA } from "./sections/HomeCTA";
 
 // UI
 export { Button } from "./ui/Button";

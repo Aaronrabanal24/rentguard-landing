@@ -7,16 +7,16 @@ import type { ReactNode } from "react";
 export function HeroContent() {
   const router = useRouter();
 
-  const handleManagerClick = () => {
-    track("click_cta", { role: "manager", location: "hero", label: "request_demo" });
+  const handlePrimaryClick = () => {
+    track("click_cta", { role: "landlord", location: "hero", label: "request_demo" });
     router.push("/get-started").catch(() => {
       /* noop */
     });
   };
 
-  const handleRenterClick = () => {
-    track("click_cta", { role: "renter", location: "hero", label: "join_pilot" });
-    router.push("/signup").catch(() => {
+  const handleSecondaryClick = () => {
+    track("click_cta", { role: "landlord", location: "hero", label: "learn_how" });
+    router.push("/how-it-works").catch(() => {
       /* noop */
     });
   };
@@ -62,17 +62,11 @@ export function HeroContent() {
 
       <div className="space-y-6">
         <div className="flex flex-col items-start gap-4 sm:flex-row">
-          <Button onClick={handleManagerClick} size="lg" className="group relative overflow-hidden">
-            <span className="relative z-10">For landlords &amp; PMs → Request demo</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-sky-600 to-teal-500 opacity-0 transition-opacity group-hover:opacity-100" />
+          <Button onClick={handlePrimaryClick} size="lg">
+            Request demo
           </Button>
-          <Button
-            onClick={handleRenterClick}
-            variant="secondary"
-            size="lg"
-            className="group border-2 border-slate-300 hover:border-sky-400 hover:bg-sky-50"
-          >
-            For renters → Join pilot
+          <Button onClick={handleSecondaryClick} variant="secondary" size="lg" className="border-2 border-slate-300">
+            Learn how it works
           </Button>
         </div>
 

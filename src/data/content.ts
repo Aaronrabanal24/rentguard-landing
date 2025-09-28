@@ -1,20 +1,20 @@
 export const heroContent = {
-  badge: "California compliance, handled",
-  headline: "California deposit compliance without the panic",
+  badge: "California deposit automation",
+  headline: "Stay compliant. Save hours.",
   subheadline:
-    "Fairvia automates 21-day clocks, AB 2801 photo evidence, and tenant updates in minutes so you protect every dollar and look enterprise-level to renters.",
+    "Fairvia handles California deposit rules with escrow, automation, and templates that cut paperwork time to minutes.",
   value_props: [
     {
-      title: "21-day deadline protection",
-      description: "Live timers and alerts stop forfeited deposits and last-minute rush refunds.",
+      title: "Licensed escrow partners",
+      description: "Neutral DFPI partners safeguard every deposit and document every release.",
     },
     {
-      title: "AB 2801 ready",
-      description: "Guided photo logs capture timestamped proof you can send with a tap.",
+      title: "21-day deadline automation",
+      description: "Timers, reminders, and tasking keep refunds and notices inside the legal window.",
     },
     {
-      title: "Tenant-ready transparency",
-      description: "Neutral escrow status texts calm disputes and reinforce your professionalism.",
+      title: "AB 2801 proof in minutes",
+      description: "Photo checklists and deduction templates are ready to send at move-out.",
     },
   ],
 } as const;

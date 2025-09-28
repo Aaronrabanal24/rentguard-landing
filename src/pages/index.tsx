@@ -1,4 +1,4 @@
-import { Footer, Hero } from "@/components";
+import { CoreBenefits, Footer, Hero, HomeCTA, SocialProof, TrustSignals } from "@/components";
 import { motion } from "@/lib/motion";
 
 export default function Home() {
@@ -7,6 +7,10 @@ export default function Home() {
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4 }}>
         <Hero />
       </motion.div>
+      <TrustSignals />
+      <CoreBenefits />
+      <SocialProof />
+      <HomeCTA />
       <Footer />
     </div>
   );

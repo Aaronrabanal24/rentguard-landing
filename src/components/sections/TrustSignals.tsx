@@ -1,5 +1,20 @@
 import { motion } from "@/lib/motion";
 
+const TRUST_POINTS = [
+  {
+    title: "Licensed escrow partners",
+    description: "Deposits stay with DFPI-licensed escrow agents and FDIC banks—Fairvia never touches client funds.",
+  },
+  {
+    title: "0 missed deadlines",
+    description: "Pilot landlords hit every 21-day refund clock with Fairvia running timers and reminders.",
+  },
+  {
+    title: "Audit-ready documentation",
+    description: "Civil Code §1950.5, AB 12, and AB 2801 checklists prove deductions and deposit handling on demand.",
+  },
+];
+
 export default function TrustSignals() {
   return (
     <motion.section
@@ -12,53 +27,31 @@ export default function TrustSignals() {
     >
       <div className="mx-auto max-w-5xl px-4 text-slate-800">
         <motion.div
-          className="flex flex-col gap-6 rounded-3xl border border-slate-200 bg-slate-50 p-8 shadow-sm sm:flex-row sm:items-center sm:justify-between"
+          className="rounded-3xl border border-slate-200 bg-slate-50 p-8 shadow-sm"
           initial={{ opacity: 0, scale: 0.96 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
         >
-          <div className="max-w-xl space-y-3">
-            <h2 className="text-2xl font-semibold text-slate-900">The liability shield busy landlords need</h2>
-            <p className="text-sm text-slate-600">
-              Fairvia partners with DFPI-licensed escrow firms and FDIC banks, keeping deposits neutral and proving you did everything by the book.
-            </p>
-            <ul className="space-y-2 text-sm text-slate-600">
-              <li className="flex items-start gap-2">
-                <span className="mt-1 text-sky-500">•</span>
-                <span>Escrow stays with licensed California partners—Fairvia never commingles or touches client funds.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="mt-1 text-sky-500">•</span>
-                <span>Automation surfaces 21-day deadlines, deduction limits, and delivery requirements before they lapse.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="mt-1 text-sky-500">•</span>
-                <span>Photo logs and itemized statements align with Civil Code §1950.5, AB 12, and AB 2801 so deductions stand up in disputes.</span>
-              </li>
-            </ul>
-          </div>
-          <div className="space-y-3 text-sm text-slate-600">
-            <motion.div
-              className="rounded-2xl border border-slate-300 bg-white px-4 py-3 text-center"
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
-            >
-              <p className="font-semibold text-slate-900">Escrow partner badge</p>
-              <p>Deposits protected by DFPI-licensed escrow agents partnered with FDIC banks.</p>
-            </motion.div>
-            <motion.div
-              className="rounded-2xl border border-slate-300 bg-white px-4 py-3 text-center"
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.3, ease: "easeOut", delay: 0.05 }}
-            >
-              <p className="font-semibold text-slate-900">Compliance attestation</p>
-              <p>Designed with California counsel using Civil Code §1950.5, AB 12, and AB 2801 requirements.</p>
-            </motion.div>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-600">Trust signals</p>
+          <h2 className="mt-2 text-3xl font-semibold text-slate-900">Compliance proof landlords can point to</h2>
+          <p className="mt-3 max-w-2xl text-sm text-slate-600">
+            Landlords and investors want validation up front. These signals show Fairvia keeps deposits neutral, on time, and audit-ready.
+          </p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-3">
+            {TRUST_POINTS.map((point, index) => (
+              <motion.div
+                key={point.title}
+                className="rounded-2xl border border-slate-200 bg-white p-5 text-sm text-slate-600"
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.35, ease: "easeOut", delay: index * 0.05 }}
+              >
+                <p className="font-semibold text-slate-900">{point.title}</p>
+                <p className="mt-2 leading-relaxed">{point.description}</p>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
       </div>
