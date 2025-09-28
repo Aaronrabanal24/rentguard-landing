@@ -1,8 +1,8 @@
 import { heroContent } from "@/data/content";
 import { Button } from "@/components/ui";
 import { track } from "@/lib/tracking";
-import { HeroStats } from "./HeroStats";
 import { useRouter } from "next/router";
+import type { ReactNode } from "react";
 
 export function HeroContent() {
   const router = useRouter();
@@ -21,35 +21,117 @@ export function HeroContent() {
     });
   };
 
+  const [headlineLead, headlineAccent] = splitHeadline(heroContent.headline);
+
   return (
-    <div>
-      <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-sky-400/40 bg-sky-100 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-sky-700 shadow-sm shadow-sky-200/60">
+    <div className="relative">
+      <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-sky-400/40 bg-gradient-to-r from-sky-50 to-teal-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-sky-700 shadow-sm shadow-sky-200/60 backdrop-blur-sm">
+        <span className="h-2 w-2 rounded-full bg-sky-500 animate-pulse" />
         {heroContent.badge}
       </span>
-      <h1 className="mb-3 text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">{heroContent.headline}</h1>
-      <p className="mb-6 max-w-xl text-base text-slate-600 sm:text-lg">{heroContent.subheadline}</p>
 
-      <div className="mb-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        {heroContent.value_props.map((value) => (
-          <div key={value.title} className="rounded-xl border border-slate-200 bg-white/80 p-4 shadow-sm backdrop-blur">
-            <h3 className="text-sm font-semibold text-slate-900">{value.title}</h3>
-            <p className="mt-1 text-sm text-slate-600">{value.description}</p>
+      <h1 className="mb-4 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+        {headlineLead}
+        {headlineAccent ? (
+          <span className="bg-gradient-to-r from-sky-600 via-sky-500 to-teal-500 bg-clip-text text-transparent">
+            {` ${headlineAccent}`}
+          </span>
+        ) : null}
+      </h1>
+
+      <p className="mb-8 max-w-xl text-lg leading-relaxed text-slate-600 sm:text-xl">
+        {heroContent.subheadline}
+      </p>
+
+      <div className="mb-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {heroContent.value_props.map((value, index) => (
+          <div
+            key={value.title}
+            className="group rounded-xl border border-slate-200 bg-white/90 p-5 shadow-sm backdrop-blur transition-all hover:-translate-y-1 hover:shadow-md"
+          >
+            <div className="mb-2 flex items-center gap-2">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-sky-100 text-sky-600 transition-colors group-hover:bg-sky-500 group-hover:text-white">
+                {getValuePropIcon(index)}
+              </div>
+              <h3 className="font-semibold text-slate-900">{value.title}</h3>
+            </div>
+            <p className="text-sm leading-relaxed text-slate-600">{value.description}</p>
           </div>
         ))}
       </div>
 
-      <HeroStats />
+      <div className="space-y-6">
+        <div className="flex flex-col items-start gap-4 sm:flex-row">
+          <Button onClick={handleManagerClick} size="lg" className="group relative overflow-hidden">
+            <span className="relative z-10">For landlords &amp; PMs → Request demo</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-sky-600 to-teal-500 opacity-0 transition-opacity group-hover:opacity-100" />
+          </Button>
+          <Button
+            onClick={handleRenterClick}
+            variant="secondary"
+            size="lg"
+            className="group border-2 border-slate-300 hover:border-sky-400 hover:bg-sky-50"
+          >
+            For renters → Join pilot
+          </Button>
+        </div>
 
-      <div className="flex flex-col items-start gap-4 sm:flex-row">
-        <Button onClick={handleManagerClick} size="lg">
-          For landlords & PMs → Request demo
-        </Button>
-        <Button onClick={handleRenterClick} variant="secondary" size="lg">
-          For renters → Join pilot
-        </Button>
+        <div className="flex items-center gap-6 text-xs text-slate-500">
+          {trustIndicators.map((item) => (
+            <div key={item.label} className="flex items-center gap-2">
+              <div className={`h-2 w-2 rounded-full ${item.color}`} />
+              <span>{item.label}</span>
+            </div>
+          ))}
+        </div>
       </div>
-
-      <p className="mt-6 text-xs text-slate-500">Fairvia partners with licensed California escrow providers. We’re a technology platform, not a bank or law firm.</p>
     </div>
   );
+}
+
+const trustIndicators: Array<{ label: string; color: string }> = [
+  { label: "Licensed CA partners", color: "bg-green-500" },
+  { label: "FDIC protected", color: "bg-blue-500" },
+  { label: "SOC 2 compliant", color: "bg-purple-500" },
+];
+
+function splitHeadline(headline: string): [string, string] {
+  if (!headline.includes(" ")) {
+    return [headline, ""];
+  }
+
+  const lastSpaceIndex = headline.lastIndexOf(" ");
+  const lead = headline.slice(0, lastSpaceIndex);
+  const accent = headline.slice(lastSpaceIndex + 1);
+  return [lead, accent];
+}
+
+function getValuePropIcon(index: number): ReactNode {
+  const icons: ReactNode[] = [
+    (
+      <svg key="check" className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+        <path
+          fillRule="evenodd"
+          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+          clipRule="evenodd"
+        />
+      </svg>
+    ),
+    (
+      <svg key="shield" className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
+    (
+      <svg key="clock" className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+        <path
+          fillRule="evenodd"
+          d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+          clipRule="evenodd"
+        />
+      </svg>
+    ),
+  ];
+
+  return icons[index % icons.length];
 }

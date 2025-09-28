@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useWaitlist } from "@/hooks/useWaitlist";
 import type { WaitlistData } from "@/lib/types";
 import { track } from "@/lib/tracking";
+import { cn } from "@/lib/utils";
 
 type FormState = Omit<WaitlistData, "userType"> & { userType: WaitlistData["userType"] | "" };
 
@@ -24,6 +25,7 @@ export default function WaitlistForm({
     userType: defaultRole || "",
     location: "",
   });
+  const [focusedField, setFocusedField] = useState<keyof FormState | null>(null);
 
   const { isSubmitting, isSubmitted, error, submitWaitlist } = useWaitlist({ source });
 
@@ -60,62 +62,123 @@ export default function WaitlistForm({
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mx-auto max-w-md space-y-4 text-left">
-      <div>
-        <input
-          type="text"
-          placeholder="Your name"
-          value={formData.name}
-          onChange={(e) => handleInputChange("name", e.target.value)}
-          className="w-full rounded-xl border border-slate-200 px-4 py-3 text-slate-900 shadow-sm focus:border-sky-400 focus:outline-none focus:ring-4 focus:ring-sky-200"
-          required
-        />
+    <form onSubmit={handleSubmit} className="mx-auto max-w-md space-y-6 text-left">
+      <div className="space-y-4">
+        {[
+          { name: "name" as const, placeholder: "Your name", type: "text" },
+          { name: "email" as const, placeholder: "Work email", type: "email" },
+        ].map((field) => (
+          <div key={field.name} className="relative">
+            <input
+              type={field.type}
+              placeholder={field.placeholder}
+              value={formData[field.name]}
+              onChange={(e) => handleInputChange(field.name, e.target.value)}
+              onFocus={() => setFocusedField(field.name)}
+              onBlur={() => setFocusedField(null)}
+              className={cn(
+                "w-full rounded-xl border px-4 py-3 text-slate-900 shadow-sm transition-all",
+                "focus:outline-none focus:ring-4",
+                focusedField === field.name
+                  ? "border-sky-400 bg-sky-50/50 ring-sky-200"
+                  : "border-slate-200 bg-white hover:border-slate-300"
+              )}
+              required
+            />
+            {focusedField === field.name ? (
+              <div className="absolute -right-2 top-1/2 h-3 w-3 -translate-y-1/2 rounded-full bg-sky-500 animate-pulse" />
+            ) : null}
+          </div>
+        ))}
       </div>
 
-      <div>
-        <input
-          type="email"
-          placeholder="Work email"
-          value={formData.email}
-          onChange={(e) => handleInputChange("email", e.target.value)}
-          className="w-full rounded-xl border border-slate-200 px-4 py-3 text-slate-900 shadow-sm focus:border-sky-400 focus:outline-none focus:ring-4 focus:ring-sky-200"
-          required
-        />
+      <div className="space-y-4">
+        <div className="relative">
+          <select
+            value={formData.userType}
+            onChange={(e) => handleInputChange("userType", e.target.value)}
+            onFocus={() => setFocusedField("userType")}
+            onBlur={() => setFocusedField(null)}
+            className={cn(
+              "w-full appearance-none rounded-xl border px-4 py-3 text-slate-900 shadow-sm transition-all",
+              "focus:outline-none focus:ring-4",
+              focusedField === "userType"
+                ? "border-sky-400 bg-sky-50/50 ring-sky-200"
+                : "border-slate-200 bg-white hover:border-slate-300",
+              lockRole && "cursor-not-allowed opacity-60"
+            )}
+            required
+            disabled={lockRole}
+          >
+            <option value="">I'm a...</option>
+            <option value="renter">Renter looking for a home</option>
+            <option value="landlord">Landlord with available units</option>
+          </select>
+          {focusedField === "userType" ? (
+            <div className="absolute -right-2 top-1/2 h-3 w-3 -translate-y-1/2 rounded-full bg-sky-500 animate-pulse" />
+          ) : null}
+        </div>
+
+        <div className="relative">
+          <input
+            type="text"
+            placeholder="City, State"
+            value={formData.location}
+            onChange={(e) => handleInputChange("location", e.target.value)}
+            onFocus={() => setFocusedField("location")}
+            onBlur={() => setFocusedField(null)}
+            className={cn(
+              "w-full rounded-xl border px-4 py-3 text-slate-900 shadow-sm transition-all",
+              "focus:outline-none focus:ring-4",
+              focusedField === "location"
+                ? "border-sky-400 bg-sky-50/50 ring-sky-200"
+                : "border-slate-200 bg-white hover:border-slate-300"
+            )}
+            required
+          />
+          {focusedField === "location" ? (
+            <div className="absolute -right-2 top-1/2 h-3 w-3 -translate-y-1/2 rounded-full bg-sky-500 animate-pulse" />
+          ) : null}
+        </div>
       </div>
 
-      <div>
-        <select
-          value={formData.userType}
-          onChange={(e) => handleInputChange("userType", e.target.value)}
-          className="w-full rounded-xl border border-slate-200 px-4 py-3 text-slate-900 shadow-sm focus:border-sky-400 focus:outline-none focus:ring-4 focus:ring-sky-200"
-          required
-          disabled={lockRole}
-        >
-          <option value="">I'm a...</option>
-          <option value="renter">Renter looking for a home</option>
-          <option value="landlord">Landlord with available units</option>
-        </select>
-      </div>
-
-      <div>
-        <input
-          type="text"
-          placeholder="City, State"
-          value={formData.location}
-          onChange={(e) => handleInputChange("location", e.target.value)}
-          className="w-full rounded-xl border border-slate-200 px-4 py-3 text-slate-900 shadow-sm focus:border-sky-400 focus:outline-none focus:ring-4 focus:ring-sky-200"
-          required
-        />
-      </div>
-
-      {error && <div className="rounded-lg bg-rose-500/10 p-3 text-center text-sm text-rose-500">{error}</div>}
+      {error ? <div className="rounded-lg bg-rose-500/10 p-3 text-center text-sm text-rose-500">{error}</div> : null}
 
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full rounded-full bg-gradient-to-r from-sky-400 via-sky-500 to-teal-500 py-3 px-6 text-base font-semibold text-white shadow-lg shadow-sky-200/60 transition hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-sky-200 focus:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-60"
+        className={cn(
+          "group relative w-full overflow-hidden rounded-full py-3 px-6 text-base font-semibold text-white transition-all",
+          "focus:outline-none focus:ring-4 focus:ring-sky-200 focus:ring-offset-0",
+          isSubmitting
+            ? "cursor-not-allowed bg-slate-400"
+            : "bg-gradient-to-r from-sky-400 via-sky-500 to-teal-500 shadow-lg shadow-sky-200/60 hover:scale-105 hover:shadow-2xl"
+        )}
       >
-        {isSubmitting ? "Joining..." : ctaLabel}
+        <span className="relative z-10 flex items-center justify-center gap-2">
+          {isSubmitting ? (
+            <>
+              <div className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
+              Joining...
+            </>
+          ) : (
+            <>
+              {ctaLabel}
+              <svg
+                className="h-4 w-4 transition-transform group-hover:translate-x-1"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </>
+          )}
+        </span>
+        <div className="absolute inset-0 bg-gradient-to-r from-sky-600 to-teal-600 opacity-0 transition-opacity group-hover:opacity-100" />
       </button>
 
       <p className="text-center text-xs text-slate-500">We respect your privacy. Unsubscribe any time.</p>
