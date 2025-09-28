@@ -23,14 +23,14 @@ export default function HomeCTA() {
       transition={{ duration: 0.45, ease: "easeOut" }}
     >
       <div className="mx-auto max-w-4xl rounded-3xl border border-slate-200 bg-gradient-to-br from-sky-50 via-white to-teal-50 px-8 py-12 text-center shadow-sm">
-        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Request demo</p>
-        <h2 className="mt-3 text-3xl font-semibold text-slate-900">Ready to see it in action?</h2>
+        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Landlord demo</p>
+        <h2 className="mt-3 text-3xl font-semibold text-slate-900">Landlord ready to see it in action?</h2>
         <p className="mt-3 text-sm text-slate-600">
-          We&apos;ll walk through a current deposit, show the automation, and hand over the compliance checklist you can use immediately.
+          We&apos;ll walk through one of your deposits, show the landlord automation, and hand over the compliance checklist you can use immediately.
         </p>
         <div className="mt-6 flex justify-center">
           <Button onClick={handleClick} size="lg">
-            Request demo
+            Request landlord demo
           </Button>
         </div>
       </div>

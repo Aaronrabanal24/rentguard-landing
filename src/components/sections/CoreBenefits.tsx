@@ -36,10 +36,10 @@ export default function CoreBenefits() {
     >
       <div className="mx-auto max-w-5xl px-4">
         <div className="max-w-xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Core benefits</p>
-          <h2 className="mt-2 text-3xl font-semibold text-slate-900">Show the fast path to deeper detail</h2>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Landlord benefits</p>
+          <h2 className="mt-2 text-3xl font-semibold text-slate-900">Guide landlords to the details they need</h2>
           <p className="mt-3 text-sm text-slate-600">
-            Landlords land here, understand the value in seconds, then click through to the play-by-play on each workflow.
+            Busy owners get the highlights here, then jump straight into the Fairvia workflows built for California landlords.
           </p>
         </div>
         <div className="mt-8 grid gap-4 md:grid-cols-2">

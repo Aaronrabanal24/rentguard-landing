@@ -22,7 +22,7 @@ export default function Header() {
   ];
 
   const handleCTA = () => {
-    track("click_cta", { role: "general", location: "hero", label: "nav" });
+    track("click_cta", { role: "landlord", location: "nav", label: "request_demo" });
     router.push("/get-started").catch(() => {
       /* noop */
     });

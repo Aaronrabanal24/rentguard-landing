@@ -2,8 +2,8 @@ import { motion } from "@/lib/motion";
 
 const TRUST_POINTS = [
   {
-    title: "Licensed escrow partners",
-    description: "Deposits stay with DFPI-licensed escrow agents and FDIC banks—Fairvia never touches client funds.",
+    title: "Licensed escrow for landlords",
+    description: "Deposits stay with DFPI-licensed escrow agents and FDIC banks—Fairvia never touches landlord funds.",
   },
   {
     title: "0 missed deadlines",
@@ -36,7 +36,7 @@ export default function TrustSignals() {
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-600">Trust signals</p>
           <h2 className="mt-2 text-3xl font-semibold text-slate-900">Compliance proof landlords can point to</h2>
           <p className="mt-3 max-w-2xl text-sm text-slate-600">
-            Landlords and investors want validation up front. These signals show Fairvia keeps deposits neutral, on time, and audit-ready.
+            California landlords ask for proof first. These signals show Fairvia keeps deposits neutral, on time, and audit-ready for owners.
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
             {TRUST_POINTS.map((point, index) => (
