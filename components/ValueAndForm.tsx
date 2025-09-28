@@ -4,8 +4,8 @@ import { track } from "../lib/track";
 const PERSONA_CONTENT = {
   renter: {
     badge: "For renters",
-    heading: "Renter benefits",
-    description: "Keep your savings in escrow and only release when the keys are in hand.",
+    heading: "Renter view",
+    description: "Know where the deposit sits, see evidence for deductions, and approve releases with confidence.",
     ctaLabel: "I'm a renter",
     ctaId: "btn_renter_protect_deposit",
     role: "renter",
@@ -32,8 +32,8 @@ const PERSONA_CONTENT = {
   },
   landlord: {
     badge: "For landlords",
-    heading: "Landlord benefits",
-    description: "Collect deposits in neutral escrow, share compliant leases, and show renters you run a fair operation.",
+    heading: "Landlord workspace",
+    description: "Collect deposits in neutral escrow, share compliant leases, and document every move-in without adding headcount.",
     ctaLabel: "I'm a landlord",
     ctaId: "btn_landlord_trust_badge",
     role: "landlord",
@@ -126,7 +126,7 @@ const RENTER_VALUE_STACK = [
 ];
 
 export default function ValueAndForm() {
-  const [activeTab, setActiveTab] = useState<"renter" | "landlord">("renter");
+  const [activeTab, setActiveTab] = useState<"renter" | "landlord">("landlord");
 
   const handleTabClick = (tab: "renter" | "landlord") => {
     setActiveTab(tab);
@@ -140,11 +140,11 @@ export default function ValueAndForm() {
       <div className="mx-auto max-w-6xl px-4">
         <div className="text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
-            Choose your journey
+            Pick your role
           </span>
-          <h2 className="mt-5 text-3xl font-semibold text-slate-900 sm:text-4xl">See how RentGuard keeps things tidy</h2>
+          <h2 className="mt-5 text-3xl font-semibold text-slate-900 sm:text-4xl">The neutral escrow playbook for California landlords</h2>
           <p className="mx-auto mt-4 max-w-3xl text-base text-slate-600">
-            Switch between renter and landlord views to learn how deposits, paperwork, and trust signals stay under control without extra work.
+            Start with the landlord workflow and toggle to see exactly what renters experience when deposits stay in neutral escrow.
           </p>
         </div>
 

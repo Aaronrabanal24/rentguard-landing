@@ -3,15 +3,15 @@ import { useState, useEffect } from "react";
 import { track } from "../lib/track";
 
 const HEADLINE_VARIANTS: Record<"A" | "B" | "C", string> = {
-  A: "California rental escrow made easy",
-  B: "Hold deposits safely in California escrow",
-  C: "Neutral escrow for California rentals",
+  A: "California landlords: secure every deposit with neutral escrow",
+  B: "Cut deposit disputes with licensed California escrow",
+  C: "Stay compliant on California deposits without spreadsheets",
 };
 
 const SUBHEADLINE_VARIANTS: Record<"A" | "B" | "C", string> = {
-  A: "Licensed escrow partners + CA compliant leases in one simple workflow.",
-  B: "Lock the deposit, sign the lease, and move in with confidence.",
-  C: "One dashboard to verify tenants, hold funds, and release on your approval.",
+  A: "Hold tenant funds in licensed escrow, automate CA-compliant leases, and ship audit-ready records from one dashboard.",
+  B: "RentGuard tracks the 21-day clock, prepares itemized deductions, and stores inspection photos for every unit.",
+  C: "A central hub for neutral escrow, CA-compliant paperwork, and dispute-ready documentation." ,
 };
 
 export default function Hero() {
@@ -47,14 +47,20 @@ export default function Hero() {
             <span className="text-lg font-semibold tracking-tight text-slate-900">RentGuard</span>
           </div>
           <nav className="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
+            <a href="#trust" className="transition-colors hover:text-slate-900">
+              Trust
+            </a>
+            <a href="#problems" className="transition-colors hover:text-slate-900">
+              Pain points
+            </a>
             <a href="#how-it-works" className="transition-colors hover:text-slate-900">
-              How it works
+              Workflow
             </a>
-            <a href="#pricing" className="transition-colors hover:text-slate-900">
-              Pricing
+            <a href="#legal" className="transition-colors hover:text-slate-900">
+              Compliance
             </a>
-            <a href="#signup" className="transition-colors hover:text-slate-900">
-              Early Access
+            <a href="#conversion" className="transition-colors hover:text-slate-900">
+              Get started
             </a>
             <a href="#faq" className="transition-colors hover:text-slate-900">
               FAQ
@@ -74,7 +80,7 @@ export default function Hero() {
         <div className="mx-auto grid max-w-6xl items-center gap-16 px-4 pb-20 pt-12 md:grid-cols-[minmax(0,1fr)_minmax(0,420px)] md:pt-16">
           <div>
             <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-sky-400/40 bg-sky-100 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-sky-700 shadow-sm shadow-sky-200/60">
-              California pilot • Licensed escrow partners
+              Built for California landlords • Licensed escrow partners
             </span>
             <h1 className="mb-3 text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
               {HEADLINE_VARIANTS[variant]}
@@ -91,8 +97,8 @@ export default function Hero() {
                 <p className="mt-1">Inspection photos, videos, and notes are stored for deduction evidence.</p>
               </div>
               <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-                <p className="font-semibold text-slate-900">Neutral escrow only</p>
-                <p className="mt-1">Deposits stay with licensed California escrow agents. RentGuard never holds client funds.</p>
+                <p className="font-semibold text-slate-900">Low-volume friendly</p>
+                <p className="mt-1">Tailored for independent owners and PMs under 50 units who need compliance without complexity.</p>
               </div>
             </div>
 
@@ -104,7 +110,7 @@ export default function Hero() {
                 }}
                 className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-sky-500 via-sky-600 to-teal-500 px-7 py-3 text-base font-semibold text-white shadow-lg shadow-sky-300/50 transition hover:scale-[1.01] hover:shadow-xl"
               >
-                For managers → Request demo
+                For landlords & PMs → Request demo
               </button>
               <button
                 onClick={() => {

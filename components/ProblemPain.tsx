@@ -1,6 +1,6 @@
 const MANAGER_PAIN = [
-  "Security deposit disputes consume hours, and missing California's 21-day deadline can trigger double-damages claims.",
-  "Manual deductions risk violating caps on cleaning and damage charges, exposing you to bad faith penalties.",
+  "Running fewer than 50 doors means you still handle deposits yourself—and one missed 21-day deadline can trigger double-damages claims.",
+  "Manual deductions risk violating cleaning and damage caps, exposing you to bad faith penalties.",
   "Scattered emails and photos make it hard to compile a defensible audit trail when challenged."
 ];
 
