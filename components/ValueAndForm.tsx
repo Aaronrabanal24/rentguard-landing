@@ -7,7 +7,7 @@ const PERSONA_CONTENT = {
     badge: "Renter journey",
     heading: "Keep your deposit safe from listing to move-in",
     description:
-      "RentGuard guides you through every milestone so you transfer money only after the landlord is verified and the lease is approved.",
+      "RentGuard keeps the money in escrow, nudges you through the paperwork, and hands you a clean record when it's time to move in.",
     steps: [
       {
         title: "Create your secure profile",
@@ -15,7 +15,7 @@ const PERSONA_CONTENT = {
       },
       {
         title: "Invite the landlord to escrow",
-        description: "Share a protected escrow link so funds stay in licensed escrow while both sides review documents.",
+        description: "Share a protected escrow link so the money stays put while you both review documents.",
       },
       {
         title: "Sign and move in",
@@ -25,18 +25,18 @@ const PERSONA_CONTENT = {
     highlights: [
       { icon: "🛡️", text: "Escrow holds deposits until you approve the move-in." },
       { icon: "🧾", text: "Attorney-reviewed leases included at no extra cost." },
-      { icon: "📲", text: "Status updates keep everyone aligned in real time." },
+      { icon: "📲", text: "Status alerts let you know when it's safe to pay." },
     ],
     stats: [
-      { value: "$0", label: "upfront cost to get protected" },
-      { value: "15 min", label: "from sign-up to escrow ready" },
+      { value: "No upfront fees", label: "get protected first, settle later" },
+      { value: "Set up in minutes", label: "simple flow on any device" },
     ],
   },
   landlord: {
     badge: "Landlord journey",
     heading: "Fill units faster with every safeguard built in",
     description:
-      "See qualified renters, collect deposits safely, and close with compliant paperwork—without chasing signatures or worrying about disputes.",
+      "See verified renters, collect deposits without touching Zelle, and close with compliant paperwork—no chasing, no second guessing.",
     steps: [
       {
         title: "Share your protected listing",
@@ -52,13 +52,13 @@ const PERSONA_CONTENT = {
       },
     ],
     highlights: [
-      { icon: "🔍", text: "Verified renters with proof of income and ID." },
-      { icon: "⚖️", text: "Automatic compliance guardrails for your jurisdiction." },
-      { icon: "📦", text: "Structured move-in checklist keeps everyone accountable." },
+      { icon: "🔍", text: "See proof of income and ID before you schedule a tour." },
+      { icon: "⚖️", text: "RentGuard keeps local rules in check so your leases stay tidy." },
+      { icon: "📦", text: "Move-in checklist shows who has the keys and when." },
     ],
     stats: [
-      { value: "3×", label: "faster time to deposit than manual workflows" },
-      { value: "$25-$100", label: "monthly plans for pro tools" },
+      { value: "Deposits arrive sooner", label: "escrow nudges tenants to pay on time" },
+      { value: "Plans for any size", label: "start with one unit and grow from there" },
     ],
   },
 } satisfies Record<"renter" | "landlord", {
@@ -81,29 +81,29 @@ export default function ValueAndForm() {
   const content = PERSONA_CONTENT[activeTab];
 
   return (
-    <section className="relative bg-slate-950 pb-20 pt-16" id="how-it-works">
-      <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900" aria-hidden="true" />
+    <section className="relative bg-slate-50 pb-20 pt-16" id="how-it-works">
+      <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-slate-50 via-white to-slate-100" aria-hidden="true" />
       <div className="relative mx-auto max-w-6xl px-4">
-        <div className="mb-16 text-center text-slate-100">
-          <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-slate-300">
+        <div className="mb-16 text-center text-slate-800">
+          <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1 text-xs font-semibold uppercase tracking-widest text-slate-500">
             Built for both sides
           </span>
-          <h2 className="mx-auto max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl">
-            Trusted infrastructure for modern renters and property owners
+          <h2 className="mx-auto max-w-3xl text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
+            One calm place for leases, deposits, and check-ins
           </h2>
-          <p className="mx-auto mt-6 max-w-3xl text-lg text-slate-300">
-            Powerful workflows for verifying applicants, handling payments, and filling homes without the usual friction.
+          <p className="mx-auto mt-6 max-w-3xl text-lg text-slate-600">
+            Swap the inbox chaos for a friendly dashboard. Tap through the renter or landlord view to see exactly what happens next.
           </p>
         </div>
 
         <div className="mx-auto mb-12 flex justify-center">
-          <div className="flex rounded-full border border-white/10 bg-white/10 p-1 text-sm font-medium text-slate-200">
+          <div className="flex rounded-full border border-slate-200 bg-white p-1 text-sm font-medium text-slate-600 shadow-sm">
             <button
               onClick={() => handleTabClick("renter")}
               className={`rounded-full px-7 py-2.5 transition ${
                 activeTab === "renter"
-                  ? "bg-white text-slate-900 shadow-[0_12px_42px_-22px_rgba(245,119,57,0.55)]"
-                  : "hover:text-white"
+                  ? "bg-sky-500 text-white shadow-[0_10px_30px_-18px_rgba(14,165,233,0.6)]"
+                  : "hover:text-slate-900"
               }`}
             >
               For renters
@@ -112,8 +112,8 @@ export default function ValueAndForm() {
               onClick={() => handleTabClick("landlord")}
               className={`rounded-full px-7 py-2.5 transition ${
                 activeTab === "landlord"
-                  ? "bg-white text-slate-900 shadow-[0_12px_42px_-22px_rgba(245,119,57,0.55)]"
-                  : "hover:text-white"
+                  ? "bg-sky-500 text-white shadow-[0_10px_30px_-18px_rgba(14,165,233,0.6)]"
+                  : "hover:text-slate-900"
               }`}
             >
               For landlords
@@ -121,23 +121,23 @@ export default function ValueAndForm() {
           </div>
         </div>
         <div className="grid gap-12 md:gap-16 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)]" id="features">
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-8 sm:p-10 text-slate-100">
-            <span className="inline-flex items-center rounded-full bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-orange-200">
+          <div className="rounded-3xl border border-slate-200 bg-white p-8 sm:p-10 text-slate-900 shadow-sm">
+            <span className="inline-flex items-center rounded-full bg-sky-100 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-sky-700">
               {content.badge}
             </span>
-            <h3 className="mt-5 text-3xl font-semibold text-white sm:text-4xl">{content.heading}</h3>
-            <p className="mt-4 max-w-3xl text-base leading-relaxed text-slate-300">{content.description}</p>
+            <h3 className="mt-5 text-3xl font-semibold text-slate-900 sm:text-4xl">{content.heading}</h3>
+            <p className="mt-4 max-w-3xl text-base leading-relaxed text-slate-600">{content.description}</p>
 
             <ol className="mt-10 space-y-6">
               {content.steps.map((step, index) => (
-                <li key={step.title} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                <li key={step.title} className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
                   <div className="flex items-center gap-4">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-orange-500/20 text-base font-semibold text-orange-100">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-sky-500/10 text-base font-semibold text-sky-600">
                       {index + 1}
                     </span>
                     <div>
-                      <h4 className="text-lg font-semibold text-white">{step.title}</h4>
-                      <p className="mt-1 text-sm text-slate-300">{step.description}</p>
+                      <h4 className="text-lg font-semibold text-slate-900">{step.title}</h4>
+                      <p className="mt-1 text-sm text-slate-600">{step.description}</p>
                     </div>
                   </div>
                 </li>
@@ -146,9 +146,9 @@ export default function ValueAndForm() {
           </div>
 
           <div className="space-y-6">
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 text-slate-100">
-              <h4 className="text-lg font-semibold text-white">What this unlocks</h4>
-              <ul className="mt-4 space-y-4 text-sm leading-relaxed text-slate-300">
+            <div className="rounded-3xl border border-slate-200 bg-white p-8 text-slate-900 shadow-sm">
+              <h4 className="text-lg font-semibold text-slate-900">What this unlocks</h4>
+              <ul className="mt-4 space-y-4 text-sm leading-relaxed text-slate-600">
                 {content.highlights.map((item) => (
                   <li key={item.text} className="flex items-start gap-3">
                     <span className="mt-0.5 text-lg">{item.icon}</span>
@@ -157,26 +157,26 @@ export default function ValueAndForm() {
                 ))}
               </ul>
             </div>
-            <div className="rounded-3xl border border-orange-400/30 bg-orange-500/10 p-8 text-slate-100">
-              <h4 className="text-sm font-semibold uppercase tracking-[0.3em] text-orange-200">Fast facts</h4>
+            <div className="rounded-3xl border border-sky-200 bg-sky-50 p-8 text-slate-900">
+              <h4 className="text-sm font-semibold uppercase tracking-[0.3em] text-sky-700">Fast facts</h4>
               <div className="mt-5 grid gap-6 sm:grid-cols-2">
                 {content.stats.map((stat) => (
-                  <div key={stat.label} className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                    <p className="text-2xl font-semibold text-orange-100">{stat.value}</p>
-                    <p className="mt-2 text-xs uppercase tracking-wide text-orange-100/80">{stat.label}</p>
+                  <div key={stat.label} className="rounded-2xl border border-white/60 bg-white p-5 shadow-sm">
+                    <p className="text-base font-semibold text-slate-800">{stat.value}</p>
+                    <p className="mt-2 text-xs uppercase tracking-wide text-slate-500">{stat.label}</p>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="relative rounded-3xl border border-white/10 bg-gradient-to-br from-orange-500/30 via-orange-500/15 to-slate-900/40 p-[1px] shadow-2xl shadow-orange-600/30" id="waitlist-form">
-              <div className="rounded-3xl bg-slate-950/80 p-8 backdrop-blur">
-                <div className="mb-6 text-center text-slate-100">
-                  <span className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-orange-200">
+            <div className="relative rounded-3xl border border-slate-200 bg-gradient-to-br from-white via-sky-50 to-slate-100 p-[1px] shadow-xl shadow-sky-100/70" id="waitlist-form">
+              <div className="rounded-3xl bg-white p-8">
+                <div className="mb-6 text-center text-slate-800">
+                  <span className="mb-3 inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-sky-700">
                     Early access
                   </span>
-                  <h3 className="text-2xl font-semibold text-white sm:text-3xl">Join the protected rental waitlist</h3>
-                  <p className="mt-3 text-sm text-slate-300">
-                    Tell us whether you're renting or leasing property—we'll unlock the right workflow and keep you updated on launch timing.
+                  <h3 className="text-2xl font-semibold text-slate-900 sm:text-3xl">Join the protected rental waitlist</h3>
+                  <p className="mt-3 text-sm text-slate-600">
+                    Tell us whether you're renting or leasing property—we'll unlock the right workflow and ping you when it's ready.
                   </p>
                 </div>
                 <WaitlistForm />

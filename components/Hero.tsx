@@ -3,15 +3,15 @@ import { useState, useEffect } from "react";
 import { track } from "../lib/track";
 
 const HEADLINE_VARIANTS: Record<"A" | "B" | "C", string> = {
-  A: "End Rental Horror Stories Forever",
-  B: "The Trust Layer for Rentals",
-  C: "Secure Deposits. Verified People. Safe Rentals.",
+  A: "Real escrow for real people",
+  B: "Protect every rental the easy way",
+  C: "No more guessing where the deposit sits",
 };
 
 const SUBHEADLINE_VARIANTS: Record<"A" | "B" | "C", string> = {
-  A: "Protect your deposits with escrow, verify identities, and use compliant digital leases. No more scams, disputes, or sleepless nights.",
-  B: "We eliminate rental fraud and deposit disputes through secure escrow, identity verification, and legal compliance tools.",
-  C: "RentGuard holds deposits safely in escrow while verifying both parties, so you can rent with complete confidence.",
+  A: "Hold funds in licensed escrow, keep paperwork in one place, and show tenants you play fair.",
+  B: "RentGuard watches the money, the leases, and the trust signals so you can hand over the keys without worry.",
+  C: "A friendly dashboard that keeps deposits safe, paperwork tidy, and reputations intact.",
 };
 
 export default function Hero() {
@@ -25,11 +25,11 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-slate-950 text-slate-50">
-      <div className="pointer-events-none absolute inset-0 opacity-70" aria-hidden="true">
-        <div className="absolute left-1/2 top-[-12rem] h-[32rem] w-[32rem] -translate-x-1/2 rounded-full bg-orange-500/35 blur-3xl" />
-        <div className="absolute right-[-12rem] top-1/3 h-[28rem] w-[28rem] rounded-full bg-amber-400/25 blur-3xl" />
-        <div className="absolute bottom-[-10rem] left-[-8rem] h-[26rem] w-[26rem] rounded-full bg-rose-400/25 blur-3xl" />
+    <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-100 text-slate-900">
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div className="absolute left-1/2 top-[-10rem] h-[26rem] w-[26rem] -translate-x-1/2 rounded-full bg-sky-200/40 blur-3xl" />
+        <div className="absolute right-[-8rem] top-1/3 h-[22rem] w-[22rem] rounded-full bg-teal-200/35 blur-3xl" />
+        <div className="absolute bottom-[-8rem] left-[-6rem] h-[22rem] w-[22rem] rounded-full bg-orange-200/30 blur-3xl" />
       </div>
 
       <div className="relative">
@@ -41,21 +41,21 @@ export default function Hero() {
               width={44}
               height={44}
               priority
-              className="h-11 w-11 rounded-xl shadow-lg shadow-orange-600/30"
+              className="h-11 w-11 rounded-xl shadow-lg shadow-sky-200/60"
             />
-            <span className="text-lg font-semibold tracking-tight text-white">RentGuard</span>
+            <span className="text-lg font-semibold tracking-tight text-slate-900">RentGuard</span>
           </div>
-          <nav className="hidden items-center gap-8 text-sm font-medium text-slate-200 md:flex">
-            <a href="#how-it-works" className="transition-colors hover:text-white">
+          <nav className="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
+            <a href="#how-it-works" className="transition-colors hover:text-slate-900">
               How it works
             </a>
-            <a href="#pricing" className="transition-colors hover:text-white">
+            <a href="#pricing" className="transition-colors hover:text-slate-900">
               Pricing
             </a>
-            <a href="#waitlist-form" className="transition-colors hover:text-white">
+            <a href="#waitlist-form" className="transition-colors hover:text-slate-900">
               Early Access
             </a>
-            <a href="#faq" className="transition-colors hover:text-white">
+            <a href="#faq" className="transition-colors hover:text-slate-900">
               FAQ
             </a>
             <button
@@ -63,7 +63,7 @@ export default function Hero() {
                 track("hero_cta_clicked", { variant, button: "nav" });
                 document.getElementById("waitlist-form")?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="rounded-full bg-white/10 px-5 py-2 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20"
+              className="rounded-full bg-sky-500/10 px-5 py-2 text-sm font-semibold text-sky-700 transition hover:bg-sky-500/20"
             >
               Get protected
             </button>
@@ -72,14 +72,14 @@ export default function Hero() {
 
         <div className="mx-auto grid max-w-6xl items-center gap-16 px-4 pb-20 pt-12 md:grid-cols-[minmax(0,1fr)_minmax(0,420px)] md:pt-16">
           <div>
-            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-orange-400/30 bg-orange-500/15 px-4 py-2 text-sm font-medium text-orange-100 shadow-sm shadow-orange-500/25">
-              <span className="inline-flex h-2 w-2 rounded-full bg-orange-400" />
-              Licensed escrow partners • NYC, LA, SF
+            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-sky-400/30 bg-sky-100 px-4 py-2 text-sm font-medium text-sky-700 shadow-sm shadow-sky-200/60">
+              <span className="inline-flex h-2 w-2 rounded-full bg-sky-400" />
+              Licensed escrow partners in NYC • LA • SF
             </div>
-            <h1 className="mb-6 text-4xl font-semibold leading-tight text-white sm:text-5xl md:text-6xl">
+            <h1 className="mb-6 text-4xl font-semibold leading-tight text-slate-900 sm:text-5xl md:text-6xl">
               {HEADLINE_VARIANTS[variant]}
             </h1>
-            <p className="mb-10 max-w-2xl text-lg leading-relaxed text-slate-200 sm:text-xl">
+            <p className="mb-10 max-w-2xl text-lg leading-relaxed text-slate-600 sm:text-xl">
               {SUBHEADLINE_VARIANTS[variant]}
             </p>
 
@@ -89,7 +89,7 @@ export default function Hero() {
                   track("hero_cta_clicked", { variant, button: "primary" });
                   document.getElementById("waitlist-form")?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-orange-400 via-orange-500 to-rose-500 px-7 py-3 text-base font-semibold text-white shadow-lg shadow-orange-500/40 transition hover:scale-[1.01] hover:shadow-xl"
+                className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-sky-400 via-sky-500 to-teal-500 px-7 py-3 text-base font-semibold text-white shadow-lg shadow-sky-300/50 transition hover:scale-[1.01] hover:shadow-xl"
               >
                 Start a protected rental
               </button>
@@ -98,72 +98,71 @@ export default function Hero() {
                   track("hero_cta_clicked", { variant, button: "secondary" });
                   document.getElementById("how-it-works")?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="inline-flex items-center justify-center rounded-full border border-white/20 px-7 py-3 text-base font-semibold text-white transition hover:border-white/40"
+                className="inline-flex items-center justify-center rounded-full border border-slate-300 px-7 py-3 text-base font-semibold text-slate-700 transition hover:border-slate-400"
               >
                 See how escrow works
               </button>
             </div>
 
             <div className="mt-12 grid gap-6 text-left sm:grid-cols-3">
-              <div className="rounded-2xl border border-white/5 bg-white/5 p-5">
-                <p className="text-2xl font-semibold text-orange-300">$0</p>
-                <p className="text-sm text-slate-300">No upfront cost for renters • pay only when protected</p>
+              <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                <p className="text-sm font-semibold text-sky-600">Escrow status</p>
+                <p className="mt-2 text-base text-slate-600">Funds stay locked until move-in is approved.</p>
               </div>
-              <div className="rounded-2xl border border-white/5 bg-white/5 p-5">
-                <p className="text-2xl font-semibold text-orange-300">1-2%</p>
-                <p className="text-sm text-slate-300">Deposit fee • split between both parties</p>
+              <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                <p className="text-sm font-semibold text-teal-600">Paperwork done</p>
+                <p className="mt-2 text-base text-slate-600">Generate leases and handovers in a couple of clicks.</p>
               </div>
-              <div className="rounded-2xl border border-white/5 bg-white/5 p-5">
-                <p className="text-2xl font-semibold text-orange-300">Licensed</p>
-                <p className="text-sm text-slate-300">Escrow partners in major metro areas</p>
+              <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                <p className="text-sm font-semibold text-orange-600">Reputation boost</p>
+                <p className="mt-2 text-base text-slate-600">Show tenants you’re verified and dispute-free.</p>
               </div>
             </div>
           </div>
 
           <div className="relative">
-            <div className="absolute inset-0 rounded-[32px] bg-gradient-to-br from-orange-500/35 via-slate-900/45 to-rose-500/35 blur-2xl" aria-hidden="true" />
-            <div className="relative rounded-[28px] border border-white/10 bg-white/5 p-6 backdrop-blur-lg shadow-2xl shadow-orange-600/30">
-              <div className="mb-6 flex items-center justify-between text-xs text-slate-200">
-                <span className="rounded-full bg-white/15 px-3 py-1 font-medium">Escrow Protection</span>
-                <span className="rounded-full bg-orange-400/20 px-2 py-1 text-orange-200">Active</span>
+            <div className="absolute inset-0 rounded-[32px] bg-gradient-to-br from-white via-sky-100 to-teal-100 blur-2xl" aria-hidden="true" />
+            <div className="relative rounded-[28px] border border-slate-200 bg-white p-6 shadow-xl shadow-sky-200/50">
+              <div className="mb-6 flex items-center justify-between text-xs text-slate-500">
+                <span className="inline-flex items-center gap-2 rounded-full bg-sky-100 px-3 py-1 font-medium text-sky-700">
+                  <span className="text-sm">🛡️</span> Escrow protection
+                </span>
+                <span className="inline-flex items-center gap-2 rounded-full bg-teal-100 px-3 py-1 text-teal-700">
+                  <span className="text-sm">✔</span> In good standing
+                </span>
               </div>
-              <div className="rounded-2xl bg-slate-900/60 p-5">
-                <div className="mb-4 flex items-center justify-between text-sm text-slate-200">
-                  <span className="font-semibold">Deposit Status</span>
-                  <span className="rounded-full bg-orange-400/10 px-2 py-1 text-xs text-orange-200">Secured</span>
+              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                <div className="mb-4 flex items-center justify-between text-sm text-slate-600">
+                  <span className="font-semibold">Deposit secured in escrow</span>
+                  <span className="rounded-full bg-white px-3 py-1 text-xs text-sky-700">Pending move-in</span>
                 </div>
                 <div className="space-y-4">
                   {[
-                    { label: "Identity verified", amount: "$2,500 deposit" },
-                    { label: "Funds in escrow", amount: "Licensed partner" },
-                    { label: "Lease approved", amount: "Ready to move" },
+                    { label: "Identity verified", amount: "Tenant shared documents" },
+                    { label: "Funds in escrow", amount: "Held by licensed partner" },
+                    { label: "Lease prepared", amount: "Waiting for e-signature" },
                   ].map((item) => (
-                    <div key={item.label} className="flex items-center justify-between rounded-xl border border-white/5 bg-white/5 p-4">
+                    <div key={item.label} className="flex items-center justify-between rounded-xl border border-slate-200 bg-white p-4">
                       <div>
-                        <p className="text-sm font-semibold text-white">{item.label}</p>
-                        <p className="text-xs text-slate-300">{item.amount}</p>
+                        <p className="text-sm font-semibold text-slate-800">{item.label}</p>
+                        <p className="text-xs text-slate-500">{item.amount}</p>
                       </div>
-                      <div className="h-10 w-10 rounded-full bg-gradient-to-br from-orange-400 to-rose-500 text-center text-lg font-semibold leading-10 text-white">
-                        ✓
-                      </div>
+                      <div className="h-10 w-10 rounded-full bg-sky-500/10 text-center text-lg font-semibold leading-10 text-sky-600">✓</div>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="mt-6 rounded-2xl border border-white/10 bg-slate-900/60 p-5 text-sm text-slate-200">
-                <p className="mb-3 font-semibold text-white">RentGuard Protection</p>
+              <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-5 text-sm text-slate-600">
+                <p className="mb-3 font-semibold text-slate-800">RentGuard keeps tabs on</p>
                 <ul className="space-y-2">
                   <li className="flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-orange-400" />
-                    Deposit held until move-in approved
+                    <span className="text-sm">🔒</span> Deposit stays locked until you give the nod
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-orange-400" />
-                    Identity & fraud verification
+                    <span className="text-sm">🪪</span> Identity and fraud checks in the background
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-orange-400" />
-                    Compliant digital lease templates
+                    <span className="text-sm">📝</span> Ready-to-send lease templates for your city
                   </li>
                 </ul>
               </div>
@@ -172,19 +171,19 @@ export default function Hero() {
         </div>
 
         <div className="mx-auto max-w-6xl px-4 pb-16">
-          <div className="flex flex-col items-center justify-between gap-6 rounded-2xl border border-white/10 bg-white/5 p-6 text-sm text-slate-300 backdrop-blur md:flex-row">
-            <div className="flex items-center gap-3 text-white">
+          <div className="flex flex-col items-center justify-between gap-6 rounded-2xl border border-slate-200 bg-white p-6 text-sm text-slate-600 shadow-sm md:flex-row">
+            <div className="flex items-center gap-3 text-slate-700">
               <div className="flex -space-x-2">
                 {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="h-9 w-9 rounded-full border border-white/30 bg-gradient-to-br from-orange-400 to-rose-500" />
+                  <div key={i} className="h-9 w-9 rounded-full border border-white/80 bg-gradient-to-br from-sky-400 to-teal-500" />
                 ))}
               </div>
-              <p className="font-medium">Join early renters and landlords who've eliminated deposit fears</p>
+              <p className="font-medium">Join landlords and renters who now hand over keys without stress</p>
             </div>
-            <div className="flex items-center gap-6 text-xs uppercase tracking-wide text-slate-300">
-              <span>Licensed escrow</span>
-              <span>Identity verified</span>
-              <span>Fraud protected</span>
+            <div className="flex items-center gap-6 text-xs uppercase tracking-wide text-slate-400">
+              <span>Real escrow</span>
+              <span>Verified tenants</span>
+              <span>Dispute history saved</span>
             </div>
           </div>
         </div>
