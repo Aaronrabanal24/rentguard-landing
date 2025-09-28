@@ -52,7 +52,7 @@ export default function Hero() {
             <a href="#pricing" className="transition-colors hover:text-slate-900">
               Pricing
             </a>
-            <a href="#waitlist-form" className="transition-colors hover:text-slate-900">
+            <a href="#signup" className="transition-colors hover:text-slate-900">
               Early Access
             </a>
             <a href="#faq" className="transition-colors hover:text-slate-900">
@@ -61,7 +61,7 @@ export default function Hero() {
             <button
               onClick={() => {
                 track("hero_cta_clicked", { variant, button: "nav" });
-                document.getElementById("waitlist-form")?.scrollIntoView({ behavior: "smooth" });
+                document.getElementById("signup")?.scrollIntoView({ behavior: "smooth" });
               }}
               className="rounded-full bg-sky-500/10 px-5 py-2 text-sm font-semibold text-sky-700 transition hover:bg-sky-500/20"
             >
@@ -87,7 +87,7 @@ export default function Hero() {
               <button
                 onClick={() => {
                   track("hero_cta_clicked", { variant, button: "primary" });
-                  document.getElementById("waitlist-form")?.scrollIntoView({ behavior: "smooth" });
+                  document.getElementById("signup")?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-sky-400 via-sky-500 to-teal-500 px-7 py-3 text-base font-semibold text-white shadow-lg shadow-sky-300/50 transition hover:scale-[1.01] hover:shadow-xl"
               >

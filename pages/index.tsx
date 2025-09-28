@@ -1,4 +1,5 @@
 import Hero from "../components/Hero";
+import SignupSection from "../components/SignupSection";
 import ValueAndForm from "../components/ValueAndForm";
 import Pricing from "../components/Pricing";
 import FAQSchema from "../components/FAQSchema";
@@ -7,6 +8,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <Hero />
+      <SignupSection />
       <ValueAndForm />
       <Pricing />
       <FAQSchema />
@@ -37,18 +39,18 @@ export default function Home() {
               <h4 className="text-sm font-semibold uppercase tracking-widest text-slate-300">Product</h4>
               <ul className="mt-4 space-y-3 text-sm text-slate-400">
                 <li>
-                  <a href="#features" className="transition hover:text-white">
-                    Features
-                  </a>
-                </li>
-                <li>
                   <a href="#how-it-works" className="transition hover:text-white">
                     How it works
                   </a>
                 </li>
                 <li>
-                  <a href="#waitlist-form" className="transition hover:text-white">
+                  <a href="#signup" className="transition hover:text-white">
                     Join waitlist
+                  </a>
+                </li>
+                <li>
+                  <a href="#pricing" className="transition hover:text-white">
+                    Pricing
                   </a>
                 </li>
                 <li>

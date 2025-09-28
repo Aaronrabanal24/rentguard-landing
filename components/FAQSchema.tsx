@@ -85,7 +85,7 @@ export default function FAQSchema() {
               <h3 className="text-lg font-semibold text-orange-900 mb-2">Ready to eliminate rental fears?</h3>
               <p className="text-orange-700 mb-4">Join thousands who've protected their deposits with RentGuard escrow.</p>
               <button
-                onClick={() => document.getElementById("waitlist-form")?.scrollIntoView({ behavior: "smooth" })}
+                onClick={() => document.getElementById("signup")?.scrollIntoView({ behavior: "smooth" })}
                 className="inline-flex items-center rounded-full bg-orange-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-700"
               >
                 Get protected now

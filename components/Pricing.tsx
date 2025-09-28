@@ -36,6 +36,15 @@ export default function Pricing() {
             <p className="mt-2 text-xs text-slate-400">Escrow fees are shared with the renter once the move-in is approved.</p>
           </div>
         </div>
+
+        <div className="mt-12 text-center">
+          <button
+            onClick={() => document.getElementById("signup")?.scrollIntoView({ behavior: "smooth" })}
+            className="inline-flex items-center justify-center rounded-full bg-sky-500 px-8 py-3 text-sm font-semibold text-white transition hover:bg-sky-600"
+          >
+            Protect your next lease today
+          </button>
+        </div>
       </div>
     </section>
   );

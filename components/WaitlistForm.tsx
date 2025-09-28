@@ -55,14 +55,14 @@ export default function WaitlistForm() {
   if (isSubmitted) {
     return (
       <div className="py-8 text-center">
-        <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
-          <svg className="h-8 w-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-sky-100">
+          <svg className="h-8 w-8 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="mb-2 text-2xl font-bold text-gray-900">You're on the list</h3>
-        <p className="mb-4 text-gray-600">We'll notify you when we launch. Stay tuned.</p>
-        <p className="text-sm text-gray-500">Check your email for confirmation and updates.</p>
+        <h3 className="mb-2 text-2xl font-bold text-slate-900">You're on the list</h3>
+        <p className="mb-4 text-slate-600">We'll let you know as soon as RentGuard rolls into your city.</p>
+        <p className="text-sm text-slate-500">Keep an eye on your inbox for confirmation.</p>
       </div>
     );
   }
@@ -75,7 +75,7 @@ export default function WaitlistForm() {
           placeholder="Your name"
           value={formData.name}
           onChange={(e) => handleInputChange("name", e.target.value)}
-          className="w-full rounded-xl border border-white/10 bg-white/90 px-4 py-3 text-slate-900 shadow-sm focus:border-transparent focus:outline-none focus:ring-4 focus:ring-indigo-500/30"
+          className="w-full rounded-xl border border-slate-200 px-4 py-3 text-slate-900 shadow-sm focus:border-sky-400 focus:outline-none focus:ring-4 focus:ring-sky-200"
           required
         />
       </div>
@@ -86,7 +86,7 @@ export default function WaitlistForm() {
           placeholder="Work email"
           value={formData.email}
           onChange={(e) => handleInputChange("email", e.target.value)}
-          className="w-full rounded-xl border border-white/10 bg-white/90 px-4 py-3 text-slate-900 shadow-sm focus:border-transparent focus:outline-none focus:ring-4 focus:ring-indigo-500/30"
+          className="w-full rounded-xl border border-slate-200 px-4 py-3 text-slate-900 shadow-sm focus:border-sky-400 focus:outline-none focus:ring-4 focus:ring-sky-200"
           required
         />
       </div>
@@ -95,7 +95,7 @@ export default function WaitlistForm() {
         <select
           value={formData.userType}
           onChange={(e) => handleInputChange("userType", e.target.value)}
-          className="w-full rounded-xl border border-white/10 bg-white/90 px-4 py-3 text-slate-900 shadow-sm focus:border-transparent focus:outline-none focus:ring-4 focus:ring-indigo-500/30"
+          className="w-full rounded-xl border border-slate-200 px-4 py-3 text-slate-900 shadow-sm focus:border-sky-400 focus:outline-none focus:ring-4 focus:ring-sky-200"
           required
         >
           <option value="">I'm a...</option>
@@ -110,22 +110,22 @@ export default function WaitlistForm() {
           placeholder="City, State"
           value={formData.location}
           onChange={(e) => handleInputChange("location", e.target.value)}
-          className="w-full rounded-xl border border-white/10 bg-white/90 px-4 py-3 text-slate-900 shadow-sm focus:border-transparent focus:outline-none focus:ring-4 focus:ring-indigo-500/30"
+          className="w-full rounded-xl border border-slate-200 px-4 py-3 text-slate-900 shadow-sm focus:border-sky-400 focus:outline-none focus:ring-4 focus:ring-sky-200"
           required
         />
       </div>
 
-      {error && <div className="rounded-lg bg-red-500/10 p-3 text-center text-sm text-red-200">{error}</div>}
+      {error && <div className="rounded-lg bg-rose-500/10 p-3 text-center text-sm text-rose-500">{error}</div>}
 
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full rounded-full bg-gradient-to-r from-indigo-400 via-indigo-500 to-blue-500 py-3 px-6 text-base font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-indigo-500/40 focus:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-60"
+        className="w-full rounded-full bg-gradient-to-r from-sky-400 via-sky-500 to-teal-500 py-3 px-6 text-base font-semibold text-white shadow-lg shadow-sky-200/60 transition hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-sky-200 focus:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {isSubmitting ? "Joining..." : "Join the waitlist"}
       </button>
 
-      <p className="text-center text-xs text-slate-300/80">We respect your privacy. Unsubscribe at any time.</p>
+      <p className="text-center text-xs text-slate-500">We respect your privacy. Unsubscribe any time.</p>
     </form>
   );
 }
