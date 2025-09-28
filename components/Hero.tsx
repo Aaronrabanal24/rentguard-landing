@@ -91,7 +91,7 @@ export default function Hero() {
                 }}
                 className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-orange-400 via-orange-500 to-rose-500 px-7 py-3 text-base font-semibold text-white shadow-lg shadow-orange-500/40 transition hover:scale-[1.01] hover:shadow-xl"
               >
-                Start protected rental
+                Start a protected rental
               </button>
               <button
                 onClick={() => {
@@ -107,15 +107,15 @@ export default function Hero() {
             <div className="mt-12 grid gap-6 text-left sm:grid-cols-3">
               <div className="rounded-2xl border border-white/5 bg-white/5 p-5">
                 <p className="text-2xl font-semibold text-orange-300">$0</p>
-                <p className="text-sm text-slate-300">upfront costs for renters • pay only when protected</p>
+                <p className="text-sm text-slate-300">No upfront cost for renters • pay only when protected</p>
               </div>
               <div className="rounded-2xl border border-white/5 bg-white/5 p-5">
                 <p className="text-2xl font-semibold text-orange-300">1-2%</p>
-                <p className="text-sm text-slate-300">deposit fee • split between both parties</p>
+                <p className="text-sm text-slate-300">Deposit fee • split between both parties</p>
               </div>
               <div className="rounded-2xl border border-white/5 bg-white/5 p-5">
                 <p className="text-2xl font-semibold text-orange-300">Licensed</p>
-                <p className="text-sm text-slate-300">escrow partners in major metro areas</p>
+                <p className="text-sm text-slate-300">Escrow partners in major metro areas</p>
               </div>
             </div>
           </div>

@@ -4,32 +4,32 @@ const FAQ_DATA = [
   {
     question: "How does RentGuard escrow protect my deposit?",
     answer:
-      "Your deposit is held by licensed escrow partners, not in personal accounts. Funds are only released when both parties approve the move-in, protecting against scams and disputes.",
+      "Your deposit is held by licensed escrow partners, not personal accounts. Funds are released only after both parties approve the move-in, protecting you from scams and disputes.",
   },
   {
     question: "What does RentGuard cost?",
     answer:
-      "Renters join free. Landlords pay $25-100/month for premium tools. Escrow transactions charge 1-2% of deposit amount, split between both parties.",
+      "Renters join free. Landlords pay $25-$100 per month for premium tools. Escrow transactions carry a 1-2% deposit fee, split between both parties.",
   },
   {
     question: "How do you verify identities and prevent fraud?",
     answer:
-      "We use multi-layer verification including identity checks, income verification, and property ownership confirmation. Suspicious activity triggers manual review before any funds move.",
+      "We use multi-layer verification that includes identity checks, income verification, and property ownership confirmation. Suspicious activity triggers manual review before any funds move.",
   },
   {
     question: "Which cities support RentGuard escrow?",
     answer:
-      "We're launching in NYC, LA, and SF with licensed escrow partners. Expanding to other major metros based on waitlist demand and regulatory approval.",
+      "We're launching in NYC, LA, and SF with licensed escrow partners and expanding to other major metros based on waitlist demand and regulatory approval.",
   },
   {
     question: "What happens if there's a dispute?",
     answer:
-      "Our digital audit trail tracks all communications and agreements. Licensed mediators help resolve disputes quickly, with escrow funds held safely until resolution.",
+      "Our digital audit trail tracks every communication and agreement. Licensed mediators help resolve disputes quickly while escrow funds remain secure until a resolution is reached.",
   },
   {
     question: "Are the lease templates legally compliant?",
     answer:
-      "Yes, our digital lease templates are pre-vetted by real estate attorneys and updated to meet local housing laws in each supported market.",
+      "Yes. Our digital lease templates are vetted by real estate attorneys and updated to meet local housing laws in every supported market.",
   },
 ];
 

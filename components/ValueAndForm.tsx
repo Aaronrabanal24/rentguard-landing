@@ -7,7 +7,7 @@ const PERSONA_CONTENT = {
     badge: "Renter journey",
     heading: "Keep your deposit safe from listing to move-in",
     description:
-      "RentGuard guides you through every milestone so you only transfer money once the landlord is verified and the lease is approved.",
+      "RentGuard guides you through every milestone so you transfer money only after the landlord is verified and the lease is approved.",
     steps: [
       {
         title: "Create your secure profile",
@@ -15,11 +15,11 @@ const PERSONA_CONTENT = {
       },
       {
         title: "Invite the landlord to escrow",
-        description: "Share your protected escrow link so funds stay in licensed escrow while both sides review documents.",
+        description: "Share a protected escrow link so funds stay in licensed escrow while both sides review documents.",
       },
       {
         title: "Sign and move in",
-        description: "Use our attorney-vetted lease, release funds only after keys are exchanged, and keep the full audit trail.",
+        description: "Use our attorney-vetted lease, release funds only after keys are exchanged, and keep a full audit trail.",
       },
     ],
     highlights: [
@@ -28,8 +28,8 @@ const PERSONA_CONTENT = {
       { icon: "📲", text: "Status updates keep everyone aligned in real time." },
     ],
     stats: [
-      { value: "$0", label: "upfront fees to get protected" },
-      { value: "15 min", label: "from signup to escrow-ready" },
+      { value: "$0", label: "upfront cost to get protected" },
+      { value: "15 min", label: "from sign-up to escrow ready" },
     ],
   },
   landlord: {
@@ -40,7 +40,7 @@ const PERSONA_CONTENT = {
     steps: [
       {
         title: "Share your protected listing",
-        description: "Invite applicants and review verified profiles that already passed identity and income checks.",
+        description: "Invite applicants and review verified profiles that have already passed identity and income checks.",
       },
       {
         title: "Request escrow in seconds",
@@ -57,7 +57,7 @@ const PERSONA_CONTENT = {
       { icon: "📦", text: "Structured move-in checklist keeps everyone accountable." },
     ],
     stats: [
-      { value: "3×", label: "faster time to deposit vs. manual process" },
+      { value: "3×", label: "faster time to deposit than manual workflows" },
       { value: "$25-$100", label: "monthly plans for pro tools" },
     ],
   },
@@ -176,7 +176,7 @@ export default function ValueAndForm() {
                   </span>
                   <h3 className="text-2xl font-semibold text-white sm:text-3xl">Join the protected rental waitlist</h3>
                   <p className="mt-3 text-sm text-slate-300">
-                    Tell us if you're renting or leasing property—we'll unlock the right workflow and keep you updated on launch dates.
+                    Tell us whether you're renting or leasing property—we'll unlock the right workflow and keep you updated on launch timing.
                   </p>
                 </div>
                 <WaitlistForm />

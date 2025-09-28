@@ -60,8 +60,8 @@ export default function WaitlistForm() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="mb-2 text-2xl font-bold text-gray-900">You are on the list</h3>
-        <p className="mb-4 text-gray-600">We will notify you when we launch. Stay tuned.</p>
+        <h3 className="mb-2 text-2xl font-bold text-gray-900">You're on the list</h3>
+        <p className="mb-4 text-gray-600">We'll notify you when we launch. Stay tuned.</p>
         <p className="text-sm text-gray-500">Check your email for confirmation and updates.</p>
       </div>
     );
@@ -98,9 +98,9 @@ export default function WaitlistForm() {
           className="w-full rounded-xl border border-white/10 bg-white/90 px-4 py-3 text-slate-900 shadow-sm focus:border-transparent focus:outline-none focus:ring-4 focus:ring-indigo-500/30"
           required
         >
-          <option value="">I am a...</option>
-          <option value="renter">Renter searching</option>
-          <option value="landlord">Landlord leasing units</option>
+          <option value="">I'm a...</option>
+          <option value="renter">Renter looking for a home</option>
+          <option value="landlord">Landlord with available units</option>
         </select>
       </div>
 
