@@ -4,15 +4,16 @@ import type { TrackingEvent } from "./types";
 
 export function track(eventName: string, properties?: TrackingEvent) {
   try {
-    // Plausible
-    if (typeof window !== "undefined" && typeof (window as any).plausible === "function") {
-      (window as any).plausible(eventName, { props: properties });
+    if (typeof window !== "undefined") {
+      if (typeof window.plausible === "function") {
+        window.plausible(eventName, { props: properties });
+      }
+
+      if (typeof window.gtag === "function") {
+        window.gtag("event", eventName, properties || {});
+      }
     }
-    // GA4
-    if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
-      (window as any).gtag("event", eventName, properties || {});
-    }
-    // Dev log
+
     if (process.env.NODE_ENV === "development") {
       // eslint-disable-next-line no-console
       console.log("📊 Analytics Event:", eventName, properties);

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { COMPANY } from "@/lib/constants";
 
 export default function Footer() {
@@ -27,29 +28,29 @@ export default function Footer() {
             <h4 className="text-sm font-semibold uppercase tracking-widest text-slate-300">Explore</h4>
             <ul className="mt-4 space-y-3 text-sm text-slate-400">
               <li>
-                <a href="/why-fairvia" className="transition hover:text-white">
+                <Link href="/why-fairvia" className="transition hover:text-white">
                   Why Fairvia
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/how-it-works" className="transition hover:text-white">
+                <Link href="/how-it-works" className="transition hover:text-white">
                   How it works
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/features" className="transition hover:text-white">
+                <Link href="/features" className="transition hover:text-white">
                   Features
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/trust" className="transition hover:text-white">
-                  Trust & security
-                </a>
+                <Link href="/trust" className="transition hover:text-white">
+                  Trust &amp; security
+                </Link>
               </li>
               <li>
-                <a href="/faq" className="transition hover:text-white">
+                <Link href="/faq" className="transition hover:text-white">
                   FAQ
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -58,19 +59,19 @@ export default function Footer() {
             <h4 className="text-sm font-semibold uppercase tracking-widest text-slate-300">Company</h4>
             <ul className="mt-4 space-y-3 text-sm text-slate-400">
               <li>
-                <a href="/about" className="transition hover:text-white">
+                <Link href="/about" className="transition hover:text-white">
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/contact" className="transition hover:text-white">
+                <Link href="/contact" className="transition hover:text-white">
                   Contact
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/pricing" className="transition hover:text-white">
+                <Link href="/pricing" className="transition hover:text-white">
                   Pricing
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -79,14 +80,14 @@ export default function Footer() {
             <h4 className="text-sm font-semibold uppercase tracking-widest text-slate-300">Policies</h4>
             <ul className="mt-4 space-y-3 text-sm text-slate-400">
               <li>
-                <a href="/privacy" className="transition hover:text-white">
+                <Link href="/privacy" className="transition hover:text-white">
                   Privacy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/terms" className="transition hover:text-white">
+                <Link href="/terms" className="transition hover:text-white">
                   Terms
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -102,15 +103,15 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex gap-6">
-            <a href="/privacy" className="transition hover:text-white">
+            <Link href="/privacy" className="transition hover:text-white">
               Privacy
-            </a>
-            <a href="/terms" className="transition hover:text-white">
+            </Link>
+            <Link href="/terms" className="transition hover:text-white">
               Terms
-            </a>
-            <a href="/trust" className="transition hover:text-white">
+            </Link>
+            <Link href="/trust" className="transition hover:text-white">
               Security
-            </a>
+            </Link>
           </div>
         </div>
       </div>

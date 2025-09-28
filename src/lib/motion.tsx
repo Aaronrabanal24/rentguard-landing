@@ -94,11 +94,10 @@ function createMotionComponent<T extends ElementType>(tag: T) {
   return Component as unknown as MotionComponent<T>;
 }
 
-export const motion = new Proxy(
-  {},
-  {
-    get(_target, prop: string) {
-      return createMotionComponent(prop as ElementType);
-    },
-  }
-) as Record<string, MotionComponent<any>>;
+type MotionRegistry = Record<string, MotionComponent<ElementType>>;
+
+export const motion = new Proxy({} as MotionRegistry, {
+  get(_target, prop: string) {
+    return createMotionComponent(prop as ElementType);
+  },
+});
