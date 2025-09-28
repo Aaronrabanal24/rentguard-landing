@@ -26,7 +26,7 @@ export default function Header() {
     <header className="mx-auto flex max-w-6xl items-center justify-between px-4 py-6">
       <div className="flex items-center gap-3">
         <Image
-          src="/rentguard-mark.svg"
+          src="/fairvia-logo.svg"
           alt="Fairvia logo"
           width={44}
           height={44}

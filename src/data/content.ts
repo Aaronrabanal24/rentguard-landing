@@ -5,15 +5,15 @@ export const heroContent = {
   value_props: [
     {
       title: "Stay compliant",
-      description: "Auto-track the 21-day clock and AB 2801 photo requirements.",
+      description: "Auto-track 21-day refunds and AB 2801 photo proof.",
     },
     {
-      title: "Delight tenants",
-      description: "Neutral escrow and clear updates build trust with great renters.",
+      title: "Tenant clarity",
+      description: "Neutral escrow with clear status updates for renters.",
     },
     {
       title: "Save time",
-      description: "Automated workflows handle reminders, paperwork, and releases.",
+      description: "Workflow automation handles reminders, paperwork, releases.",
     },
   ],
 } as const;
@@ -25,10 +25,10 @@ export const lawPoints = [
   },
   {
     title: "Deposit caps (AB 12)",
-    detail: "Caps land in July 2024. Fairvia surfaces the limits for every unit automatically.",
+    detail: "Caps land July 2024. Fairvia surfaces the limit per unit instantly.",
   },
   {
     title: "Photo documentation (AB 2801)",
-    detail: "Starting 2025, deductions need photo proof. Fairvia stores and shares them for you.",
+    detail: "From 2025, deductions need photo proof. Fairvia stores and shares it.",
   },
 ];

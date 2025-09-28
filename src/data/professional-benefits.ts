@@ -2,16 +2,16 @@ export const professionalBenefits = {
   operational: {
     title: "Streamline daily ops",
     benefits: [
-      "Track every deposit from one place",
-      "Compliance nudges built for California",
-      "Clean documentation ready to share",
+      "Track every deposit from one board",
+      "California nudges baked in",
+      "Clean documentation on demand",
     ],
   },
   growth: {
     title: "Scale with confidence",
     benefits: [
-      "Works for 1 unit or 50+ without chaos",
-      "Transparent deposits attract great tenants",
+      "Works for 1 or 50+ doors without chaos",
+      "Transparent deposits attract stronger tenants",
       "Spend less time chasing paperwork",
     ],
   },
@@ -20,7 +20,7 @@ export const professionalBenefits = {
     benefits: [
       "Offer neutral escrow most landlords skip",
       "Move faster with organized processes",
-      "Deliver a professional experience at small-landlord pricing",
+      "Deliver a pro experience at small-landlord pricing",
     ],
   },
 } as const;

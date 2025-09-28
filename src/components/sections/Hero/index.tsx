@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Image from "next/image";
 import Header from "@/components/layout/Header";
 import { HeroContent } from "./HeroContent";
 import { HeroSocialProof } from "./HeroSocialProof";
@@ -21,9 +22,23 @@ export default function Hero() {
       <div className="relative">
         <Header />
 
-        <div className="mx-auto grid max-w-6xl items-center gap-16 px-4 pb-20 pt-12 md:grid-cols-[minmax(0,1fr)_minmax(0,420px)] md:pt-16">
+        <div className="mx-auto grid max-w-6xl items-center gap-16 px-4 pb-20 pt-12 md:grid-cols-[minmax(0,1fr)_minmax(0,460px)] md:pt-16">
           <HeroContent />
-          <HeroComplianceCard />
+          <div className="relative flex flex-col items-center gap-6">
+            <div className="relative w-full max-w-sm rounded-3xl border border-white/60 bg-white/70 p-6 shadow-lg shadow-sky-100">
+              <Image
+                src="/visuals/hero-dashboard.svg"
+                alt="Fairvia landlord dashboard"
+                width={420}
+                height={360}
+                priority
+                className="h-auto w-full"
+              />
+            </div>
+            <div className="w-full max-w-sm">
+              <HeroComplianceCard />
+            </div>
+          </div>
         </div>
 
         <HeroSocialProof />

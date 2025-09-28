@@ -3,19 +3,19 @@ import { motion } from "@/lib/motion";
 const STEPS = [
   {
     title: "Onboard your properties",
-    description: "Import tenants or add units—Fairvia builds one dashboard for every deposit.",
+    description: "Import tenants or units—Fairvia builds one dashboard per deposit.",
   },
   {
     title: "Open neutral deposit holding",
-    description: "Licensed California partners safeguard funds while everyone stays synced on status.",
+    description: "Licensed partners safeguard funds while everyone sees the status.",
   },
   {
     title: "Capture photo documentation",
-    description: "Move-in/out checklists collect timestamped photos that satisfy AB 2801.",
+    description: "Move-in/out checklists capture timestamped AB 2801 photos.",
   },
   {
     title: "Send statements & release on time",
-    description: "Itemized summaries send automatically and deposits release inside the 21-day window.",
+    description: "Itemized statements send automatically and releases hit the 21-day window.",
   },
 ];
 

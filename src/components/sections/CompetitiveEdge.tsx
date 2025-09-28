@@ -3,19 +3,19 @@ import { motion } from "@/lib/motion";
 const FEATURES = [
   {
     title: "21-day deadline management",
-    detail: "Smart reminders keep every refund window on schedule.",
+    detail: "Smart nudges keep every refund window on schedule.",
   },
   {
     title: "Photo documentation workflows",
-    detail: "Guided checklists capture AB 2801 proof in a couple of taps.",
+    detail: "Guided shoots capture AB 2801 proof in a couple taps.",
   },
   {
     title: "Professional tenant communication",
-    detail: "Ready-to-send templates keep deposit updates clean and consistent.",
+    detail: "Templates keep deposit updates sharp and consistent.",
   },
   {
     title: "Portfolio-friendly dashboard",
-    detail: "Manage 1–50+ units from one view with statuses, reminders, and escrow built in.",
+    detail: "See every unit, status, and escrow ledger in one view.",
   },
 ];
 
@@ -40,9 +40,9 @@ export default function CompetitiveEdge() {
           <span className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-white">
             Why Fairvia works
           </span>
-          <h2 className="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl">Run deposits like a pro without adding headcount</h2>
+          <h2 className="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl">Run deposits like a pro without extra staff</h2>
           <p className="mt-3 max-w-3xl text-sm text-slate-600 sm:text-base">
-            Built-in workflows handle the busywork so you stay responsive, compliant, and tenant-friendly across every property.
+            Fairvia handles the busywork so you stay responsive, compliant, and tenant-friendly across every property.
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             {FEATURES.map((item, index) => (

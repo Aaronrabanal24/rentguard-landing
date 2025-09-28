@@ -8,7 +8,7 @@ export function HeroSocialProof() {
               <div key={item} className="h-9 w-9 rounded-full border border-white/80 bg-gradient-to-br from-sky-400 to-teal-500" />
             ))}
           </div>
-          <p className="font-medium">Pilot landlords rely on neutral escrow, verified tenants, and saved dispute history.</p>
+          <p className="font-medium">Pilot landlords rely on Fairvia escrow, tenant checks, and dispute logs.</p>
         </div>
         <div className="flex items-center gap-6 text-xs uppercase tracking-wide text-slate-400">
           <span>Real escrow</span>

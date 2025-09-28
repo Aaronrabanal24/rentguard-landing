@@ -9,7 +9,7 @@ export default function Footer() {
           <div>
             <div className="mb-6 flex items-center gap-3">
               <span className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-indigo-400 via-indigo-500 to-blue-500 text-lg font-semibold text-white shadow-lg shadow-indigo-500/40">
-                NV
+                FV
               </span>
               <span className="text-xl font-semibold text-white">{COMPANY.name}</span>
             </div>

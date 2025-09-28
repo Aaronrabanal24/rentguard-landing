@@ -26,24 +26,24 @@ export default function SignupSection() {
           <p className="mt-2 inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-orange-600">
             Currently available in California • Pilot access is limited while we onboard landlords
           </p>
-          <p className="mt-4 max-w-xl text-base text-slate-600">Drop your details and we’ll keep you posted as the pilot rolls out new markets.</p>
+          <p className="mt-4 max-w-xl text-base text-slate-600">Share your info and we’ll ping you as new metros turn on.</p>
 
           <dl className="mt-8 grid gap-4 text-sm text-slate-600 sm:grid-cols-2">
             <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
               <dt className="font-semibold text-slate-900">Trust badge ready</dt>
-              <dd className="mt-1">Show tenants you use licensed escrow and verified workflows.</dd>
+              <dd className="mt-1">Show tenants you bank with licensed escrow.</dd>
             </div>
             <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
               <dt className="font-semibold text-slate-900">Paperwork in one click</dt>
-              <dd className="mt-1">Generate compliant leases and handover checklists instantly.</dd>
+              <dd className="mt-1">Spin up compliant leases and checklists instantly.</dd>
             </div>
             <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
               <dt className="font-semibold text-slate-900">Reputation tracker</dt>
-              <dd className="mt-1">Keep a log of disputes, ratings, and happy handovers.</dd>
+              <dd className="mt-1">Log disputes, ratings, and smooth handovers.</dd>
             </div>
             <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
               <dt className="font-semibold text-slate-900">Mobile friendly</dt>
-              <dd className="mt-1">Review tenants or release funds in just a couple of taps.</dd>
+              <dd className="mt-1">Approve tenants or release funds in a few taps.</dd>
             </div>
           </dl>
         </motion.div>
@@ -56,7 +56,7 @@ export default function SignupSection() {
           transition={{ duration: 0.35, ease: "easeOut", delay: 0.05 }}
         >
           <h3 className="mb-4 text-xl font-semibold text-slate-900">Get on the list</h3>
-          <p className="mb-6 text-sm text-slate-600">We'll send a friendly invite when your market opens. No spam - just escrow peace of mind.</p>
+          <p className="mb-6 text-sm text-slate-600">We’ll send the invite when your market lights up. No spam—just escrow peace of mind.</p>
           <WaitlistForm />
         </motion.div>
       </div>

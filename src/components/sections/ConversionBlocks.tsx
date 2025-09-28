@@ -6,7 +6,7 @@ export default function ConversionBlocks() {
   return (
     <motion.section
       className="bg-white py-16"
-      id="conversion"
+      id="get-started"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
@@ -26,7 +26,7 @@ export default function ConversionBlocks() {
           </span>
           <h3 className="mt-4 text-3xl font-semibold text-slate-900">Request a demo</h3>
           <p className="mt-3 text-sm text-slate-600">
-            Download the California Deposit Playbook and see the dashboard in action. Pilot access is currently limited to California portfolios.
+            Grab the California Deposit Playbook and watch the dashboard flow. Pilot access stays limited to California portfolios for now.
           </p>
           <button
             onClick={() => {
@@ -56,7 +56,7 @@ export default function ConversionBlocks() {
           </span>
           <h3 className="mt-4 text-3xl font-semibold text-slate-900">Enroll in the pilot</h3>
           <p className="mt-3 text-sm text-slate-600">
-            Grab the Move-Out Rights checklist and get notified the moment escrow coverage hits your city.
+            Download the Move-Out Rights checklist and get the alert when escrow coverage hits your city.
           </p>
           <button
             onClick={() => {

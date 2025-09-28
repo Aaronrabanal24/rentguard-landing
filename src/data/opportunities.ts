@@ -1,14 +1,14 @@
 export const opportunities = [
   {
-    challenge: "Managing multiple deposit timelines",
-    solution: "Automated tracking keeps you organized across all properties.",
+    challenge: "Deposit deadlines stack up",
+    solution: "Fairvia tracks every door's 21-day clock.",
   },
   {
-    challenge: "Creating proper documentation",
-    solution: "Built-in photo workflows meet all requirements automatically.",
+    challenge: "Photo proof eats time",
+    solution: "Guided shoots cover AB 2801 in minutes.",
   },
   {
-    challenge: "Professional tenant relations",
-    solution: "Clear communication tools build trust with quality tenants.",
+    challenge: "Tenant messaging drags",
+    solution: "Templated updates keep renters looped in.",
   },
 ] as const;
