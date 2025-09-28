@@ -16,14 +16,11 @@ export function ChatPanel() {
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-sky-500 to-indigo-500 text-white">
               <MessageSquareIcon className="h-5 w-5" />
             </div>
-            <div>
-              <p className="text-sm font-semibold text-slate-900">Communications</p>
-              <p className="text-xs text-slate-500">Recent activity</p>
-            </div>
+            <p className="text-sm font-semibold text-slate-900">Tenant updates</p>
           </div>
           <div className="flex items-center gap-2 text-xs text-emerald-600">
             <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
-            Online
+            Synced
           </div>
         </div>
 
@@ -34,10 +31,10 @@ export function ChatPanel() {
             </Avatar>
             <div className="flex-1">
               <div className="max-w-sm rounded-2xl rounded-tl-md bg-slate-50 px-4 py-3 text-sm text-slate-800">
-                Walkthrough scheduled Tuesday at 2:00 PM
+                Walkthrough Tue • 2:00 PM
                 <div className="mt-2 flex items-center gap-2 text-xs text-slate-500">
                   <CalendarIcon className="h-3.5 w-3.5" />
-                  Today, 10:30 AM
+                  Logged 10:30 AM
                 </div>
               </div>
             </div>
@@ -50,7 +47,7 @@ export function ChatPanel() {
                   <CheckCircleSmallIcon className="h-4 w-4" />
                   Confirmed
                 </div>
-                <span className="mt-1 block text-xs text-sky-100">You • 10:32 AM</span>
+                <span className="mt-1 block text-xs text-sky-100">Sent 10:32 AM</span>
               </div>
             </div>
             <Avatar className="h-8 w-8 bg-sky-100 text-[11px] text-sky-600">
@@ -60,8 +57,8 @@ export function ChatPanel() {
 
           <div className="flex items-center gap-2 rounded-lg border border-emerald-100 bg-emerald-50 px-3 py-2 text-sm text-emerald-700">
             <CheckCircleSmallIcon className="h-4 w-4 text-emerald-500" />
-            Appointment confirmed
-            <span className="ml-auto text-xs text-emerald-600">Tuesday, 2:00 PM</span>
+            Tenant acknowledged
+            <span className="ml-auto text-xs text-emerald-600">Ready for keys</span>
           </div>
         </div>
       </div>

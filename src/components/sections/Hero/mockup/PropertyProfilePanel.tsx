@@ -24,13 +24,13 @@ export function PropertyProfilePanel() {
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent" />
           <Badge className="absolute right-3 top-3 bg-gradient-to-r from-emerald-500 to-teal-500 px-3 py-1.5 text-xs font-semibold text-white shadow-lg">
             <span className="mr-2 h-2 w-2 rounded-full bg-white animate-pulse" />
-            Fairvia verified
+            Verified listing
           </Badge>
         </div>
 
         <div className="space-y-4">
           <div>
-            <h3 className="text-lg font-semibold text-slate-900">2BR Apartment in Oakland</h3>
+            <h3 className="text-lg font-semibold text-slate-900">Lakeside 2BR • Oakland</h3>
             <div className="mt-1 flex flex-wrap items-center gap-4 text-sm text-slate-500">
               <span className="flex items-center gap-2">
                 <MapPinIcon className="h-4 w-4" />
@@ -38,7 +38,7 @@ export function PropertyProfilePanel() {
               </span>
               <span className="flex items-center gap-2">
                 <UsersIcon className="h-4 w-4" />
-                2 bed, 1 bath
+                2 bed · 1 bath
               </span>
             </div>
           </div>
@@ -48,7 +48,7 @@ export function PropertyProfilePanel() {
               <span className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-white">
                 <CheckIcon className="h-3 w-3" />
               </span>
-              Escrow active
+              Escrow live
               <span className="ml-auto h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
             </div>
 
@@ -56,7 +56,7 @@ export function PropertyProfilePanel() {
               <span className="flex h-6 w-6 items-center justify-center rounded-full bg-sky-500 text-white">
                 <CheckIcon className="h-3 w-3" />
               </span>
-              Lease signed
+              Lease signed & stored
               <CalendarIcon className="ml-auto h-4 w-4 text-sky-500" />
             </div>
 
@@ -64,7 +64,7 @@ export function PropertyProfilePanel() {
               <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500 text-white">
                 <CheckIcon className="h-3 w-3" />
               </span>
-              Timeline confirmed
+              Move-out timeline set
             </div>
           </div>
         </div>

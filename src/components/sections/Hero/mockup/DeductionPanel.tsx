@@ -28,12 +28,9 @@ export function DeductionPanel() {
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 text-white">
               <FileTextIcon className="h-5 w-5" />
             </div>
-            <div>
-              <p className="text-sm font-semibold text-slate-900">Final statement</p>
-              <p className="text-xs text-slate-500">Deposit resolution</p>
-            </div>
+            <p className="text-sm font-semibold text-slate-900">Deposit summary</p>
           </div>
-          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-100 text-emerald-600" aria-hidden>
             <CheckCircleIcon className="h-4 w-4" />
           </div>
         </div>
@@ -42,7 +39,7 @@ export function DeductionPanel() {
           <div className="rounded-xl bg-slate-50 p-4">
             <div className="mb-3 flex items-center gap-2 text-slate-700">
               <ReceiptIcon className="h-4 w-4" />
-              Itemized deductions
+              Deductions applied
             </div>
 
             <div className="space-y-3">
@@ -59,7 +56,7 @@ export function DeductionPanel() {
               <Separator className="my-2" />
 
               <div className="flex items-center justify-between text-sm">
-                <span>Total deductions</span>
+                <span>Total</span>
                 <span className="font-semibold text-slate-900">${totals.totalDeductions}</span>
               </div>
             </div>
@@ -72,8 +69,8 @@ export function DeductionPanel() {
                   <CheckCircleIcon className="h-4 w-4" />
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-emerald-800">Release confirmed</p>
-                  <p className="text-xs text-emerald-600">Processed successfully</p>
+                  <p className="text-sm font-medium text-emerald-800">Release ready</p>
+                  <p className="text-xs text-emerald-600">Packet queued</p>
                 </div>
               </div>
               <ArrowUpRightIcon className="h-4 w-4 text-emerald-600" />
@@ -81,13 +78,13 @@ export function DeductionPanel() {
             <div className="flex items-baseline gap-1 text-emerald-800">
               <DollarIcon className="h-5 w-5 text-emerald-600" />
               <span className="text-2xl font-semibold">{totals.refundAmount.toLocaleString()}</span>
-              <span className="text-xs text-emerald-600">refunded</span>
+              <span className="text-xs text-emerald-600">to renter</span>
             </div>
           </div>
 
           <div className="flex items-center justify-center gap-2 text-xs text-slate-500">
             <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
-            Completed within 21-day period
+            21-day clock met
           </div>
         </div>
       </div>

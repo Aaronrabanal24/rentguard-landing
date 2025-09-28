@@ -18,19 +18,16 @@ export function EscrowPanel() {
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-sky-500 text-white">
               <ShieldIcon className="h-5 w-5" />
             </div>
-            <div>
-              <p className="text-sm font-semibold text-slate-900">Escrow status</p>
-              <p className="text-xs text-slate-500">Security deposit</p>
-            </div>
+            <p className="text-sm font-semibold text-slate-900">Deposit in escrow</p>
           </div>
-          <div className="h-8 w-8 animate-[spin_6s_linear_infinite] rounded-full border-2 border-indigo-200 border-t-indigo-500" />
+          <div className="h-8 w-8 animate-[spin_6s_linear_infinite] rounded-full border-2 border-indigo-200 border-t-indigo-500" aria-hidden />
         </div>
 
         <div className="space-y-4">
           <div className="flex items-center justify-between text-sm text-slate-700">
             <div className="flex items-center gap-2">
               <DollarIcon className="h-4 w-4 text-emerald-500" />
-              Amount secured
+              In account
             </div>
             <span className="text-lg font-semibold text-slate-900">$2,450</span>
           </div>
@@ -39,7 +36,7 @@ export function EscrowPanel() {
             <div className="flex items-center justify-between text-sm text-slate-700">
               <div className="flex items-center gap-2">
                 <ClockIcon className="h-4 w-4 text-amber-500" />
-                Time remaining
+                Days left
               </div>
               <span className="font-medium text-amber-600">21 days</span>
             </div>
@@ -49,14 +46,14 @@ export function EscrowPanel() {
             </Progress>
 
             <div className="flex justify-between text-xs text-slate-500">
-              <span>Started</span>
+              <span>Opened</span>
               <span>{progress}% elapsed</span>
             </div>
           </div>
 
           <div className="flex items-center gap-2 rounded-lg border border-emerald-100 bg-emerald-50 px-3 py-2 text-sm text-emerald-700">
             <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
-            Deposit secured & protected
+            Funds locked until release
           </div>
         </div>
       </div>
