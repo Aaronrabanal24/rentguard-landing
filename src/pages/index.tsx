@@ -1,6 +1,7 @@
 import {
   Hero,
   MarketOpportunity,
+  ProfessionalBenefits,
   TrustSignals,
   ProblemPain,
   ValueAndForm,
@@ -17,11 +18,12 @@ export default function Home() {
     <div className="min-h-screen">
       <Hero />
       <MarketOpportunity />
+      <CompetitiveEdge />
+      <ProfessionalBenefits />
       <TrustSignals />
       <ProblemPain />
       <ValueAndForm />
       <LegalCompliance />
-      <CompetitiveEdge />
       <SocialProof />
       <ConversionBlocks />
       <FAQSection />

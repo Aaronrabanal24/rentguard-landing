@@ -1,39 +1,54 @@
-const MANAGER_PAIN = [
-  "Running fewer than 50 doors means you still handle deposits yourself—automated timelines keep every refund on schedule.",
-  "Deposit caps from AB 12 and deduction limits become simple when best practices are built into the workflow.",
-  "Scattered emails and photos disappear once documentation lives in one organized record."
-];
-
-const RENTER_PAIN = [
-  "Tenants want confidence about where deposits sit and when funds will be released.",
-  "Sharing photo evidence and itemized statements upfront builds trust from move-in to move-out.",
-  "A neutral activity log makes it easy to resolve questions without conflict."
-];
+const SNAPSHOT = {
+  target: "Independent landlords • 1–50 units",
+  valueProp: "Enterprise-level deposit management tailored for small portfolios",
+  differentiators: [
+    "California compliance built in from day one",
+    "Tenant-friendly transparency that reduces conflict",
+    "Automation that frees up hours each move-out",
+  ],
+  socialProof: "Join 100+ California landlords managing deposits professionally",
+};
 
 export default function ProblemPain() {
   return (
-    <section className="bg-slate-900 py-16 text-slate-100" id="problems">
-      <div className="mx-auto max-w-6xl px-4">
-        <h2 className="text-3xl font-semibold">The California security deposit headache</h2>
-        <p className="mt-3 max-w-3xl text-sm text-slate-300">
-          RentGuard tackles the same pain points for both sides: legal timelines, compliant documentation, and transparent communication.
-        </p>
-        <div className="mt-10 grid gap-8 md:grid-cols-2">
-          <div className="rounded-3xl border border-slate-700 bg-slate-800 p-8 shadow-sm">
-            <h3 className="text-2xl font-semibold text-white">Property managers & owners</h3>
-            <ul className="mt-4 space-y-3 text-sm text-slate-300">
-              {MANAGER_PAIN.map((pain) => (
-                <li key={pain}>• {pain}</li>
-              ))}
-            </ul>
-          </div>
-          <div className="rounded-3xl border border-slate-700 bg-slate-800 p-8 shadow-sm">
-            <h3 className="text-2xl font-semibold text-white">Renters & tenants</h3>
-            <ul className="mt-4 space-y-3 text-sm text-slate-300">
-              {RENTER_PAIN.map((pain) => (
-                <li key={pain}>• {pain}</li>
-              ))}
-            </ul>
+    <section className="bg-slate-50 py-16" id="positioning">
+      <div className="mx-auto max-w-5xl px-4">
+        <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+          <span className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-white">
+            Positioning snapshot
+          </span>
+          <h2 className="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl">Built for the landlords who do it all</h2>
+          <p className="mt-3 max-w-3xl text-sm text-slate-600 sm:text-base">
+            Novatra gives independent owners enterprise polish: clear tenant communication, compliant documentation, and automated reminders—without hiring extra staff.
+          </p>
+
+          <dl className="mt-8 grid gap-6 sm:grid-cols-2">
+            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-sm">
+              <dt className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Target</dt>
+              <dd className="mt-2 text-base font-semibold text-slate-900">{SNAPSHOT.target}</dd>
+            </div>
+            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-sm">
+              <dt className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Value proposition</dt>
+              <dd className="mt-2 text-base font-semibold text-slate-900">{SNAPSHOT.valueProp}</dd>
+            </div>
+          </dl>
+
+          <div className="mt-6 grid gap-6 sm:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
+            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-sm">
+              <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Differentiators</h3>
+              <ul className="mt-3 space-y-3 text-sm text-slate-600">
+                {SNAPSHOT.differentiators.map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="mt-1 text-sky-500">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="rounded-2xl border border-slate-200 bg-slate-900/80 p-5 text-slate-100 shadow-sm">
+              <h3 className="text-sm font-semibold uppercase tracking-[0.2em]">Social proof</h3>
+              <p className="mt-3 text-base font-semibold">{SNAPSHOT.socialProof}</p>
+            </div>
           </div>
         </div>
       </div>
