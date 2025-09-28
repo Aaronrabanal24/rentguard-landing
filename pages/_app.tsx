@@ -41,7 +41,16 @@ export default function App({ Component, pageProps }: AppProps) {
         <Script
           strategy="afterInteractive"
           data-domain="rentguard-landing-git-main-aaron-rabanals-projects.vercel.app"
-          src="https://plausible.io/js/script.js"
+          data-api="https://plausible.io/api/event"
+          data-extended-analytics="true"
+          data-track-outbound-links="true"
+          data-track-file-downloads="true"
+          data-track-404="true"
+          data-hash="true"
+          data-track-custom-events="true"
+          data-track-custom-properties="true"
+          data-revenue="true"
+          src="https://plausible.io/js/script.tagged-events.js"
         />
       )}
       {/* GA4 optional:
