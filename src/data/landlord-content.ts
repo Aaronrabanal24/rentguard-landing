@@ -3,32 +3,20 @@ export const landlordContent = {
     badge: "Built for California landlords",
     headline: "Professional deposit management for California landlords",
     subheadline:
-      "Automated best practices, happy tenants, and streamlined operations for independent property owners.",
+      "Automated compliance, happy tenants, and streamlined operations for independent property owners.",
     benefits: [
-      "21-day deadline tracking built in",
+      "21-day deadline tracking built-in",
       "Property condition documentation made simple",
-      "Tenant communication templates provided"
+      "Tenant communication templates included",
     ],
   },
   problems: {
     title: "Common landlord challenges we solve",
-    opportunities: [
-      {
-        challenge: "Managing multiple deposit timelines",
-        solution: "Automated tracking keeps every property organized and compliant.",
-      },
-      {
-        challenge: "Creating proper documentation",
-        solution: "Built-in photo workflows meet California requirements automatically.",
-      },
-      {
-        challenge: "Maintaining professional tenant relations",
-        solution: "Clear templates and neutral escrow build trust with quality renters.",
-      },
-      {
-        challenge: "Keeping up with evolving regulations",
-        solution: "RentGuard monitors state updates so your process stays current.",
-      },
+    pain_points: [
+      "Tracking multiple deposit deadlines across properties",
+      "Creating proper documentation for legitimate deductions",
+      "Managing tenant communications about deposits",
+      "Staying current with changing California regulations",
     ],
   },
   solutions: {
@@ -47,12 +35,12 @@ export const landlordContent = {
       {
         icon: "💬",
         title: "Tenant communication",
-        description: "Professional templates for deposit updates, itemized statements, and follow-ups.",
+        description: "Professional templates for deposit discussions and itemized statements.",
       },
       {
         icon: "🏠",
-        title: "Portfolio friendly",
-        description: "Manage deposits across all properties from one dashboard that grows with your units.",
+        title: "Multi-property support",
+        description: "Manage deposits across your entire portfolio from one dashboard.",
       },
     ],
   },

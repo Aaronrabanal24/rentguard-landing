@@ -8,12 +8,12 @@ const POINTS = [
     detail: "Deposit caps begin July 2024 and photo documentation becomes mandatory July 2025—landlords need tooling now.",
   },
   {
-    title: "3× penalty risk",
-    detail: "Civil Code §1950.5 allows tenants to pursue up to triple the deposit if deadlines are missed or documentation is lacking.",
+    title: "21-day compliance confidence",
+    detail: "Civil Code §1950.5 timelines stay on track with automated reminders and neutral deposit holding.",
   },
   {
     title: "60% of disputes",
-    detail: "Deposits drive the majority of landlord-tenant complaints; urgency is built into the regulatory timeline.",
+    detail: "Deposits drive most landlord-tenant complaints—transparent processes unlock smoother move-outs.",
   },
 ];
 

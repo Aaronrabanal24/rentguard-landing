@@ -25,7 +25,7 @@ export function useWaitlist({ source = "default" }: UseWaitlistConfig = {}) {
       if (!response.ok) throw new Error("Failed to join waitlist");
 
       setIsSubmitted(true);
-      track("waitlist_signup_completed", data);
+      track("waitlist_signup_completed", { ...data });
       track("submit_signup", { ...data, source });
     } catch (err: any) {
       const message = err?.message || "Something went wrong. Please try again.";

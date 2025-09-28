@@ -1,4 +1,4 @@
-import WaitlistForm from "./WaitlistForm";
+import WaitlistForm from "@/components/forms/WaitlistForm";
 
 export default function SignupSection() {
   return (

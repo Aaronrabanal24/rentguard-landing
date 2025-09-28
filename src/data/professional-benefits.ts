@@ -3,27 +3,27 @@ export const professionalBenefits = {
     title: "Streamline your property operations",
     benefits: [
       "Centralized deposit management across all units",
-      "California best practices handled automatically",
+      "Automated compliance with California requirements",
       "Professional documentation for every transaction",
-      "Tenant communication templates that keep everyone aligned",
+      "Tenant communication templates that work",
     ],
   },
   growth: {
     title: "Scale your rental business confidently",
     benefits: [
-      "Works for one unit or an entire portfolio",
-      "Transparent processes attract higher-quality tenants",
+      "Same process works for 1 unit or 50+ units",
+      "Attract quality tenants with transparent processes",
       "Reduce time spent on deposit-related tasks",
-      "Build your reputation as a professional landlord",
+      "Build reputation as a professional landlord",
     ],
   },
-  competitiveAdvantage: {
+  competitive_advantage: {
     title: "Stand out in the rental market",
     benefits: [
-      "Offer tenants deposit protection most landlords skip",
-      "Faster tenant placement with clear processes",
+      "Offer tenants deposit protection other landlords don't",
+      "Faster tenant placement with streamlined processes",
       "Higher tenant satisfaction scores",
-      "Professional tools priced for independent landlords",
+      "Professional property management tools at small landlord prices",
     ],
   },
 } as const;

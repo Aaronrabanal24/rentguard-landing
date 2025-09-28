@@ -1,18 +1,14 @@
-export const opportunityPairs = [
+export const opportunities = [
   {
     challenge: "Managing multiple deposit timelines",
-    solution: "Automated tracking keeps you organized across every property." ,
+    solution: "Automated tracking keeps you organized across all properties.",
   },
   {
     challenge: "Creating proper documentation",
-    solution: "Built-in photo workflows meet California requirements automatically.",
+    solution: "Built-in photo workflows meet all requirements automatically.",
   },
   {
     challenge: "Professional tenant relations",
-    solution: "Neutral deposit holding and clear communication build trust with renters.",
-  },
-  {
-    challenge: "Staying current with California regulations",
-    solution: "RentGuard updates best practices so your process evolves without extra effort.",
+    solution: "Clear communication tools build trust with quality tenants.",
   },
 ] as const;

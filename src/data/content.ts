@@ -1,10 +1,23 @@
 export const heroContent = {
-  headline: "Stay compliant with California's new deposit laws",
-  subHeadlines: {
-    manager: "Avoid 3× penalties with automated escrow, photo documentation, and 21-day deadline tracking.",
-    renter: "Renters see neutral escrow status, deduction evidence, and faster refunds with full transparency.",
-  },
-};
+  badge: "Built for California landlords",
+  headline: "Professional deposit management that scales with your portfolio",
+  subheadline:
+    "Everything you need to handle deposits professionally—from compliance tracking to tenant communication.",
+  value_props: [
+    {
+      title: "Compliance made simple",
+      description: "Built-in California requirements mean you're always following best practices.",
+    },
+    {
+      title: "Tenant-friendly approach",
+      description: "Transparent processes attract better tenants and reduce conflicts.",
+    },
+    {
+      title: "Time-saving automation",
+      description: "Handles routine tasks so you can focus on growing your business.",
+    },
+  ],
+} as const;
 
 export const lawPoints = [
   {

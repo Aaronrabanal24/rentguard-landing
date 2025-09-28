@@ -1,13 +1,13 @@
 const MANAGER_PAIN = [
-  "Running fewer than 50 doors means you still handle deposits yourself—and one missed 21-day deadline can trigger double-damages claims.",
-  "Deposit caps from AB 12 and deduction limits demand constant vigilance or you risk bad-faith penalties.",
-  "Scattered emails and photos make it hard to compile a defensible audit trail when challenged."
+  "Running fewer than 50 doors means you still handle deposits yourself—automated timelines keep every refund on schedule.",
+  "Deposit caps from AB 12 and deduction limits become simple when best practices are built into the workflow.",
+  "Scattered emails and photos disappear once documentation lives in one organized record."
 ];
 
 const RENTER_PAIN = [
-  "You rarely know where the deposit sits or when it will be returned.",
-  "Itemized deductions arrive late or lack photo evidence, even though AB 2801 requires documentation.",
-  "Escalating disputes is confusing without a neutral record of inspections and messages."
+  "Tenants want confidence about where deposits sit and when funds will be released.",
+  "Sharing photo evidence and itemized statements upfront builds trust from move-in to move-out.",
+  "A neutral activity log makes it easy to resolve questions without conflict."
 ];
 
 export default function ProblemPain() {
