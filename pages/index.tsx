@@ -115,7 +115,11 @@ export default function Home() {
           </div>
 
           <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-8 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
-            <p>&copy; {new Date().getFullYear()} RentGuard. All rights reserved.</p>
+            <div>
+              <p>&copy; {new Date().getFullYear()} RentGuard. All rights reserved.</p>
+              <p>Pilot availability: California only. First 100 rentals are free.</p>
+              <p>RentGuard is not a bank, law firm, or escrow agent. All escrow accounts are managed by licensed California partners. Lease templates are reviewed for California compliance but do not substitute for legal advice.</p>
+            </div>
             <div className="flex gap-6">
               <a href="#" className="transition hover:text-white">
                 Privacy

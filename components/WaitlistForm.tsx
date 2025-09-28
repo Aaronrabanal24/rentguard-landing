@@ -33,10 +33,13 @@ export default function WaitlistForm() {
 
       if (!response.ok) throw new Error("Failed to join waitlist");
 
-      track("waitlist_signup_completed", {
+      const payload = {
         userType: formData.userType,
         location: formData.location,
-      });
+      };
+
+      track("waitlist_signup_completed", payload);
+      track("submit_signup", { role: formData.userType || "unknown", source: "signup_section", ...payload });
 
       setIsSubmitted(true);
     } catch (err: any) {

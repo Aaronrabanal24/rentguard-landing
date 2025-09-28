@@ -1,3 +1,5 @@
+import { track } from "../lib/track";
+
 export default function Pricing() {
   return (
     <section className="bg-slate-900 py-20" id="pricing">
@@ -39,7 +41,10 @@ export default function Pricing() {
 
         <div className="mt-12 text-center">
           <button
-            onClick={() => document.getElementById("signup")?.scrollIntoView({ behavior: "smooth" })}
+            onClick={() => {
+              track("click_cta", { role: "general", location: "pricing", label: "protect_next_lease" });
+              document.getElementById("signup")?.scrollIntoView({ behavior: "smooth" });
+            }}
             className="inline-flex items-center justify-center rounded-full bg-sky-500 px-8 py-3 text-sm font-semibold text-white transition hover:bg-sky-600"
           >
             Protect your next lease today

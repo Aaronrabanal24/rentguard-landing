@@ -3,15 +3,15 @@ import { useState, useEffect } from "react";
 import { track } from "../lib/track";
 
 const HEADLINE_VARIANTS: Record<"A" | "B" | "C", string> = {
-  A: "Real escrow for real people",
-  B: "Protect every rental the easy way",
-  C: "No more guessing where the deposit sits",
+  A: "Safe deposits. Verified leases. California pilot now open.",
+  B: "California pilot for neutral rental escrow now enrolling.",
+  C: "California renters and landlords: safeguard deposits with licensed escrow partners.",
 };
 
 const SUBHEADLINE_VARIANTS: Record<"A" | "B" | "C", string> = {
-  A: "Hold funds in licensed escrow, keep paperwork in one place, and show tenants you play fair.",
-  B: "RentGuard watches the money, the leases, and the trust signals so you can hand over the keys without worry.",
-  C: "A friendly dashboard that keeps deposits safe, paperwork tidy, and reputations intact.",
+  A: "RentGuard partners with licensed escrow agents and California-compliant leases to protect both renters and landlords.",
+  B: "Hold deposits with licensed California escrow agents and sign compliant leases without extra back-and-forth.",
+  C: "Join the California pilot that keeps deposits neutral and paperwork compliant for every move-in.",
 };
 
 export default function Hero() {
@@ -22,6 +22,7 @@ export default function Hero() {
     const selectedVariant = variants[Math.floor(Math.random() * variants.length)];
     setVariant(selectedVariant);
     track("headline_variant_shown", { variant: selectedVariant });
+    track("view_hero", { variant: selectedVariant });
   }, []);
 
   return (
@@ -60,7 +61,7 @@ export default function Hero() {
             </a>
             <button
               onClick={() => {
-                track("hero_cta_clicked", { variant, button: "nav" });
+                track("click_cta", { role: "general", location: "hero", label: "nav" });
                 document.getElementById("signup")?.scrollIntoView({ behavior: "smooth" });
               }}
               className="rounded-full bg-sky-500/10 px-5 py-2 text-sm font-semibold text-sky-700 transition hover:bg-sky-500/20"
@@ -72,9 +73,9 @@ export default function Hero() {
 
         <div className="mx-auto grid max-w-6xl items-center gap-16 px-4 pb-20 pt-12 md:grid-cols-[minmax(0,1fr)_minmax(0,420px)] md:pt-16">
           <div>
-            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-sky-400/30 bg-sky-100 px-4 py-2 text-sm font-medium text-sky-700 shadow-sm shadow-sky-200/60">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-sky-400/40 bg-sky-100 px-4 py-2 text-sm font-medium text-sky-700 shadow-sm shadow-sky-200/60">
               <span className="inline-flex h-2 w-2 rounded-full bg-sky-400" />
-              Licensed escrow partners in NYC • LA • SF
+              California pilot • Licensed escrow partners
             </div>
             <h1 className="mb-6 text-4xl font-semibold leading-tight text-slate-900 sm:text-5xl md:text-6xl">
               {HEADLINE_VARIANTS[variant]}
@@ -86,16 +87,16 @@ export default function Hero() {
             <div className="flex flex-col items-start gap-4 sm:flex-row">
               <button
                 onClick={() => {
-                  track("hero_cta_clicked", { variant, button: "primary" });
+                  track("click_cta", { role: "general", location: "hero", label: "primary" });
                   document.getElementById("signup")?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-sky-400 via-sky-500 to-teal-500 px-7 py-3 text-base font-semibold text-white shadow-lg shadow-sky-300/50 transition hover:scale-[1.01] hover:shadow-xl"
               >
-                Start a protected rental
+                Join the Pilot
               </button>
               <button
                 onClick={() => {
-                  track("hero_cta_clicked", { variant, button: "secondary" });
+                  track("click_cta", { role: "general", location: "hero", label: "secondary" });
                   document.getElementById("how-it-works")?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className="inline-flex items-center justify-center rounded-full border border-slate-300 px-7 py-3 text-base font-semibold text-slate-700 transition hover:border-slate-400"
@@ -103,6 +104,26 @@ export default function Hero() {
                 See how escrow works
               </button>
             </div>
+
+            <div className="mt-6 flex items-center gap-4 text-sm text-slate-600">
+              <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1">
+                <span role="img" aria-label="lock">
+                  🔒
+                </span>
+                Deposits held by licensed CA escrow partners
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1">
+                <span role="img" aria-label="shield">
+                  🛡️
+                </span>
+                CA-compliant leases ready to send
+              </span>
+            </div>
+
+            <p className="mt-6 text-sm font-medium text-slate-700">
+              RentGuard is a technology platform and not a bank. Deposits are held by licensed California escrow partners.
+            </p>
+            <p className="mt-2 text-sm text-slate-600">Pilot currently enrolling the first 100 landlords and tenants in California.</p>
 
             <div className="mt-12 grid gap-6 text-left sm:grid-cols-3">
               <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
@@ -115,7 +136,7 @@ export default function Hero() {
               </div>
               <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
                 <p className="text-sm font-semibold text-orange-600">Reputation boost</p>
-                <p className="mt-2 text-base text-slate-600">Show tenants you're verified and dispute-free.</p>
+                <p className="mt-2 text-base text-slate-600">Pilot is currently enrolling the first 100 rentals at no cost.</p>
               </div>
             </div>
           </div>

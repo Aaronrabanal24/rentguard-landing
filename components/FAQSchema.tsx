@@ -1,39 +1,33 @@
 import Head from "next/head";
+import { useState } from "react";
+import { track } from "../lib/track";
 
 const FAQ_DATA = [
   {
-    question: "How does RentGuard escrow protect my deposit?",
+    question: "Who holds the money?",
     answer:
-      "Your deposit is held by licensed escrow partners, not personal accounts. Funds are released only after both parties approve the move-in, protecting you from scams and disputes.",
+      "RentGuard routes deposits to licensed escrow partners. Neither renter nor landlord can touch the funds until both approve the release.",
   },
   {
-    question: "What does RentGuard cost?",
+    question: "What if there is a dispute?",
     answer:
-      "Renters join free. Landlords pay $25-$100 per month for premium tools. Escrow transactions carry a 1-2% deposit fee, split between both parties.",
+      "Every deposit includes an audit trail. If something goes sideways, our licensed mediators step in while the funds stay locked.",
   },
   {
-    question: "How do you verify identities and prevent fraud?",
+    question: "Where is RentGuard available?",
     answer:
-      "We use multi-layer verification that includes identity checks, income verification, and property ownership confirmation. Suspicious activity triggers manual review before any funds move.",
+      "The pilot is live in California and New York metro areas, with more regions coming soon.",
   },
   {
-    question: "Which cities support RentGuard escrow?",
+    question: "How much does it cost?",
     answer:
-      "We're launching in NYC, LA, and SF with licensed escrow partners and expanding to other major metros based on waitlist demand and regulatory approval.",
-  },
-  {
-    question: "What happens if there's a dispute?",
-    answer:
-      "Our digital audit trail tracks every communication and agreement. Licensed mediators help resolve disputes quickly while escrow funds remain secure until a resolution is reached.",
-  },
-  {
-    question: "Are the lease templates legally compliant?",
-    answer:
-      "Yes. Our digital lease templates are vetted by real estate attorneys and updated to meet local housing laws in every supported market.",
+      "Renters join free and share a small escrow fee with the landlord when the move-in is confirmed. Landlords pick a simple monthly plan that scales with their units.",
   },
 ];
 
 export default function FAQSchema() {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -68,16 +62,29 @@ export default function FAQSchema() {
           </div>
           <div className="grid gap-6 md:grid-cols-2">
             {FAQ_DATA.map((faq, index) => (
-              <div
+              <button
+                type="button"
                 key={faq.question}
-                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg hover:border-orange-200"
+                className={`text-left rounded-2xl border bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg ${
+                  openIndex === index ? "border-orange-300" : "border-slate-200"
+                }`}
+                onClick={() => {
+                  const next = openIndex === index ? null : index;
+                  if (next !== null) {
+                    track("faq_expand", { question: faq.question });
+                  }
+                  setOpenIndex(next);
+                }}
               >
-                <div className="mb-3 flex items-center gap-3 text-orange-600">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-orange-100 text-sm font-semibold">{index + 1}</span>
-                  <h3 className="text-base font-semibold text-slate-900">{faq.question}</h3>
+                <div className="mb-3 flex items-center justify-between text-orange-600">
+                  <div className="flex items-center gap-3">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-orange-100 text-sm font-semibold">{index + 1}</span>
+                    <h3 className="text-base font-semibold text-slate-900">{faq.question}</h3>
+                  </div>
+                  <span className="text-slate-400">{openIndex === index ? "-" : "+"}</span>
                 </div>
-                <p className="text-sm leading-relaxed text-slate-600">{faq.answer}</p>
-              </div>
+                {openIndex === index && <p className="text-sm leading-relaxed text-slate-600">{faq.answer}</p>}
+              </button>
             ))}
           </div>
           <div className="mt-12 text-center">

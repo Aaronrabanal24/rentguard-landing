@@ -7,9 +7,12 @@ export default function SignupSection() {
       <div className="relative mx-auto grid max-w-5xl gap-10 px-4 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
         <div>
           <span className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-sky-700">
-            Early access
+            California pilot
           </span>
           <h2 className="mt-5 text-3xl font-semibold text-slate-900 sm:text-4xl">Protect the next lease in minutes</h2>
+          <p className="mt-2 inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-orange-600">
+            Currently available in California only • First 100 rentals are free during the pilot
+          </p>
           <p className="mt-4 max-w-xl text-base text-slate-600">
             Drop your details below and we'll send you the dashboard that keeps deposits in escrow, paperwork tidy, and your reputation spotless. No heavy setup - just a guided flow on any device.
           </p>

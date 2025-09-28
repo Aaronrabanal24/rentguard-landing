@@ -7,6 +7,9 @@ const PERSONA_CONTENT = {
     heading: "A calmer way to hand over your deposit",
     description:
       "Keep savings in escrow, see every step at a glance, and arrive on move-in day with the money still protected.",
+    ctaLabel: "I'm a renter",
+    ctaId: "btn_renter_protect_deposit",
+    role: "renter",
     steps: [
       {
         title: "Create your secure profile",
@@ -22,6 +25,7 @@ const PERSONA_CONTENT = {
       },
     ],
     highlights: [
+      { icon: "📜", text: "Deposits are secure and refundable, subject to California law." },
       { icon: "🛡️", text: "Escrow every deposit without extra apps." },
       { icon: "🧾", text: "Leases fill themselves with your details." },
       { icon: "📱", text: "Mobile-friendly for that mid-work break." },
@@ -32,6 +36,9 @@ const PERSONA_CONTENT = {
     heading: "Protect your good name while filling units",
     description:
       "See verified tenants, keep payments out of personal accounts, and show a clean history when the next renter checks you out.",
+    ctaLabel: "I'm a landlord",
+    ctaId: "btn_landlord_trust_badge",
+    role: "landlord",
     steps: [
       {
         title: "Invite applicants with a link",
@@ -47,8 +54,9 @@ const PERSONA_CONTENT = {
       },
     ],
     highlights: [
+      { icon: "⚖️", text: "Standardized leases reduce disputes and compliance risk." },
       { icon: "🔍", text: "No more blind meetups - see verifications first." },
-      { icon: "⚖️", text: "Lease templates stay compliant by city." },
+      { icon: "📑", text: "Lease templates stay compliant by city." },
       { icon: "👍", text: "Show dispute-free history to future tenants." },
     ],
   },
@@ -56,9 +64,19 @@ const PERSONA_CONTENT = {
   badge: string;
   heading: string;
   description: string;
+  ctaLabel: string;
+  ctaId: string;
+  role: "renter" | "landlord";
   steps: Array<{ title: string; description: string }>;
   highlights: Array<{ icon: string; text: string }>;
 }>;
+
+const HOW_IT_WORKS = [
+  { icon: "🪪", title: "Verify ID", description: "RentGuard confirms renter and landlord identities plus property ownership." },
+  { icon: "🏦", title: "Secure deposit in escrow", description: "Funds move into a neutral account managed by licensed California partners." },
+  { icon: "📑", title: "Sign CA-compliant lease", description: "Generate and e-sign the right California lease template for your city." },
+  { icon: "🔓", title: "Move in with confidence", description: "Checklists track keys, condition, and approvals before releasing funds." },
+];
 
 export default function ValueAndForm() {
   const [activeTab, setActiveTab] = useState<"renter" | "landlord">("renter");
@@ -127,6 +145,17 @@ export default function ValueAndForm() {
                 </li>
               ))}
             </ol>
+
+            <button
+              id={content.ctaId}
+              onClick={() => {
+                track("click_cta", { role: content.role, location: "split_paths", label: content.ctaId });
+                document.getElementById("signup")?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="mt-8 inline-flex items-center justify-center rounded-full bg-sky-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-sky-600"
+            >
+              {content.ctaLabel}
+            </button>
           </div>
 
           <div className="space-y-6">
@@ -149,7 +178,7 @@ export default function ValueAndForm() {
               </p>
               <button
                 onClick={() => {
-                  track("journey_signup_click", { from: activeTab });
+                  track("click_cta", { role: activeTab, location: "journey_helper", label: "make_leasing_hassle_free" });
                   document.getElementById("signup")?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className="mt-6 inline-flex items-center justify-center rounded-full bg-sky-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-sky-600"
@@ -158,6 +187,23 @@ export default function ValueAndForm() {
               </button>
             </div>
           </div>
+        </div>
+
+        <div className="mt-16 rounded-3xl border border-slate-200 bg-white p-10 shadow-sm">
+          <h3 className="text-2xl font-semibold text-slate-900">How RentGuard keeps the money neutral</h3>
+          <ol className="mt-8 grid gap-6 md:grid-cols-4">
+            {HOW_IT_WORKS.map((step, index) => (
+              <li key={step.title} className="flex flex-col items-start gap-3">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-sky-500/10 text-base text-sky-600">
+                  {step.icon}
+                </span>
+                <div>
+                  <h4 className="text-base font-semibold text-slate-900">{step.title}</h4>
+                  <p className="mt-1 text-sm text-slate-600">{step.description}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
       </div>
     </section>
