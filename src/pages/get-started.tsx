@@ -11,9 +11,9 @@ export default function GetStartedPage() {
             <span className="inline-flex items-center gap-2 rounded-full bg-sky-100 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-sky-600">
               Get Started
             </span>
-            <h1 className="mt-4 text-3xl font-semibold sm:text-4xl">Choose the path that delivers peace of mind</h1>
+            <h1 className="mt-4 text-3xl font-semibold sm:text-4xl">Apply to the Fairvia pilot or join the renter waitlist</h1>
             <p className="mt-3 text-sm text-slate-600 sm:text-base">
-              California landlords can claim a compliance walkthrough before pilot seats fill up. Renters can secure a neutral escrow slot that guarantees transparent updates.
+              Independent California landlords get a guided compliance review and Listing Assist setup. Renters can raise their hand to receive neutral escrow updates when their landlord enrolls.
             </p>
           </div>
           <div className="flex justify-center md:justify-end">

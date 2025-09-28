@@ -4,7 +4,6 @@ export { default as TrustSignals } from "./sections/TrustSignals";
 export { default as CoreBenefits } from "./sections/CoreBenefits";
 export { default as ProblemPain } from "./sections/ProblemPain";
 export { default as ValueAndForm } from "./sections/ValueAndForm";
-export { default as LegalCompliance } from "./sections/LegalCompliance";
 export { default as CompetitiveEdge } from "./sections/CompetitiveEdge";
 export { default as ProfessionalBenefits } from "./sections/ProfessionalBenefits";
 export { default as SocialProof } from "./sections/SocialProof";

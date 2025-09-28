@@ -1,9 +1,8 @@
 import Image from "next/image";
 import { PageContainer } from "@/components/layout/PageContainer";
-import CompetitiveEdge from "@/components/sections/CompetitiveEdge";
-import ProfessionalBenefits from "@/components/sections/ProfessionalBenefits";
-import CommunicationTimeline from "@/components/sections/CommunicationTimeline";
-import LegalCompliance from "@/components/sections/LegalCompliance";
+import PilotModules from "@/components/sections/PilotModules";
+import PilotFeatureMatrix from "@/components/sections/PilotFeatureMatrix";
+import HomeCTA from "@/components/sections/HomeCTA";
 
 export default function FeaturesPage() {
   return (
@@ -30,10 +29,9 @@ export default function FeaturesPage() {
           </div>
         </div>
       </section>
-      <CompetitiveEdge />
-      <ProfessionalBenefits />
-      <CommunicationTimeline />
-      <LegalCompliance />
+      <PilotModules />
+      <PilotFeatureMatrix />
+      <HomeCTA />
     </PageContainer>
   );
 }

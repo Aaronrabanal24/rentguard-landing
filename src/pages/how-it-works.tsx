@@ -1,10 +1,12 @@
 import { PageContainer } from "@/components/layout/PageContainer";
-import ValueAndForm from "@/components/sections/ValueAndForm";
+import PilotWorkflows from "@/components/sections/PilotWorkflows";
+import HomeCTA from "@/components/sections/HomeCTA";
 
 export default function HowItWorksPage() {
   return (
     <PageContainer title="Fairvia — How the Workflow Operates">
-      <ValueAndForm />
+      <PilotWorkflows />
+      <HomeCTA />
     </PageContainer>
   );
 }

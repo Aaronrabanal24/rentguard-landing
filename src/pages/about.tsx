@@ -1,19 +1,20 @@
 import Image from "next/image";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { motion } from "@/lib/motion";
+import { pilotFocus, pilotGuardrails, pilotPersonas } from "@/data/pilot-scope";
 
 const HIGHLIGHTS = [
   {
-    title: "Why we built Fairvia",
-    detail: "Independent landlords deserve escrow workflows that match California's evolving requirements without adding headcount.",
+    title: "Pilot focus",
+    detail: pilotFocus.focus,
   },
   {
-    title: "Compliance-first approach",
-    detail: "We partner with DFPI-licensed escrow firms and review every feature against state regulations before launch.",
+    title: "Who we build for first",
+    detail: `${pilotPersonas[0]?.name ?? "Owner-operators"} need professional compliance without adding headcount.`,
   },
   {
-    title: "Pilot program",
-    detail: "Fairvia is onboarding California portfolios while we expand templates, integrations, and tenant tooling.",
+    title: "What stays out for now",
+    detail: pilotGuardrails[3] ?? "Pilot scope stays tight so we deliver a finished deposit workflow.",
   },
 ];
 
@@ -27,9 +28,9 @@ export default function AboutPage() {
               <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-slate-600">
                 About
               </span>
-              <h1 className="mt-4 text-3xl font-semibold sm:text-4xl">Meet the team simplifying California deposits</h1>
+              <h1 className="mt-4 text-3xl font-semibold sm:text-4xl">Meet the team behind Fairvia&apos;s California pilot</h1>
               <p className="mt-3 text-sm text-slate-600 sm:text-base">
-                Fairvia helps small portfolios deliver enterprise-grade compliance, documentation, and renter transparency.
+                We&apos;re narrowing scope to deposits so independent landlords get escrow, compliance, and renter visibility without adding staff or extra software.
               </p>
             </div>
             <div className="flex justify-center md:justify-end">

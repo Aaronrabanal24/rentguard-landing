@@ -12,23 +12,23 @@ export const FEATURES = {
 
 export const FAQ_DATA = [
   {
-    question: "Will this work for my duplex or small portfolio?",
+    question: "Who can join the pilot?",
     answer:
-      "Yes. Fairvia was built with 6-door and 30-door landlords during our pilot, so the workflows match the realities of small teams. Most owners tell us they save 6–8 hours every move-out and finally feel confident competing with full-service management companies.",
+      "We&apos;re onboarding independent California landlords with one to twenty units. Your listings stay on Zillow, Craigslist, or Facebook—we supply the Listing Assist badge and property profile instead of a marketplace.",
   },
   {
-    question: "How do I explain it to tenants?",
+    question: "Does Fairvia replace my leasing workflow?",
     answer:
-      "We give you email and text templates that explain neutral escrow in plain language. Once renters learn their deposit sits with a licensed third party and they can see status updates, resistance disappears—92% of pilot tenants rated the process \"more fair\" than their last move-out.",
+      "Fairvia connects you to a DFPI-licensed escrow partner, provides the California lease pack, and tracks status for both sides. You still control your lease terms—we just make sure identity checks, signatures, and neutral custody happen on time.",
   },
   {
-    question: "Does it work with traditional deposits?",
+    question: "What proof do renters and advisors get?",
     answer:
-      "Absolutely. Fairvia supports standard security deposits, surety alternatives, and even hybrid arrangements. Funds stay in DFPI-regulated escrow and every transaction is logged so you can prove compliance if a tenant or owner ever questions it.",
+      "Every case has a shared timeline with guided messages, receipts, and photos. Renters can acknowledge updates with one click, and advisors can export the archive if they need to review deductions or timelines.",
   },
   {
-    question: "How quickly can I start?",
+    question: "How fast can I get onboarded?",
     answer:
-      "Most landlords import their units and invite tenants in under 30 minutes. We'll walk you through your first move-out, and by the second one the automation handles timers, photo logs, and statements without you lifting a finger.",
+      "Most landlords complete identity verification, property setup, and the first tenant invite in under 30 minutes. We walk you through the first move-in and move-out so the compliance workflow, timers, and documentation are dialed before you go live.",
   },
 ] as const;

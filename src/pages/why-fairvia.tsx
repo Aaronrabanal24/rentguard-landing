@@ -1,8 +1,10 @@
 import Image from "next/image";
 import { PageContainer } from "@/components/layout/PageContainer";
-import MarketOpportunity from "@/components/sections/MarketOpportunity";
-import ProblemPain from "@/components/sections/ProblemPain";
-import SocialProof from "@/components/sections/SocialProof";
+import PilotOverview from "@/components/sections/PilotOverview";
+import PilotGuardrailsSection from "@/components/sections/PilotGuardrails";
+import PilotPersonasSection from "@/components/sections/PilotPersonas";
+import PilotValuePromisesSection from "@/components/sections/PilotValuePromises";
+import HomeCTA from "@/components/sections/HomeCTA";
 
 export default function WhyFairviaPage() {
   return (
@@ -29,9 +31,11 @@ export default function WhyFairviaPage() {
           </div>
         </div>
       </section>
-      <MarketOpportunity />
-      <ProblemPain />
-      <SocialProof />
+      <PilotOverview />
+      <PilotGuardrailsSection />
+      <PilotPersonasSection />
+      <PilotValuePromisesSection />
+      <HomeCTA />
     </PageContainer>
   );
 }

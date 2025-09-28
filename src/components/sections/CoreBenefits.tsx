@@ -3,24 +3,24 @@ import { motion } from "@/lib/motion";
 
 const BENEFITS = [
   {
-    title: "Landlord workspace",
-    description: "Track properties, tenants, and escrow status in one Fairvia pilot dashboard built for 1-20 unit owners.",
+    title: "Deposit command center",
+    description: "See escrow status, deadlines, and tenant invites in one workspace built for independent California landlords.",
     href: "/features",
   },
   {
-    title: "Move-in and move-out guides",
-    description: "Photo checklists, deduction helpers, and 21-day timers shape each case from walkthrough to release.",
-    href: "/features",
+    title: "Case-ready evidence",
+    description: "Photo checklists, deduction helpers, and release notes stay attached to each deposit so audits feel effortless.",
+    href: "/how-it-works",
   },
   {
-    title: "Listing Assist badge",
-    description: "Overlay a Fairvia trust badge on Zillow, Craigslist, or Facebook listings with QR codes and short links.",
+    title: "Listing Assist trust signal",
+    description: "Add Fairvia&apos;s badge to existing listings and link renters to a live compliance profile without moving marketplaces.",
     href: "/trust",
   },
   {
-    title: "Compliance-ready communication",
-    description: "Guided message templates, receipts, and FAQs keep renters informed without extra back-and-forth.",
-    href: "/how-it-works",
+    title: "Shared updates without inbox ping-pong",
+    description: "Guided messages, receipts, and renter confirmations live in one timeline that both sides can reference.",
+    href: "/features",
   },
 ];
 
@@ -36,10 +36,10 @@ export default function CoreBenefits() {
     >
       <div className="mx-auto max-w-5xl px-4">
         <div className="max-w-xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Landlord benefits</p>
-          <h2 className="mt-2 text-3xl font-semibold text-slate-900">Show the pilot scope without adding clutter</h2>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Pilot outcomes</p>
+          <h2 className="mt-2 text-3xl font-semibold text-slate-900">Why small California portfolios start with Fairvia</h2>
           <p className="mt-3 text-sm text-slate-600">
-            Independent landlords understand what the Fairvia pilot covers and where it fits alongside their existing listings.
+            Each benefit maps back to the five pilot layers: compliance workflow, escrow backbone, checklists, Listing Assist, and shared communication.
           </p>
         </div>
         <div className="mt-8 grid gap-4 md:grid-cols-2">

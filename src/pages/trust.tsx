@@ -1,20 +1,22 @@
 import Image from "next/image";
 import { PageContainer } from "@/components/layout/PageContainer";
 import TrustSignals from "@/components/sections/TrustSignals";
+import ListingAssistSection from "@/components/sections/ListingAssistSection";
+import PilotComplianceFocusSection from "@/components/sections/PilotComplianceFocus";
 import { motion } from "@/lib/motion";
 
 const SECURITY_POINTS = [
   {
-    title: "Licensed escrow, zero liability",
-    detail: "Deposits live in DFPI-supervised accounts so you never touch tenant money or risk personal funds.",
+    title: "Neutral escrow partner",
+    detail: "Funds route straight to DFPI-licensed escrow so personal accounts never enter the conversation.",
   },
   {
-    title: "Court-ready evidence",
-    detail: "Every inspection, note, and message is timestamped and exportable for attorneys, owners, or judges.",
+    title: "Shared, immutable timeline",
+    detail: "Photos, receipts, and approvals live with the deposit record for three years and export in seconds.",
   },
   {
-    title: "Enterprise-grade safeguards",
-    detail: "Encryption, role-based access, and monitoring give you the same protection larger PM firms rely on.",
+    title: "Listing proof you can share",
+    detail: "The Listing Assist badge links to live compliance status, giving renters and advisors confidence before they apply.",
   },
 ];
 
@@ -27,10 +29,10 @@ export default function TrustPage() {
             <span className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-white">
               Trust & Security
             </span>
-            <h1 className="mt-4 text-3xl font-semibold sm:text-4xl">The compliance partner that keeps tenants and courts on your side</h1>
+            <h1 className="mt-4 text-3xl font-semibold sm:text-4xl">Escrow, leases, and badges that prove the deposit is handled right</h1>
             <p className="mt-3 text-sm text-slate-600 sm:text-base">
-              Fairvia shields funds in licensed escrow, captures every proof point, and gives you the documentation to calm disputes before they escalate.
-            </p>
+              Fairvia pilots with DFPI partners, verified leases, and public proof so landlords, renters, and advisors can point to neutral controls before questions even start.
+          </p>
           </div>
           <div className="flex justify-center md:justify-end">
             <Image
@@ -44,6 +46,8 @@ export default function TrustPage() {
         </div>
       </section>
       <TrustSignals />
+      <ListingAssistSection />
+      <PilotComplianceFocusSection />
       <motion.section
         className="bg-slate-900 py-16 text-slate-100"
         initial={{ opacity: 0, y: 24 }}
