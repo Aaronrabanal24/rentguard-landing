@@ -445,6 +445,27 @@
       line-height: 1.7;
     }
 
+    /* Benefits */
+    .benefits { background:#fff; padding:80px 0; position: relative; }
+    .benefit-grid {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:1.5rem; margin-top:2rem;
+    }
+    .benefit-card {
+      background:var(--card); padding:2rem; border-radius:16px;
+      box-shadow:var(--shadow-md); border:1px solid rgba(0,0,0,0.04);
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+    .benefit-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); }
+    .benefit-card h3 { color:var(--text); margin-bottom:1rem; font-size:1.2rem; }
+    .tick-list { list-style:none; }
+    .tick-list li {
+      margin:.6rem 0; padding-left:1.5rem; position:relative; color:var(--muted);
+    }
+    .tick-list li::before {
+      content:"✓"; color:var(--ok); font-weight:800; position:absolute; left:0;
+    }
+
     /* Timeline connector for steps */
     .steps-container {
       position: relative;
@@ -840,6 +861,14 @@
         background: #2d3748;
         color: #e2e8f0;
       }
+      .benefits {
+        background: #1a202c;
+      }
+      .benefit-card {
+        background: #2d3748;
+        color: #e2e8f0;
+        border-color: rgba(255,255,255,0.06);
+      }
       .how-it-works {
         background: #1a202c;
       }
@@ -851,6 +880,9 @@
       }
       .faq {
         background: #1a202c;
+      }
+      .tick-list li {
+        color: #a0aec0;
       }
       .faq details {
         background: #2d3748;
@@ -878,6 +910,7 @@
           <li role="none"><a role="menuitem" href="#problem">Problem</a></li>
           <li role="none"><a role="menuitem" href="#solution">Solution</a></li>
           <li role="none"><a role="menuitem" href="#how-it-works">How It Works</a></li>
+          <li role="none"><a role="menuitem" href="#benefits">Benefits</a></li>
           <li role="none"><a role="menuitem" href="#faq">FAQ</a></li>
           <li role="none"><a role="menuitem" href="#signup">Join Waitlist</a></li>
         </ul>
@@ -1046,6 +1079,47 @@
               <p>Automated rent payments, maintenance request tracking, and fair dispute resolution throughout the entire lease term.</p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits" id="benefits" aria-labelledby="benefits-title">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="benefits-title">Why RentGuard</h2>
+          <p>Clear goals and practical benefits for both renters and landlords</p>
+        </div>
+
+        <div class="benefit-grid" role="list">
+          <article class="benefit-card" role="listitem" aria-labelledby="goals-heading">
+            <h3 id="goals-heading">Goals</h3>
+            <ul class="tick-list">
+              <li>Protect deposits in a neutral escrow account</li>
+              <li>Verify every lease with ID and fraud checks</li>
+              <li>Simplify compliance with ready-to-use legal templates</li>
+              <li>Prevent disputes with digital records and audit trail</li>
+            </ul>
+          </article>
+
+          <article class="benefit-card" role="listitem" aria-labelledby="renters-heading">
+            <h3 id="renters-heading">Benefits for Renters</h3>
+            <ul class="tick-list">
+              <li>Deposits are secure and refundable</li>
+              <li>Landlords are verified and trustworthy</li>
+              <li>Move-in is faster and hassle-free</li>
+              <li>Lease terms are clear and compliant</li>
+            </ul>
+          </article>
+
+          <article class="benefit-card" role="listitem" aria-labelledby="landlords-heading">
+            <h3 id="landlords-heading">Benefits for Landlords</h3>
+            <ul class="tick-list">
+              <li>Trusted signal that attracts quality tenants</li>
+              <li>Standardized leases reduce legal risk</li>
+              <li>Less paperwork, more peace of mind</li>
+              <li>Dispute shield to protect your reputation</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
@@ -1244,6 +1318,7 @@
           <a href="#problem">Problem</a>
           <a href="#solution">Solution</a>
           <a href="#how-it-works">How It Works</a>
+          <a href="#benefits">Benefits</a>
           <a href="#faq">FAQ</a>
           <a href="#signup">Join Waitlist</a>
         `;
