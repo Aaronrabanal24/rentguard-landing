@@ -1,19 +1,13 @@
-import { landlordContent } from "@/data/landlord-content";
+const MANAGER_PAIN = [
+  "Running fewer than 50 doors means you still handle deposits yourself—and one missed 21-day deadline can trigger double-damages claims.",
+  "Deposit caps from AB 12 and deduction limits demand constant vigilance or you risk bad-faith penalties.",
+  "Scattered emails and photos make it hard to compile a defensible audit trail when challenged."
+];
 
-const managerPain = landlordContent.problems.opportunities;
-const renterPain = [
-  {
-    challenge: "Understanding deposit status",
-    solution: "Neutral deposit holding lets renters see when funds are released.",
-  },
-  {
-    challenge: "Receiving clear deduction evidence",
-    solution: "Photo-driven documentation means deductions come with proof upfront.",
-  },
-  {
-    challenge: "Knowing how to raise concerns",
-    solution: "RentGuard keeps a shared record so tenants can flag questions without friction.",
-  },
+const RENTER_PAIN = [
+  "You rarely know where the deposit sits or when it will be returned.",
+  "Itemized deductions arrive late or lack photo evidence, even though AB 2801 requires documentation.",
+  "Escalating disputes is confusing without a neutral record of inspections and messages."
 ];
 
 export default function ProblemPain() {
@@ -28,20 +22,16 @@ export default function ProblemPain() {
           <div className="rounded-3xl border border-slate-700 bg-slate-800 p-8 shadow-sm">
             <h3 className="text-2xl font-semibold text-white">Property managers & owners</h3>
             <ul className="mt-4 space-y-3 text-sm text-slate-300">
-              {managerPain.map((item) => (
-                <li key={item.challenge}>
-                  <span className="font-semibold text-white">{item.challenge}:</span> {item.solution}
-                </li>
+              {MANAGER_PAIN.map((pain) => (
+                <li key={pain}>• {pain}</li>
               ))}
             </ul>
           </div>
           <div className="rounded-3xl border border-slate-700 bg-slate-800 p-8 shadow-sm">
             <h3 className="text-2xl font-semibold text-white">Renters & tenants</h3>
             <ul className="mt-4 space-y-3 text-sm text-slate-300">
-              {renterPain.map((item) => (
-                <li key={item.challenge}>
-                  <span className="font-semibold text-white">{item.challenge}:</span> {item.solution}
-                </li>
+              {RENTER_PAIN.map((pain) => (
+                <li key={pain}>• {pain}</li>
               ))}
             </ul>
           </div>
