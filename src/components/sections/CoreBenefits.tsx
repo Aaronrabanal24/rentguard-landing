@@ -3,23 +3,23 @@ import { motion } from "@/lib/motion";
 
 const BENEFITS = [
   {
-    title: "21-day deadline automation",
-    description: "Automated timers, tasking, and email kits keep every refund and notice on schedule.",
+    title: "Landlord workspace",
+    description: "Track properties, tenants, and escrow status in one Fairvia pilot dashboard built for 1-20 unit owners.",
     href: "/features",
   },
   {
-    title: "AB 2801 photo compliance",
-    description: "Guided checklists capture timestamped photos and receipts ready to share with tenants.",
+    title: "Move-in and move-out guides",
+    description: "Photo checklists, deduction helpers, and 21-day timers shape each case from walkthrough to release.",
     href: "/features",
   },
   {
-    title: "Neutral escrow process",
-    description: "Licensed partners hold deposits in third-party escrow so disputes never point back to you.",
+    title: "Listing Assist badge",
+    description: "Overlay a Fairvia trust badge on Zillow, Craigslist, or Facebook listings with QR codes and short links.",
     href: "/trust",
   },
   {
-    title: "Tenant communication templates",
-    description: "Send pre-built updates, deductions, and reminders that meet Civil Code requirements.",
+    title: "Compliance-ready communication",
+    description: "Guided message templates, receipts, and FAQs keep renters informed without extra back-and-forth.",
     href: "/how-it-works",
   },
 ];
@@ -37,9 +37,9 @@ export default function CoreBenefits() {
       <div className="mx-auto max-w-5xl px-4">
         <div className="max-w-xl">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Landlord benefits</p>
-          <h2 className="mt-2 text-3xl font-semibold text-slate-900">Guide landlords to the details they need</h2>
+          <h2 className="mt-2 text-3xl font-semibold text-slate-900">Show the pilot scope without adding clutter</h2>
           <p className="mt-3 text-sm text-slate-600">
-            Busy owners get the highlights here, then jump straight into the Fairvia workflows built for California landlords.
+            Independent landlords understand what the Fairvia pilot covers and where it fits alongside their existing listings.
           </p>
         </div>
         <div className="mt-8 grid gap-4 md:grid-cols-2">

@@ -8,14 +8,14 @@ export function HeroContent() {
   const router = useRouter();
 
   const handlePrimaryClick = () => {
-    track("click_cta", { role: "landlord", location: "hero", label: "request_demo" });
+    track("click_cta", { role: "landlord", location: "hero", label: "apply_pilot" });
     router.push("/get-started").catch(() => {
       /* noop */
     });
   };
 
   const handleSecondaryClick = () => {
-    track("click_cta", { role: "landlord", location: "hero", label: "learn_how" });
+    track("click_cta", { role: "landlord", location: "hero", label: "view_listing_assist" });
     router.push("/how-it-works").catch(() => {
       /* noop */
     });
@@ -63,10 +63,10 @@ export function HeroContent() {
       <div className="space-y-6">
         <div className="flex flex-col items-start gap-4 sm:flex-row">
           <Button onClick={handlePrimaryClick} size="lg">
-            Request a landlord demo
+            Apply for the Fairvia pilot
           </Button>
           <Button onClick={handleSecondaryClick} variant="secondary" size="lg" className="border-2 border-slate-300">
-            View the landlord workflow
+            Preview the Listing Assist badge
           </Button>
         </div>
 
@@ -84,9 +84,9 @@ export function HeroContent() {
 }
 
 const trustIndicators: Array<{ label: string; color: string }> = [
-  { label: "0 missed 21-day deadlines", color: "bg-green-500" },
-  { label: "DFPI-licensed escrow partners", color: "bg-blue-500" },
-  { label: "AB 2801 photo-ready", color: "bg-purple-500" },
+  { label: "Escrow-only deposit custody", color: "bg-green-500" },
+  { label: "21-day clock auto-tracked", color: "bg-blue-500" },
+  { label: "Listing Assist badge for any listing", color: "bg-purple-500" },
 ];
 
 function splitHeadline(headline: string): [string, string] {

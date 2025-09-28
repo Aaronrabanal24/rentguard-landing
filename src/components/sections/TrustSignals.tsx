@@ -2,16 +2,16 @@ import { motion } from "@/lib/motion";
 
 const TRUST_POINTS = [
   {
-    title: "Licensed escrow for landlords",
-    description: "Deposits stay with DFPI-licensed escrow agents and FDIC banks—Fairvia never touches landlord funds.",
+    title: "Neutral deposit custody",
+    description: "DFPI-licensed escrow partners hold the funds until the landlord signs the Fairvia release flow.",
   },
   {
-    title: "0 missed deadlines",
-    description: "Pilot landlords hit every 21-day refund clock with Fairvia running timers and reminders.",
+    title: "Compliance overlay for California",
+    description: "AB 12 caps, AB 2801 photo proof, and §1950.5 notices stay in one timeline with audit logs.",
   },
   {
-    title: "Audit-ready documentation",
-    description: "Civil Code §1950.5, AB 12, and AB 2801 checklists prove deductions and deposit handling on demand.",
+    title: "Listing Assist badge",
+    description: "Each property gets a tokenized badge, QR code, and SEO profile that prove controls to renters.",
   },
 ];
 
@@ -34,9 +34,9 @@ export default function TrustSignals() {
           transition={{ duration: 0.4, ease: "easeOut" }}
         >
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-600">Trust signals</p>
-          <h2 className="mt-2 text-3xl font-semibold text-slate-900">Compliance proof landlords can point to</h2>
+          <h2 className="mt-2 text-3xl font-semibold text-slate-900">Proof points every pilot landlord can share</h2>
           <p className="mt-3 max-w-2xl text-sm text-slate-600">
-            California landlords ask for proof first. These signals show Fairvia keeps deposits neutral, on time, and audit-ready for owners.
+            California landlords ask for proof first. Fairvia packages escrow custody, compliance, and Listing Assist evidence for you and your renters.
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
             {TRUST_POINTS.map((point, index) => (

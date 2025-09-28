@@ -2,16 +2,16 @@ import { motion } from "@/lib/motion";
 
 const SIGNALS = [
   {
-    title: "0 missed 21-day deadlines",
-    body: "Pilot landlords hit every refund window last quarter with Fairvia running the timers.",
+    title: "Designed for independent owners",
+    body: "Pilot landlords manage 1-20 units and keep their listings on Zillow, Craigslist, and Facebook.",
   },
   {
-    title: "6.3 hours saved per move-out",
-    body: "Owners report AB 2801 photo logs and statements now take minutes instead of half a day.",
+    title: "Pilot target: under 4 hours per move",
+    body: "Guided workflows trim the paperwork, photos, and notices that normally stretch across a week.",
   },
   {
-    title: "92% tenant satisfaction",
-    body: "Renters cite neutral escrow updates as the reason they trust Fairvia-managed properties.",
+    title: "Listing Assist wins trust",
+    body: "Renters scan the badge, confirm escrow and compliance, then click through to your original listing.",
   },
 ];
 
@@ -33,8 +33,8 @@ export default function SocialProof() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
         >
-          <h2 className="text-3xl font-semibold text-slate-900">Proof that Fairvia keeps landlords ahead</h2>
-          <p className="mt-2 text-sm text-slate-600">We track outcomes, not vanity metrics&mdash;here&apos;s what current operators experience.</p>
+          <h2 className="text-3xl font-semibold text-slate-900">What landlords and renters get during the pilot</h2>
+          <p className="mt-2 text-sm text-slate-600">Fairvia keeps the pilot scoped to California deposits so we can deliver fast wins and measurable trust signals.</p>
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
             {SIGNALS.map((signal, index) => (
               <motion.div
@@ -50,7 +50,7 @@ export default function SocialProof() {
               </motion.div>
             ))}
           </div>
-          <p className="mt-6 text-xs text-slate-500">Join the pilot to share results and feature in our first landlord case study.</p>
+          <p className="mt-6 text-xs text-slate-500">Join the pilot early to shape templates, badge language, and the compliance checklist library.</p>
         </motion.div>
       </div>
     </motion.section>

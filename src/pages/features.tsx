@@ -2,6 +2,7 @@ import Image from "next/image";
 import { PageContainer } from "@/components/layout/PageContainer";
 import CompetitiveEdge from "@/components/sections/CompetitiveEdge";
 import ProfessionalBenefits from "@/components/sections/ProfessionalBenefits";
+import CommunicationTimeline from "@/components/sections/CommunicationTimeline";
 import LegalCompliance from "@/components/sections/LegalCompliance";
 
 export default function FeaturesPage() {
@@ -31,6 +32,7 @@ export default function FeaturesPage() {
       </section>
       <CompetitiveEdge />
       <ProfessionalBenefits />
+      <CommunicationTimeline />
       <LegalCompliance />
     </PageContainer>
   );

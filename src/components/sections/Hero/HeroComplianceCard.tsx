@@ -1,8 +1,8 @@
 export function HeroComplianceCard() {
   const statusItems = [
-    { label: "Identity verified", amount: "Tenant shared documents" },
-    { label: "Funds in escrow", amount: "Held by licensed partner" },
-    { label: "Lease prepared", amount: "Waiting for e-signature" },
+    { label: "Identity & lease verified", amount: "Driver license + CA lease pack signed" },
+    { label: "Deposit in partner escrow", amount: "Release instructions controlled in Fairvia" },
+    { label: "Listing Assist badge live", amount: "Token linked to Zillow + Craigslist posts" },
   ] as const;
 
   return (
@@ -19,8 +19,8 @@ export function HeroComplianceCard() {
         </div>
         <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
           <div className="mb-4 flex items-center justify-between text-sm text-slate-600">
-            <span className="font-semibold">Deposit secured in escrow</span>
-            <span className="rounded-full bg-white px-3 py-1 text-xs text-sky-700">Pending move-in</span>
+            <span className="font-semibold">Fairvia pilot case • Maple Street 2B</span>
+            <span className="rounded-full bg-white px-3 py-1 text-xs text-sky-700">Move-in scheduled</span>
           </div>
           <div className="space-y-4">
             {statusItems.map((item) => (
@@ -35,16 +35,16 @@ export function HeroComplianceCard() {
           </div>
         </div>
         <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-5 text-sm text-slate-600">
-          <p className="mb-3 font-semibold text-slate-800">Fairvia keeps tabs on</p>
+          <p className="mb-3 font-semibold text-slate-800">Pilot controls running</p>
           <ul className="space-y-2">
             <li className="flex items-center gap-2">
-              <span className="text-sm">🔒</span> Deposits stay locked until you approve release
+              <span className="text-sm">⏱️</span> 21-day timer visible to both landlord and renter
             </li>
             <li className="flex items-center gap-2">
-              <span className="text-sm">🪪</span> Identity checks run quietly in the background
+              <span className="text-sm">📷</span> Move-in and move-out photo archive organized by room
             </li>
             <li className="flex items-center gap-2">
-              <span className="text-sm">📝</span> CA-compliant lease templates ready to send
+              <span className="text-sm">🔗</span> SEO profile + badge link ready for renter discovery
             </li>
           </ul>
         </div>

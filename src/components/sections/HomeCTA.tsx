@@ -7,7 +7,7 @@ export default function HomeCTA() {
   const router = useRouter();
 
   const handleClick = () => {
-    track("click_cta", { role: "landlord", location: "cta_section", label: "request_demo" });
+    track("click_cta", { role: "landlord", location: "cta_section", label: "apply_pilot" });
     router.push("/get-started").catch(() => {
       /* noop */
     });
@@ -23,14 +23,14 @@ export default function HomeCTA() {
       transition={{ duration: 0.45, ease: "easeOut" }}
     >
       <div className="mx-auto max-w-4xl rounded-3xl border border-slate-200 bg-gradient-to-br from-sky-50 via-white to-teal-50 px-8 py-12 text-center shadow-sm">
-        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Landlord demo</p>
-        <h2 className="mt-3 text-3xl font-semibold text-slate-900">Landlords, ready to see it in action?</h2>
+        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Pilot enrollment</p>
+        <h2 className="mt-3 text-3xl font-semibold text-slate-900">Ready to run deposits the Fairvia way?</h2>
         <p className="mt-3 text-sm text-slate-600">
-          We&apos;ll walk through one of your deposits, show the landlord automation, and hand over the compliance checklist you can use immediately.
+          Share a current or upcoming move-in. We&apos;ll map it through Fairvia, enable Listing Assist, and leave you with the compliance checklist.
         </p>
         <div className="mt-6 flex justify-center">
           <Button onClick={handleClick} size="lg">
-            Request a landlord demo
+            Apply for the Fairvia pilot
           </Button>
         </div>
       </div>
