@@ -26,7 +26,7 @@ export default function ConversionBlocks() {
           </span>
           <h3 className="mt-4 text-3xl font-semibold text-slate-900">See 21-day compliance run itself</h3>
           <p className="mt-3 text-sm text-slate-600">
-            We'll audit one of your recent move-outs, show where Fairvia saves time, and hand you the California Deposit Playbook so you stop gambling with penalties.
+            We&apos;ll audit one of your recent move-outs, show where Fairvia saves time, and hand you the California Deposit Playbook so you stop gambling with penalties.
           </p>
           <button
             onClick={() => {

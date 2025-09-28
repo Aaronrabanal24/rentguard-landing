@@ -55,7 +55,7 @@ export default function TrustPage() {
           <div className="mb-8 text-center">
             <h2 className="text-3xl font-semibold">Security talking points for owners, tenants, and attorneys</h2>
             <p className="mt-3 text-sm text-slate-300 sm:text-base">
-              Use these proof points when someone asks, "Why should I trust Fairvia with our deposits?"
+              Use these proof points when someone asks, &ldquo;Why should I trust Fairvia with our deposits?&rdquo;
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-3">

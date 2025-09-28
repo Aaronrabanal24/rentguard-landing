@@ -26,7 +26,7 @@ export default function HomeCTA() {
         <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Landlord demo</p>
         <h2 className="mt-3 text-3xl font-semibold text-slate-900">Landlords, ready to see it in action?</h2>
         <p className="mt-3 text-sm text-slate-600">
-          We'll walk through one of your deposits, show the landlord automation, and hand over the compliance checklist you can use immediately.
+          We&apos;ll walk through one of your deposits, show the landlord automation, and hand over the compliance checklist you can use immediately.
         </p>
         <div className="mt-6 flex justify-center">
           <Button onClick={handleClick} size="lg">

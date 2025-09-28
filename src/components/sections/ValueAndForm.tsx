@@ -77,7 +77,7 @@ export default function ValueAndForm() {
           <div>
             <h3 className="text-lg font-semibold text-white">Designed for peak chaos days</h3>
             <p className="mt-2">
-              Whether you're turning units back-to-back or meeting contractors, Fairvia keeps the compliance layer running quietly in the background.
+              Whether you&apos;re turning units back-to-back or meeting contractors, Fairvia keeps the compliance layer running quietly in the background.
             </p>
           </div>
           <ul className="space-y-3">

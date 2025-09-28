@@ -64,7 +64,7 @@ export default function PricingPage() {
           ))}
         </div>
         <p className="mx-auto mt-8 max-w-3xl px-4 text-xs text-slate-500">
-          Still on the fence? Compare the cost of one disputed deposit—lost rent, cleaning, and legal hours often exceed $3,000. Fairvia's automation keeps that money in your pocket while delivering a professional experience tenants talk about.
+          Still on the fence? Compare the cost of one disputed deposit&mdash;lost rent, cleaning, and legal hours often exceed $3,000. Fairvia&apos;s automation keeps that money in your pocket while delivering a professional experience tenants talk about.
         </p>
       </section>
     </PageContainer>
