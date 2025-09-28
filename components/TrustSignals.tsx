@@ -6,7 +6,7 @@ export default function TrustSignals() {
           <div className="space-y-3 max-w-xl">
             <h2 className="text-2xl font-semibold text-slate-900">Built to satisfy California security deposit law</h2>
             <p className="text-sm text-slate-600">
-              RentGuard aligns with California Civil Code §1950.5 and AB 2801, keeping deposits neutral, documented, and on schedule.
+              RentGuard is registered with California DFPI partners, works with FDIC-insured escrow banks, and aligns with Civil Code §1950.5 plus AB 12 and AB 2801.
             </p>
             <ul className="text-sm text-slate-600">
               <li>• Escrow accounts are held by licensed California partners. RentGuard never touches client funds.</li>
@@ -17,11 +17,11 @@ export default function TrustSignals() {
           <div className="space-y-3 text-sm text-slate-600">
             <div className="rounded-2xl border border-slate-300 bg-white px-4 py-3 text-center">
               <p className="font-semibold text-slate-900">Escrow partner badge</p>
-              <p>Deposits protected by licensed CA escrow agent</p>
+              <p>Deposits protected by licensed California escrow agents (FDIC partner banks)</p>
             </div>
             <div className="rounded-2xl border border-slate-300 bg-white px-4 py-3 text-center">
               <p className="font-semibold text-slate-900">Compliance attestation</p>
-              <p>Built around CA Civil Code §1950.5 & AB 2801</p>
+              <p>Built around Civil Code §1950.5, AB 12, and AB 2801 requirements</p>
             </div>
           </div>
         </div>

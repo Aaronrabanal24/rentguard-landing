@@ -1,12 +1,12 @@
 const MANAGER_PAIN = [
   "Running fewer than 50 doors means you still handle deposits yourself—and one missed 21-day deadline can trigger double-damages claims.",
-  "Manual deductions risk violating cleaning and damage caps, exposing you to bad faith penalties.",
+  "Deposit caps from AB 12 and deduction limits demand constant vigilance or you risk bad-faith penalties.",
   "Scattered emails and photos make it hard to compile a defensible audit trail when challenged."
 ];
 
 const RENTER_PAIN = [
   "You rarely know where the deposit sits or when it will be returned.",
-  "Itemized deductions arrive late or lack photo evidence, despite your rights under CA Civil Code §1950.5.",
+  "Itemized deductions arrive late or lack photo evidence, even though AB 2801 requires documentation.",
   "Escalating disputes is confusing without a neutral record of inspections and messages."
 ];
 

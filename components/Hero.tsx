@@ -1,28 +1,14 @@
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { track } from "../lib/track";
 
-const HEADLINE_VARIANTS: Record<"A" | "B" | "C", string> = {
-  A: "California landlords: secure every deposit with neutral escrow",
-  B: "Cut deposit disputes with licensed California escrow",
-  C: "Stay compliant on California deposits without spreadsheets",
-};
-
-const SUBHEADLINE_VARIANTS: Record<"A" | "B" | "C", string> = {
-  A: "Hold tenant funds in licensed escrow, automate CA-compliant leases, and ship audit-ready records from one dashboard.",
-  B: "RentGuard tracks the 21-day clock, prepares itemized deductions, and stores inspection photos for every unit.",
-  C: "A central hub for neutral escrow, CA-compliant paperwork, and dispute-ready documentation." ,
-};
+const HEADLINE = "Stay compliant with California's new deposit laws";
+const SUB_HEADLINE_MANAGER = "Avoid 3× penalties with automated escrow, photo documentation, and 21-day deadline tracking.";
+const SUB_HEADLINE_RENTER = "Renters see neutral escrow status, deduction evidence, and faster refunds with full transparency.";
 
 export default function Hero() {
-  const [variant, setVariant] = useState<"A" | "B" | "C">("A");
-
   useEffect(() => {
-    const variants = ["A", "B", "C"] as const;
-    const selectedVariant = variants[Math.floor(Math.random() * variants.length)];
-    setVariant(selectedVariant);
-    track("headline_variant_shown", { variant: selectedVariant });
-    track("view_hero", { variant: selectedVariant });
+    track("view_hero", { focus: "landlord" });
   }, []);
 
   return (
@@ -47,17 +33,20 @@ export default function Hero() {
             <span className="text-lg font-semibold tracking-tight text-slate-900">RentGuard</span>
           </div>
           <nav className="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
+            <a href="#market" className="transition-colors hover:text-slate-900">
+              Why now
+            </a>
             <a href="#trust" className="transition-colors hover:text-slate-900">
-              Trust
+              Compliance
             </a>
             <a href="#problems" className="transition-colors hover:text-slate-900">
               Pain points
             </a>
-            <a href="#how-it-works" className="transition-colors hover:text-slate-900">
-              Workflow
+            <a href="#platform" className="transition-colors hover:text-slate-900">
+              Platform
             </a>
-            <a href="#legal" className="transition-colors hover:text-slate-900">
-              Compliance
+            <a href="#value-stacks" className="transition-colors hover:text-slate-900">
+              Value stacks
             </a>
             <a href="#conversion" className="transition-colors hover:text-slate-900">
               Get started
@@ -83,9 +72,10 @@ export default function Hero() {
               Built for California landlords • Licensed escrow partners
             </span>
             <h1 className="mb-3 text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
-              {HEADLINE_VARIANTS[variant]}
+              {HEADLINE}
             </h1>
-            <p className="mb-6 max-w-xl text-base text-slate-600 sm:text-lg">{SUBHEADLINE_VARIANTS[variant]}</p>
+            <p className="mb-2 max-w-xl text-base text-slate-600 sm:text-lg">{SUB_HEADLINE_MANAGER}</p>
+            <p className="mb-6 max-w-xl text-sm text-slate-500">{SUB_HEADLINE_RENTER}</p>
 
             <div className="mb-6 grid gap-4 text-sm text-slate-600 sm:grid-cols-3">
               <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
@@ -122,6 +112,10 @@ export default function Hero() {
                 For renters → Join pilot
               </button>
             </div>
+
+            <p className="mt-6 text-xs text-slate-500">
+              RentGuard is a technology platform—not a bank or law firm. Escrow is provided by licensed California partners.
+            </p>
 
             <div className="mt-12 grid gap-6 text-left sm:grid-cols-3">
               <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">

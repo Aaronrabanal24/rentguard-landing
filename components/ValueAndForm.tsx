@@ -136,7 +136,7 @@ export default function ValueAndForm() {
   const content = PERSONA_CONTENT[activeTab];
 
   return (
-    <section className="bg-white py-20" id="how-it-works">
+    <section className="bg-white py-20" id="platform">
       <div className="mx-auto max-w-6xl px-4">
         <div className="text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">

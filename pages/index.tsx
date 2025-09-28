@@ -1,8 +1,10 @@
 import Hero from "../components/Hero";
+import MarketOpportunity from "../components/MarketOpportunity";
 import TrustSignals from "../components/TrustSignals";
 import ProblemPain from "../components/ProblemPain";
 import ValueAndForm from "../components/ValueAndForm";
 import LegalCompliance from "../components/LegalCompliance";
+import CompetitiveEdge from "../components/CompetitiveEdge";
 import SocialProof from "../components/SocialProof";
 import ConversionBlocks from "../components/ConversionBlocks";
 import FAQSchema from "../components/FAQSchema";
@@ -11,10 +13,12 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <Hero />
+      <MarketOpportunity />
       <TrustSignals />
       <ProblemPain />
       <ValueAndForm />
       <LegalCompliance />
+      <CompetitiveEdge />
       <SocialProof />
       <ConversionBlocks />
       <FAQSchema />
@@ -45,23 +49,23 @@ export default function Home() {
               <h4 className="text-sm font-semibold uppercase tracking-widest text-slate-300">Product</h4>
               <ul className="mt-4 space-y-3 text-sm text-slate-400">
                 <li>
-                  <a href="#how-it-works" className="transition hover:text-white">
-                    How it works
+                  <a href="#market" className="transition hover:text-white">
+                    Why now
                   </a>
                 </li>
                 <li>
-                  <a href="#signup" className="transition hover:text-white">
-                    Join waitlist
+                  <a href="#platform" className="transition hover:text-white">
+                    Platform
                   </a>
                 </li>
                 <li>
-                  <a href="#pricing" className="transition hover:text-white">
-                    Pricing
+                  <a href="#value-stacks" className="transition hover:text-white">
+                    Value stacks
                   </a>
                 </li>
                 <li>
-                  <a href="#faq" className="transition hover:text-white">
-                    FAQs
+                  <a href="#conversion" className="transition hover:text-white">
+                    Get started
                   </a>
                 </li>
               </ul>

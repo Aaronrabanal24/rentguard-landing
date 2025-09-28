@@ -1,15 +1,15 @@
 const SIGNALS = [
   {
-    title: "Pilot cohort",
-    body: "First 100 California leases enrolling now with concierge onboarding.",
+    title: "15 deposits secured today",
+    body: "Neutral escrow accounts opened through RentGuard in the last 24 hours.",
   },
   {
-    title: "Manager waitlist",
-    body: "Property managers representing 1,200+ units have requested demos to streamline deposit compliance.",
+    title: "38 landlords on the pilot list",
+    body: "Independent owners and boutique PMs representing 1,200+ units awaiting onboarding.",
   },
   {
-    title: "Tenant interest",
-    body: "Renter waitlist sign-ups cite faster refunds and transparent deductions as top reasons to join.",
+    title: "Renter demand",
+    body: "Waitlist tenants rank neutral escrow and transparent deductions as top reasons to join.",
   },
 ];
 
@@ -20,7 +20,7 @@ export default function SocialProof() {
         <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
           <h2 className="text-3xl font-semibold text-slate-900">Pilot demand at a glance</h2>
           <p className="mt-2 text-sm text-slate-600">
-            We are actively onboarding California property managers and renters. Metrics below are updated weekly so you can see momentum without the hype.
+            Pilot metrics update weekly so landlords can gauge demand without marketing fluff.
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
             {SIGNALS.map((signal) => (
@@ -31,7 +31,7 @@ export default function SocialProof() {
             ))}
           </div>
           <p className="mt-6 text-xs text-slate-500">
-            Want to be featured in the first case study? Join the pilot and share your results as we collect verified testimonials.
+            Want to be featured in the first case study? Join the pilot and contribute verified results as the cohort completes move-outs.
           </p>
         </div>
       </div>

@@ -22,7 +22,8 @@ export default function ConversionBlocks() {
           >
             Download playbook (email required)
           </button>
-          <div id="manager-form" className="mt-6">
+          <div id="manager-form" className="mt-6 space-y-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Step 1 of 3</p>
             <WaitlistForm defaultRole="landlord" lockRole source="manager_demo" ctaLabel="Request demo" />
           </div>
         </div>
@@ -44,7 +45,8 @@ export default function ConversionBlocks() {
           >
             Get the checklist (email required)
           </button>
-          <div id="renter-form" className="mt-6">
+          <div id="renter-form" className="mt-6 space-y-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Step 1 of 3</p>
             <WaitlistForm defaultRole="renter" lockRole source="renter_enroll" ctaLabel="Join pilot" />
           </div>
         </div>
