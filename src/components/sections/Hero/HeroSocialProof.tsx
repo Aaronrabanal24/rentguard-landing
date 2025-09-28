@@ -8,7 +8,7 @@ export function HeroSocialProof() {
               <div key={item} className="h-9 w-9 rounded-full border border-white/80 bg-gradient-to-br from-sky-400 to-teal-500" />
             ))}
           </div>
-          <p className="font-medium">15 deposits secured today • Pilot cohort limited to the first 100 California rentals</p>
+          <p className="font-medium">Pilot landlords rely on neutral escrow, verified tenants, and saved dispute history.</p>
         </div>
         <div className="flex items-center gap-6 text-xs uppercase tracking-wide text-slate-400">
           <span>Real escrow</span>

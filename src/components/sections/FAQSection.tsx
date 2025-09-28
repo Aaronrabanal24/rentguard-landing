@@ -1,5 +1,7 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { useState } from "react";
+import { motion } from "@/lib/motion";
 import { FAQ_DATA } from "@/lib/constants";
 import { track } from "@/lib/tracking";
 
@@ -7,6 +9,7 @@ const faqItems = FAQ_DATA;
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const router = useRouter();
 
   const schemaData = {
     "@context": "https://schema.org",
@@ -28,7 +31,14 @@ export default function FAQSection() {
         />
       </Head>
 
-      <section className="relative overflow-hidden bg-slate-100 py-20" id="faq">
+      <motion.section
+        className="relative overflow-hidden bg-slate-100 py-20"
+        id="faq"
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.45, ease: "easeOut" }}
+      >
         <div className="absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full bg-orange-300/25 blur-3xl" aria-hidden="true" />
         <div className="mx-auto max-w-5xl px-4">
           <div className="mb-12 text-center">
@@ -40,12 +50,16 @@ export default function FAQSection() {
           </div>
           <div className="grid gap-6 md:grid-cols-2">
             {faqItems.map((faq, index) => (
-              <button
+              <motion.button
                 type="button"
                 key={faq.question}
                 className={`text-left rounded-2xl border bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg ${
                   openIndex === index ? "border-orange-300" : "border-slate-200"
                 }`}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.3, ease: "easeOut", delay: index * 0.04 }}
                 onClick={() => {
                   const next = openIndex === index ? null : index;
                   if (next !== null) {
@@ -62,7 +76,7 @@ export default function FAQSection() {
                   <span className="text-slate-400">{openIndex === index ? "-" : "+"}</span>
                 </div>
                 {openIndex === index && <p className="text-sm leading-relaxed text-slate-600">{faq.answer}</p>}
-              </button>
+              </motion.button>
             ))}
           </div>
           <div className="mt-12 text-center">
@@ -70,7 +84,11 @@ export default function FAQSection() {
               <h3 className="mb-2 text-lg font-semibold text-orange-900">Need a deeper walkthrough?</h3>
               <p className="mb-4 text-orange-700">Hop on a call and we’ll show how Novatra fits your portfolio.</p>
               <button
-                onClick={() => document.getElementById("signup")?.scrollIntoView({ behavior: "smooth" })}
+                onClick={() => {
+                  router.push("/signup").catch(() => {
+                    /* noop */
+                  });
+                }}
                 className="inline-flex items-center rounded-full bg-orange-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-700"
               >
                 Talk to the team
@@ -78,7 +96,7 @@ export default function FAQSection() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
     </>
   );
 }

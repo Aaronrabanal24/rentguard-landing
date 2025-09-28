@@ -1,17 +1,32 @@
+import { motion } from "@/lib/motion";
 import WaitlistForm from "@/components/forms/WaitlistForm";
 import { track } from "@/lib/tracking";
 
 export default function ConversionBlocks() {
   return (
-    <section className="bg-white py-16" id="conversion">
-      <div className="mx-auto max-w-6xl px-4 grid gap-10 lg:grid-cols-2">
-        <div id="manager-conversion" className="rounded-3xl border border-slate-200 bg-slate-50 p-8 shadow-sm">
+    <motion.section
+      className="bg-white py-16"
+      id="conversion"
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.45, ease: "easeOut" }}
+    >
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 lg:grid-cols-2">
+        <motion.div
+          id="manager-conversion"
+          className="rounded-3xl border border-slate-200 bg-slate-50 p-8 shadow-sm"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+        >
           <span className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-sky-700">
             Property managers
           </span>
           <h3 className="mt-4 text-3xl font-semibold text-slate-900">Request a demo</h3>
           <p className="mt-3 text-sm text-slate-600">
-            Download the California Deposit Playbook and see the dashboard in action. First 100 leases are free during the pilot.
+            Download the California Deposit Playbook and see the dashboard in action. Pilot access is currently limited to California portfolios.
           </p>
           <button
             onClick={() => {
@@ -26,9 +41,16 @@ export default function ConversionBlocks() {
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Step 1 of 3</p>
             <WaitlistForm defaultRole="landlord" lockRole source="manager_demo" ctaLabel="Request demo" />
           </div>
-        </div>
+        </motion.div>
 
-        <div id="renter-conversion" className="rounded-3xl border border-slate-200 bg-slate-50 p-8 shadow-sm">
+        <motion.div
+          id="renter-conversion"
+          className="rounded-3xl border border-slate-200 bg-slate-50 p-8 shadow-sm"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.4, ease: "easeOut", delay: 0.05 }}
+        >
           <span className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-orange-600">
             Renters & tenants
           </span>
@@ -49,8 +71,8 @@ export default function ConversionBlocks() {
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Step 1 of 3</p>
             <WaitlistForm defaultRole="renter" lockRole source="renter_enroll" ctaLabel="Join pilot" />
           </div>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

@@ -1,11 +1,28 @@
 import Image from "next/image";
-import { scrollToElement } from "@/lib/utils";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { track } from "@/lib/tracking";
 
 export default function Header() {
+  const router = useRouter();
+
+  const navLinks = [
+    { href: "/market", label: "Why now" },
+    { href: "/workflows", label: "Workflows" },
+    { href: "/benefits", label: "Benefits" },
+    { href: "/trust", label: "Trust" },
+    { href: "/legal", label: "Legal" },
+    { href: "/positioning", label: "Positioning" },
+    { href: "/how-it-works", label: "How it works" },
+    { href: "/conversion", label: "Get started" },
+    { href: "/faq", label: "FAQ" },
+  ];
+
   const handleCTA = () => {
     track("click_cta", { role: "general", location: "hero", label: "nav" });
-    scrollToElement("conversion");
+    router.push("/conversion").catch(() => {
+      /* noop */
+    });
   };
 
   return (
@@ -22,30 +39,11 @@ export default function Header() {
         <span className="text-lg font-semibold tracking-tight text-slate-900">Novatra</span>
       </div>
       <nav className="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
-        <a href="#market" className="transition-colors hover:text-slate-900">
-          Why now
-        </a>
-        <a href="#edge" className="transition-colors hover:text-slate-900">
-          Workflows
-        </a>
-        <a href="#benefits" className="transition-colors hover:text-slate-900">
-          Benefits
-        </a>
-        <a href="#trust" className="transition-colors hover:text-slate-900">
-          Compliance
-        </a>
-        <a href="#positioning" className="transition-colors hover:text-slate-900">
-          Positioning
-        </a>
-        <a href="#how-it-works" className="transition-colors hover:text-slate-900">
-          How it works
-        </a>
-        <a href="#conversion" className="transition-colors hover:text-slate-900">
-          Get started
-        </a>
-        <a href="#faq" className="transition-colors hover:text-slate-900">
-          FAQ
-        </a>
+        {navLinks.map((item) => (
+          <Link key={item.href} href={item.href} className="transition-colors hover:text-slate-900">
+            {item.label}
+          </Link>
+        ))}
         <button
           onClick={handleCTA}
           className="rounded-full bg-sky-500/10 px-5 py-2 text-sm font-semibold text-sky-700 transition hover:bg-sky-500/20"

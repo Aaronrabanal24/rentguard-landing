@@ -1,32 +1,12 @@
-import {
-  Hero,
-  MarketOpportunity,
-  ProfessionalBenefits,
-  TrustSignals,
-  ProblemPain,
-  ValueAndForm,
-  LegalCompliance,
-  CompetitiveEdge,
-  SocialProof,
-  ConversionBlocks,
-  FAQSection,
-  Footer,
-} from "@/components";
+import { Footer, Hero } from "@/components";
+import { motion } from "@/lib/motion";
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
-      <Hero />
-      <MarketOpportunity />
-      <CompetitiveEdge />
-      <ProfessionalBenefits />
-      <TrustSignals />
-      <ProblemPain />
-      <ValueAndForm />
-      <LegalCompliance />
-      <SocialProof />
-      <ConversionBlocks />
-      <FAQSection />
+    <div className="min-h-screen bg-slate-50 text-slate-900">
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4 }}>
+        <Hero />
+      </motion.div>
       <Footer />
     </div>
   );

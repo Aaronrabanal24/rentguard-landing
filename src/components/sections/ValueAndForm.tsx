@@ -1,3 +1,5 @@
+import { motion } from "@/lib/motion";
+
 const STEPS = [
   {
     title: "Onboard your properties",
@@ -25,7 +27,14 @@ const MOBILE_TIPS = [
 
 export default function ValueAndForm() {
   return (
-    <section className="bg-slate-900 py-16 text-slate-100" id="how-it-works">
+    <motion.section
+      className="bg-slate-900 py-16 text-slate-100"
+      id="how-it-works"
+      initial={{ opacity: 0, y: 32 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.45, ease: "easeOut" }}
+    >
       <div className="mx-auto max-w-6xl px-4">
         <div className="max-w-3xl">
           <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em]">
@@ -39,9 +48,13 @@ export default function ValueAndForm() {
 
         <ol className="mt-10 space-y-6">
           {STEPS.map((step, index) => (
-            <li
+            <motion.li
               key={step.title}
               className="flex flex-col gap-4 rounded-3xl border border-slate-800 bg-slate-800/60 p-6 shadow-sm sm:flex-row sm:items-start"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.35, ease: "easeOut", delay: index * 0.05 }}
             >
               <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/10 text-lg font-semibold text-white">
                 {index + 1}
@@ -50,11 +63,17 @@ export default function ValueAndForm() {
                 <h3 className="text-xl font-semibold text-white">{step.title}</h3>
                 <p className="mt-2 text-sm text-slate-300 sm:text-base">{step.description}</p>
               </div>
-            </li>
+            </motion.li>
           ))}
         </ol>
 
-        <div className="mt-10 grid gap-6 rounded-3xl border border-slate-800 bg-slate-800/60 p-6 text-sm text-slate-300 sm:grid-cols-2">
+        <motion.div
+          className="mt-10 grid gap-6 rounded-3xl border border-slate-800 bg-slate-800/60 p-6 text-sm text-slate-300 sm:grid-cols-2"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+        >
           <div>
             <h3 className="text-lg font-semibold text-white">Designed for busy days</h3>
             <p className="mt-2">
@@ -63,14 +82,21 @@ export default function ValueAndForm() {
           </div>
           <ul className="space-y-3">
             {MOBILE_TIPS.map((tip) => (
-              <li key={tip} className="flex items-start gap-2">
+              <motion.li
+                key={tip}
+                className="flex items-start gap-2"
+                initial={{ opacity: 0, x: 12 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+              >
                 <span className="mt-1 text-sky-300">•</span>
                 <span>{tip}</span>
-              </li>
+              </motion.li>
             ))}
           </ul>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

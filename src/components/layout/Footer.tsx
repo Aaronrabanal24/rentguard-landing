@@ -9,7 +9,7 @@ export default function Footer() {
           <div>
             <div className="mb-6 flex items-center gap-3">
               <span className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-indigo-400 via-indigo-500 to-blue-500 text-lg font-semibold text-white shadow-lg shadow-indigo-500/40">
-                RG
+                NV
               </span>
               <span className="text-xl font-semibold text-white">{COMPANY.name}</span>
             </div>
@@ -27,23 +27,23 @@ export default function Footer() {
             <h4 className="text-sm font-semibold uppercase tracking-widest text-slate-300">Product</h4>
             <ul className="mt-4 space-y-3 text-sm text-slate-400">
               <li>
-                <a href="#market" className="transition hover:text-white">
+                <a href="/market" className="transition hover:text-white">
                   Why now
                 </a>
               </li>
               <li>
-                <a href="#platform" className="transition hover:text-white">
-                  Platform
+                <a href="/workflows" className="transition hover:text-white">
+                  Workflows
                 </a>
               </li>
               <li>
-                <a href="#value-stacks" className="transition hover:text-white">
-                  Value stacks
+                <a href="/benefits" className="transition hover:text-white">
+                  Benefits
                 </a>
               </li>
               <li>
-                <a href="#conversion" className="transition hover:text-white">
-                  Get started
+                <a href="/conversion" className="transition hover:text-white">
+                  Pilot access
                 </a>
               </li>
             </ul>
@@ -105,7 +105,7 @@ export default function Footer() {
         <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-8 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p>&copy; {new Date().getFullYear()} {COMPANY.name}. All rights reserved.</p>
-            <p>Pilot availability: California only. First 100 rentals are free.</p>
+            <p>Pilot availability: California only while we onboard landlords.</p>
             <p>
               {COMPANY.name} is not a bank, law firm, or escrow agent. All escrow accounts are managed by licensed California partners.
               Lease templates are reviewed for California compliance but do not substitute for legal advice.

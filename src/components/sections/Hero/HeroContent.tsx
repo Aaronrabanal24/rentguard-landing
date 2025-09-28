@@ -1,18 +1,24 @@
 import { heroContent } from "@/data/content";
 import { Button } from "@/components/ui";
-import { scrollToElement } from "@/lib/utils";
 import { track } from "@/lib/tracking";
 import { HeroStats } from "./HeroStats";
+import { useRouter } from "next/router";
 
 export function HeroContent() {
+  const router = useRouter();
+
   const handleManagerClick = () => {
     track("click_cta", { role: "manager", location: "hero", label: "request_demo" });
-    scrollToElement("manager-conversion");
+    router.push("/conversion").catch(() => {
+      /* noop */
+    });
   };
 
   const handleRenterClick = () => {
     track("click_cta", { role: "renter", location: "hero", label: "join_pilot" });
-    scrollToElement("renter-conversion");
+    router.push("/signup").catch(() => {
+      /* noop */
+    });
   };
 
   return (
