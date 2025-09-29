@@ -17,12 +17,17 @@ interface ProductVisualDefinition {
   spotlightClassName: string;
 }
 
+interface ListEntry {
+  label: string;
+  detail: string;
+}
+
 interface ProductDefinition {
   slug: string;
   name: string;
   tagline: string;
-  features: ReadonlyArray<string>;
-  benefits: ReadonlyArray<string>;
+  features: ReadonlyArray<ListEntry>;
+  benefits: ReadonlyArray<ListEntry>;
   why: string;
   visual: ProductVisualDefinition;
   ctaHref?: string;
@@ -61,8 +66,8 @@ const FEATURE_HERO_LAYERS: FeatureLayer[] = [
       "bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 text-white shadow-[0_44px_92px_-46px_rgba(15,23,42,0.75)]",
     content: (
       <div className="space-y-2">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-white/65">Fairvie Trust+</p>
-        <p className="text-lg font-semibold">Live badge</p>
+        <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-white/65">Trust badge</p>
+        <p className="text-lg font-semibold">Live verification</p>
         <p className="text-xs text-white/70">Portable proof for every listing.</p>
       </div>
     ),
@@ -73,19 +78,19 @@ const FAIRVIA_PRODUCTS: ProductDefinition[] = [
   {
     slug: "discover",
     name: "Fairvia Discover",
-    tagline: "Search-ready property profiles for California landlords that attract better renters and prove compliance.",
+    tagline: "SEO-ready property profiles that put California rentals in front of quality renters before they reach out.",
     features: [
-      "SEO landing page with city and neighborhood tags",
-      "Trust badge that mirrors real escrow and ID verification",
-      "Google-friendly markup auto-generated for every publish",
-      "Shareable short link and QR code for listings or flyers",
+      { label: "SEO-ready profile", detail: "City and neighborhood tags publish automatically." },
+      { label: "Trust Badge banner", detail: "Mirrors escrow and ID verification in real time." },
+      { label: "Google-friendly markup", detail: "Schema and sharing tags generate with every publish." },
+      { label: "Share-anywhere link", detail: "Short link and QR fit marketplaces and flyers." },
     ],
     benefits: [
-      "Attract renters already searching in your area",
-      "Cut down the back-and-forth before the first message",
-      "Keep your marketplace listings but add a professional proof page",
+      { label: "Better renters", detail: "SEO profiles plus Trust Badge clicks bring qualified leads." },
+      { label: "Less back-and-forth", detail: "Renters get FAQs and proof before messaging you." },
+      { label: "Keep listings", detail: "Layer a professional proof page onto what you already use." },
     ],
-    why: "Independent landlords look established with verified escrow and simple FAQs—without extra marketing work.",
+    why: "Independent California landlords look established with verified escrow and simple FAQs—without extra marketing work.",
     visual: {
       headline: "Discover profile",
       caption: "Neighborhood tags, trust controls, and schema emitters in one clean card.",
@@ -121,18 +126,18 @@ const FAIRVIA_PRODUCTS: ProductDefinition[] = [
   {
     slug: "comply",
     name: "Fairvia Comply",
-    tagline: "Move-in compliance made simple: escrow, ID, and lease in one flow.",
+    tagline: "Escrow, ID checks, and AB 1482-compliant paperwork handled in one guided flow for clean move-ins.",
     badge: "AB 1482 ready",
     features: [
-      "Verify landlord and renter IDs to build trust",
-      "Licensed escrow with live status updates",
-      "Auto-generated lease packs built for California law",
-      "Photo and receipt uploads timestamped automatically",
+      { label: "ID verification", detail: "Verify landlord and renter identities instantly." },
+      { label: "Licensed escrow", detail: "Live status updates keep deposits neutral." },
+      { label: "AB 1482 lease pack", detail: "California clauses ready with guided signatures." },
+      { label: "Evidence logging", detail: "Photos and receipts timestamped automatically." },
     ],
     benefits: [
-      "Deposits secured in neutral escrow before move-in",
-      "No more missing fields or endless email chains",
-      "Renters see everything clearly, so fewer support questions",
+      { label: "Neutral escrow", detail: "Deposits secured before move-in day." },
+      { label: "No missing fields", detail: "Step-by-step flow replaces email chains." },
+      { label: "Fewer support pings", detail: "Renters see the same timeline you do." },
     ],
     why: "Stay compliant without the stress—ID, escrow, and AB 1482 paperwork all handled in one guided process.",
     ctaLabel: "Secure your next lease the compliant way",
@@ -169,22 +174,22 @@ const FAIRVIA_PRODUCTS: ProductDefinition[] = [
     },
   },
   {
-    slug: "trust-plus",
-    name: "Fairvie Trust+",
-    tagline: "Portable trust badge that proves escrow anywhere California landlords list rentals.",
+    slug: "trust-badge",
+    name: "Fairvia Trust Badge",
+    tagline: "A trust badge that extends verification across every marketplace and listing you already use.",
     features: [
-      "One-line Trust+ badge with live verification states",
-      "Source-aware short link comparing marketplace, email, and QR clicks",
-      "Badge artwork and QR pack sized for posts, replies, and flyers",
+      { label: "One-line badge", detail: "Live verification state embeds in any listing." },
+      { label: "Source tracking", detail: "Short link compares marketplace, email, and QR clicks." },
+      { label: "Ready-to-use art", detail: "Badge and QR kit sized for posts, replies, and flyers." },
     ],
     benefits: [
-      "Lift click quality inside crowded marketplace feeds",
-      "Show proof before a renter ever reaches out",
-      "Route prospects into Discover without rebuilding listings",
+      { label: "Higher quality clicks", detail: "Trust Badge lifts response rates in crowded feeds." },
+      { label: "Proof pre-contact", detail: "Renters see escrow and verification before messaging." },
+      { label: "Seamless handoff", detail: "Badge routes traffic straight to Discover profiles." },
     ],
-    why: "Trust+ turns escrow status into a portable signal so every channel carries the same calm proof.",
+    why: "The Trust Badge turns escrow verification into a portable signal so every channel carries the same calm proof.",
     visual: {
-      headline: "Trust+ overlay",
+      headline: "Trust Badge overlay",
       caption: "Live badge states and tracking for every channel in play.",
       spotlightClassName: "bg-indigo-500/20",
       layers: [
@@ -218,19 +223,19 @@ const FAIRVIA_PRODUCTS: ProductDefinition[] = [
   {
     slug: "offboard-21",
     name: "Offboard 21",
-    tagline: "Move-out control center that keeps California landlords on time and dispute-ready.",
+    tagline: "Guided move-out with itemized letters, receipts, and a tracked 21-day deposit timeline.",
     features: [
-      "21-day countdown dashboard with smart nudges",
-      "Deductions helper that checks math, categories, and proof",
-      "Letter generator with receipts, photos, and escrow release steps",
-      "Walkthrough capture with labeled photo prompts and notes",
+      { label: "21-day dashboard", detail: "Smart nudges keep California deadlines visible." },
+      { label: "Deduction helper", detail: "Checks math, categories, and required proof." },
+      { label: "Letter automation", detail: "Exports itemized letters with receipts and photos." },
+      { label: "Walkthrough capture", detail: "Labeled photo prompts log move-out evidence." },
     ],
     benefits: [
-      "Hit California deadlines without scramble",
-      "Avoid overclaim mistakes with built-in guardrails",
-      "Release funds confidently with a complete case file",
+      { label: "Fewer disputes", detail: "Neutral escrow and documented deductions calm conversations." },
+      { label: "Faster turnarounds", detail: "Finish move-outs in under 40 minutes." },
+      { label: "Court-ready records", detail: "Three-year archive of letters, notes, and releases." },
     ],
-    why: "Offboard 21 pairs timers with evidence prompts so you finish in under 40 minutes and stay compliant.",
+    why: "Offboard 21 pairs timers with evidence prompts so you stay compliant and confident during every 21-day deposit return.",
     visual: {
       headline: "Offboard timeline",
       caption: "Countdown, deduction math, and release controls in one calm panel.",
@@ -268,42 +273,44 @@ const FAIRVIA_PRODUCTS: ProductDefinition[] = [
 const SUITE_TOGETHER_POINTS = [
   {
     title: "Fairvia Discover",
-    detail: "Puts a verified, search-ready profile in front of renters before they ever reach out.",
+    detail: "SEO profile plus Trust Badge proof attract better renters before they reach out.",
   },
   {
     title: "Fairvia Comply",
-    detail: "Moves escrow, ID checks, and AB 1482 paperwork into one guided flow so move-ins start clean.",
+    detail: "Escrow, ID checks, and AB 1482 paperwork run in one guided, compliant flow.",
   },
   {
-    title: "Fairvie Trust+",
-    detail: "Extends that live trust signal to every marketplace and message landlords already use.",
+    title: "Fairvia Trust Badge",
+    detail: "Extends live escrow verification across marketplaces, emails, and QR handouts.",
   },
   {
     title: "Offboard 21",
-    detail: "Closes each tenancy on time with receipts, letters, and escrow releases documented in one place.",
+    detail: "Guides the 21-day deposit return with itemized letters, receipts, and releases.",
   },
 ];
 
 const SUITE_IMPACT = {
   landlord: {
-    headline: "What landlords earn",
-    summary: "One calm platform that keeps deposits neutral, paperwork precise, and messaging aligned across the entire tenancy lifecycle.",
+    headline: "Landlord impact — what California landlords gain",
+    summary:
+      "Fairvia keeps deposits neutral, paperwork compliant, and communication smooth—so independent landlords attract better applicants and avoid costly disputes.",
     bullets: [
-      "Better-qualified leads from search and trust badge clickthroughs",
-      "Neutral escrow and guided compliance that cut risk and admin hours",
-      "Documented move-outs with fewer disputes and faster turnarounds",
+      { label: "Better renters", detail: "SEO search profiles and Trust Badge click-throughs." },
+      { label: "Fewer disputes", detail: "Neutral escrow plus guided compliance reduce risk and admin time." },
+      { label: "Faster move-outs", detail: "Documented deductions and 21-day tracking speed turnovers." },
     ],
   },
   renter: {
-    headline: "What renters feel",
-    summary: "Clear proof up front, a shared record during the lease, and transparent release timing when it is time to move on.",
+    headline: "Renter impact — what renters trust",
+    summary:
+      "Fairvia builds confidence for renters from first click to final refund, with clear records every step of the way.",
     bullets: [
-      "Trust from the first click with verified escrow and identity checks",
-      "Shared timelines and plain-language updates instead of scattered emails",
-      "Confidence that deposits are handled fairly with receipts and release math",
+      { label: "Verified escrow", detail: "Live escrow and ID checks create instant trust." },
+      { label: "Shared timelines", detail: "Plain-language updates replace scattered emails." },
+      { label: "Fair deposits", detail: "Receipts, letters, and refund math stay transparent." },
     ],
   },
-} as const;
+} as const satisfies Record<"landlord" | "renter", { headline: string; summary: string; bullets: ReadonlyArray<ListEntry> }>;
 
 export default function FeaturesPage() {
   return (
@@ -326,7 +333,7 @@ function FeatureHero() {
           </span>
           <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Proof-led tools for calm California deposits</h1>
           <p className="text-base text-slate-300 sm:text-lg">
-            Four focused products—Discover, Comply, Fairvie Trust+, and Offboard 21—cover the deposit arc from first search to final release without bloating the workflow.
+            Four focused products—Discover, Comply, the Fairvia Trust Badge, and Offboard 21—cover the deposit arc from first search to final release without bloating the workflow.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
             <a
@@ -461,7 +468,7 @@ function ProductListCard({
   className,
 }: {
   title: string;
-  items: ReadonlyArray<string>;
+  items: ReadonlyArray<ListEntry>;
   className?: string;
 }) {
   return (
@@ -473,9 +480,12 @@ function ProductListCard({
       <h3 className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">{title}</h3>
       <ul className="mt-3 space-y-2.5 text-sm text-slate-600">
         {items.map((item) => (
-          <li key={item} className="flex items-start gap-2">
+          <li key={item.label} className="flex items-start gap-2">
             <span className="mt-1 inline-flex h-2 w-2 flex-none rounded-full bg-emerald-500" />
-            <span>{item}</span>
+            <span>
+              <span className="font-semibold text-slate-900">{item.label}</span>
+              <span className="text-slate-600"> — {item.detail}</span>
+            </span>
           </li>
         ))}
       </ul>
@@ -502,7 +512,7 @@ function SuiteImpactSection() {
           </span>
           <h2 className="text-3xl font-semibold sm:text-4xl">What happens when all four products run together</h2>
           <p className="text-sm text-slate-300 sm:text-base">
-            Discover sparks credible demand, Comply locks move-in compliance, Fairvie Trust+ carries proof across every listing, and Offboard 21 closes the loop with documented releases. The full suite keeps both sides aligned from first click to final refund.
+            Discover sparks credible demand, Comply locks move-in compliance, the Fairvia Trust Badge carries escrow verification across every listing, and Offboard 21 closes the loop with a documented 21-day deposit return. The full suite keeps both sides aligned from first click to final refund.
           </p>
         </div>
 
@@ -536,9 +546,12 @@ function SuiteRoleCard({ role }: { role: keyof typeof SUITE_IMPACT }) {
       <p className="mt-2 text-sm text-slate-100/85">{data.summary}</p>
       <ul className="mt-4 space-y-2.5 text-sm text-slate-100/90">
         {data.bullets.map((bullet) => (
-          <li key={bullet} className="flex items-start gap-2">
+          <li key={bullet.label} className="flex items-start gap-2">
             <span className="mt-1 inline-flex h-2 w-2 flex-none rounded-full bg-emerald-400" />
-            <span>{bullet}</span>
+            <span>
+              <span className="font-semibold text-white">{bullet.label}</span>
+              <span className="text-slate-100/80"> — {bullet.detail}</span>
+            </span>
           </li>
         ))}
       </ul>
