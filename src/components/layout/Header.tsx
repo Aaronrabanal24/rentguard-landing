@@ -30,30 +30,30 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/60 bg-white/80 backdrop-blur-lg shadow-sm">
+    <header className="safe-top sticky top-0 z-50 border-b border-white/60 bg-white/80 backdrop-blur-lg shadow-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-3 py-3 sm:px-4 sm:py-4">
         <Link href="/" aria-label="Fairvia home" className="inline-flex items-center">
           <BrandLogo priority className="drop-shadow-sm" />
         </Link>
-      <nav className="hidden items-center gap-4 text-sm font-medium text-slate-600 lg:flex">
-        {navLinks.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className="rounded-full px-4 py-2 transition-all hover:bg-sky-50 hover:text-slate-900 hover:shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
+        <nav className="hidden items-center gap-4 text-sm font-medium text-slate-600 lg:flex">
+          {navLinks.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="rounded-full px-4 py-2 transition-all hover:bg-sky-50 hover:text-slate-900 hover:shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
+            >
+              {item.label}
+            </Link>
+          ))}
+          <button
+            onClick={handleCTA}
+            className="tap rounded-full bg-gradient-to-r from-sky-500 to-teal-500 px-5 py-2 text-sm font-semibold text-white shadow-sm shadow-sky-200/80 transition hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
           >
-            {item.label}
-          </Link>
-        ))}
-        <button
-          onClick={handleCTA}
-          className="rounded-full bg-gradient-to-r from-sky-500 to-teal-500 px-5 py-2 text-sm font-semibold text-white shadow-sm shadow-sky-200/80 transition hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
-        >
-          Request a demo
-        </button>
-      </nav>
+            Request a demo
+          </button>
+        </nav>
 
-      <MobileMenu navLinks={navLinks} onSelectNav={handleCTA} />
+        <MobileMenu navLinks={navLinks} onSelectNav={handleCTA} />
       </div>
     </header>
   );
@@ -76,7 +76,7 @@ function MobileMenu({ navLinks, onSelectNav }: { navLinks: NavLink[]; onSelectNa
         onClick={toggleMenu}
         aria-expanded={isOpen}
         aria-label="Toggle navigation"
-        className="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:-translate-y-[1px] hover:border-sky-200 hover:text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
+        className="tap flex h-11 w-11 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:-translate-y-[1px] hover:border-sky-200 hover:text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
       >
         <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
           <path
@@ -101,7 +101,7 @@ function MobileMenu({ navLinks, onSelectNav }: { navLinks: NavLink[]; onSelectNa
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 transition hover:-translate-y-[1px] hover:bg-slate-50 hover:text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
+                  className="tap block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 transition hover:-translate-y-[1px] hover:bg-slate-50 hover:text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
                   onClick={closeMenu}
                 >
                   {link.label}
@@ -114,7 +114,7 @@ function MobileMenu({ navLinks, onSelectNav }: { navLinks: NavLink[]; onSelectNa
                   closeMenu();
                   onSelectNav();
                 }}
-                className="w-full rounded-full bg-gradient-to-r from-sky-400 via-sky-500 to-teal-500 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-[1px] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
+                className="tap w-full rounded-full bg-gradient-to-r from-sky-400 via-sky-500 to-teal-500 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-[1px] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
               >
                 Request a demo
               </button>

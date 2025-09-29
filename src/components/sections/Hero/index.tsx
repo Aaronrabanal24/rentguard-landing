@@ -25,13 +25,14 @@ export default function Hero() {
         <div className="absolute left-[-12rem] bottom-[-6rem] h-[20rem] w-[20rem] rounded-full bg-indigo-200/25 blur-3xl animate-[pulse_16s_ease-in-out_infinite]" />
       </div>
 
-      <div className="relative">
+      <div className="relative flex min-dvh-80 flex-col">
         <Header />
-
-        <div className="mx-auto max-w-5xl px-4 pb-16 pt-12 sm:px-6 lg:px-8">
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-start lg:gap-16">
-            <HeroContent />
-            <HeroVisual />
+        <div className="flex flex-1 flex-col justify-center">
+          <div className="mx-auto w-full max-w-5xl px-4 pb-12 pt-10 sm:px-6 sm:pb-16 sm:pt-12 lg:px-8">
+            <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-center lg:gap-16">
+              <HeroContent />
+              <HeroVisual />
+            </div>
           </div>
         </div>
 
@@ -43,6 +44,6 @@ export default function Hero() {
 
 function HeroVisualSkeleton() {
   return (
-    <div className="h-full min-h-[320px] w-full animate-pulse rounded-[32px] border border-slate-200/70 bg-white/60" />
+    <div className="media-16x9 w-full animate-pulse rounded-[32px] border border-slate-200/70 bg-white/60" />
   );
 }

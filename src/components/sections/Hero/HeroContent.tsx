@@ -30,7 +30,7 @@ export function HeroContent() {
         {heroContent.eyebrow}
       </span>
 
-      <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+      <h1 className="text-balance text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
         {headlineLead}
         {headlineAccent ? (
           <span className="bg-gradient-to-r from-sky-600 via-sky-500 to-teal-500 bg-clip-text text-transparent">
@@ -39,14 +39,21 @@ export function HeroContent() {
         ) : null}
       </h1>
 
-      <p className="text-lg leading-relaxed text-slate-600 sm:text-xl">{heroContent.subheadline}</p>
+      <p className="max-w-prose text-lg leading-relaxed text-slate-600 sm:text-xl">
+        {heroContent.subheadline}
+      </p>
 
       <div className="space-y-6 pt-2">
         <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
-          <Button onClick={handlePrimaryClick} size="lg">
+          <Button onClick={handlePrimaryClick} size="lg" className="w-full sm:w-auto">
             {heroContent.primaryCta}
           </Button>
-          <Button onClick={handleSecondaryClick} variant="secondary" size="lg" className="border-2 border-slate-300">
+          <Button
+            onClick={handleSecondaryClick}
+            variant="secondary"
+            size="lg"
+            className="w-full border-2 border-slate-300 sm:w-auto"
+          >
             {heroContent.secondaryCta}
           </Button>
         </div>

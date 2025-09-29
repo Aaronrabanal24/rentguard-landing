@@ -53,7 +53,7 @@ export function HeroVisual() {
           <button
             type="button"
             onClick={() => goTo(activeIndex - 1)}
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:-translate-y-[1px] hover:border-slate-300"
+            className="tap flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-base text-slate-600 shadow-sm transition hover:-translate-y-[1px] hover:border-slate-300"
             aria-label="Previous step"
           >
             ‹
@@ -61,7 +61,7 @@ export function HeroVisual() {
           <button
             type="button"
             onClick={() => goTo(activeIndex + 1)}
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:-translate-y-[1px] hover:border-slate-300"
+            className="tap flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-base text-slate-600 shadow-sm transition hover:-translate-y-[1px] hover:border-slate-300"
             aria-label="Next step"
           >
             ›
@@ -85,7 +85,7 @@ export function HeroVisual() {
         <ActiveComponent />
       </article>
 
-      <nav className="mt-6 flex snap-x snap-mandatory items-center gap-2 overflow-x-auto pb-1">
+      <nav className="mt-6 flex items-center gap-2 overflow-x-auto pb-1 snap-x-mandatory">
         {STEP_CARDS.map((card, index) => {
           const isActive = index === activeIndex;
           return (
@@ -94,7 +94,7 @@ export function HeroVisual() {
               type="button"
               onClick={() => setActiveIndex(index)}
               className={cn(
-                "flex min-w-[160px] snap-start flex-col rounded-2xl border px-4 py-3 text-left text-xs transition",
+                "tap snap-child flex min-w-[160px] flex-col rounded-2xl border px-4 py-3 text-left text-xs transition",
                 isActive
                   ? "border-slate-900 bg-slate-900 text-white shadow-sm"
                   : "border-slate-200 bg-white text-slate-600 hover:border-slate-300"

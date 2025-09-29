@@ -92,7 +92,7 @@ function PropertyProfileMockup() {
   return (
     <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
       <div className="relative border-b border-slate-200/70">
-        <div className="relative h-52 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        <div className="relative media-16x9 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
           <div className="absolute inset-0 flex items-center justify-center text-sm font-semibold text-white">
             Berkeley Hills single family home
           </div>
@@ -106,24 +106,24 @@ function PropertyProfileMockup() {
           </div>
           <button
             type="button"
-            className="absolute left-3 top-1/2 hidden h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-white/40 bg-white/15 text-white shadow-sm md:flex"
+            className="tap absolute left-3 top-1/2 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/40 bg-white/15 text-lg text-white shadow-sm md:flex"
             aria-label="Previous photo"
           >
             {"<"}
           </button>
           <button
             type="button"
-            className="absolute right-3 top-1/2 hidden h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-white/40 bg-white/15 text-white shadow-sm md:flex"
+            className="tap absolute right-3 top-1/2 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/40 bg-white/15 text-lg text-white shadow-sm md:flex"
             aria-label="Next photo"
           >
             {">"}
           </button>
         </div>
-        <div className="flex gap-2 overflow-x-auto bg-slate-900/90 px-4 py-3 text-[11px] text-white/70">
+        <div className="snap-x-mandatory flex gap-2 overflow-x-auto bg-slate-900/90 px-4 py-3 text-[11px] text-white/70">
           {gallery.map((label, index) => (
             <div
               key={label}
-              className={`flex min-w-[110px] items-center justify-between rounded-xl border px-3 py-2 ${
+              className={`snap-child flex min-w-[110px] items-center justify-between rounded-xl border px-3 py-2 ${
                 index === 1 ? "border-white/60 bg-white/10 text-white" : "border-white/20"
               }`}
             >
@@ -138,8 +138,8 @@ function PropertyProfileMockup() {
         <header className="flex flex-wrap items-start justify-between gap-4">
           <div className="space-y-2">
             <p className="text-[11px] uppercase tracking-[0.25em] text-slate-400">Fairvia profile</p>
-            <h3 className="text-lg font-semibold text-slate-900">Secure deposit handling in Berkeley Hills</h3>
-            <p className="text-xs text-slate-500">
+            <h3 className="text-base font-semibold text-slate-900 sm:text-lg">Secure deposit handling in Berkeley Hills</h3>
+            <p className="text-sm leading-relaxed text-slate-500">
               Calm copy keeps renters grounded. Shared updates track every deposit move.
             </p>
           </div>
@@ -152,16 +152,16 @@ function PropertyProfileMockup() {
           </div>
         </header>
 
-        <div className="flex flex-wrap gap-2">
+        <ul className="flex flex-wrap gap-2">
           {featureChips.map((chip) => (
-            <span
+            <li
               key={chip}
               className="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600"
             >
               {chip}
-            </span>
+            </li>
           ))}
-        </div>
+        </ul>
 
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:items-start">
           <div className="space-y-4">

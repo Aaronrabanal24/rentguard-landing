@@ -25,3 +25,4 @@ export { default as WaitlistForm } from "./forms/WaitlistForm";
 // Layout
 export { default as Header } from "./layout/Header";
 export { default as Footer } from "./layout/Footer";
+export { StickyCTA } from "./layout/StickyCTA";

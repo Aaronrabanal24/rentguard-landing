@@ -18,7 +18,7 @@ export function PropertyProfilePanel() {
             src="https://images.unsplash.com/photo-1581209410127-8211e90da024?auto=format&fit=crop&w=1080&q=80"
             alt="2 bedroom apartment interior"
             fill
-            priority={false}
+            priority
             sizes="(min-width: 1024px) 480px, 90vw"
             className="object-cover transition-transform duration-500 group-hover:scale-105"
           />

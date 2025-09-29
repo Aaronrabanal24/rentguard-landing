@@ -5,11 +5,16 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    font-size: 14px;
+    font-size: 16px;
+    min-height: 100%;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
   body {
     color: #111827;
     background: #ffffff;
+    min-height: 100%;
+    line-height: 1.5;
   }
 
   .motion-reveal {
@@ -64,10 +69,72 @@
   .panel-fade {
     animation: panel-fade 0.45s ease;
   }
+
+  .safe-top {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+
+  .safe-bot {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .min-dvh-75 {
+    min-height: 75vh;
+  }
+
+  .min-dvh-80 {
+    min-height: 80vh;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+    hyphens: none;
+  }
+
+  .snap-x-mandatory {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .snap-child {
+    scroll-snap-align: start;
+  }
+
+  .tap {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .media-16x9 {
+    aspect-ratio: 16 / 9;
+  }
 }
 
 .scrollbar-none::-webkit-scrollbar {
   display: none;
+}
+
+@supports (height: 100dvh) {
+  .min-dvh-75 {
+    min-height: 75dvh;
+  }
+
+  .min-dvh-80 {
+    min-height: 80dvh;
+  }
+}
+
+@media (max-width: 640px) {
+  .backdrop-blur-sm,
+  .backdrop-blur,
+  .backdrop-blur-md,
+  .backdrop-blur-lg,
+  .backdrop-blur-xl,
+  .backdrop-blur-2xl,
+  .backdrop-blur-3xl {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
 }
 
 @keyframes float {
