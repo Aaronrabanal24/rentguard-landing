@@ -12,7 +12,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-100 text-slate-900">
+    <section className="relative bg-gradient-to-b from-slate-50 via-white to-slate-100 text-slate-900 lg:overflow-hidden">
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <div className="absolute left-1/2 top-[-12rem] h-[26rem] w-[26rem] -translate-x-1/2 rounded-full bg-sky-200/35 blur-3xl animate-[pulse_14s_ease-in-out_infinite]" />
         <div className="absolute right-[-10rem] top-1/4 h-[22rem] w-[22rem] rounded-full bg-teal-200/30 blur-3xl animate-[pulse_18s_ease-in-out_infinite]" />
