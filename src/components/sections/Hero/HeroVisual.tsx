@@ -7,14 +7,15 @@ interface StepCard {
   step: string;
   label: string;
   accent: string;
+  icon: string;
   component: () => ReactElement;
 }
 
 const STEP_CARDS: StepCard[] = [
-  { id: "seo", step: "Step 1", label: "SEO marketing", accent: "from-sky-50 via-white to-sky-100", component: StepOneCard },
-  { id: "lease", step: "Step 2", label: "Lease onboarding & deposit", accent: "from-emerald-50 via-white to-teal-100", component: StepTwoCard },
-  { id: "communication", step: "Step 3", label: "Communication", accent: "from-indigo-50 via-white to-indigo-100", component: StepThreeCard },
-  { id: "release", step: "Step 4", label: "Deposit release", accent: "from-amber-50 via-white to-emerald-100", component: StepFourCard },
+  { id: "seo", step: "Step 1", label: "SEO marketing", accent: "from-sky-50 via-white to-sky-100", icon: "🔍", component: StepOneCard },
+  { id: "lease", step: "Step 2", label: "Lease onboarding & deposit", accent: "from-emerald-50 via-white to-teal-100", icon: "📑", component: StepTwoCard },
+  { id: "communication", step: "Step 3", label: "Communication", accent: "from-indigo-50 via-white to-indigo-100", icon: "💬", component: StepThreeCard },
+  { id: "release", step: "Step 4", label: "Deposit release", accent: "from-amber-50 via-white to-emerald-100", icon: "✅", component: StepFourCard },
 ];
 
 export function HeroVisual() {
@@ -101,7 +102,10 @@ export function HeroVisual() {
               aria-current={isActive ? "step" : undefined}
             >
               <span className="font-semibold uppercase tracking-[0.25em]">{card.step}</span>
-              <span className="mt-2 text-sm font-semibold tracking-tight">{card.label}</span>
+              <span className="mt-2 flex items-center gap-2 text-sm font-semibold tracking-tight">
+                <span aria-hidden>{card.icon}</span>
+                {card.label}
+              </span>
             </button>
           );
         })}
