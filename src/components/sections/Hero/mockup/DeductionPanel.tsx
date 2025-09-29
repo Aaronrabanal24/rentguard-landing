@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { motion } from "@/lib/motion";
 import { Separator } from "@/components/ui";
+import { Hero3DScene } from "./Hero3DScene";
 import { ArrowUpRightIcon, CheckCircleIcon, DollarIcon, FileTextIcon, ReceiptIcon } from "./icons";
 
 const deductions = [
@@ -22,7 +23,7 @@ export function DeductionPanel() {
     >
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-emerald-50/80 via-white to-slate-50 opacity-0 transition-opacity duration-300 hover:opacity-100" />
 
-      <div className="relative z-10 space-y-5">
+      <div className="relative z-10 space-y-6">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 text-white">
@@ -87,6 +88,35 @@ export function DeductionPanel() {
             21-day clock met
           </div>
         </div>
+        <Hero3DScene
+          spotlightClassName="bg-emerald-400/20"
+          layers={[
+            {
+              wrapperClassName: "-translate-x-16 -translate-y-12 -rotate-6",
+              tileClassName:
+                "bg-gradient-to-br from-emerald-500 via-teal-500 to-lime-500 text-white shadow-[0_46px_88px_-42px_rgba(16,185,129,0.85)]",
+              content: (
+                <div className="space-y-2">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-white/70">Refund</p>
+                  <p className="text-3xl font-semibold leading-none">${totals.refundAmount.toLocaleString()}</p>
+                  <p className="text-xs text-white/75">Clears to renter in under 24 hours</p>
+                </div>
+              ),
+            },
+            {
+              wrapperClassName: "translate-x-12 translate-y-8 rotate-3",
+              tileClassName:
+                "bg-white/95 text-slate-700 shadow-[0_32px_62px_-34px_rgba(15,23,42,0.45)]",
+              content: (
+                <div className="space-y-2">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-slate-400">Audit trail</p>
+                  <p className="text-sm font-semibold text-slate-900">Receipts attached</p>
+                  <p className="text-xs text-slate-500">Cleaning & repairs auto-added to PDF packet.</p>
+                </div>
+              ),
+            },
+          ]}
+        />
       </div>
     </motion.div>
   );

@@ -1,5 +1,6 @@
 import { motion } from "@/lib/motion";
 import { Badge } from "@/components/ui";
+import { Hero3DScene } from "./Hero3DScene";
 import { CalendarIcon, CheckIcon, MapPinIcon, UsersIcon } from "./icons";
 import { ImageWithFallback } from "./ImageWithFallback";
 
@@ -11,7 +12,7 @@ export function PropertyProfilePanel() {
     >
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-sky-50/80 via-white to-emerald-50 opacity-0 transition-opacity duration-300 hover:opacity-100" />
 
-      <div className="relative z-10 space-y-5">
+      <div className="relative z-10 space-y-6">
         <div className="relative h-48 overflow-hidden rounded-xl">
           <ImageWithFallback
             src="https://images.unsplash.com/photo-1581209410127-8211e90da024?auto=format&fit=crop&w=1080&q=80"
@@ -68,6 +69,47 @@ export function PropertyProfilePanel() {
             </div>
           </div>
         </div>
+        <Hero3DScene
+          spotlightClassName="bg-sky-400/20"
+          layers={[
+            {
+              wrapperClassName: "-translate-x-20 -translate-y-10 -rotate-6 scale-95",
+              tileClassName:
+                "bg-gradient-to-br from-sky-600 via-sky-500 to-teal-500 text-white shadow-[0_40px_70px_-35px_rgba(14,116,144,0.85)]",
+              content: (
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.35em] text-white/60">
+                    <span>Profile kit</span>
+                    <span>Live</span>
+                  </div>
+                  <p className="text-xl font-semibold leading-tight">Lakeside badge</p>
+                  <div className="flex items-center gap-2 text-xs text-white/80">
+                    <CalendarIcon className="h-4 w-4" />
+                    Compliance timer synced
+                  </div>
+                </div>
+              ),
+            },
+            {
+              wrapperClassName: "translate-x-12 translate-y-8 rotate-3",
+              tileClassName:
+                "bg-white/95 text-slate-700 shadow-[0_26px_60px_-30px_rgba(15,23,42,0.55)]",
+              content: (
+                <div className="space-y-2">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.4em] text-slate-400">Verification</p>
+                  <div className="flex items-center justify-between text-sm font-semibold text-slate-900">
+                    <span>Fairvia badge</span>
+                    <span className="flex items-center gap-1 text-emerald-500">
+                      <CheckIcon className="h-3 w-3" />
+                      Active
+                    </span>
+                  </div>
+                  <p className="text-xs text-slate-500">QR links renters to escrow proof.</p>
+                </div>
+              ),
+            },
+          ]}
+        />
       </div>
     </motion.div>
   );

@@ -1,5 +1,6 @@
 import { motion } from "@/lib/motion";
 import { Progress } from "@/components/ui";
+import { Hero3DScene } from "./Hero3DScene";
 import { ClockIcon, DollarIcon, ShieldIcon } from "./icons";
 
 export function EscrowPanel() {
@@ -56,6 +57,41 @@ export function EscrowPanel() {
             Funds locked until release
           </div>
         </div>
+        <Hero3DScene
+          spotlightClassName="bg-indigo-500/20"
+          layers={[
+            {
+              wrapperClassName: "-translate-x-16 -translate-y-10 rotate-3",
+              tileClassName:
+                "bg-gradient-to-br from-indigo-600 via-violet-500 to-sky-500 text-white shadow-[0_44px_82px_-40px_rgba(79,70,229,0.8)]",
+              content: (
+                <div className="space-y-3">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.4em] text-white/70">Escrow vault</p>
+                  <p className="text-lg font-semibold">Multi-sig secured</p>
+                  <p className="text-xs text-white/75">DFPI tracked release sequence</p>
+                </div>
+              ),
+            },
+            {
+              wrapperClassName: "translate-x-12 translate-y-8 -rotate-6",
+              tileClassName:
+                "bg-white/95 text-slate-700 shadow-[0_30px_60px_-32px_rgba(15,23,42,0.5)]",
+              content: (
+                <div className="space-y-2">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-slate-400">Release path</p>
+                  <div className="flex items-center justify-between text-sm font-semibold text-slate-900">
+                    <span>Tenant</span>
+                    <span className="text-emerald-500">✔ Notified</span>
+                  </div>
+                  <div className="flex items-center justify-between text-xs text-slate-500">
+                    <span>Reg clock</span>
+                    <span>Day 9 of 21</span>
+                  </div>
+                </div>
+              ),
+            },
+          ]}
+        />
       </div>
     </motion.div>
   );

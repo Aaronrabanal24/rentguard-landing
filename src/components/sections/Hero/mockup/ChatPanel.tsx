@@ -1,5 +1,6 @@
 import { motion } from "@/lib/motion";
 import { Avatar, AvatarFallback } from "@/components/ui";
+import { Hero3DScene } from "./Hero3DScene";
 import { CalendarIcon, CheckCircleSmallIcon, MessageSquareIcon } from "./icons";
 
 export function ChatPanel() {
@@ -10,7 +11,7 @@ export function ChatPanel() {
     >
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-sky-50/70 via-white to-slate-50 opacity-0 transition-opacity duration-300 hover:opacity-100" />
 
-      <div className="relative z-10 space-y-5">
+      <div className="relative z-10 space-y-6">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-sky-500 to-indigo-500 text-white">
@@ -61,6 +62,40 @@ export function ChatPanel() {
             <span className="ml-auto text-xs text-emerald-600">Ready for keys</span>
           </div>
         </div>
+        <Hero3DScene
+          spotlightClassName="bg-sky-500/20"
+          layers={[
+            {
+              wrapperClassName: "-translate-x-16 -translate-y-12 rotate-6",
+              tileClassName:
+                "bg-gradient-to-br from-sky-500 via-indigo-500 to-violet-500 text-white shadow-[0_42px_84px_-38px_rgba(56,189,248,0.75)]",
+              content: (
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.35em] text-white/70">
+                    <span>Thread</span>
+                    <span>Synced</span>
+                  </div>
+                  <div className="space-y-1 text-sm">
+                    <p className="font-semibold">&ldquo;Walkthrough confirmed&rdquo;</p>
+                    <p className="text-xs text-white/70">Tenant · 10:32 AM</p>
+                  </div>
+                </div>
+              ),
+            },
+            {
+              wrapperClassName: "translate-x-12 translate-y-8 -rotate-3",
+              tileClassName:
+                "bg-white/95 text-slate-700 shadow-[0_30px_60px_-32px_rgba(15,23,42,0.45)]",
+              content: (
+                <div className="space-y-2">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-slate-400">Auto log</p>
+                  <p className="text-sm font-semibold text-slate-900">Add to release packet</p>
+                  <p className="text-xs text-slate-500">Screenshot + receipt zipped.</p>
+                </div>
+              ),
+            },
+          ]}
+        />
       </div>
     </motion.div>
   );
