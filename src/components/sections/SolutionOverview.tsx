@@ -3,27 +3,31 @@ import { motion } from "@/lib/motion";
 const STEPS = [
   {
     step: "Step 1",
-    title: "SEO profile + trust badge",
+    title: "SEO profile & trust badge",
     before: "Renters Google your property and see nothing but listings.",
     after: "They see a Fairvia profile proving funds are safe before they apply.",
+    badge: "Confidence before the tour",
   },
   {
     step: "Step 2",
     title: "Lease onboarding & neutral escrow",
     before: "Deposits sit in your personal account with no shared view.",
     after: "Escrow partner holds the money and everyone views the same timeline.",
+    badge: "Neutral custody in minutes",
   },
   {
     step: "Step 3",
     title: "Guided communication",
     before: "Late-night texts, missing receipts, and unclear commitments.",
     after: "Pre-written updates, renter confirmations, and receipts in one feed.",
+    badge: "Every update documented",
   },
   {
     step: "Step 4",
     title: "21-day release packet",
     before: "Day-21 panic, manual letters, and risky math.",
     after: "Auto alerts, deduction helpers, and a court-ready PDF.",
+    badge: "Deposit released on time",
   },
 ];
 
@@ -48,19 +52,22 @@ export default function SolutionOverview() {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-2">
+        <div className="mt-10 grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
           {STEPS.map((item, index) => (
             <motion.div
               key={item.title}
-              className="flex h-full flex-col gap-4 rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_25px_45px_-35px_rgba(15,23,42,0.6)]"
+              className="flex h-full flex-col gap-4 rounded-3xl border border-white/15 bg-gradient-to-br from-white/10 via-white/5 to-transparent p-6 shadow-[0_25px_45px_-35px_rgba(15,23,42,0.6)]"
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}
               transition={{ duration: 0.35, ease: "easeOut", delay: index * 0.05 }}
             >
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-300">{item.step}</p>
-                <h3 className="mt-2 text-xl font-semibold text-white">{item.title}</h3>
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-300">{item.step}</p>
+                  <h3 className="mt-2 text-xl font-semibold text-white">{item.title}</h3>
+                </div>
+                <span className="rounded-full bg-white/10 px-3 py-1 text-[11px] font-medium text-slate-200">{item.badge}</span>
               </div>
 
               <div className="grid gap-3 text-sm text-slate-200">
@@ -73,6 +80,13 @@ export default function SolutionOverview() {
                   <p className="mt-1 leading-relaxed text-emerald-50">{item.after}</p>
                 </div>
               </div>
+
+              <button
+                type="button"
+                className="mt-2 inline-flex w-max items-center gap-2 rounded-full border border-white/30 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-white/10"
+              >
+                See the workflow →
+              </button>
             </motion.div>
           ))}
         </div>

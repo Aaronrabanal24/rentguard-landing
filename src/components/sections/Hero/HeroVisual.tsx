@@ -101,10 +101,7 @@ export function HeroVisual() {
               aria-current={isActive ? "step" : undefined}
             >
               <span className="font-semibold uppercase tracking-[0.25em]">{card.step}</span>
-              <span className="mt-2 flex items-center gap-2 text-sm font-semibold tracking-tight">
-                <span aria-hidden>{card.icon}</span>
-                {card.label}
-              </span>
+              <span className="mt-2 text-sm font-semibold tracking-tight">{card.label}</span>
             </button>
           );
         })}
