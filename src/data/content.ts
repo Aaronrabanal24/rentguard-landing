@@ -1,8 +1,11 @@
 export const heroContent = {
-  badge: "Fairvia Pilot • California",
-  headline: "Stay compliant. Attract renters. Save hours.",
+  eyebrow: "For California landlords",
+  headline: "Stop losing deposits to missed deadlines.",
   subheadline:
-    "Fairvia gives California landlords a complete deposit workflow — SEO property profiles, escrow with verified leases, clear landlord-renter communication, and a guided 21-day release.",
+    "Fairvia handles compliance, neutral escrow, and tenant communication so you can focus on filling units—not fighting disputes.",
+  primaryCta: "See how it works",
+  secondaryCta: "Talk to a specialist",
+  socialProof: "Join 150+ California landlords who stopped sweating the 21-day rule.",
 } as const;
 
 export const lawPoints = [

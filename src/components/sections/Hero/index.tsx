@@ -2,9 +2,8 @@ import { useEffect } from "react";
 import Header from "@/components/layout/Header";
 import { HeroContent } from "./HeroContent";
 import { HeroSocialProof } from "./HeroSocialProof";
-import { HeroComplianceCard } from "./HeroComplianceCard";
 import { track } from "@/lib/tracking";
-import { HeroMockup } from "./mockup/HeroMockup";
+import { HeroVisual } from "./HeroVisual";
 
 export default function Hero() {
   useEffect(() => {
@@ -22,16 +21,10 @@ export default function Hero() {
       <div className="relative">
         <Header />
 
-        <div className="mx-auto max-w-6xl px-4 pb-20 pt-14 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-start lg:gap-16">
-            <div className="space-y-10">
-              <HeroContent />
-              <HeroComplianceCard />
-            </div>
-
-            <div className="relative">
-              <HeroMockup />
-            </div>
+        <div className="mx-auto max-w-6xl px-4 pb-16 pt-12 sm:px-6 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-center">
+            <HeroContent />
+            <HeroVisual />
           </div>
         </div>
 

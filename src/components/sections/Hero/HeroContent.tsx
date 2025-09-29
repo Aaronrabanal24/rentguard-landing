@@ -72,9 +72,9 @@ export function HeroContent() {
 
   return (
     <div className="relative mx-auto max-w-xl space-y-8">
-      <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-sky-400/40 bg-gradient-to-r from-sky-50 to-teal-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-sky-700 shadow-sm shadow-sky-200/60 backdrop-blur-sm">
+      <span className="inline-flex items-center gap-2 rounded-full border border-sky-400/40 bg-gradient-to-r from-sky-50 to-teal-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-sky-700 shadow-sm shadow-sky-200/60 backdrop-blur-sm">
         <span className="h-2 w-2 rounded-full bg-sky-500 animate-pulse" />
-        {heroContent.badge}
+        {heroContent.eyebrow}
       </span>
 
       <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
@@ -103,31 +103,23 @@ export function HeroContent() {
       <div className="space-y-6 pt-4">
         <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
           <Button onClick={handlePrimaryClick} size="lg">
-            Apply for the Fairvia pilot
+            {heroContent.primaryCta}
           </Button>
           <Button onClick={handleSecondaryClick} variant="secondary" size="lg" className="border-2 border-slate-300">
-            Preview the Listing Assist badge
+            {heroContent.secondaryCta}
           </Button>
         </div>
 
         <div className="flex flex-wrap items-center gap-4 text-xs text-slate-500">
-          {trustIndicators.map((item) => (
-            <div key={item.label} className="flex items-center gap-2">
-              <div className={`h-2 w-2 rounded-full ${item.color}`} />
-              <span>{item.label}</span>
-            </div>
-          ))}
+          <div className="flex items-center gap-2">
+            <div className="h-2 w-2 rounded-full bg-emerald-500" />
+            <span>{heroContent.socialProof}</span>
+          </div>
         </div>
       </div>
     </div>
   );
 }
-
-const trustIndicators: Array<{ label: string; color: string }> = [
-  { label: "Escrow-only deposit custody", color: "bg-green-500" },
-  { label: "21-day clock auto-tracked", color: "bg-blue-500" },
-  { label: "Listing Assist badge for any listing", color: "bg-purple-500" },
-];
 
 function splitHeadline(headline: string): [string, string] {
   if (!headline.includes(" ")) {
