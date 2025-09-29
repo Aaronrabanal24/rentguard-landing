@@ -23,10 +23,10 @@ interface ProductDefinition {
   name: string;
   tagline: string;
   features: ReadonlyArray<string>;
-  capabilities: ReadonlyArray<string>;
   benefits: ReadonlyArray<string>;
   why: string;
   visual: ProductVisualDefinition;
+  ctaHref?: string;
 }
 
 const PilotModules = dynamic(() => import("@/components/sections/PilotModules"), {
@@ -80,23 +80,19 @@ const FAIRVIA_PRODUCTS: ProductDefinition[] = [
   {
     slug: "discover",
     name: "Fairvia Discover",
-    tagline: "Proof-first property profile that converts search intent into calm conversations.",
+    tagline: "Search-ready property profiles for California landlords that attract better renters and prove compliance.",
     features: [
-      "Search-ready landing page with city + neighborhood tags",
-      "Trust banner that locks to real escrow + ID checks",
-      "FAQ schema + OG tags generated automatically",
-    ],
-    capabilities: [
-      "Suggested titles, alt text, and copy tuned for California rentals",
-      "RentalProperty JSON-LD baked into every publish",
-      "Shareable short link and QR for marketplaces and flyers",
+      "SEO landing page with city and neighborhood tags",
+      "Trust badge that mirrors real escrow and ID verification",
+      "Google-friendly markup auto-generated for every publish",
+      "Shareable short link and QR code for listings or flyers",
     ],
     benefits: [
-      "Attract qualified renters who are already searching for your area",
-      "Set expectations before the first message hits your inbox",
-      "Keep existing listing workflows while adding a dedicated proof page",
+      "Attract renters already searching in your area",
+      "Cut down the back-and-forth before the first message",
+      "Keep your marketplace listings but add a professional proof page",
     ],
-    why: "Discover leads with verified escrow and plain-language FAQs so independent landlords look established without heavy marketing work.",
+    why: "Independent landlords look established with verified escrow and simple FAQs—without extra marketing work.",
     visual: {
       headline: "Discover profile",
       caption: "Neighborhood tags, trust controls, and schema emitters in one clean card.",
@@ -110,7 +106,7 @@ const FAIRVIA_PRODUCTS: ProductDefinition[] = [
             <div className="space-y-2">
               <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-white/70">SEO view</p>
               <p className="text-lg font-semibold">Temescal · 2BR</p>
-              <p className="text-xs text-white/75">FAQ schema and OG tags ship together.</p>
+              <p className="text-xs text-white/75">FAQ schema and sharing tags publish together.</p>
             </div>
           ),
         },
@@ -132,23 +128,19 @@ const FAIRVIA_PRODUCTS: ProductDefinition[] = [
   {
     slug: "comply",
     name: "Fairvia Comply",
-    tagline: "Identity, escrow, and lease pack orchestrated in minutes, not weeks.",
+    tagline: "Compliance workspace that moves California leases, escrow, and ID checks from invite to funded in minutes.",
     features: [
-      "Dual identity verification for landlord and renter",
-      "DFPI-licensed escrow setup with status sharing",
-      "Lease pack generator with California-first clauses",
-    ],
-    capabilities: [
-      "Guided invite-to-funded flow with progress checkpoints",
-      "Photo + receipt logging that timestamps every upload",
-      "Shared case timeline and audit log for both parties",
+      "Dual identity verification for landlords and renters",
+      "DFPI-licensed escrow setup with shared status",
+      "California lease pack with guided signatures",
+      "Photo and receipt logging with automatic timestamps",
     ],
     benefits: [
       "Move deposits into neutral custody before keys change hands",
-      "Eliminate missing fields and slow email threads",
-      "Give renters a clear view so support pings drop",
+      "Stop chasing paperwork across email threads",
+      "Give renters the same clear timeline so support pings drop",
     ],
-    why: "Comply removes guesswork by bundling ID checks, escrow wiring, and AB 1482-ready paperwork into a single guided lane.",
+    why: "Comply bundles ID checks, escrow wiring, and AB 1482 paperwork into one guided lane that keeps everyone synced.",
     visual: {
       headline: "Comply workspace",
       caption: "Escrow, signatures, and identity steps tracked side-by-side.",
@@ -184,23 +176,18 @@ const FAIRVIA_PRODUCTS: ProductDefinition[] = [
   {
     slug: "trust-plus",
     name: "Fairvie Trust+",
-    tagline: "Port your escrow proof anywhere prospects discover you.",
+    tagline: "Portable trust badge that proves escrow anywhere California landlords list rentals.",
     features: [
-      "One-line badge snippet with live verification states",
-      "Tokenized short link that tracks marketplace vs. email vs. QR",
-      "Compact graphic pack for listings, replies, and flyers",
-    ],
-    capabilities: [
-      "Badge states mirror Comply: setup, live, paused, under review",
-      "QR builder for door signs and print handouts",
-      "Click analytics segmented by source and placement",
+      "One-line Trust+ badge with live verification states",
+      "Source-aware short link comparing marketplace, email, and QR clicks",
+      "Badge artwork and QR pack sized for posts, replies, and flyers",
     ],
     benefits: [
       "Lift click quality inside crowded marketplace feeds",
-      "Show trust before a renter ever asks",
+      "Show proof before a renter ever reaches out",
       "Route prospects into Discover without rebuilding listings",
     ],
-    why: "Trust+ turns compliance status into a portable badge so landlords can keep using every channel while signaling escrow-backed safety.",
+    why: "Trust+ turns escrow status into a portable signal so every channel carries the same calm proof.",
     visual: {
       headline: "Trust+ overlay",
       caption: "Live badge states and tracking for every channel in play.",
@@ -236,23 +223,19 @@ const FAIRVIA_PRODUCTS: ProductDefinition[] = [
   {
     slug: "offboard-21",
     name: "Offboard 21",
-    tagline: "Guided move-out that keeps the 21-day clock calm and documented.",
+    tagline: "Move-out control center that keeps California landlords on time and dispute-ready.",
     features: [
-      "Countdown dashboard with nudges at key milestones",
-      "Deductions helper that checks math, categories, and evidence",
+      "21-day countdown dashboard with smart nudges",
+      "Deductions helper that checks math, categories, and proof",
       "Letter generator with receipts, photos, and escrow release steps",
-    ],
-    capabilities: [
-      "Pre move-out walkthrough capture with labeled photo prompts",
-      "Dispute buffer that logs questions and responses",
-      "Three-year archive exportable for audits or attorneys",
+      "Walkthrough capture with labeled photo prompts and notes",
     ],
     benefits: [
-      "Hit legal deadlines without scrambling",
+      "Hit California deadlines without scramble",
       "Avoid overclaim mistakes with built-in guardrails",
-      "Release funds confidently from escrow with a full record",
+      "Release funds confidently with a complete case file",
     ],
-    why: "Offboard 21 pairs timers with evidence prompts so landlords close cases in under 40 minutes while meeting California rules.",
+    why: "Offboard 21 pairs timers with evidence prompts so you finish in under 40 minutes and stay compliant.",
     visual: {
       headline: "Offboard timeline",
       caption: "Countdown, deduction math, and release controls in one calm panel.",
@@ -386,6 +369,7 @@ function ProductSections() {
 
 function ProductSection({ product, index }: { product: ProductDefinition; index: number }) {
   const backgroundClass = index % 2 === 0 ? "bg-white" : "bg-slate-50";
+  const ctaHref = product.ctaHref ?? "#contact";
 
   return (
     <section id={product.slug} className={`${backgroundClass} py-14`}>
@@ -398,12 +382,22 @@ function ProductSection({ product, index }: { product: ProductDefinition; index:
             </span>
             <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">{product.tagline}</h2>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            <ProductCategoryCard title="Features" items={product.features} />
-            <ProductCategoryCard title="Capabilities" items={product.capabilities} />
-            <ProductCategoryCard title="Benefits" items={product.benefits} />
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <ProductListCard
+              title="Features"
+              items={product.features}
+              className="sm:col-span-2 lg:col-span-2"
+            />
+            <ProductListCard title="Benefits" items={product.benefits} />
             <ProductWhyCard why={product.why} />
           </div>
+          <a
+            href={ctaHref}
+            className="inline-flex w-max items-center gap-2 text-sm font-semibold text-emerald-600 transition hover:text-emerald-700"
+          >
+            See how Fairvia boosts your listings
+            <span aria-hidden>→</span>
+          </a>
         </div>
       </div>
     </section>
@@ -431,9 +425,21 @@ function ProductVisual({ visual }: { visual: ProductVisualDefinition }) {
   );
 }
 
-function ProductCategoryCard({ title, items }: { title: string; items: ReadonlyArray<string> }) {
+function ProductListCard({
+  title,
+  items,
+  className,
+}: {
+  title: string;
+  items: ReadonlyArray<string>;
+  className?: string;
+}) {
   return (
-    <div className="h-full rounded-2xl border border-slate-200 bg-white px-5 py-6 shadow-[0_20px_40px_-34px_rgba(15,23,42,0.18)]">
+    <div
+      className={`h-full rounded-2xl border border-slate-200 bg-white px-5 py-6 shadow-[0_20px_40px_-34px_rgba(15,23,42,0.18)] ${
+        className ?? ""
+      }`}
+    >
       <h3 className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">{title}</h3>
       <ul className="mt-3 space-y-2.5 text-sm text-slate-600">
         {items.map((item) => (
