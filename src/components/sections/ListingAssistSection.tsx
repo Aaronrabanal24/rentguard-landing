@@ -11,7 +11,7 @@ export default function ListingAssistSection() {
       id="listing-assist"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, margin: "-50px 0px 0px 0px", amount: 0.15 }}
       transition={{ duration: 0.45, ease: "easeOut" }}
     >
       <div className="mx-auto max-w-6xl px-4">
@@ -33,7 +33,7 @@ export default function ListingAssistSection() {
               className="rounded-3xl border border-slate-200 bg-slate-50 p-6 text-sm text-slate-600 shadow-sm"
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={{ once: true, margin: "-50px 0px 0px 0px", amount: 0.2 }}
               transition={{ duration: 0.35, ease: "easeOut" }}
             >
               <h3 className="text-base font-semibold text-slate-900">What renters see</h3>
@@ -51,7 +51,7 @@ export default function ListingAssistSection() {
               className="rounded-3xl border border-slate-200 bg-slate-50 p-6 text-sm text-slate-600 shadow-sm"
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={{ once: true, margin: "-50px 0px 0px 0px", amount: 0.2 }}
               transition={{ duration: 0.35, ease: "easeOut", delay: 0.05 }}
             >
               <h3 className="text-base font-semibold text-slate-900">How you share it</h3>

@@ -17,7 +17,7 @@ export default function PilotFeatureMatrix() {
       id="pilot-feature-set"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, margin: "-50px 0px 0px 0px", amount: 0.2 }}
       transition={{ duration: 0.45, ease: "easeOut" }}
     >
       <div className="mx-auto max-w-6xl px-4">
@@ -36,7 +36,7 @@ export default function PilotFeatureMatrix() {
               className="rounded-3xl border border-slate-200 bg-slate-50 p-6 text-sm text-slate-600 shadow-sm"
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={{ once: true, margin: "-50px 0px 0px 0px", amount: 0.2 }}
               transition={{ duration: 0.35, ease: "easeOut", delay: index * 0.05 }}
             >
               <h3 className="text-lg font-semibold text-slate-900">{set.title}</h3>

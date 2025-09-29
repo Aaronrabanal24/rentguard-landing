@@ -290,7 +290,7 @@ function FeatureHeroVisual() {
       className="relative w-full max-w-xl overflow-hidden rounded-[32px] border border-white/20 bg-white/10 p-6 shadow-[0_40px_80px_-30px_rgba(6,40,90,0.55)] backdrop-blur"
       initial={{ opacity: 0, x: 40 }}
       whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: true, margin: "-50px 0px 0px 0px", amount: 0.2 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <div className="flex items-center justify-between text-xs text-slate-200">
@@ -345,7 +345,7 @@ function CoreFeatureShowcase() {
               className="flex h-full flex-col gap-4 overflow-hidden rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-[0_25px_45px_-35px_rgba(15,23,42,0.18)]"
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={{ once: true, margin: "-50px 0px 0px 0px", amount: 0.2 }}
               transition={{ duration: 0.35, ease: "easeOut", delay: index * 0.05 }}
             >
               <span className="inline-flex w-max items-center gap-2 rounded-full bg-sky-100 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.3em] text-sky-600">
@@ -397,7 +397,7 @@ function WorkflowStory() {
             className="flex snap-x snap-mandatory gap-3 overflow-x-auto rounded-3xl border border-slate-200 bg-white px-4 py-5 text-sm text-slate-600 shadow-sm lg:flex-col lg:overflow-visible"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, margin: "-50px 0px 0px 0px", amount: 0.2 }}
             transition={{ duration: 0.35, ease: "easeOut" }}
           >
             {WORKFLOW_STEPS.map((step, index) => (
@@ -425,7 +425,7 @@ function WorkflowVisual() {
       className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-[0_35px_70px_-40px_rgba(15,23,42,0.3)]"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, margin: "-50px 0px 0px 0px", amount: 0.2 }}
       transition={{ duration: 0.35, ease: "easeOut" }}
     >
       <div className="flex items-center justify-between">
