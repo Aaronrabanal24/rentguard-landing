@@ -24,13 +24,13 @@ export function HeroContent() {
   const [headlineLead, headlineAccent] = splitHeadline(heroContent.headline);
 
   return (
-    <div className="relative">
+    <div className="relative mx-auto max-w-xl space-y-8">
       <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-sky-400/40 bg-gradient-to-r from-sky-50 to-teal-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-sky-700 shadow-sm shadow-sky-200/60 backdrop-blur-sm">
         <span className="h-2 w-2 rounded-full bg-sky-500 animate-pulse" />
         {heroContent.badge}
       </span>
 
-      <h1 className="mb-4 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+      <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
         {headlineLead}
         {headlineAccent ? (
           <span className="bg-gradient-to-r from-sky-600 via-sky-500 to-teal-500 bg-clip-text text-transparent">
@@ -39,11 +39,11 @@ export function HeroContent() {
         ) : null}
       </h1>
 
-      <p className="mb-8 max-w-xl text-lg leading-relaxed text-slate-600 sm:text-xl">
+      <p className="text-lg leading-relaxed text-slate-600 sm:text-xl">
         {heroContent.subheadline}
       </p>
 
-      <div className="mb-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
+      <div className="grid gap-4 pt-4 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
         {heroContent.value_props.map((value, index) => (
           <div
             key={value.title}
@@ -60,8 +60,8 @@ export function HeroContent() {
         ))}
       </div>
 
-      <div className="space-y-6">
-        <div className="flex flex-col items-start gap-4 sm:flex-row">
+      <div className="space-y-6 pt-4">
+        <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
           <Button onClick={handlePrimaryClick} size="lg">
             Apply for the Fairvia pilot
           </Button>
@@ -70,7 +70,7 @@ export function HeroContent() {
           </Button>
         </div>
 
-        <div className="flex items-center gap-6 text-xs text-slate-500">
+        <div className="flex flex-wrap items-center gap-4 text-xs text-slate-500">
           {trustIndicators.map((item) => (
             <div key={item.label} className="flex items-center gap-2">
               <div className={`h-2 w-2 rounded-full ${item.color}`} />

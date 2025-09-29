@@ -56,7 +56,7 @@ export function HeroMockup() {
         <div className="absolute left-1/2 top-1/3 hidden h-40 w-72 -translate-x-1/2 rounded-full bg-slate-100/60 blur-2xl lg:block" aria-hidden />
       </div>
 
-      <div className="relative mx-auto max-w-5xl">
+      <div className="relative mx-auto max-w-xl">
         <div className="overflow-hidden rounded-[32px] border border-white/50 bg-white/90 p-5 shadow-[0_45px_90px_-40px_rgba(15,23,42,0.35)] backdrop-blur-xl sm:p-6 lg:p-8">
           <div className="flex flex-col gap-6 lg:grid lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-8">
             <nav
