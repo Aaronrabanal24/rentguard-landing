@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { motion } from "@/lib/motion";
 import HomeCTA from "@/components/sections/HomeCTA";
@@ -440,9 +440,31 @@ function ProductSections() {
   );
 }
 
+type PanelKey = "benefits" | "features" | "why";
+
 function ProductSection({ product, index }: { product: ProductDefinition; index: number }) {
   const backgroundClass = index % 2 === 0 ? "bg-white" : "bg-slate-50";
   const ctaHref = product.ctaHref ?? "#contact";
+  const [openPanel, setOpenPanel] = useState<PanelKey | null>("benefits");
+
+  const panelConfig: Record<PanelKey, { title: string; subtitle: string; items?: ReadonlyArray<ListEntry>; content?: string; accent?: "light" | "dark" }> = {
+    benefits: {
+      title: "Benefits",
+      subtitle: "Outcomes landlords feel",
+      items: product.benefits,
+    },
+    features: {
+      title: "Features",
+      subtitle: "What powers the workflow",
+      items: product.features,
+    },
+    why: {
+      title: "Why it matters",
+      subtitle: "Confidence builder",
+      content: product.why,
+      accent: "dark",
+    },
+  };
 
   return (
     <section id={product.slug} className={`${backgroundClass} py-14`}>
@@ -460,22 +482,29 @@ function ProductSection({ product, index }: { product: ProductDefinition; index:
             ) : null}
             <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">{product.tagline}</h2>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <ProductListCard
-              title="Benefits"
-              items={product.benefits}
-              className="sm:col-span-2 lg:col-span-3"
-            />
-            <ProductListCard
-              title="Features"
-              items={product.features}
-              className="sm:col-span-2 lg:col-span-2"
-            />
-            <ProductWhyCard why={product.why} />
+          <div className="space-y-3">
+            {(Object.keys(panelConfig) as PanelKey[]).map((key) => {
+              const config = panelConfig[key];
+              const isOpen = openPanel === key;
+              const panelId = `${product.slug}-${key}`;
+              return (
+                <ProductAccordionCard
+                  key={key}
+                  title={config.title}
+                  subtitle={config.subtitle}
+                  items={config.items}
+                  content={config.content}
+                  open={isOpen}
+                  onToggle={() => setOpenPanel(isOpen ? null : key)}
+                  panelId={panelId}
+                  accent={config.accent}
+                />
+              );
+            })}
           </div>
           <a
             href={ctaHref}
-            className="inline-flex w-max items-center gap-2 text-sm font-semibold text-emerald-600 transition hover:text-emerald-700"
+            className="inline-flex w-max items-center gap-2 rounded-full bg-emerald-500/90 px-6 py-3 text-sm font-semibold text-white shadow-[0_18px_30px_-20px_rgba(16,185,129,0.75)] transition hover:-translate-y-[2px] hover:bg-emerald-500"
           >
             {product.ctaLabel ?? "See how Fairvia boosts your listings"}
             <span aria-hidden>→</span>
@@ -507,42 +536,73 @@ function ProductVisual({ visual }: { visual: ProductVisualDefinition }) {
   );
 }
 
-function ProductListCard({
+function ProductAccordionCard({
   title,
+  subtitle,
   items,
-  className,
+  content,
+  open,
+  onToggle,
+  panelId,
+  accent = "light",
 }: {
   title: string;
-  items: ReadonlyArray<ListEntry>;
-  className?: string;
+  subtitle?: string;
+  items?: ReadonlyArray<ListEntry>;
+  content?: string;
+  open: boolean;
+  onToggle: () => void;
+  panelId: string;
+  accent?: "light" | "dark";
 }) {
-  return (
-    <div
-      className={`h-full rounded-2xl border border-slate-200 bg-white px-5 py-6 shadow-[0_20px_40px_-34px_rgba(15,23,42,0.18)] ${
-        className ?? ""
-      }`}
-    >
-      <h3 className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">{title}</h3>
-      <ul className="mt-3 space-y-2.5 text-sm text-slate-600">
-        {items.map((item) => (
-          <li key={item.label} className="flex items-start gap-2">
-            <span className="mt-1 inline-flex h-2 w-2 flex-none rounded-full bg-emerald-500" />
-            <span>
-              <span className="font-semibold text-slate-900">{item.label}</span>
-              <span className="text-slate-600"> — {item.detail}</span>
-            </span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
+  const isDark = accent === "dark";
+  const containerClasses = isDark
+    ? "border-slate-900/70 bg-slate-900/90 text-white shadow-[0_28px_60px_-30px_rgba(15,23,42,0.6)]"
+    : "border-slate-200 bg-white/95 text-slate-900 shadow-[0_24px_56px_-34px_rgba(15,23,42,0.22)]";
+  const detailTextClass = isDark ? "text-white/80" : "text-slate-600";
+  const bulletBorder = isDark ? "border-white/10 bg-white/5" : "border-emerald-200/60 bg-emerald-500/5";
 
-function ProductWhyCard({ why }: { why: string }) {
   return (
-    <div className="h-full rounded-2xl border border-slate-900/10 bg-slate-900/95 px-5 py-6 text-slate-100 shadow-[0_24px_48px_-34px_rgba(15,23,42,0.3)]">
-      <h3 className="text-xs font-semibold uppercase tracking-[0.3em] text-white/70">Why it matters</h3>
-      <p className="mt-3 text-sm text-white/90">{why}</p>
+    <div className={`rounded-3xl border transition ${containerClasses}`}>
+      <button
+        type="button"
+        onClick={onToggle}
+        aria-expanded={open}
+        aria-controls={panelId}
+        className="flex w-full items-center justify-between gap-3 px-5 py-4 text-left"
+      >
+        <div className="space-y-1">
+          <p className={`text-xs font-semibold uppercase tracking-[0.3em] ${isDark ? "text-emerald-200" : "text-emerald-600"}`}>
+            {title}
+          </p>
+          {subtitle ? (
+            <p className={`text-sm font-semibold ${isDark ? "text-white" : "text-slate-900"}`}>{subtitle}</p>
+          ) : null}
+        </div>
+        <span className={`text-lg transition-transform duration-200 ${open ? "rotate-180" : "rotate-0"}`} aria-hidden>
+          ▾
+        </span>
+      </button>
+      {open ? (
+        <div id={panelId} className="space-y-3 px-5 pb-5">
+          {items ? (
+            <ul className="space-y-2.5">
+              {items.map((item) => (
+                <li
+                  key={item.label}
+                  className={`rounded-2xl border px-4 py-3 transition ${bulletBorder}`}
+                >
+                  <p className={`text-sm font-semibold ${isDark ? "text-white" : "text-slate-900"}`}>{item.label}</p>
+                  <p className={`mt-1 text-sm leading-relaxed ${detailTextClass}`}>{item.detail}</p>
+                </li>
+              ))}
+            </ul>
+          ) : null}
+          {content ? (
+            <p className={`text-sm leading-relaxed ${detailTextClass}`}>{content}</p>
+          ) : null}
+        </div>
+      ) : null}
     </div>
   );
 }
