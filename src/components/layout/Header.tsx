@@ -28,9 +28,9 @@ export default function Header() {
   };
 
   return (
-    <header className="safe-top">
+    <header>
       {/* Sticky top bar */}
-      <div className="sticky top-0 z-50 border-b border-white/60 bg-white/80 backdrop-blur-lg shadow-sm">
+      <div className="sticky top-0 z-50 border-b border-white/60 bg-white/80 backdrop-blur-lg shadow-sm safe-top">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-3 py-3 sm:px-4 sm:py-4">
           <Link href="/" aria-label="Fairvia home" className="inline-flex items-center">
             <BrandLogo priority className="drop-shadow-sm" />
