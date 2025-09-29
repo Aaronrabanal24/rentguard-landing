@@ -27,6 +27,8 @@ interface ProductDefinition {
   why: string;
   visual: ProductVisualDefinition;
   ctaHref?: string;
+  ctaLabel?: string;
+  badge?: string;
 }
 
 const PilotModules = dynamic(() => import("@/components/sections/PilotModules"), {
@@ -128,19 +130,21 @@ const FAIRVIA_PRODUCTS: ProductDefinition[] = [
   {
     slug: "comply",
     name: "Fairvia Comply",
-    tagline: "Compliance workspace that moves California leases, escrow, and ID checks from invite to funded in minutes.",
+    tagline: "Move-in compliance made simple: escrow, ID, and lease in one flow.",
+    badge: "AB 1482 ready",
     features: [
-      "Dual identity verification for landlords and renters",
-      "DFPI-licensed escrow setup with shared status",
-      "California lease pack with guided signatures",
-      "Photo and receipt logging with automatic timestamps",
+      "Verify landlord and renter IDs to build trust",
+      "Licensed escrow with live status updates",
+      "Auto-generated lease packs built for California law",
+      "Photo and receipt uploads timestamped automatically",
     ],
     benefits: [
-      "Move deposits into neutral custody before keys change hands",
-      "Stop chasing paperwork across email threads",
-      "Give renters the same clear timeline so support pings drop",
+      "Deposits secured in neutral escrow before move-in",
+      "No more missing fields or endless email chains",
+      "Renters see everything clearly, so fewer support questions",
     ],
-    why: "Comply bundles ID checks, escrow wiring, and AB 1482 paperwork into one guided lane that keeps everyone synced.",
+    why: "Stay compliant without the stress—ID, escrow, and AB 1482 paperwork all handled in one guided process.",
+    ctaLabel: "Secure your next lease the compliant way",
     visual: {
       headline: "Comply workspace",
       caption: "Escrow, signatures, and identity steps tracked side-by-side.",
@@ -380,22 +384,31 @@ function ProductSection({ product, index }: { product: ProductDefinition; index:
             <span className="inline-flex items-center gap-2 rounded-full bg-slate-900/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.3em] text-white/90">
               {product.name}
             </span>
+            {product.badge ? (
+              <span className="inline-flex items-center gap-2 rounded-full bg-emerald-500/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.3em] text-emerald-700">
+                {product.badge}
+              </span>
+            ) : null}
             <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">{product.tagline}</h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <ProductListCard
+              title="Benefits"
+              items={product.benefits}
+              className="sm:col-span-2 lg:col-span-3"
+            />
             <ProductListCard
               title="Features"
               items={product.features}
               className="sm:col-span-2 lg:col-span-2"
             />
-            <ProductListCard title="Benefits" items={product.benefits} />
             <ProductWhyCard why={product.why} />
           </div>
           <a
             href={ctaHref}
             className="inline-flex w-max items-center gap-2 text-sm font-semibold text-emerald-600 transition hover:text-emerald-700"
           >
-            See how Fairvia boosts your listings
+            {product.ctaLabel ?? "See how Fairvia boosts your listings"}
             <span aria-hidden>→</span>
           </a>
         </div>
