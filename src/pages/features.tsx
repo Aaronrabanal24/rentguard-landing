@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { motion } from "@/lib/motion";
 import HomeCTA from "@/components/sections/HomeCTA";
+import ListingAssistSection from "@/components/sections/ListingAssistSection";
 import { Hero3DScene } from "@/components/sections/Hero/mockup/Hero3DScene";
 
 interface FeatureLayer {
@@ -226,6 +227,7 @@ export default function FeaturesPage() {
   return (
     <PageContainer title="Fairvia — Features & Compliance">
       <FeatureHero />
+      <ListingAssistSection />
       <CoreFeatureShowcase />
       <WorkflowStory />
       <PilotModules />
