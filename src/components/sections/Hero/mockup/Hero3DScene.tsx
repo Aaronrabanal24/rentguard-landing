@@ -11,7 +11,7 @@ interface Hero3DLayer {
 interface Hero3DSceneProps {
   className?: string;
   spotlightClassName?: string;
-  layers: Hero3DLayer[];
+  layers: ReadonlyArray<Hero3DLayer>;
 }
 
 export function Hero3DScene({ className, spotlightClassName, layers }: Hero3DSceneProps) {
