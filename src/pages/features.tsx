@@ -511,9 +511,6 @@ function SuiteImpactSection() {
             Suite in sync
           </span>
           <h2 className="text-3xl font-semibold sm:text-4xl">What happens when all four products run together</h2>
-          <p className="text-sm text-slate-300 sm:text-base">
-            Discover sparks credible demand, Comply locks move-in compliance, the Fairvia Trust Badge carries escrow verification across every listing, and Offboard 21 closes the loop with a documented 21-day deposit return. The full suite keeps both sides aligned from first click to final refund.
-          </p>
         </div>
 
         <div className="grid gap-4 md:grid-cols-2">
