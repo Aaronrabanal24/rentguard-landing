@@ -74,6 +74,29 @@ const FEATURE_HERO_LAYERS: FeatureLayer[] = [
   },
 ];
 
+const FEATURE_INTRO_HIGHLIGHTS = [
+  {
+    product: "Discover",
+    headline: "Better renters from search",
+    detail: "SEO rental profiles surface verified listings for California intent-based queries.",
+  },
+  {
+    product: "Comply",
+    headline: "Neutral escrow by default",
+    detail: "ID checks, escrow, and AB 1482-ready leases run in one guided, compliant flow.",
+  },
+  {
+    product: "Trust Badge",
+    headline: "Confidence across marketplaces",
+    detail: "A live verification overlay follows every listing, email reply, and QR handout.",
+  },
+  {
+    product: "Offboard 21",
+    headline: "Tracked 21-day deposit return",
+    detail: "Itemized deductions, receipts, and release math stay audit-ready in under 40 minutes.",
+  },
+] as const;
+
 const FAIRVIA_PRODUCTS: ProductDefinition[] = [
   {
     slug: "discover",
@@ -326,8 +349,8 @@ export default function FeaturesPage() {
 function FeatureHero() {
   return (
     <section className="overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-16 text-slate-100">
-      <div className="mx-auto flex max-w-5xl flex-col gap-10 px-4 lg:flex-row lg:items-center lg:gap-16">
-        <div className="space-y-5">
+      <div className="mx-auto flex max-w-6xl flex-col gap-12 px-4 lg:flex-row lg:items-center lg:gap-16">
+        <div className="space-y-6">
           <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.3em]">
             Fairvia feature suite
           </span>
@@ -335,47 +358,40 @@ function FeatureHero() {
             SEO, escrow, and compliance tools for California landlords
           </h1>
           <p className="text-base text-slate-300 sm:text-lg">
-            Fairvia gives independent landlords four focused products that simplify the entire rental lifecycle. From first listing to deposit return you’ll attract better renters, stay compliant, and return deposits on time without extra work.
+            Independent landlords get enterprise-grade rental compliance without adding staff. Fairvia ties the four critical moments—discoverability, move-in compliance, portable trust, and the 21-day deposit return—into one calm workflow.
           </p>
-          <ul className="space-y-2.5 text-sm text-slate-200 sm:text-base">
-            <li className="flex items-start gap-2">
-              <span className="mt-1 inline-flex h-2 w-2 flex-none rounded-full bg-emerald-400" />
-              <span>
-                <span className="font-semibold text-white">Discover →</span> SEO rental profile that brings in quality renter leads through search
-              </span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="mt-1 inline-flex h-2 w-2 flex-none rounded-full bg-emerald-400" />
-              <span>
-                <span className="font-semibold text-white">Comply →</span> Escrow, ID checks, and AB 1482-ready leases in one guided flow
-              </span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="mt-1 inline-flex h-2 w-2 flex-none rounded-full bg-emerald-400" />
-              <span>
-                <span className="font-semibold text-white">Trust Badge →</span> Verification overlay that builds renter confidence across your listings
-              </span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="mt-1 inline-flex h-2 w-2 flex-none rounded-full bg-emerald-400" />
-              <span>
-                <span className="font-semibold text-white">Offboard 21 →</span> Itemized deductions, ready-to-send letters, and a tracked 21-day deposit return
-              </span>
-            </li>
-          </ul>
-          <p className="text-sm font-semibold text-emerald-200 sm:text-base">👉 Fairvia makes rental deposits trusted, fair, and stress-free for California landlords.</p>
+
+          <div className="grid gap-3 sm:grid-cols-2">
+            {FEATURE_INTRO_HIGHLIGHTS.map((item) => (
+              <div
+                key={item.product}
+                className="rounded-3xl border border-white/10 bg-white/8 px-5 py-4 shadow-[0_24px_60px_-32px_rgba(15,23,42,0.55)] backdrop-blur"
+              >
+                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-300">{item.product}</p>
+                <p className="mt-2 text-sm font-semibold text-white">{item.headline}</p>
+                <p className="mt-1 text-xs text-slate-200/80 sm:text-sm">{item.detail}</p>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-sm font-semibold text-emerald-200 sm:text-base">
+            👉 Fairvia makes rental deposits trusted, fair, and stress-free for California landlords.
+          </p>
+
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
             <a
               href="#discover"
-              className="inline-flex items-center justify-center rounded-full bg-emerald-500 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-[1px] hover:bg-emerald-600"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-500 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-[1px] hover:bg-emerald-600"
             >
               Book a Demo and See Fairvia in Action
+              <span aria-hidden>→</span>
             </a>
             <a
               href="#offboard-21"
-              className="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white/90 transition hover:-translate-y-[1px] hover:border-white/60"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white/90 transition hover:-translate-y-[1px] hover:border-white/60"
             >
               Talk to Us About 21 Day Deposits
+              <span aria-hidden>→</span>
             </a>
           </div>
         </div>
