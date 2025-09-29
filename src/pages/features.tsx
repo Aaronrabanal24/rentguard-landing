@@ -1,8 +1,7 @@
 import type { ReactNode } from "react";
+import dynamic from "next/dynamic";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { motion } from "@/lib/motion";
-import PilotModules from "@/components/sections/PilotModules";
-import PilotFeatureMatrix from "@/components/sections/PilotFeatureMatrix";
 import HomeCTA from "@/components/sections/HomeCTA";
 import { Hero3DScene } from "@/components/sections/Hero/mockup/Hero3DScene";
 
@@ -21,6 +20,14 @@ interface FeatureCardDefinition {
   spotlightClassName: string;
   layers: ReadonlyArray<FeatureLayer>;
 }
+
+const PilotModules = dynamic(() => import("@/components/sections/PilotModules"), {
+  loading: () => <SectionSkeleton heightClass="h-[420px]" label="Loading pilot modules" />,
+});
+
+const PilotFeatureMatrix = dynamic(() => import("@/components/sections/PilotFeatureMatrix"), {
+  loading: () => <SectionSkeleton heightClass="h-[420px]" label="Loading feature matrix" />,
+});
 
 const CORE_FEATURES: FeatureCardDefinition[] = [
   {
@@ -228,6 +235,19 @@ export default function FeaturesPage() {
   );
 }
 
+function SectionSkeleton({ heightClass, label }: { heightClass: string; label: string }) {
+  return (
+    <div
+      className={`flex ${heightClass} items-center justify-center rounded-3xl border border-slate-200 bg-white/70 text-sm text-slate-400 animate-pulse`}
+      role="status"
+      aria-live="polite"
+      aria-label={label}
+    >
+      {label}
+    </div>
+  );
+}
+
 function FeatureHero() {
   return (
     <section className="overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-16 text-slate-100">
@@ -277,6 +297,12 @@ function FeatureHeroVisual() {
       </div>
       <div className="mt-6 rounded-3xl border border-white/15 bg-white/10 p-4">
         <Hero3DScene className="h-48" spotlightClassName="bg-sky-500/20" layers={FEATURE_HERO_LAYERS} />
+        <noscript>
+          <div className="mt-4 rounded-2xl border border-white/20 bg-white/80 p-4 text-slate-700">
+            <p className="text-sm font-semibold">Escrow workflow preview</p>
+            <p className="text-xs text-slate-500">Enable JavaScript to see the interactive feature demo.</p>
+          </div>
+        </noscript>
       </div>
       <div className="mt-5 grid gap-3 text-xs text-slate-200 sm:grid-cols-3">
         <FeatureHeroStat label="Deposits released on time" value="100%" />
@@ -330,6 +356,11 @@ function CoreFeatureShowcase() {
               </div>
               <div className={`relative mt-4 rounded-3xl border border-slate-200/70 p-4 ${feature.accent}`}>
                 <Hero3DScene className="h-40" spotlightClassName={feature.spotlightClassName} layers={feature.layers} />
+                <noscript>
+                  <div className="mt-3 rounded-2xl border border-slate-200 bg-white/90 p-4 text-xs text-slate-600">
+                    Interactive demo unavailable without JavaScript.
+                  </div>
+                </noscript>
               </div>
             </motion.article>
           ))}
