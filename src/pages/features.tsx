@@ -225,7 +225,7 @@ const WORKFLOW_VISUAL_LAYERS: FeatureLayer[] = [
 
 export default function FeaturesPage() {
   return (
-    <PageContainer title="Fairvia — Features & Compliance">
+    <PageContainer title="Fairvia — Features & Compliance" animateMain={false}>
       <FeatureHero />
       <ListingAssistSection />
       <CoreFeatureShowcase />

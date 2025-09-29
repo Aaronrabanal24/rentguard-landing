@@ -9,6 +9,7 @@ interface PageContainerProps {
   description?: string;
   includeHeader?: boolean;
   includeFooter?: boolean;
+  animateMain?: boolean;
 }
 
 export function PageContainer({
@@ -16,6 +17,7 @@ export function PageContainer({
   description = "Fairvia keeps California security deposits neutral, compliant, and transparent.",
   includeHeader = true,
   includeFooter = true,
+  animateMain = true,
   children,
 }: PropsWithChildren<PageContainerProps>) {
   return (
@@ -27,14 +29,18 @@ export function PageContainer({
 
       {includeHeader && <Header />}
 
-      <motion.main
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -24 }}
-        transition={{ duration: 0.4, ease: "easeOut" }}
-      >
-        {children}
-      </motion.main>
+      {animateMain ? (
+        <motion.main
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -24 }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+        >
+          {children}
+        </motion.main>
+      ) : (
+        <main>{children}</main>
+      )}
 
       {includeFooter && <Footer />}
     </div>
