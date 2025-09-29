@@ -12,23 +12,18 @@ export const FEATURES = {
 
 export const FAQ_DATA = [
   {
-    question: "Who can join the pilot?",
+    question: "How much does Fairvia cost?",
     answer:
-      "We&apos;re onboarding independent California landlords with one to twenty units. Your listings stay on Zillow, Craigslist, or Facebook—we supply the Listing Assist badge and property profile instead of a marketplace.",
+      "Fairvia is $49 per door per month with no long-term contract. That includes escrow, compliance automation, tenant communication, and live support. We also offer a free 30-minute compliance audit before you start so you can see the workflow in action.",
   },
   {
-    question: "Does Fairvia replace my leasing workflow?",
+    question: "Is my tenant’s deposit actually safe?",
     answer:
-      "Fairvia connects you to a DFPI-licensed escrow partner, provides the California lease pack, and tracks status for both sides. You still control your lease terms—we just make sure identity checks, signatures, and neutral custody happen on time.",
+      "Yes. Deposits are held with DFPI-licensed escrow partners—not in your personal account. Tenants and owners see the same timeline, alerts, and release packet so there’s no question about where the money sits or when it will be released.",
   },
   {
-    question: "What proof do renters and advisors get?",
+    question: "What if I only manage 2 or 3 units?",
     answer:
-      "Every case has a shared timeline with guided messages, receipts, and photos. Renters can acknowledge updates with one click, and advisors can export the archive if they need to review deductions or timelines.",
-  },
-  {
-    question: "How fast can I get onboarded?",
-    answer:
-      "Most landlords complete identity verification, property setup, and the first tenant invite in under 30 minutes. We walk you through the first move-in and move-out so the compliance workflow, timers, and documentation are dialed before you go live.",
+      "Fairvia is built for California landlords with 1–20 doors. You can onboard a single property, set up the move-out workflow in under 20 minutes, and only pay for the doors you run through Fairvia. Most landlords start with one deposit and expand from there.",
   },
 ] as const;
