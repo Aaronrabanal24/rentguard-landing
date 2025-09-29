@@ -1,17 +1,62 @@
-import Image from "next/image";
+import type { ReactNode } from "react";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { motion } from "@/lib/motion";
 import PilotModules from "@/components/sections/PilotModules";
 import PilotFeatureMatrix from "@/components/sections/PilotFeatureMatrix";
 import HomeCTA from "@/components/sections/HomeCTA";
+import { Hero3DScene } from "@/components/sections/Hero/mockup/Hero3DScene";
 
-const CORE_FEATURES = [
+interface FeatureLayer {
+  content: ReactNode;
+  wrapperClassName?: string;
+  tileClassName?: string;
+}
+
+interface FeatureCardDefinition {
+  badge: string;
+  title: string;
+  description: string;
+  highlight: string;
+  accent: string;
+  spotlightClassName: string;
+  layers: ReadonlyArray<FeatureLayer>;
+}
+
+const CORE_FEATURES: FeatureCardDefinition[] = [
   {
     badge: "Neutral escrow",
     title: "Licensed custody with renter-friendly transparency",
     description:
       "Deposits land in DFPI-licensed escrow automatically. Renters, owners, and advisors share the same timeline so there are zero surprises.",
     highlight: "Works with any bank account you already use for rent collection.",
+    accent: "bg-gradient-to-br from-sky-100 via-white to-emerald-50",
+    spotlightClassName: "bg-sky-400/15",
+    layers: [
+      {
+        wrapperClassName: "-translate-x-16 -translate-y-12 rotate-6",
+        tileClassName:
+          "bg-gradient-to-br from-sky-500 via-indigo-500 to-slate-600 text-white shadow-[0_44px_90px_-42px_rgba(59,130,246,0.75)]",
+        content: (
+          <div className="space-y-2">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-white/60">Escrow</p>
+            <p className="text-lg font-semibold">DFPI-licensed</p>
+            <p className="text-xs text-white/75">Neutral status page renters can see.</p>
+          </div>
+        ),
+      },
+      {
+        wrapperClassName: "translate-x-12 translate-y-8 -rotate-4",
+        tileClassName:
+          "bg-white/95 text-slate-700 shadow-[0_32px_70px_-36px_rgba(15,23,42,0.45)]",
+        content: (
+          <div className="space-y-2">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-slate-400">Timeline</p>
+            <p className="text-sm font-semibold text-slate-900">Deposit received</p>
+            <p className="text-xs text-slate-500">Shared ledger updates both sides.</p>
+          </div>
+        ),
+      },
+    ],
   },
   {
     badge: "Compliance automation",
@@ -19,6 +64,34 @@ const CORE_FEATURES = [
     description:
       "Upload photos, receipts, and notes from your phone. Fairvia timestamps everything, builds the deduction packet, and alerts you before day 21.",
     highlight: "Alerts fire at day 16, 19, and 20—never forfeit another deposit.",
+    accent: "bg-gradient-to-br from-amber-100 via-white to-rose-50",
+    spotlightClassName: "bg-amber-400/15",
+    layers: [
+      {
+        wrapperClassName: "-translate-x-16 -translate-y-12 -rotate-6",
+        tileClassName:
+          "bg-gradient-to-br from-amber-500 via-orange-500 to-rose-500 text-white shadow-[0_46px_92px_-42px_rgba(249,115,22,0.78)]",
+        content: (
+          <div className="space-y-2">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-white/70">Clock</p>
+            <p className="text-lg font-semibold">Day 16 alert</p>
+            <p className="text-xs text-white/75">Stay ahead of the 21-day cutoff.</p>
+          </div>
+        ),
+      },
+      {
+        wrapperClassName: "translate-x-12 translate-y-8 rotate-3",
+        tileClassName:
+          "bg-white/95 text-slate-700 shadow-[0_34px_72px_-38px_rgba(15,23,42,0.45)]",
+        content: (
+          <div className="space-y-2">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-slate-400">Packet</p>
+            <p className="text-sm font-semibold text-slate-900">Receipts bundled</p>
+            <p className="text-xs text-slate-500">Exports to PDF in one tap.</p>
+          </div>
+        ),
+      },
+    ],
   },
   {
     badge: "Tenant communication",
@@ -26,6 +99,34 @@ const CORE_FEATURES = [
     description:
       "Guided messages cover walkthrough scheduling, deduction previews, and final releases. Tenants acknowledge with one tap so you have written proof.",
     highlight: "Keep conversations out of texts and inside a shared record you control.",
+    accent: "bg-gradient-to-br from-sky-100 via-white to-violet-50",
+    spotlightClassName: "bg-indigo-400/15",
+    layers: [
+      {
+        wrapperClassName: "-translate-x-16 -translate-y-12 rotate-5",
+        tileClassName:
+          "bg-gradient-to-br from-sky-500 via-indigo-500 to-violet-500 text-white shadow-[0_44px_90px_-40px_rgba(56,189,248,0.75)]",
+        content: (
+          <div className="space-y-2">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-white/70">Inbox</p>
+            <p className="text-sm font-semibold">Read receipts</p>
+            <p className="text-xs text-white/75">Tenant confirmed walkthrough 2m ago.</p>
+          </div>
+        ),
+      },
+      {
+        wrapperClassName: "translate-x-12 translate-y-9 -rotate-3",
+        tileClassName:
+          "bg-white/95 text-slate-700 shadow-[0_32px_70px_-36px_rgba(15,23,42,0.45)]",
+        content: (
+          <div className="space-y-2">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-slate-400">Archive</p>
+            <p className="text-sm font-semibold text-slate-900">3-year log</p>
+            <p className="text-xs text-slate-500">Messages + receipts stay audit ready.</p>
+          </div>
+        ),
+      },
+    ],
   },
 ];
 
@@ -45,6 +146,72 @@ const WORKFLOW_STEPS = [
   {
     title: "Release funds and archive the case",
     detail: "Escrow releases the balance automatically at day 21. You export a court-ready PDF for your records or accountant.",
+  },
+];
+
+const FEATURE_HERO_LAYERS: FeatureLayer[] = [
+  {
+    wrapperClassName: "-translate-x-20 -translate-y-14 -rotate-6",
+    tileClassName:
+      "bg-gradient-to-br from-sky-500 via-teal-500 to-emerald-500 text-white shadow-[0_48px_96px_-46px_rgba(20,184,166,0.85)]",
+    content: (
+      <div className="space-y-2">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-white/70">Case status</p>
+        <p className="text-xl font-semibold">Escrow live</p>
+        <p className="text-xs text-white/80">Tenant + landlord synced in one view.</p>
+      </div>
+    ),
+  },
+  {
+    wrapperClassName: "translate-x-10 -translate-y-4 rotate-3",
+    tileClassName:
+      "bg-white/95 text-slate-700 shadow-[0_36px_80px_-44px_rgba(15,23,42,0.55)]",
+    content: (
+      <div className="space-y-2">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-slate-400">Reminders</p>
+        <p className="text-sm font-semibold text-slate-900">Day 16 · Prep packet</p>
+        <p className="text-xs text-slate-500">Auto texts + emails to both parties.</p>
+      </div>
+    ),
+  },
+  {
+    wrapperClassName: "translate-x-4 translate-y-12 -rotate-2",
+    tileClassName:
+      "bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 text-white shadow-[0_42px_90px_-46px_rgba(15,23,42,0.75)]",
+    content: (
+      <div className="space-y-2">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-white/60">Release math</p>
+        <p className="text-xl font-semibold">$2,100</p>
+        <p className="text-xs text-white/70">Refund queued for renter in escrow.</p>
+      </div>
+    ),
+  },
+];
+
+const WORKFLOW_VISUAL_LAYERS: FeatureLayer[] = [
+  {
+    wrapperClassName: "-translate-x-16 -translate-y-12 rotate-5",
+    tileClassName:
+      "bg-gradient-to-br from-indigo-500 via-sky-500 to-blue-500 text-white shadow-[0_42px_88px_-44px_rgba(59,130,246,0.8)]",
+    content: (
+      <div className="space-y-2">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-white/70">Timeline</p>
+        <p className="text-sm font-semibold">Walkthrough confirmed</p>
+        <p className="text-xs text-white/75">Tenant tapped confirm 2 minutes ago.</p>
+      </div>
+    ),
+  },
+  {
+    wrapperClassName: "translate-x-12 translate-y-8 -rotate-4",
+    tileClassName:
+      "bg-white/95 text-slate-700 shadow-[0_36px_76px_-42px_rgba(15,23,42,0.5)]",
+    content: (
+      <div className="space-y-2">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-slate-400">Checklist</p>
+        <p className="text-sm font-semibold text-slate-900">Photos logged</p>
+        <p className="text-xs text-slate-500">Kitchen, bedrooms, and bath uploaded.</p>
+      </div>
+    ),
   },
 ];
 
@@ -89,34 +256,34 @@ function FeatureHero() {
           </div>
         </div>
 
-        <motion.div
-          className="relative w-full max-w-xl overflow-hidden rounded-[32px] border border-white/20 bg-white/10 p-6 shadow-[0_40px_80px_-30px_rgba(6,40,90,0.55)] backdrop-blur"
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-        >
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-            <div className="flex items-center justify-between text-xs text-slate-200">
-              <span>Oakland 2BR · Escrow timeline</span>
-              <span className="rounded-full bg-emerald-500/20 px-3 py-1 text-emerald-300">100% compliant</span>
-            </div>
-            <Image
-              src="/visuals/features-stack.svg"
-              alt="Fairvia feature stack"
-              width={480}
-              height={320}
-              className="mt-4 h-auto w-full"
-            />
-            <div className="mt-5 grid gap-3 text-xs text-slate-200 sm:grid-cols-3">
-              <FeatureHeroStat label="Deposits released on time" value="100%" />
-              <FeatureHeroStat label="Average time saved per move-out" value="6.2 hrs" />
-              <FeatureHeroStat label="Renter satisfaction" value="4.9/5" />
-            </div>
-          </div>
-        </motion.div>
+        <FeatureHeroVisual />
       </div>
     </section>
+  );
+}
+
+function FeatureHeroVisual() {
+  return (
+    <motion.div
+      className="relative w-full max-w-xl overflow-hidden rounded-[32px] border border-white/20 bg-white/10 p-6 shadow-[0_40px_80px_-30px_rgba(6,40,90,0.55)] backdrop-blur"
+      initial={{ opacity: 0, x: 40 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+    >
+      <div className="flex items-center justify-between text-xs text-slate-200">
+        <span>Oakland 2BR · Escrow timeline</span>
+        <span className="rounded-full bg-emerald-500/20 px-3 py-1 text-emerald-300">100% compliant</span>
+      </div>
+      <div className="mt-6 rounded-3xl border border-white/15 bg-white/10 p-4">
+        <Hero3DScene className="h-48" spotlightClassName="bg-sky-500/20" layers={FEATURE_HERO_LAYERS} />
+      </div>
+      <div className="mt-5 grid gap-3 text-xs text-slate-200 sm:grid-cols-3">
+        <FeatureHeroStat label="Deposits released on time" value="100%" />
+        <FeatureHeroStat label="Average time saved per move-out" value="6.2 hrs" />
+        <FeatureHeroStat label="Renter satisfaction" value="4.9/5" />
+      </div>
+    </motion.div>
   );
 }
 
@@ -160,6 +327,9 @@ function CoreFeatureShowcase() {
               <p className="text-sm leading-relaxed text-slate-600">{feature.description}</p>
               <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-xs font-medium text-slate-600">
                 {feature.highlight}
+              </div>
+              <div className={`relative mt-4 rounded-3xl border border-slate-200/70 p-4 ${feature.accent}`}>
+                <Hero3DScene className="h-40" spotlightClassName={feature.spotlightClassName} layers={feature.layers} />
               </div>
             </motion.article>
           ))}
@@ -209,38 +379,47 @@ function WorkflowStory() {
             ))}
           </motion.ol>
 
-          <motion.div
-            className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_35px_60px_-40px_rgba(15,23,42,0.25)]"
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.4, ease: "easeOut", delay: 0.1 }}
-          >
-            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-sm text-slate-600">
-              <div className="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-slate-400">
-                <span>Move-out timeline</span>
-                <span>Fairvia case #1827</span>
-              </div>
-              <div className="mt-4 space-y-3 text-sm text-slate-700">
-                <TimelineItem time="May 2 · 10:04 AM" title="Tenant notice received" detail="Fairvia started 21-day countdown" />
-                <TimelineItem time="May 15 · 9:12 AM" title="Walkthrough scheduled" detail="Message + checklist sent to renter" />
-                <TimelineItem time="May 18 · 3:47 PM" title="Photos uploaded" detail="AB 2801 evidence tagged & timestamped" />
-                <TimelineItem time="May 21 · 8:01 AM" title="Release packet sent" detail="Escrow released $2,100 refund, $350 deductions kept" />
-              </div>
-            </div>
-          </motion.div>
+          <WorkflowVisual />
         </div>
       </div>
     </section>
   );
 }
 
-function TimelineItem({ time, title, detail }: { time: string; title: string; detail: string }) {
+function WorkflowVisual() {
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white px-4 py-3">
-      <p className="text-xs uppercase tracking-[0.25em] text-slate-400">{time}</p>
-      <p className="mt-1 text-sm font-semibold text-slate-900">{title}</p>
-      <p className="text-xs text-slate-600">{detail}</p>
-    </div>
+    <motion.div
+      className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-[0_35px_70px_-40px_rgba(15,23,42,0.3)]"
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.35, ease: "easeOut" }}
+    >
+      <div className="flex items-center justify-between">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Live case</p>
+          <h3 className="mt-2 text-lg font-semibold text-slate-900">Move-out checklist</h3>
+          <p className="mt-2 text-sm text-slate-600">
+            Progress auto-updates as landlords log photos and receipts. Tenants see the same view so they know what happens next.
+          </p>
+        </div>
+        <span className="rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-semibold text-emerald-600">On track</span>
+      </div>
+      <div className="mt-6 rounded-3xl border border-slate-200 bg-slate-50/80 p-4">
+        <Hero3DScene className="h-44" spotlightClassName="bg-indigo-500/20" layers={WORKFLOW_VISUAL_LAYERS} />
+      </div>
+      <div className="mt-5 grid gap-3 text-sm text-slate-600 sm:grid-cols-2">
+        <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">Day 16</p>
+          <p className="mt-1 text-sm font-semibold text-slate-900">Send draft deductions</p>
+          <p className="mt-1 text-xs text-slate-500">Tenant notified with preview + proof</p>
+        </div>
+        <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">Day 21</p>
+          <p className="mt-1 text-sm font-semibold text-slate-900">Release remaining $2,100</p>
+          <p className="mt-1 text-xs text-slate-500">Escrow partner pays renter automatically</p>
+        </div>
+      </div>
+    </motion.div>
   );
 }
