@@ -1,9 +1,16 @@
 import { useEffect } from "react";
+import dynamic from "next/dynamic";
 import Header from "@/components/layout/Header";
 import { HeroContent } from "./HeroContent";
 import { HeroSocialProof } from "./HeroSocialProof";
 import { track } from "@/lib/tracking";
-import { HeroVisual } from "./HeroVisual";
+
+const HeroVisual = dynamic(async () => {
+  const mod = await import("./HeroVisual");
+  return { default: mod.HeroVisual };
+}, {
+  loading: () => <HeroVisualSkeleton />,
+});
 
 export default function Hero() {
   useEffect(() => {
@@ -31,5 +38,11 @@ export default function Hero() {
         <HeroSocialProof />
       </div>
     </section>
+  );
+}
+
+function HeroVisualSkeleton() {
+  return (
+    <div className="h-full min-h-[320px] w-full animate-pulse rounded-[32px] border border-slate-200/70 bg-white/60" />
   );
 }

@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import type { WaitlistData } from "@/lib/types";
+import { enforceRateLimit, isRateLimitEnabled } from "@/lib/ratelimit";
+import { waitlistSchema, type WaitlistData } from "@/lib/types";
 
 // If you want emails, install Resend and uncomment below:
 // import { Resend } from "resend";
@@ -9,16 +10,34 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   if (req.method !== "POST") return res.status(405).json({ message: "Method not allowed" });
 
   try {
-    const { email, name, userType, location } = req.body as WaitlistData;
+    const identifier =
+      (req.headers["x-forwarded-for"] as string | undefined)?.split(",")[0]?.trim() ??
+      req.socket.remoteAddress ??
+      "unknown";
 
-    if (!email || !name || !userType || !location) {
-      return res.status(400).json({ message: "All fields are required" });
+    const rateLimitResult = await enforceRateLimit(identifier);
+
+    if (!rateLimitResult.success) {
+      if (isRateLimitEnabled()) {
+        res.setHeader("RateLimit-Limit", rateLimitResult.limit.toString());
+        res.setHeader("RateLimit-Remaining", rateLimitResult.remaining.toString());
+        res.setHeader("RateLimit-Reset", rateLimitResult.reset.toString());
+      }
+
+      return res.status(429).json({ message: "Too many requests. Please slow down and try again." });
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return res.status(400).json({ message: "Invalid email address" });
+    const parsedBody = waitlistSchema.safeParse(req.body);
+
+    if (!parsedBody.success) {
+      const errors = parsedBody.error.flatten().fieldErrors;
+      return res.status(400).json({
+        message: "Invalid form submission.",
+        errors,
+      });
     }
+
+    const { email, name, userType, location } = parsedBody.data as WaitlistData;
 
     // TODO: Save to your datastore here (Prisma, Supabase, etc.)
 
@@ -47,6 +66,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     */
 
     console.log("New waitlist signup:", { email, name, userType, location });
+
+    if (isRateLimitEnabled()) {
+      res.setHeader("RateLimit-Limit", rateLimitResult.limit.toString());
+      res.setHeader("RateLimit-Remaining", rateLimitResult.remaining.toString());
+      res.setHeader("RateLimit-Reset", rateLimitResult.reset.toString());
+    }
 
     return res.status(200).json({
       message: "Successfully joined waitlist",
