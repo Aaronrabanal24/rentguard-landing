@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import dynamic from "next/dynamic";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { motion } from "@/lib/motion";
 import HomeCTA from "@/components/sections/HomeCTA";
@@ -30,14 +29,6 @@ interface ProductDefinition {
   ctaLabel?: string;
   badge?: string;
 }
-
-const PilotModules = dynamic(() => import("@/components/sections/PilotModules"), {
-  loading: () => <SectionSkeleton heightClass="h-[320px]" label="Loading pilot modules" />,
-});
-
-const PilotFeatureMatrix = dynamic(() => import("@/components/sections/PilotFeatureMatrix"), {
-  loading: () => <SectionSkeleton heightClass="h-[320px]" label="Loading feature matrix" />,
-});
 
 const FEATURE_HERO_LAYERS: FeatureLayer[] = [
   {
@@ -274,28 +265,54 @@ const FAIRVIA_PRODUCTS: ProductDefinition[] = [
   },
 ];
 
+const SUITE_TOGETHER_POINTS = [
+  {
+    title: "Fairvia Discover",
+    detail: "Puts a verified, search-ready profile in front of renters before they ever reach out.",
+  },
+  {
+    title: "Fairvia Comply",
+    detail: "Moves escrow, ID checks, and AB 1482 paperwork into one guided flow so move-ins start clean.",
+  },
+  {
+    title: "Fairvie Trust+",
+    detail: "Extends that live trust signal to every marketplace and message landlords already use.",
+  },
+  {
+    title: "Offboard 21",
+    detail: "Closes each tenancy on time with receipts, letters, and escrow releases documented in one place.",
+  },
+];
+
+const SUITE_IMPACT = {
+  landlord: {
+    headline: "What landlords earn",
+    summary: "One calm platform that keeps deposits neutral, paperwork precise, and messaging aligned across the entire tenancy lifecycle.",
+    bullets: [
+      "Better-qualified leads from search and trust badge clickthroughs",
+      "Neutral escrow and guided compliance that cut risk and admin hours",
+      "Documented move-outs with fewer disputes and faster turnarounds",
+    ],
+  },
+  renter: {
+    headline: "What renters feel",
+    summary: "Clear proof up front, a shared record during the lease, and transparent release timing when it is time to move on.",
+    bullets: [
+      "Trust from the first click with verified escrow and identity checks",
+      "Shared timelines and plain-language updates instead of scattered emails",
+      "Confidence that deposits are handled fairly with receipts and release math",
+    ],
+  },
+} as const;
+
 export default function FeaturesPage() {
   return (
     <PageContainer title="Fairvia — Features" animateMain={false}>
       <FeatureHero />
       <ProductSections />
-      <PilotModules />
-      <PilotFeatureMatrix />
+      <SuiteImpactSection />
       <HomeCTA />
     </PageContainer>
-  );
-}
-
-function SectionSkeleton({ heightClass, label }: { heightClass: string; label: string }) {
-  return (
-    <div
-      className={`flex ${heightClass} items-center justify-center rounded-3xl border border-slate-200 bg-white/70 text-sm text-slate-400 animate-pulse`}
-      role="status"
-      aria-live="polite"
-      aria-label={label}
-    >
-      {label}
-    </div>
   );
 }
 
@@ -471,6 +488,60 @@ function ProductWhyCard({ why }: { why: string }) {
     <div className="h-full rounded-2xl border border-slate-900/10 bg-slate-900/95 px-5 py-6 text-slate-100 shadow-[0_24px_48px_-34px_rgba(15,23,42,0.3)]">
       <h3 className="text-xs font-semibold uppercase tracking-[0.3em] text-white/70">Why it matters</h3>
       <p className="mt-3 text-sm text-white/90">{why}</p>
+    </div>
+  );
+}
+
+function SuiteImpactSection() {
+  return (
+    <section className="bg-slate-900 py-16 text-slate-100">
+      <div className="mx-auto max-w-6xl space-y-10 px-4">
+        <div className="space-y-4">
+          <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.3em]">
+            Suite in sync
+          </span>
+          <h2 className="text-3xl font-semibold sm:text-4xl">What happens when all four products run together</h2>
+          <p className="text-sm text-slate-300 sm:text-base">
+            Discover sparks credible demand, Comply locks move-in compliance, Fairvie Trust+ carries proof across every listing, and Offboard 21 closes the loop with documented releases. The full suite keeps both sides aligned from first click to final refund.
+          </p>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-2">
+          {SUITE_TOGETHER_POINTS.map((point) => (
+            <div key={point.title} className="rounded-3xl border border-white/10 bg-white/5 px-5 py-5 shadow-[0_24px_48px_-30px_rgba(8,47,73,0.45)]">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-300">{point.title}</p>
+              <p className="mt-2 text-sm text-slate-100/90">{point.detail}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2">
+          <SuiteRoleCard role="landlord" />
+          <SuiteRoleCard role="renter" />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function SuiteRoleCard({ role }: { role: keyof typeof SUITE_IMPACT }) {
+  const data = SUITE_IMPACT[role];
+
+  return (
+    <div className="h-full rounded-3xl border border-white/10 bg-white/8 px-6 py-6 shadow-[0_26px_54px_-30px_rgba(8,47,73,0.5)]">
+      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-300">
+        {role === "landlord" ? "Landlord impact" : "Renter impact"}
+      </p>
+      <h3 className="mt-3 text-lg font-semibold text-white">{data.headline}</h3>
+      <p className="mt-2 text-sm text-slate-100/85">{data.summary}</p>
+      <ul className="mt-4 space-y-2.5 text-sm text-slate-100/90">
+        {data.bullets.map((bullet) => (
+          <li key={bullet} className="flex items-start gap-2">
+            <span className="mt-1 inline-flex h-2 w-2 flex-none rounded-full bg-emerald-400" />
+            <span>{bullet}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
