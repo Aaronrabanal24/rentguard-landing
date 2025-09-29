@@ -1,4 +1,4 @@
-import { type ReactElement } from "react";
+import { type ReactElement, useState } from "react";
 import { motion } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
@@ -18,34 +18,94 @@ const STEP_CARDS: StepCard[] = [
 ];
 
 export function HeroVisual() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const activeCard = STEP_CARDS[activeIndex];
+  const ActiveComponent = activeCard.component;
+
+  const goTo = (index: number) => {
+    if (index < 0) {
+      setActiveIndex(STEP_CARDS.length - 1);
+      return;
+    }
+    if (index >= STEP_CARDS.length) {
+      setActiveIndex(0);
+      return;
+    }
+    setActiveIndex(index);
+  };
+
   return (
     <motion.div
-      className="mx-auto grid w-full max-w-xl gap-4 rounded-[32px] border border-white/60 bg-white/80 p-5 shadow-[0_40px_80px_-45px_rgba(15,23,42,0.4)] backdrop-blur-lg sm:max-w-none sm:p-6 lg:grid-cols-2"
+      className="mx-auto w-full max-w-3xl rounded-[32px] border border-white/60 bg-white/80 p-5 shadow-[0_40px_80px_-45px_rgba(15,23,42,0.4)] backdrop-blur-lg sm:p-6"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.45, ease: "easeOut" }}
     >
-      {STEP_CARDS.map(({ id, step, label, accent, component: Component }) => (
-        <article
-          key={id}
-          className="relative flex h-full flex-col gap-4 overflow-hidden rounded-3xl border border-white/60 bg-white/95 p-5 shadow-[0_30px_45px_-40px_rgba(15,23,42,0.45)]"
-        >
-          <span
-            className={cn(
-              "pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br opacity-90",
-              accent
-            )}
-            aria-hidden
-          />
-          <header className="flex flex-col gap-2">
-            <span className="inline-flex w-max items-center gap-2 rounded-full bg-slate-900 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.3em] text-white">
-              {step}
-            </span>
-            <h3 className="text-base font-semibold text-slate-900">{label}</h3>
-          </header>
-          <Component />
-        </article>
-      ))}
+      <div className="flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <span className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.3em] text-white">
+            {activeCard.step}
+          </span>
+          <h3 className="mt-3 text-lg font-semibold text-slate-900">{activeCard.label}</h3>
+        </div>
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => goTo(activeIndex - 1)}
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:-translate-y-[1px] hover:border-slate-300"
+            aria-label="Previous step"
+          >
+            ‹
+          </button>
+          <button
+            type="button"
+            onClick={() => goTo(activeIndex + 1)}
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:-translate-y-[1px] hover:border-slate-300"
+            aria-label="Next step"
+          >
+            ›
+          </button>
+        </div>
+      </div>
+
+      <article
+        className={cn(
+          "relative mt-6 overflow-hidden rounded-3xl border border-white/60 bg-white/95 p-5 shadow-[0_30px_45px_-40px_rgba(15,23,42,0.45)]",
+          "min-h-[280px]"
+        )}
+      >
+        <span
+          className={cn(
+            "pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br opacity-90",
+            activeCard.accent
+          )}
+          aria-hidden
+        />
+        <ActiveComponent />
+      </article>
+
+      <nav className="mt-6 flex snap-x snap-mandatory items-center gap-2 overflow-x-auto pb-1">
+        {STEP_CARDS.map((card, index) => {
+          const isActive = index === activeIndex;
+          return (
+            <button
+              key={card.id}
+              type="button"
+              onClick={() => setActiveIndex(index)}
+              className={cn(
+                "flex min-w-[160px] snap-start flex-col rounded-2xl border px-4 py-3 text-left text-xs transition",
+                isActive
+                  ? "border-slate-900 bg-slate-900 text-white shadow-sm"
+                  : "border-slate-200 bg-white text-slate-600 hover:border-slate-300"
+              )}
+              aria-current={isActive ? "step" : undefined}
+            >
+              <span className="font-semibold uppercase tracking-[0.25em]">{card.step}</span>
+              <span className="mt-2 text-sm font-semibold tracking-tight">{card.label}</span>
+            </button>
+          );
+        })}
+      </nav>
     </motion.div>
   );
 }
