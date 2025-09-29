@@ -35,7 +35,7 @@ export default function Header() {
         <Link href="/" aria-label="Fairvia home" className="inline-flex items-center">
           <BrandLogo priority className="drop-shadow-sm" />
         </Link>
-      <nav className="hidden items-center gap-4 text-sm font-medium text-slate-600 md:flex">
+      <nav className="hidden items-center gap-4 text-sm font-medium text-slate-600 lg:flex">
         {navLinks.map((item) => (
           <Link
             key={item.href}
@@ -71,7 +71,7 @@ function MobileMenu({ navLinks, onSelectNav }: { navLinks: NavLink[]; onSelectNa
   };
 
   return (
-    <div className="relative md:hidden">
+    <div className="relative lg:hidden">
       <button
         onClick={toggleMenu}
         aria-expanded={isOpen}
