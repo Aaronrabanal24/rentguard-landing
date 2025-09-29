@@ -331,22 +331,51 @@ function FeatureHero() {
           <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.3em]">
             Fairvia feature suite
           </span>
-          <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Proof-led tools for calm California deposits</h1>
+          <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
+            SEO, escrow, and compliance tools for California landlords
+          </h1>
           <p className="text-base text-slate-300 sm:text-lg">
-            Four focused products—Discover, Comply, the Fairvia Trust Badge, and Offboard 21—cover the deposit arc from first search to final release without bloating the workflow.
+            Fairvia gives independent landlords four focused products that simplify the entire rental lifecycle. From first listing to deposit return you’ll attract better renters, stay compliant, and return deposits on time without extra work.
           </p>
+          <ul className="space-y-2.5 text-sm text-slate-200 sm:text-base">
+            <li className="flex items-start gap-2">
+              <span className="mt-1 inline-flex h-2 w-2 flex-none rounded-full bg-emerald-400" />
+              <span>
+                <span className="font-semibold text-white">Discover →</span> SEO rental profile that brings in quality renter leads through search
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-1 inline-flex h-2 w-2 flex-none rounded-full bg-emerald-400" />
+              <span>
+                <span className="font-semibold text-white">Comply →</span> Escrow, ID checks, and AB 1482-ready leases in one guided flow
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-1 inline-flex h-2 w-2 flex-none rounded-full bg-emerald-400" />
+              <span>
+                <span className="font-semibold text-white">Trust Badge →</span> Verification overlay that builds renter confidence across your listings
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-1 inline-flex h-2 w-2 flex-none rounded-full bg-emerald-400" />
+              <span>
+                <span className="font-semibold text-white">Offboard 21 →</span> Itemized deductions, ready-to-send letters, and a tracked 21-day deposit return
+              </span>
+            </li>
+          </ul>
+          <p className="text-sm font-semibold text-emerald-200 sm:text-base">👉 Fairvia makes rental deposits trusted, fair, and stress-free for California landlords.</p>
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
             <a
               href="#discover"
               className="inline-flex items-center justify-center rounded-full bg-emerald-500 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-[1px] hover:bg-emerald-600"
             >
-              Explore each product
+              Book a Demo and See Fairvia in Action
             </a>
             <a
               href="#offboard-21"
               className="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white/90 transition hover:-translate-y-[1px] hover:border-white/60"
             >
-              See Offboard 21
+              Talk to Us About 21 Day Deposits
             </a>
           </div>
         </div>
