@@ -50,14 +50,17 @@ export function HeroMockup() {
 
   return (
     <div className="relative">
-      <div className="absolute -left-12 top-6 hidden h-80 w-80 rounded-full bg-sky-200/30 blur-3xl lg:block" aria-hidden />
-      <div className="absolute -right-16 bottom-6 hidden h-96 w-96 rounded-full bg-emerald-200/30 blur-3xl lg:block" aria-hidden />
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -left-16 top-6 hidden h-80 w-80 rounded-full bg-sky-200/35 blur-3xl lg:block" aria-hidden />
+        <div className="absolute -right-20 bottom-0 hidden h-96 w-96 rounded-full bg-emerald-200/30 blur-3xl lg:block" aria-hidden />
+        <div className="absolute left-1/2 top-1/3 hidden h-40 w-72 -translate-x-1/2 rounded-full bg-slate-100/60 blur-2xl lg:block" aria-hidden />
+      </div>
 
       <div className="relative mx-auto max-w-5xl">
-        <div className="overflow-hidden rounded-[32px] border border-white/70 bg-white/85 p-5 shadow-2xl shadow-sky-200/60 backdrop-blur-xl sm:p-6 lg:p-8">
+        <div className="overflow-hidden rounded-[32px] border border-white/50 bg-white/90 p-5 shadow-[0_45px_90px_-40px_rgba(15,23,42,0.35)] backdrop-blur-xl sm:p-6 lg:p-8">
           <div className="flex flex-col gap-6 lg:grid lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-8">
             <nav
-              className="-mx-1 flex gap-2 overflow-x-auto pb-1 pr-2 lg:mx-0 lg:flex-col lg:overflow-visible lg:pb-0"
+              className="-mx-1 flex gap-3 overflow-x-auto pb-2 pr-3 scrollbar-none snap-x snap-mandatory lg:mx-0 lg:flex-col lg:gap-2 lg:overflow-visible lg:pb-0"
               role="tablist"
               aria-label="Hero mockup states"
               aria-orientation="vertical"
@@ -78,9 +81,9 @@ export function HeroMockup() {
                       tabRefs.current.set(panel.id, node);
                     }}
                     className={cn(
-                      "group flex min-w-[180px] flex-1 items-start gap-3 rounded-xl border border-transparent px-4 py-3 text-left text-sm transition focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white lg:flex-none",
+                      "group relative flex min-w-[160px] flex-1 snap-start items-start gap-3 rounded-xl border border-transparent px-4 py-3 text-left text-sm transition focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white lg:flex-none",
                       isActive
-                        ? "bg-slate-900 text-white shadow-lg shadow-slate-900/30"
+                        ? "bg-slate-900 text-white shadow-lg shadow-slate-900/25"
                         : "bg-white/0 text-slate-600 hover:border-slate-200 hover:bg-slate-50"
                     )}
                     role="tab"
@@ -89,6 +92,13 @@ export function HeroMockup() {
                     aria-controls={`panel-${panel.id}`}
                     tabIndex={isActive ? 0 : -1}
                   >
+                    <span
+                      className="pointer-events-none absolute inset-0 -z-10 rounded-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                      style={{
+                        background: "radial-gradient(circle at top, rgba(56,189,248,0.25), transparent 70%)",
+                      }}
+                      aria-hidden
+                    />
                     <span className={cn("mt-1 h-2.5 w-2.5 rounded-full", isActive ? panel.accent : "bg-slate-300")} />
                     <span className="space-y-1">
                       <span className="block font-semibold tracking-tight">{panel.label}</span>
@@ -104,7 +114,7 @@ export function HeroMockup() {
               role="tabpanel"
               id={`panel-${currentPanel.id}`}
               aria-labelledby={`tab-${currentPanel.id}`}
-              className="relative"
+              className="relative panel-fade"
             >
               <div className="space-y-4">
                 <header className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-white/70 px-4 py-3 text-left text-slate-600 shadow-sm">
