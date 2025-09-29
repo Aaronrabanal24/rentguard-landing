@@ -358,7 +358,7 @@ function FeatureHero() {
             SEO, escrow, and compliance tools for California landlords
           </h1>
           <p className="text-base text-slate-300 sm:text-lg">
-            Independent landlords get enterprise-grade rental compliance without adding staff. Fairvia ties the four critical moments—discoverability, move-in compliance, portable trust, and the 21-day deposit return—into one calm workflow.
+            Independent landlords get enterprise-grade rental compliance without extra staff. Fairvia connects discoverability, move-in compliance, portable trust, and the 21-day deposit return in one calm workflow.
           </p>
 
           <div className="grid gap-3 sm:grid-cols-2">
@@ -383,14 +383,14 @@ function FeatureHero() {
               href="#discover"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-500 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-[1px] hover:bg-emerald-600"
             >
-              Book a Demo and See Fairvia in Action
+              Book a Demo
               <span aria-hidden>→</span>
             </a>
             <a
               href="#offboard-21"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white/90 transition hover:-translate-y-[1px] hover:border-white/60"
             >
-              Talk to Us About 21 Day Deposits
+              Talk 21-Day Deposits
               <span aria-hidden>→</span>
             </a>
           </div>
