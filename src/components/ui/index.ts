@@ -5,3 +5,4 @@ export { Avatar, AvatarFallback, AvatarImage } from "./Avatar";
 export { Badge } from "./Badge";
 export { Separator } from "./Separator";
 export { Progress } from "./Progress";
+export { Tooltip } from "./Tooltip";

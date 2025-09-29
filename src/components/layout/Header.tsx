@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { BrandLogo } from "@/components/ui";
 import { track } from "@/lib/tracking";
+import { AnimatePresence, motion } from "framer-motion";
 
 interface NavLink {
   href: string;
@@ -86,8 +87,15 @@ function MobileMenu({ navLinks, onSelectNav }: { navLinks: NavLink[]; onSelectNa
         </svg>
       </button>
 
-      {isOpen ? (
-        <div className="absolute right-0 top-full z-50 mt-4 w-64 rounded-2xl border border-slate-200 bg-white py-4 shadow-2xl shadow-slate-900/10 ring-1 ring-slate-100">
+      <AnimatePresence>
+        {isOpen ? (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="absolute right-0 top-full z-50 mt-4 w-64 rounded-2xl border border-slate-200 bg-white py-4 shadow-2xl shadow-slate-900/10 ring-1 ring-slate-100"
+          >
           <nav className="space-y-1 px-4">
             {navLinks.map((link) => (
               <Link
@@ -111,8 +119,9 @@ function MobileMenu({ navLinks, onSelectNav }: { navLinks: NavLink[]; onSelectNa
               Request a demo
             </button>
           </div>
-        </div>
-      ) : null}
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </div>
   );
 }

@@ -1,11 +1,38 @@
 import { heroContent } from "@/data/content";
-import { Button } from "@/components/ui";
+import { Button, Tooltip } from "@/components/ui";
 import { track } from "@/lib/tracking";
 import { useRouter } from "next/router";
 import type { ReactNode } from "react";
 
 export function HeroContent() {
   const router = useRouter();
+
+  const valueProps: Array<{ title: string; description: ReactNode }> = [
+    {
+      title: "Look credible before renters tour",
+      description: "Public Fairvia profiles show compliance badges and link back to your Zillow or Craigslist listing, so skeptical renters book with you first.",
+    },
+    {
+      title: "Escrow stays neutral—always",
+      description: (
+        <span>
+          Licensed <Tooltip content="California Department of Financial Protection and Innovation">DFPI</Tooltip> escrow partners hold every dollar, while Fairvia handles identity checks and lease signatures.
+        </span>
+      ),
+    },
+    {
+      title: "Updates sent in two clicks",
+      description: "Pre-written messages, receipts, and confirmations keep tenants informed and remove late-night texting from your to-do list.",
+    },
+    {
+      title: "Never miss the 21-day deadline",
+      description: (
+        <span>
+          Fairvia counts down California’s 21-day clock, alerts you at day 16, 19, and 20, and packages <Tooltip content="California Assembly Bill 2801 requires timestamped photos for deductions starting 2025">AB 2801</Tooltip> photo proof automatically.
+        </span>
+      ),
+    },
+  ];
 
   const handlePrimaryClick = () => {
     track("click_cta", { role: "landlord", location: "hero", label: "apply_pilot" });
@@ -44,7 +71,7 @@ export function HeroContent() {
       </p>
 
       <div className="grid gap-4 pt-4 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
-        {heroContent.value_props.map((value, index) => (
+        {valueProps.map((value, index) => (
           <div
             key={value.title}
             className="group rounded-xl border border-slate-200 bg-white/90 p-5 shadow-sm backdrop-blur transition-all hover:-translate-y-1 hover:shadow-md"
@@ -63,10 +90,10 @@ export function HeroContent() {
       <div className="space-y-6 pt-4">
         <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
           <Button onClick={handlePrimaryClick} size="lg">
-            Apply for the Fairvia pilot
+            Lock in my pilot seat
           </Button>
           <Button onClick={handleSecondaryClick} variant="secondary" size="lg" className="border-2 border-slate-300">
-            Preview the Listing Assist badge
+            Show me the Listing Assist badge
           </Button>
         </div>
 

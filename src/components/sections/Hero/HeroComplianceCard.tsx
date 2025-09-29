@@ -1,9 +1,22 @@
+import { Tooltip } from "@/components/ui";
+import type { ReactNode } from "react";
+
 export function HeroComplianceCard() {
-  const statusItems = [
-    { label: "Identity & lease verified", amount: "Driver license + CA lease pack signed" },
-    { label: "Deposit in partner escrow", amount: "Release instructions controlled in Fairvia" },
-    { label: "Listing Assist badge live", amount: "Token linked to Zillow + Craigslist posts" },
-  ] as const;
+  const statusItems: Array<{ label: string; amount: ReactNode }> = [
+    { label: "Identity & lease verified", amount: "Gov ID and California lease pack signed in Fairvia" },
+    {
+      label: "Deposit in partner escrow",
+      amount: (
+        <span>
+          Funds held with <Tooltip content="California Department of Financial Protection and Innovation">DFPI</Tooltip>-licensed partners; release instructions live in Fairvia
+        </span>
+      ),
+    },
+    {
+      label: "Listing Assist badge live",
+      amount: "Token links back to Zillow and Craigslist posts",
+    },
+  ];
 
   return (
     <div className="relative mx-auto max-w-xl">
@@ -38,10 +51,10 @@ export function HeroComplianceCard() {
           <p className="mb-3 font-semibold text-slate-800">Pilot controls running</p>
           <ul className="space-y-2">
             <li className="flex items-center gap-2">
-              <span className="text-sm">⏱️</span> 21-day timer visible to both landlord and renter
+              <span className="text-sm">⏱️</span> 21-day timer visible to landlord and renter with alerts at 16, 19, and 20 days
             </li>
             <li className="flex items-center gap-2">
-              <span className="text-sm">📷</span> Photo log organized by room
+              <span className="text-sm">📷</span> Timestamped photo log organized by room for <Tooltip content="California Assembly Bill 2801 requires timestamped photos for deductions starting 2025">AB 2801</Tooltip> proof
             </li>
             <li className="flex items-center gap-2">
               <span className="text-sm">🔗</span> SEO badge linked to live listings
