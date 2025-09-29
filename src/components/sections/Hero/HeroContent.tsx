@@ -100,23 +100,6 @@ export function HeroContent() {
         ))}
       </div>
 
-      <div className="grid gap-4 pt-4 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
-        {heroContent.value_props.map((value, index) => (
-          <div
-            key={value.title}
-            className="group rounded-xl border border-slate-200 bg-white/90 p-5 shadow-sm backdrop-blur transition-all hover:-translate-y-1 hover:shadow-md"
-          >
-            <div className="mb-2 flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-sky-100 text-sky-600 transition-colors group-hover:bg-sky-500 group-hover:text-white">
-                {getValuePropIcon(index)}
-              </div>
-              <h3 className="font-semibold text-slate-900">{value.title}</h3>
-            </div>
-            <p className="text-sm leading-relaxed text-slate-600">{value.description}</p>
-          </div>
-        ))}
-      </div>
-
       <div className="space-y-6 pt-4">
         <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
           <Button onClick={handlePrimaryClick} size="lg">
@@ -155,39 +138,4 @@ function splitHeadline(headline: string): [string, string] {
   const lead = headline.slice(0, lastSpaceIndex);
   const accent = headline.slice(lastSpaceIndex + 1);
   return [lead, accent];
-}
-
-function getValuePropIcon(index: number): ReactNode {
-  const icons: ReactNode[] = [
-    (
-      <svg key="check" className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-        <path
-          fillRule="evenodd"
-          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-          clipRule="evenodd"
-        />
-      </svg>
-    ),
-    (
-      <svg key="shield" className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-    (
-      <svg key="clock" className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-        <path
-          fillRule="evenodd"
-          d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
-          clipRule="evenodd"
-        />
-      </svg>
-    ),
-    (
-      <svg key="spark" className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-        <path d="M10 2l1.5 4.5L16 8l-4.5 1.5L10 14l-1.5-4.5L4 8l4.5-1.5L10 2z" />
-      </svg>
-    ),
-  ];
-
-  return icons[index % icons.length];
 }

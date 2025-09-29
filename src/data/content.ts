@@ -3,24 +3,6 @@ export const heroContent = {
   headline: "Stay compliant. Attract renters. Save hours.",
   subheadline:
     "Fairvia gives California landlords a complete deposit workflow — SEO property profiles, escrow with verified leases, clear landlord-renter communication, and a guided 21-day release.",
-  value_props: [
-    {
-      title: "SEO-ready property profiles",
-      description: "Showcase compliance and trust signals on a public page that links renters back to your existing listings.",
-    },
-    {
-      title: "Escrow + lease automation",
-      description: "DFPI partners, verified IDs, and California lease packs keep funds neutral and contracts airtight.",
-    },
-    {
-      title: "Guided communication",
-      description: "Templates, receipts, and one-click confirmations align landlords and renters in real time.",
-    },
-    {
-      title: "21-day release certainty",
-      description: "Auto timers, deduction helpers, and archives ensure every release hits the legal deadline with proof attached.",
-    },
-  ],
 } as const;
 
 export const lawPoints = [

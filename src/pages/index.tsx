@@ -15,10 +15,6 @@ import {
 } from "@/components";
 import { motion } from "@/lib/motion";
 
-const StoryArc = dynamic(() => import("@/components/sections/StoryArc"), {
-  loading: () => <div className="mt-10 h-[460px] animate-pulse rounded-3xl bg-slate-100" aria-hidden />,
-});
-
 const SocialProof = dynamic(() => import("@/components/sections/SocialProof"), {
   loading: () => <div className="mt-16 h-[320px] animate-pulse rounded-3xl bg-slate-100" aria-hidden />,
 });
@@ -45,7 +41,6 @@ export default function Home() {
         <ValueAndForm />
         <CommunicationSection />
         <ReleaseSection />
-        <StoryArc />
         <TrustSignals />
         <ProblemPain />
         <CompetitiveEdge />
