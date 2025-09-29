@@ -1,3 +1,4 @@
+import { type ReactElement } from "react";
 import { motion } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
@@ -5,7 +6,7 @@ interface StepCard {
   id: string;
   step: string;
   label: string;
-  component: () => JSX.Element;
+  component: () => ReactElement;
 }
 
 const STEP_CARDS: StepCard[] = [
