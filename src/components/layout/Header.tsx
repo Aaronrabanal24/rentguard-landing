@@ -31,7 +31,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/60 bg-white/80 backdrop-blur-lg shadow-sm">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-3 py-3 sm:px-4 sm:py-4">
         <Link href="/" aria-label="Fairvia home" className="inline-flex items-center">
           <BrandLogo priority className="drop-shadow-sm" />
         </Link>
@@ -94,31 +94,31 @@ function MobileMenu({ navLinks, onSelectNav }: { navLinks: NavLink[]; onSelectNa
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute right-0 top-full z-50 mt-4 w-64 rounded-2xl border border-slate-200 bg-white py-4 shadow-2xl shadow-slate-900/10 ring-1 ring-slate-100"
+            className="absolute left-1/2 top-full z-50 mt-3 w-[calc(100vw-1.5rem)] max-w-sm -translate-x-1/2 rounded-2xl border border-slate-200 bg-white py-3 shadow-2xl shadow-slate-900/10 ring-1 ring-slate-100 sm:left-auto sm:right-0 sm:translate-x-0 sm:w-72 sm:max-w-none sm:py-4"
           >
-          <nav className="space-y-1 px-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 transition hover:-translate-y-[1px] hover:bg-slate-50 hover:text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
-                onClick={closeMenu}
+            <nav className="max-h-[calc(100vh-8rem)] space-y-1.5 overflow-y-auto px-4">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 transition hover:-translate-y-[1px] hover:bg-slate-50 hover:text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
+                  onClick={closeMenu}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+            <div className="px-4 pt-3 pb-1">
+              <button
+                onClick={() => {
+                  closeMenu();
+                  onSelectNav();
+                }}
+                className="w-full rounded-full bg-gradient-to-r from-sky-400 via-sky-500 to-teal-500 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-[1px] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
               >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-          <div className="px-4 pt-4">
-            <button
-              onClick={() => {
-                closeMenu();
-                onSelectNav();
-              }}
-              className="w-full rounded-full bg-gradient-to-r from-sky-400 via-sky-500 to-teal-500 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-[1px] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
-            >
-              Request a demo
-            </button>
-          </div>
+                Request a demo
+              </button>
+            </div>
           </motion.div>
         ) : null}
       </AnimatePresence>
