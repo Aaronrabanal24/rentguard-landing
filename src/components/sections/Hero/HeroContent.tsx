@@ -1,5 +1,5 @@
 import { heroContent } from "@/data/content";
-import { Button, Tooltip } from "@/components/ui";
+import { Button } from "@/components/ui";
 import { track } from "@/lib/tracking";
 import { useRouter } from "next/router";
 import type { ReactNode } from "react";
@@ -7,29 +7,49 @@ import type { ReactNode } from "react";
 export function HeroContent() {
   const router = useRouter();
 
-  const valueProps: Array<{ title: string; description: ReactNode }> = [
+  const quickHits: Array<{ icon: ReactNode; label: string; detail: string }> = [
     {
-      title: "Look credible before renters tour",
-      description: "Public Fairvia profiles show compliance badges and link back to your Zillow or Craigslist listing, so skeptical renters book with you first.",
-    },
-    {
-      title: "Escrow stays neutral—always",
-      description: (
-        <span>
-          Licensed <Tooltip content="California Department of Financial Protection and Innovation">DFPI</Tooltip> escrow partners hold every dollar, while Fairvia handles identity checks and lease signatures.
-        </span>
+      label: "Profile",
+      detail: "SEO marketing page",
+      icon: (
+        <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 2l-6 3-6-3v10h12V5z" />
+        </svg>
       ),
     },
     {
-      title: "Updates sent in two clicks",
-      description: "Pre-written messages, receipts, and confirmations keep tenants informed and remove late-night texting from your to-do list.",
+      label: "Lease + Escrow",
+      detail: "Verified funds flow",
+      icon: (
+        <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+          <path
+            fillRule="evenodd"
+            d="M10 2a4 4 0 00-4 4v2H5a1 1 0 000 2h1v4H5a1 1 0 100 2h1v2a1 1 0 102 0v-2h4v2a1 1 0 102 0v-2h1a1 1 0 100-2h-1v-4h1a1 1 0 100-2h-1V6a4 4 0 00-4-4zm2 6V6a2 2 0 00-4 0v2h4zm0 2h-4v4h4v-4z"
+            clipRule="evenodd"
+          />
+        </svg>
+      ),
     },
     {
-      title: "Never miss the 21-day deadline",
-      description: (
-        <span>
-          Fairvia counts down California’s 21-day clock, alerts you at day 16, 19, and 20, and packages <Tooltip content="California Assembly Bill 2801 requires timestamped photos for deductions starting 2025">AB 2801</Tooltip> photo proof automatically.
-        </span>
+      label: "Communication",
+      detail: "Shared timeline",
+      icon: (
+        <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M2 5a2 2 0 012-2h12a2 2 0 012 2v9a2 2 0 01-2 2H8l-4 4v-4H4a2 2 0 01-2-2V5z" />
+        </svg>
+      ),
+    },
+    {
+      label: "Release",
+      detail: "21-day checklist",
+      icon: (
+        <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+          <path
+            fillRule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.707a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 10-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+            clipRule="evenodd"
+          />
+        </svg>
       ),
     },
   ];
@@ -66,12 +86,22 @@ export function HeroContent() {
         ) : null}
       </h1>
 
-      <p className="text-lg leading-relaxed text-slate-600 sm:text-xl">
-        {heroContent.subheadline}
-      </p>
+      <p className="text-lg leading-relaxed text-slate-600 sm:text-xl">{heroContent.subheadline}</p>
+
+      <div className="grid gap-3 rounded-2xl border border-slate-200 bg-white/90 p-4 shadow-sm backdrop-blur sm:grid-cols-2 lg:grid-cols-4">
+        {quickHits.map((item) => (
+          <div key={item.label} className="flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-sky-100 text-sky-600">{item.icon}</div>
+            <div>
+              <p className="text-sm font-semibold text-slate-900">{item.label}</p>
+              <p className="text-xs text-slate-500">{item.detail}</p>
+            </div>
+          </div>
+        ))}
+      </div>
 
       <div className="grid gap-4 pt-4 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
-        {valueProps.map((value, index) => (
+        {heroContent.value_props.map((value, index) => (
           <div
             key={value.title}
             className="group rounded-xl border border-slate-200 bg-white/90 p-5 shadow-sm backdrop-blur transition-all hover:-translate-y-1 hover:shadow-md"
@@ -90,10 +120,10 @@ export function HeroContent() {
       <div className="space-y-6 pt-4">
         <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
           <Button onClick={handlePrimaryClick} size="lg">
-            Lock in my pilot seat
+            Apply for the Fairvia pilot
           </Button>
           <Button onClick={handleSecondaryClick} variant="secondary" size="lg" className="border-2 border-slate-300">
-            Show me the Listing Assist badge
+            Preview the Listing Assist badge
           </Button>
         </div>
 

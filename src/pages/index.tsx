@@ -1,6 +1,18 @@
 import dynamic from "next/dynamic";
 import "@/content/homepage";
-import { Footer, Hero, HomeCTA, TrustSignals, ProblemPain, CoreBenefits, ValueAndForm, CompetitiveEdge, ProfessionalBenefits } from "@/components";
+import {
+  Footer,
+  Hero,
+  HomeCTA,
+  TrustSignals,
+  ProblemPain,
+  ValueAndForm,
+  CompetitiveEdge,
+  ProfessionalBenefits,
+  ListingAssistSection,
+  CommunicationSection,
+  ReleaseSection,
+} from "@/components";
 import { motion } from "@/lib/motion";
 
 const StoryArc = dynamic(() => import("@/components/sections/StoryArc"), {
@@ -29,11 +41,13 @@ export default function Home() {
       </header>
 
       <main>
+        <ListingAssistSection />
+        <ValueAndForm />
+        <CommunicationSection />
+        <ReleaseSection />
+        <StoryArc />
         <TrustSignals />
         <ProblemPain />
-        <CoreBenefits />
-        <ValueAndForm />
-        <StoryArc />
         <CompetitiveEdge />
         <ProfessionalBenefits />
         <SocialProof />
