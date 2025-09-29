@@ -5,7 +5,8 @@ import {
   Hero,
   HomeCTA,
   TrustSignals,
-  ProblemPain,
+  PainSection,
+  SolutionOverview,
   ValueAndForm,
   CompetitiveEdge,
   ProfessionalBenefits,
@@ -17,10 +18,6 @@ import { motion } from "@/lib/motion";
 
 const SocialProof = dynamic(() => import("@/components/sections/SocialProof"), {
   loading: () => <div className="mt-16 h-[320px] animate-pulse rounded-3xl bg-slate-100" aria-hidden />,
-});
-
-const MarketOpportunity = dynamic(() => import("@/components/sections/MarketOpportunity"), {
-  loading: () => <div className="mt-16 h-[360px] animate-pulse rounded-3xl bg-slate-100" aria-hidden />,
 });
 
 const FAQSection = dynamic(() => import("@/components/sections/FAQSection"), {
@@ -37,16 +34,16 @@ export default function Home() {
       </header>
 
       <main>
+        <PainSection />
+        <SolutionOverview />
         <ListingAssistSection />
         <ValueAndForm />
         <CommunicationSection />
         <ReleaseSection />
         <TrustSignals />
-        <ProblemPain />
         <CompetitiveEdge />
         <ProfessionalBenefits />
         <SocialProof />
-        <MarketOpportunity />
         <FAQSection />
         <HomeCTA />
       </main>

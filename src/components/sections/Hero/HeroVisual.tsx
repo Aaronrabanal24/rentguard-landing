@@ -11,11 +11,11 @@ export function HeroVisual() {
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="rounded-2xl border border-rose-200 bg-rose-50 p-5 text-sm text-rose-800">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-rose-500">The old way</p>
-          <h3 className="mt-2 text-lg font-semibold text-rose-900">Sticky notes & spreadsheets</h3>
+          <h3 className="mt-2 text-lg font-semibold text-rose-900">Sticky notes &amp; spreadsheets</h3>
           <ul className="mt-4 space-y-2">
             <li className="flex items-start gap-2">
               <span className="mt-1 text-rose-400">•</span>
-              <span>Day 19 panic: "Did I send the letter?"</span>
+              <span>Day 19 panic: &ldquo;Did I send the letter?&rdquo;</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-1 text-rose-400">•</span>
