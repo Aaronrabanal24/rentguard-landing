@@ -59,7 +59,9 @@ export default function CommunicationSection() {
               alt="Fairvia communication timeline with tenant confirmations"
               width={640}
               height={480}
+              sizes="(max-width: 1024px) 100vw, 45vw"
               className="h-auto w-full"
+              priority={false}
             />
           </motion.div>
         </div>

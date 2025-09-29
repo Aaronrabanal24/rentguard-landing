@@ -3,12 +3,12 @@ import { motion } from "@/lib/motion";
 export function HeroVisual() {
   return (
     <motion.div
-      className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-[0_30px_60px_-35px_rgba(15,23,42,0.35)] backdrop-blur"
+      className="relative mx-auto w-full max-w-xl overflow-hidden rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-[0_30px_60px_-35px_rgba(15,23,42,0.35)] backdrop-blur sm:max-w-none"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
     >
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid gap-4 sm:grid-cols-2 sm:items-stretch">
         <div className="rounded-2xl border border-rose-200 bg-rose-50 p-5 text-sm text-rose-800">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-rose-500">The old way</p>
           <h3 className="mt-2 text-lg font-semibold text-rose-900">Sticky notes &amp; spreadsheets</h3>

@@ -81,7 +81,9 @@ export default function ValueAndForm() {
               alt="Fairvia escrow and lease onboarding interface"
               width={640}
               height={480}
+              sizes="(max-width: 1024px) 100vw, 45vw"
               className="h-auto w-full"
+              priority={false}
             />
           </motion.div>
         </div>
