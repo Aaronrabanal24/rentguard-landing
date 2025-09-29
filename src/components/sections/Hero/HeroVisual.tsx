@@ -6,26 +6,37 @@ interface StepCard {
   id: string;
   step: string;
   label: string;
+  accent: string;
   component: () => ReactElement;
 }
 
 const STEP_CARDS: StepCard[] = [
-  { id: "seo", step: "Step 1", label: "SEO marketing", component: StepOneCard },
-  { id: "lease", step: "Step 2", label: "Lease onboarding & deposit", component: StepTwoCard },
-  { id: "communication", step: "Step 3", label: "Communication", component: StepThreeCard },
-  { id: "release", step: "Step 4", label: "Deposit release", component: StepFourCard },
+  { id: "seo", step: "Step 1", label: "SEO marketing", accent: "from-sky-50 via-white to-sky-100", component: StepOneCard },
+  { id: "lease", step: "Step 2", label: "Lease onboarding & deposit", accent: "from-emerald-50 via-white to-teal-100", component: StepTwoCard },
+  { id: "communication", step: "Step 3", label: "Communication", accent: "from-indigo-50 via-white to-indigo-100", component: StepThreeCard },
+  { id: "release", step: "Step 4", label: "Deposit release", accent: "from-amber-50 via-white to-emerald-100", component: StepFourCard },
 ];
 
 export function HeroVisual() {
   return (
     <motion.div
-      className="mx-auto grid w-full max-w-xl gap-4 rounded-[32px] border border-slate-200 bg-white/95 p-5 shadow-[0_35px_70px_-40px_rgba(15,23,42,0.35)] backdrop-blur sm:max-w-none sm:p-6 lg:grid-cols-2"
+      className="mx-auto grid w-full max-w-xl gap-4 rounded-[32px] border border-white/60 bg-white/80 p-5 shadow-[0_40px_80px_-45px_rgba(15,23,42,0.4)] backdrop-blur-lg sm:max-w-none sm:p-6 lg:grid-cols-2"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.45, ease: "easeOut" }}
     >
-      {STEP_CARDS.map(({ id, step, label, component: Component }) => (
-        <article key={id} className="flex h-full flex-col gap-4 rounded-3xl border border-slate-100 bg-white/95 p-5 shadow-sm">
+      {STEP_CARDS.map(({ id, step, label, accent, component: Component }) => (
+        <article
+          key={id}
+          className="relative flex h-full flex-col gap-4 overflow-hidden rounded-3xl border border-white/60 bg-white/95 p-5 shadow-[0_30px_45px_-40px_rgba(15,23,42,0.45)]"
+        >
+          <span
+            className={cn(
+              "pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br opacity-90",
+              accent
+            )}
+            aria-hidden
+          />
           <header className="flex flex-col gap-2">
             <span className="inline-flex w-max items-center gap-2 rounded-full bg-slate-900 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.3em] text-white">
               {step}
@@ -42,9 +53,12 @@ export function HeroVisual() {
 function StepOneCard() {
   return (
     <div className="flex flex-col gap-4 text-sm text-slate-600">
-      <div className="overflow-hidden rounded-2xl border border-slate-200">
-        <div className="flex h-32 items-center justify-center bg-slate-200/60 text-xs font-semibold uppercase tracking-wide text-slate-500">
+      <div className="overflow-hidden rounded-2xl border border-sky-200 bg-white/95 shadow-inner">
+        <div className="relative flex h-32 items-center justify-center bg-gradient-to-br from-sky-300/30 via-sky-100 to-white text-xs font-semibold uppercase tracking-[0.3em] text-sky-600">
           Property photo
+          <span className="absolute right-4 top-4 inline-flex items-center gap-1 rounded-full bg-white/80 px-2 py-1 text-[10px] font-medium text-sky-600">
+            <span aria-hidden>🏷️</span> Fairvia badge
+          </span>
         </div>
         <div className="space-y-3 p-4">
           <div className="flex flex-wrap items-start justify-between gap-3">
@@ -86,7 +100,7 @@ function StepOneCard() {
 function StepTwoCard() {
   return (
     <div className="grid gap-4 text-sm text-slate-600">
-      <div className="grid gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4 sm:grid-cols-3">
+      <div className="grid gap-3 rounded-2xl border border-white/60 bg-white/85 p-4 shadow-inner sm:grid-cols-3">
         <div className="rounded-xl border border-slate-200 bg-white px-3 py-3">
           <p className="text-[11px] uppercase tracking-[0.25em] text-slate-400">Lease pack</p>
           <p className="mt-1 text-base font-semibold text-slate-900">Signed by both parties</p>
@@ -109,7 +123,7 @@ function StepTwoCard() {
           </div>
         </div>
       </div>
-      <span className="w-max rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-600">Compliant</span>
+      <span className="w-max rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-semibold text-emerald-600">Compliant</span>
     </div>
   );
 }
@@ -117,7 +131,7 @@ function StepTwoCard() {
 function StepThreeCard() {
   return (
     <div className="flex flex-col gap-4 text-sm text-slate-600">
-      <div className="rounded-2xl border border-slate-200 bg-white p-4">
+      <div className="rounded-2xl border border-white/60 bg-white/95 p-4 shadow-inner">
         <div className="space-y-3">
           <div className="rounded-2xl rounded-tl-md bg-slate-100 px-4 py-3 text-sm text-slate-800">
             <p>Move-out walkthrough scheduled June 1 at 2 PM.</p>
@@ -153,7 +167,7 @@ function StepThreeCard() {
 function StepFourCard() {
   return (
     <div className="flex flex-col gap-4 text-sm text-slate-600">
-      <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
+      <div className="overflow-hidden rounded-2xl border border-white/60 bg-white/95 shadow-inner">
         <div className="border-b border-slate-200 px-4 py-3">
           <p className="text-xs uppercase tracking-[0.3em] text-slate-400">Itemized deductions</p>
         </div>
