@@ -21,23 +21,23 @@ export default function App({ Component, pageProps }: AppProps) {
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://rentguard-landing.vercel.app/" />
+        <meta property="og:url" content="https://fairvia.com/" />
         <meta property="og:title" content="Fairvia — Professional Deposit Management" />
         <meta
           property="og:description"
           content="Fairvia keeps deposits neutral, compliant, and transparent for California rentals."
         />
-        <meta property="og:image" content="https://rentguard-landing.vercel.app/og-image.jpg" />
+        <meta property="og:image" content="https://fairvia.com/og-image.jpg" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://rentguard-landing.vercel.app/" />
+        <meta name="twitter:url" content="https://fairvia.com/" />
         <meta name="twitter:title" content="Fairvia — Professional Deposit Management" />
         <meta
           name="twitter:description"
           content="Fairvia keeps deposits neutral, compliant, and transparent for California rentals."
         />
-        <meta name="twitter:image" content="https://rentguard-landing.vercel.app/og-image.jpg" />
+        <meta name="twitter:image" content="https://fairvia.com/og-image.jpg" />
         {isProduction && (
           <>
             <script

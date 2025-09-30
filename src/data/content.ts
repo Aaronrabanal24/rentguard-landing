@@ -3,8 +3,8 @@ export const heroContent = {
   headline: "Stop losing deposits to missed deadlines.",
   subheadline:
     "Fairvia handles compliance, neutral escrow, and tenant communication so you can focus on filling units—not fighting disputes.",
-  primaryCta: "See how it works",
-  secondaryCta: "Talk to a specialist",
+  primaryCta: "Start Free Trial",
+  secondaryCta: "How It Works",
   socialProof: "Join 150+ California landlords who stopped sweating the 21-day rule.",
 } as const;
 

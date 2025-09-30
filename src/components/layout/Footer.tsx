@@ -26,28 +26,18 @@ export default function Footer() {
             <h4 className="text-sm font-semibold uppercase tracking-widest text-slate-300">Explore</h4>
             <ul className="mt-4 space-y-4 text-sm text-slate-400">
               <li>
-                <Link href="/why-fairvia" className="tap inline-flex w-full items-center justify-between rounded-xl border border-white/5 px-4 py-3 transition hover:border-white/20 hover:text-white">
-                  Why Fairvia
-                </Link>
-              </li>
-              <li>
                 <Link href="/how-it-works" className="tap inline-flex w-full items-center justify-between rounded-xl border border-white/5 px-4 py-3 transition hover:border-white/20 hover:text-white">
                   How it works
                 </Link>
               </li>
               <li>
-                <Link href="/features" className="tap inline-flex w-full items-center justify-between rounded-xl border border-white/5 px-4 py-3 transition hover:border-white/20 hover:text-white">
-                  Features
+                <Link href="/pricing" className="tap inline-flex w-full items-center justify-between rounded-xl border border-white/5 px-4 py-3 transition hover:border-white/20 hover:text-white">
+                  Pricing
                 </Link>
               </li>
               <li>
-                <Link href="/trust" className="tap inline-flex w-full items-center justify-between rounded-xl border border-white/5 px-4 py-3 transition hover:border-white/20 hover:text-white">
-                  Trust &amp; security
-                </Link>
-              </li>
-              <li>
-                <Link href="/faq" className="tap inline-flex w-full items-center justify-between rounded-xl border border-white/5 px-4 py-3 transition hover:border-white/20 hover:text-white">
-                  FAQ
+                <Link href="/get-started" className="tap inline-flex w-full items-center justify-between rounded-xl border border-white/5 px-4 py-3 transition hover:border-white/20 hover:text-white">
+                  Get Started
                 </Link>
               </li>
             </ul>
@@ -64,11 +54,6 @@ export default function Footer() {
               <li>
                 <Link href="/contact" className="tap inline-flex w-full items-center justify-between rounded-xl border border-white/5 px-4 py-3 transition hover:border-white/20 hover:text-white">
                   Contact
-                </Link>
-              </li>
-              <li>
-                <Link href="/pricing" className="tap inline-flex w-full items-center justify-between rounded-xl border border-white/5 px-4 py-3 transition hover:border-white/20 hover:text-white">
-                  Pricing
                 </Link>
               </li>
             </ul>

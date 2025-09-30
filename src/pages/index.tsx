@@ -8,11 +8,6 @@ import {
   PainSection,
   SolutionOverview,
   ValueAndForm,
-  CompetitiveEdge,
-  ProfessionalBenefits,
-  ListingAssistSection,
-  CommunicationSection,
-  ReleaseSection,
   StickyCTA,
 } from "@/components";
 import { motion } from "@/lib/motion";
@@ -36,15 +31,10 @@ export default function Home() {
         </header>
 
         <main className="safe-bot pb-32">
-          <SolutionOverview />
           <PainSection />
-          <ListingAssistSection />
-          <ValueAndForm />
-          <CommunicationSection />
-          <ReleaseSection />
+          <SolutionOverview />
           <TrustSignals />
-          <CompetitiveEdge />
-          <ProfessionalBenefits />
+          <ValueAndForm />
           <SocialProof />
           <FAQSection />
           <HomeCTA />

@@ -7,7 +7,7 @@ export function StickyCTA() {
   const router = useRouter();
 
   const handleClick = useCallback(() => {
-    track("click_cta", { role: "landlord", location: "sticky_cta", label: "request_demo" });
+    track("click_cta", { role: "landlord", location: "sticky_cta", label: "start_trial" });
     router.push("/get-started").catch(() => {
       /* noop */
     });
@@ -27,7 +27,7 @@ export function StickyCTA() {
           </p>
         </div>
         <Button onClick={handleClick} size="lg" className="tap w-full whitespace-nowrap sm:w-auto">
-          Request a demo
+          Start Free Trial
         </Button>
       </div>
     </div>

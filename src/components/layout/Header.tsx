@@ -14,12 +14,9 @@ export default function Header() {
   const router = useRouter();
 
   const navLinks: NavLink[] = [
-    { href: "/why-fairvia", label: "Why Fairvia" },
     { href: "/how-it-works", label: "How It Works" },
-    { href: "/features", label: "Features" },
-    { href: "/trust", label: "Trust" },
+    { href: "/pricing", label: "Pricing" },
     { href: "/get-started", label: "Get Started" },
-    { href: "/faq", label: "FAQ" },
   ];
 
   const handleCTA = () => {
@@ -49,7 +46,7 @@ export default function Header() {
             onClick={handleCTA}
             className="tap rounded-full bg-gradient-to-r from-sky-500 to-teal-500 px-5 py-2 text-sm font-semibold text-white shadow-sm shadow-sky-200/80 transition hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
           >
-            Request a demo
+            Start Free Trial
           </button>
         </nav>
 
@@ -137,7 +134,7 @@ function MobileMenu({ navLinks, onSelectNav }: { navLinks: NavLink[]; onSelectNa
                   }}
                   className="tap w-full rounded-full bg-gradient-to-r from-sky-400 via-sky-500 to-teal-500 px-5 py-3 text-base font-semibold text-white shadow-sm transition hover:-translate-y-[1px] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
                 >
-                  Request a demo
+                  Start Free Trial
                 </button>
                 <p className="text-center text-sm text-slate-500">Built for California landlords under 50 units.</p>
               </div>
