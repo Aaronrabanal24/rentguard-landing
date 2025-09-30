@@ -40,17 +40,19 @@ export default function PainSection() {
         </div>
 
         <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {SCENARIOS.map((scenario) => (
+          {SCENARIOS.map((scenario, index) => (
             <motion.div
               key={scenario.title}
-              className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-sm"
+              className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-sm transition-all hover:scale-105 hover:border-rose-200 hover:shadow-xl"
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.35, ease: "easeOut" }}
+              transition={{ duration: 0.35, ease: "easeOut", delay: index * 0.1 }}
             >
-              <div className="text-4xl">{scenario.icon}</div>
-              <h3 className="mt-4 text-lg font-semibold text-slate-900">{scenario.title}</h3>
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-slate-50 text-4xl transition-all group-hover:bg-rose-50 group-hover:scale-110">
+                {scenario.icon}
+              </div>
+              <h3 className="mt-6 text-lg font-semibold text-slate-900 group-hover:text-rose-900">{scenario.title}</h3>
               <p className="mt-3 flex-1 leading-relaxed text-slate-600">{scenario.story}</p>
             </motion.div>
           ))}

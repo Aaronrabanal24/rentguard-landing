@@ -101,8 +101,13 @@ export default function HowItWorksSection() {
               </div>
 
               <div className={index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""}>
-                <div className="flex items-center justify-center rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-12 shadow-lg">
-                  <div className="text-8xl">{feature.visual}</div>
+                <div className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-br from-white via-sky-50/30 to-slate-50 p-8 shadow-lg transition-shadow hover:shadow-xl">
+                  <div className="absolute inset-0 bg-gradient-to-br from-sky-500/5 to-teal-500/5 opacity-0 transition-opacity group-hover:opacity-100" />
+                  <div className="relative flex items-center justify-center">
+                    <div className="flex h-64 w-full items-center justify-center rounded-xl bg-white/50 backdrop-blur-sm">
+                      <div className="text-8xl transition-transform group-hover:scale-110">{feature.visual}</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </motion.div>
