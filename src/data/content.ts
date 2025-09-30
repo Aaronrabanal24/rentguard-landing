@@ -1,11 +1,11 @@
 export const heroContent = {
-  eyebrow: "For California landlords",
-  headline: "Stop losing deposits to missed deadlines.",
+  eyebrow: "Four Step Suite for California Landlords",
+  headline: "Professional rental management from discovery to deposit return.",
   subheadline:
-    "Fairvia handles compliance, neutral escrow, and tenant communication so you can focus on filling units—not fighting disputes.",
+    "Complete system with SEO profiles, neutral escrow, trust badges, and 21-day compliance automation. Stop losing deposits to missed deadlines.",
   primaryCta: "Start Free Trial",
-  secondaryCta: "How It Works",
-  socialProof: "Join 150+ California landlords who stopped sweating the 21-day rule.",
+  secondaryCta: "See How It Works",
+  socialProof: "Trusted by 150+ California landlords with neutral escrow protection.",
 } as const;
 
 export const lawPoints = [
