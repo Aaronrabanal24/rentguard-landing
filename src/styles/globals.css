@@ -107,11 +107,11 @@
     padding-right: 1.5rem !important;
   }
 
-  :where(.shadow-lg),
-  :where(.shadow-xl),
-  :where(.shadow-2xl),
-  :where(.shadow-[0_40px_80px_-45px_rgba(15,23,42,0.4)]),
-  :where(.shadow-[0_45px_90px_-40px_rgba(15,23,42,0.35)]) {
+  .shadow-lg,
+  .shadow-xl,
+  .shadow-2xl,
+  .shadow-custom-1,
+  .shadow-custom-2 {
     box-shadow: 0 18px 30px -24px rgba(15, 23, 42, 0.28) !important;
   }
 }
