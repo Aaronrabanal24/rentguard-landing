@@ -10,7 +10,7 @@ export default function HowItWorksPage() {
         <div className="container-tight text-center">
           <h1 className="text-4xl font-bold sm:text-5xl">How Fairvia Works</h1>
           <p className="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">
-            Professional deposit management for California landlords and renters. Choose your journey below.
+            The complete four step suite for professional rental management—from discovery to deposit return. Choose your journey below.
           </p>
         </div>
       </section>
@@ -30,23 +30,23 @@ export default function HowItWorksPage() {
                   </svg>
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-3">For Landlords</h3>
-                <p className="text-slate-600 mb-6">Stop losing deposits to missed deadlines. Professional escrow, automated compliance, and tenant communication.</p>
+                <p className="text-slate-600 mb-6">Complete four step suite from discovery to deposit return. SEO profiles, neutral escrow, trust badges, and 21 day compliance.</p>
                 <div className="space-y-2 text-sm text-slate-500 mb-6">
                   <div className="flex items-center gap-2">
                     <span className="text-emerald-500">✓</span>
-                    <span>21-day deadline tracking</span>
+                    <span>Discover: SEO profiles with trust signals</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-emerald-500">✓</span>
-                    <span>Neutral escrow protection</span>
+                    <span>Comply: Identity escrow and lease pack</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-emerald-500">✓</span>
-                    <span>AB 2801 photo compliance</span>
+                    <span>Trust Badge: Portable verification</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-emerald-500">✓</span>
-                    <span>Professional listing badge</span>
+                    <span>Offboard: 21 day move out clock</span>
                   </div>
                 </div>
                 <div className="bg-sky-500 text-white px-6 py-3 rounded-full font-semibold group-hover:bg-sky-600 transition-colors">
@@ -95,34 +95,35 @@ export default function HowItWorksPage() {
       {/* Quick Overview */}
       <section className="bg-white py-16">
         <div className="container-tight text-center">
-          <h2 className="text-3xl font-semibold text-slate-900 mb-8">The Fairvia Difference</h2>
-          <div className="grid gap-8 md:grid-cols-3 max-w-4xl mx-auto">
+          <h2 className="text-3xl font-semibold text-slate-900 mb-8">The Complete Four Step Suite</h2>
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
             <div className="p-6">
               <div className="w-12 h-12 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
+                <span className="text-sky-600 font-bold text-sm">1</span>
               </div>
-              <h3 className="font-semibold text-slate-900 mb-2">Neutral Escrow</h3>
-              <p className="text-sm text-slate-600">DFPI-licensed partners hold deposits, never landlords</p>
+              <h3 className="font-semibold text-slate-900 mb-2">Discover</h3>
+              <p className="text-sm text-slate-600">SEO profiles with trust signals attract qualified renters</p>
             </div>
             <div className="p-6">
               <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+                <span className="text-amber-600 font-bold text-sm">2</span>
               </div>
-              <h3 className="font-semibold text-slate-900 mb-2">Compliance Automation</h3>
-              <p className="text-sm text-slate-600">Never miss California&apos;s 21-day deadlines or AB 2801 requirements</p>
+              <h3 className="font-semibold text-slate-900 mb-2">Comply</h3>
+              <p className="text-sm text-slate-600">Identity escrow and lease pack with guided setup</p>
             </div>
             <div className="p-6">
               <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                </svg>
+                <span className="text-emerald-600 font-bold text-sm">3</span>
               </div>
-              <h3 className="font-semibold text-slate-900 mb-2">Transparent Communication</h3>
-              <p className="text-sm text-slate-600">Guided messaging keeps everyone informed and aligned</p>
+              <h3 className="font-semibold text-slate-900 mb-2">Trust Badge</h3>
+              <p className="text-sm text-slate-600">Portable verification for marketplace listings</p>
+            </div>
+            <div className="p-6">
+              <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-rose-600 font-bold text-sm">4</span>
+              </div>
+              <h3 className="font-semibold text-slate-900 mb-2">Offboard</h3>
+              <p className="text-sm text-slate-600">21 day move out clock with guided deductions</p>
             </div>
           </div>
         </div>

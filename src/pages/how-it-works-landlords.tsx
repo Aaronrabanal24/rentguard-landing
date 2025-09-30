@@ -22,27 +22,31 @@ const landlordSolutions = [
 const landlordSteps = [
   {
     step: "1",
-    title: "Create Your Account",
-    description: "Verify your identity and connect to our DFPI-licensed escrow partners. Takes under 5 minutes.",
-    highlight: "No personal funds held"
+    title: "Discover: SEO Property Profiles",
+    description: "Create search optimized property profiles with trust signals upfront. Show escrow and verification badges before first contact to attract qualified renters.",
+    highlight: "Better click quality",
+    details: "Property profile with city tags, FAQ schema, photo gallery with room labels, short links and QR codes for flyers"
   },
   {
     step: "2",
-    title: "Set Up Property Profile",
-    description: "Add your property details and generate your professional Listing Assist badge for any marketplace.",
-    highlight: "SEO-optimized profile page"
+    title: "Comply: Identity Escrow and Lease Pack",
+    description: "Guided setup for identity verification, California lease pack with e-signature, and neutral escrow before key handoff.",
+    highlight: "Deposits start correct",
+    details: "Identity verification both sides, move in photo checklist, case timeline and vault, renter portal with status updates"
   },
   {
     step: "3",
-    title: "Invite Your Tenant",
-    description: "Send guided onboarding flow with lease templates, identity verification, and deposit instructions.",
-    highlight: "California-compliant templates"
+    title: "Trust Badge: Portable Verification",
+    description: "Generate trust badges with live verification states for your marketplace listings and social posts. One snippet works everywhere.",
+    highlight: "Works with current listings",
+    details: "Badge generator with tokens, copy block for descriptions, QR for flyers, click tracking by source"
   },
   {
     step: "4",
-    title: "Manage with Confidence",
-    description: "Track the 21-day timeline, communicate through templates, and handle releases with documentation.",
-    highlight: "Court-ready archive"
+    title: "Offboard: 21 Day Move-out Clock",
+    description: "Guided move out with visible countdown, deductions helper with guardrails, and itemized letters with receipts attached.",
+    highlight: "Never miss deadlines",
+    details: "Countdown timer with reminders, normal wear guardrails, dispute mode, final release and 3 year archive"
   }
 ];
 
@@ -98,20 +102,23 @@ export default function HowItWorksLandlordsPage() {
       {/* Step by Step Process */}
       <section className="bg-slate-50 py-16">
         <div className="container-tight">
-          <h2 className="text-3xl font-semibold text-slate-900 text-center mb-12">Your Step-by-Step Journey</h2>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <h2 className="text-3xl font-semibold text-slate-900 text-center mb-12">The Four Step Fairvia Suite</h2>
+          <div className="grid gap-8 md:grid-cols-2">
             {landlordSteps.map((item, index) => (
               <div key={index} className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-8 h-8 bg-sky-500 text-white rounded-full flex items-center justify-center text-sm font-semibold">
+                  <div className="w-10 h-10 bg-sky-500 text-white rounded-full flex items-center justify-center text-sm font-semibold">
                     {item.step}
                   </div>
-                  <h3 className="font-semibold text-slate-900">{item.title}</h3>
+                  <div>
+                    <h3 className="font-semibold text-slate-900">{item.title}</h3>
+                    <span className="inline-block bg-emerald-100 text-emerald-700 text-xs px-2 py-1 rounded-full font-medium mt-1">
+                      {item.highlight}
+                    </span>
+                  </div>
                 </div>
                 <p className="text-sm text-slate-600 mb-3">{item.description}</p>
-                <span className="inline-block bg-emerald-100 text-emerald-700 text-xs px-2 py-1 rounded-full font-medium">
-                  {item.highlight}
-                </span>
+                <p className="text-xs text-slate-500">{item.details}</p>
               </div>
             ))}
           </div>

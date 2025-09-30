@@ -33,94 +33,85 @@ interface ProductDefinition {
   badge?: string;
 }
 
-const FEATURE_HERO_LAYERS: FeatureLayer[] = [
-  {
-    wrapperClassName: "-translate-x-16 -translate-y-12 rotate-6",
-    tileClassName:
-      "bg-gradient-to-br from-sky-500 via-indigo-500 to-emerald-500 text-white shadow-[0_48px_96px_-44px_rgba(14,116,144,0.8)]",
-    content: (
-      <div className="space-y-2">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-white/70">Discover</p>
-        <p className="text-lg font-semibold">Neutral escrow</p>
-        <p className="text-xs text-white/75">Licensed California partners protect deposits.</p>
-      </div>
-    ),
-  },
-  {
-    wrapperClassName: "translate-x-12 -translate-y-2 -rotate-4",
-    tileClassName:
-      "bg-white/95 text-slate-800 shadow-[0_40px_90px_-46px_rgba(15,23,42,0.55)]",
-    content: (
-      <div className="space-y-2">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-slate-400">Comply</p>
-        <p className="text-sm font-semibold text-slate-900">21-day tracking</p>
-        <p className="text-xs text-slate-500">Automated alerts + deadline management.</p>
-      </div>
-    ),
-  },
-  {
-    wrapperClassName: "translate-x-4 translate-y-10 rotate-3",
-    tileClassName:
-      "bg-gradient-to-br from-slate-900 via-slate-800 to-slate-600 text-white shadow-[0_44px_92px_-46px_rgba(15,23,42,0.75)]",
-    content: (
-      <div className="space-y-2">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-white/65">Trust badge</p>
-        <p className="text-lg font-semibold">Professional profile</p>
-        <p className="text-xs text-white/70">SEO-optimized property listings.</p>
-      </div>
-    ),
-  },
-];
 
 const FAIRVIA_PRODUCTS: ProductDefinition[] = [
   {
-    slug: "neutral-escrow",
-    name: "Neutral Escrow",
-    tagline: "Professional deposit protection for landlords and tenants",
-    badge: "Core Feature",
+    slug: "discover",
+    name: "Discover",
+    tagline: "SEO profiles that attract qualified renters and show clear trust controls",
+    badge: "Step 1",
     features: [
-      { label: "DFPI-licensed escrow partners", detail: "California-regulated third-party deposit custody" },
-      { label: "Automated deposit transfers", detail: "Guided flow from tenant to neutral account" },
-      { label: "Real-time balance tracking", detail: "Both parties see deposit status and timeline" },
-      { label: "Release automation", detail: "Streamlined refund process with documentation" },
+      { label: "Search optimized property profiles", detail: "City and neighborhood tags with clean titles and RentalProperty schema" },
+      { label: "Trust signals upfront", detail: "Show escrow and verification before first contact" },
+      { label: "FAQ block with schema", detail: "Plain language answers that emit structured data" },
+      { label: "Photo gallery with room labels", detail: "Alt text prompts and professional presentation" },
+      { label: "Short link and QR codes", detail: "Easy sharing for flyers and marketplace listings" },
+      { label: "Simple analytics dashboard", detail: "Track impressions by query and city, measure actions" },
     ],
     benefits: [
-      { label: "Zero liability for landlords", detail: "Deposits never sit in personal accounts" },
-      { label: "Tenant confidence", detail: "Professional escrow builds trust and attracts quality renters" },
-      { label: "Compliance ready", detail: "Meets California deposit handling requirements" },
-      { label: "Dispute protection", detail: "Neutral third party holds funds during disagreements" },
+      { label: "Higher quality clicks", detail: "Attract serious renters who understand your process" },
+      { label: "Better search visibility", detail: "Structured data and local SEO optimization" },
+      { label: "Reduced message volume", detail: "FAQ answers common questions before contact" },
+      { label: "Trust before contact", detail: "Escrow and verification badges build confidence" },
     ],
-    why: "Professional landlords use neutral escrow to eliminate liability, build tenant trust, and ensure compliance with California deposit laws.",
+    why: "Independent California landlords get better click quality and fewer back and forth messages by showing trust controls upfront in search optimized profiles.",
     visual: {
-      headline: "Neutral deposit custody",
-      caption: "Licensed escrow partners protect every dollar",
+      headline: "SEO profiles with trust signals",
+      caption: "Attract qualified renters who understand your process",
       spotlightClassName: "bg-sky-400/20",
-      layers: FEATURE_HERO_LAYERS,
+      layers: [
+        {
+          wrapperClassName: "-translate-x-16 -translate-y-12 rotate-6",
+          tileClassName:
+            "bg-gradient-to-br from-sky-500 via-indigo-500 to-emerald-500 text-white shadow-[0_48px_96px_-44px_rgba(14,116,144,0.8)]",
+          content: (
+            <div className="space-y-2">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-white/70">Discover</p>
+              <p className="text-lg font-semibold">Trust signals</p>
+              <p className="text-xs text-white/75">Show escrow protection before contact.</p>
+            </div>
+          ),
+        },
+        {
+          wrapperClassName: "translate-x-12 -translate-y-2 -rotate-4",
+          tileClassName:
+            "bg-white/95 text-slate-800 shadow-[0_40px_90px_-46px_rgba(15,23,42,0.55)]",
+          content: (
+            <div className="space-y-2">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-slate-400">Search</p>
+              <p className="text-sm font-semibold text-slate-900">Local SEO</p>
+              <p className="text-xs text-slate-500">City and neighborhood optimization.</p>
+            </div>
+          ),
+        },
+      ],
     },
     ctaHref: "/how-it-works-landlords",
-    ctaLabel: "See landlord workflow",
+    ctaLabel: "See discovery workflow",
   },
   {
-    slug: "compliance-automation",
-    name: "Compliance Automation",
-    tagline: "AB 2801 photo requirements and 21-day timeline management",
-    badge: "California Law",
+    slug: "comply",
+    name: "Comply",
+    tagline: "Identity escrow and lease pack with guided setup and shared records",
+    badge: "Step 2",
     features: [
-      { label: "21-day deadline tracking", detail: "Automatic alerts at day 16, 19, and 20" },
-      { label: "AB 2801 photo compliance", detail: "Timestamped move-in and move-out documentation" },
-      { label: "Itemized deduction helper", detail: "California-compliant templates with receipt attachments" },
-      { label: "Legal document archive", detail: "Court-ready record keeping for 3+ years" },
+      { label: "Identity verification", detail: "Confirm identity on both landlord and renter sides" },
+      { label: "California lease pack", detail: "E-signature with read only copies for both parties" },
+      { label: "Neutral escrow setup", detail: "Funds move to escrow before key handoff" },
+      { label: "Move in photo checklist", detail: "Labels and timestamps for complete documentation" },
+      { label: "Case timeline and vault", detail: "Single shared record with audit log" },
+      { label: "Renter portal", detail: "Clear status updates that reduce message volume" },
     ],
     benefits: [
-      { label: "Never forfeit deposits", detail: "Automated reminders prevent missed deadlines" },
-      { label: "Deduction protection", detail: "Photo evidence supports legitimate claims" },
-      { label: "Legal compliance", detail: "Stay current with California rental laws" },
-      { label: "Audit readiness", detail: "Complete documentation for any disputes" },
+      { label: "Deposits start correct", detail: "Neutral escrow from day one eliminates liability" },
+      { label: "Complete documentation", detail: "Photo checklist and lease pack in one place" },
+      { label: "Fewer messages", detail: "Renter portal explains what happens next" },
+      { label: "California compliance", detail: "Lease forms and checklists designed for state law" },
     ],
-    why: "California's changing laws require professional documentation. Fairvia automates compliance so landlords can focus on their properties.",
+    why: "Landlords who want the deposit to start correct so the move out can finish correct use guided setup for identity, lease, and escrow.",
     visual: {
-      headline: "California compliance automation",
-      caption: "Never miss another deadline or documentation requirement",
+      headline: "Identity escrow and lease pack",
+      caption: "Guided setup with shared records from start to finish",
       spotlightClassName: "bg-amber-400/20",
       layers: [
         {
@@ -129,9 +120,9 @@ const FAIRVIA_PRODUCTS: ProductDefinition[] = [
             "bg-gradient-to-br from-amber-500 via-orange-500 to-rose-500 text-white shadow-[0_44px_86px_-38px_rgba(245,158,11,0.78)]",
           content: (
             <div className="space-y-2">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-white/70">Timeline</p>
-              <p className="text-lg font-semibold">21-day alerts</p>
-              <p className="text-xs text-white/75">Never forfeit another deposit.</p>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-white/70">Setup</p>
+              <p className="text-lg font-semibold">Guided flow</p>
+              <p className="text-xs text-white/75">Identity, lease, and escrow in order.</p>
             </div>
           ),
         },
@@ -141,38 +132,40 @@ const FAIRVIA_PRODUCTS: ProductDefinition[] = [
             "bg-white/95 text-slate-700 shadow-[0_32px_66px_-36px_rgba(15,23,42,0.45)]",
           content: (
             <div className="space-y-2">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-slate-400">Evidence</p>
-              <p className="text-sm font-semibold text-slate-900">Photo archive</p>
-              <p className="text-xs text-slate-500">AB 2801 compliant documentation.</p>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-slate-400">Records</p>
+              <p className="text-sm font-semibold text-slate-900">Shared vault</p>
+              <p className="text-xs text-slate-500">Timeline and documents in one place.</p>
             </div>
           ),
         },
       ],
     },
     ctaHref: "/how-it-works-landlords",
-    ctaLabel: "See compliance workflow",
+    ctaLabel: "See compliance setup",
   },
   {
-    slug: "tenant-communication",
-    name: "Professional Communication",
-    tagline: "Guided messaging and transparent timeline sharing",
-    badge: "Tenant Experience",
+    slug: "trust-badge",
+    name: "Trust Badge",
+    tagline: "Portable trust mark that proves escrow and verification anywhere you list",
+    badge: "Step 3",
     features: [
-      { label: "Guided message templates", detail: "Professional communication for all scenarios" },
-      { label: "Shared timeline access", detail: "Tenants see the same process status as landlords" },
-      { label: "One-click confirmations", detail: "Simple tenant acknowledgments with timestamps" },
-      { label: "Automated notifications", detail: "Keep tenants informed without manual follow-up" },
+      { label: "Badge generator with tokens", detail: "Unique verification per property with live states" },
+      { label: "Copy block for listings", detail: "One line snippet for marketplace descriptions" },
+      { label: "QR for printed materials", detail: "Flyers and window signs with tracking" },
+      { label: "Live state updates", detail: "Shows setup, live, verified, paused, or under review" },
+      { label: "Click tracking by source", detail: "Compare performance across placements" },
+      { label: "Routes to full profile", detail: "Links back to Discover page for complete details" },
     ],
     benefits: [
-      { label: "Reduced tenant calls", detail: "Self-service portal answers common questions" },
-      { label: "Professional image", detail: "Consistent, compliant communication builds trust" },
-      { label: "Faster resolutions", detail: "Clear expectations prevent misunderstandings" },
-      { label: "Documentation trail", detail: "Every message archived for dispute protection" },
+      { label: "Works with current listings", detail: "Add trust signals without changing platforms" },
+      { label: "Shows real verification", detail: "Live state backed by actual escrow setup" },
+      { label: "Measurable trust lift", detail: "Track clicks and engagement by placement" },
+      { label: "Simple and portable", detail: "One snippet works everywhere you advertise" },
     ],
-    why: "Professional communication reduces disputes, attracts better tenants, and creates a paper trail that protects both parties.",
+    why: "Landlords who want to keep using current marketplaces and social posts add a clear trust signal that increases click quality from crowded listings.",
     visual: {
-      headline: "Transparent tenant communication",
-      caption: "Keep everyone aligned with professional messaging",
+      headline: "Portable trust marks",
+      caption: "Prove escrow and verification anywhere you list",
       spotlightClassName: "bg-emerald-400/20",
       layers: [
         {
@@ -181,9 +174,9 @@ const FAIRVIA_PRODUCTS: ProductDefinition[] = [
             "bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-500 text-white shadow-[0_42px_82px_-36px_rgba(20,184,166,0.8)]",
           content: (
             <div className="space-y-2">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-white/70">Messages</p>
-              <p className="text-lg font-semibold">Guided templates</p>
-              <p className="text-xs text-white/75">Professional tone, compliant language.</p>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-white/70">Trust</p>
+              <p className="text-lg font-semibold">Live badges</p>
+              <p className="text-xs text-white/75">Real verification state, not static logos.</p>
             </div>
           ),
         },
@@ -193,16 +186,70 @@ const FAIRVIA_PRODUCTS: ProductDefinition[] = [
             "bg-white/95 text-slate-700 shadow-[0_30px_64px_-34px_rgba(15,23,42,0.45)]",
           content: (
             <div className="space-y-2">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-slate-400">Timeline</p>
-              <p className="text-sm font-semibold text-slate-900">Shared access</p>
-              <p className="text-xs text-slate-500">Tenants see the same status you do.</p>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-slate-400">Portable</p>
+              <p className="text-sm font-semibold text-slate-900">Any platform</p>
+              <p className="text-xs text-slate-500">Works with current listings and posts.</p>
             </div>
           ),
         },
       ],
     },
-    ctaHref: "/how-it-works-renters",
-    ctaLabel: "See tenant experience",
+    ctaHref: "/how-it-works-landlords",
+    ctaLabel: "See badge system",
+  },
+  {
+    slug: "offboard-twenty-one",
+    name: "Offboard",
+    tagline: "Guided move out flow with 21 day clock and documented deductions",
+    badge: "Step 4",
+    features: [
+      { label: "Visible countdown timer", detail: "21 day clock with reminders at key steps" },
+      { label: "Deductions helper", detail: "Math checks and categories for cleaning, repairs, unpaid rent" },
+      { label: "Normal wear guardrails", detail: "Gentle warnings to avoid common overclaim errors" },
+      { label: "Itemized letter generator", detail: "Clean letters with receipts and photos attached" },
+      { label: "Structured dispute mode", detail: "Notes and clear event timeline for resolution" },
+      { label: "Final release and archive", detail: "Escrow release with 3 year case storage" },
+    ],
+    benefits: [
+      { label: "Never miss deadlines", detail: "Visible timer and automated reminders keep you on track" },
+      { label: "Fair deductions only", detail: "Guardrails prevent overclaim errors and disputes" },
+      { label: "Complete documentation", detail: "Photos, receipts, and timeline support any claims" },
+      { label: "Calm finish process", detail: "Professional letters and clear communication" },
+    ],
+    why: "Landlords who want a calm and fair finish with records that stand up later use guided move out that keeps them on time and well documented.",
+    visual: {
+      headline: "Guided move out with 21 day clock",
+      caption: "Stay on time and well documented from walkthrough to refund",
+      spotlightClassName: "bg-rose-400/20",
+      layers: [
+        {
+          wrapperClassName: "-translate-x-14 -translate-y-10 -rotate-5",
+          tileClassName:
+            "bg-gradient-to-br from-rose-500 via-pink-500 to-purple-500 text-white shadow-[0_44px_86px_-38px_rgba(244,63,94,0.78)]",
+          content: (
+            <div className="space-y-2">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-white/70">Clock</p>
+              <p className="text-lg font-semibold">21 day timer</p>
+              <p className="text-xs text-white/75">Never miss California deadlines.</p>
+            </div>
+          ),
+        },
+        {
+          wrapperClassName: "translate-x-12 translate-y-8 rotate-3",
+          tileClassName:
+            "bg-white/95 text-slate-700 shadow-[0_32px_66px_-36px_rgba(15,23,42,0.45)]",
+          content: (
+            <div className="space-y-2">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-slate-400">Deductions</p>
+              <p className="text-sm font-semibold text-slate-900">Fair only</p>
+              <p className="text-xs text-slate-500">Guardrails prevent overclaim errors.</p>
+            </div>
+          ),
+        },
+      ],
+    },
+    ctaHref: "/how-it-works-landlords",
+    ctaLabel: "See offboard process",
   },
 ];
 
@@ -215,9 +262,12 @@ export default function FeaturesPage() {
       {/* Hero Section */}
       <section className="bg-white py-16 text-slate-900">
         <div className="container-tight text-center">
-          <h1 className="text-4xl font-bold sm:text-5xl">Complete Deposit Management</h1>
+          <span className="inline-flex items-center gap-2 rounded-full bg-sky-100 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-sky-600 mb-4">
+            Four Step Suite
+          </span>
+          <h1 className="text-4xl font-bold sm:text-5xl">The Complete Fairvia System</h1>
           <p className="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">
-            Everything California landlords need for professional, compliant deposit handling—from neutral escrow to automated compliance.
+            From discovery to deposit return—everything California landlords need for professional rental management with neutral escrow protection and compliance automation.
           </p>
         </div>
       </section>
