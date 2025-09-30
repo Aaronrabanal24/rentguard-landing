@@ -31,13 +31,18 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/pricing" className="tap inline-flex w-full items-center justify-between rounded-xl border border-white/5 px-4 py-3 transition hover:border-white/20 hover:text-white">
-                  Pricing
+                <Link href="/features" className="tap inline-flex w-full items-center justify-between rounded-xl border border-white/5 px-4 py-3 transition hover:border-white/20 hover:text-white">
+                  Features
                 </Link>
               </li>
               <li>
-                <Link href="/get-started" className="tap inline-flex w-full items-center justify-between rounded-xl border border-white/5 px-4 py-3 transition hover:border-white/20 hover:text-white">
-                  Get Started
+                <Link href="/how-it-works-landlords" className="tap inline-flex w-full items-center justify-between rounded-xl border border-white/5 px-4 py-3 transition hover:border-white/20 hover:text-white">
+                  For Landlords
+                </Link>
+              </li>
+              <li>
+                <Link href="/how-it-works-renters" className="tap inline-flex w-full items-center justify-between rounded-xl border border-white/5 px-4 py-3 transition hover:border-white/20 hover:text-white">
+                  For Renters
                 </Link>
               </li>
             </ul>
