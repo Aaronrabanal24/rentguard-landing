@@ -19,7 +19,7 @@ const solutionHighlights = [
 
 export default function HowItWorksPage() {
   return (
-    <PageContainer title="Fairvia — How It Works">
+    <PageContainer title="Fairvia — How It Works" animateMain={false}>
       {/* Hero Section */}
       <section className="bg-white py-16 text-slate-900">
         <div className="container-tight text-center">
