@@ -38,10 +38,10 @@ const FAIRVIA_PRODUCTS: ProductDefinition[] = [
   {
     slug: "discover",
     name: "Discover",
-    tagline: "SEO profiles that attract qualified renters and show clear trust controls",
+    tagline: "Trust profiles that attract qualified renters and show clear trust controls",
     badge: "Step 1",
     features: [
-      { label: "Search optimized property profiles", detail: "City and neighborhood tags with clean titles and RentalProperty schema" },
+      { label: "Schema-enhanced property profiles", detail: "City and neighborhood tags with clean titles and RentalProperty schema" },
       { label: "Trust signals upfront", detail: "Show escrow and verification before first contact" },
       { label: "FAQ block with schema", detail: "Plain language answers that emit structured data" },
       { label: "Photo gallery with room labels", detail: "Alt text prompts and professional presentation" },
@@ -50,13 +50,13 @@ const FAIRVIA_PRODUCTS: ProductDefinition[] = [
     ],
     benefits: [
       { label: "Higher quality clicks", detail: "Attract serious renters who understand your process" },
-      { label: "Better search visibility", detail: "Structured data and local SEO optimization" },
+      { label: "Better search visibility", detail: "Structured data and local optimization" },
       { label: "Reduced message volume", detail: "FAQ answers common questions before contact" },
       { label: "Trust before contact", detail: "Escrow and verification badges build confidence" },
     ],
-    why: "Independent California landlords get better click quality and fewer back and forth messages by showing trust controls upfront in search optimized profiles.",
+    why: "Independent California landlords get better click quality and fewer back and forth messages by showing trust controls upfront in schema-enhanced profiles.",
     visual: {
-      headline: "SEO profiles with trust signals",
+      headline: "Trust profiles with renter-verifiable signals",
       caption: "Attract qualified renters who understand your process",
       spotlightClassName: "bg-sky-400/20",
       layers: [

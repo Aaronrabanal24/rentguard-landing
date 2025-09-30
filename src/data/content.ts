@@ -1,11 +1,11 @@
 export const heroContent = {
-  eyebrow: "Four Step Suite for California Landlords",
-  headline: "Professional rental management from discovery to deposit return.",
+  eyebrow: "For California Landlords",
+  headline: "Never miss California's 21-day deposit deadline.",
   subheadline:
-    "Complete system with SEO profiles, neutral escrow, trust badges, and 21-day compliance automation. Stop losing deposits to missed deadlines.",
-  primaryCta: "Start Free Trial",
-  secondaryCta: "See How It Works",
-  socialProof: "Trusted by 150+ California landlords with neutral escrow protection.",
+    "Automated 21-day workflow with neutral escrow and court-ready packet. Stop forfeiting deposits to missed deadlines and tenant disputes.",
+  primaryCta: "See the Workflow",
+  secondaryCta: "Talk to a Specialist",
+  socialProof: "147 deposits processed • 100% on-time release rate",
 } as const;
 
 export const lawPoints = [
