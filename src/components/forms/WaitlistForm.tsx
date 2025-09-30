@@ -62,22 +62,26 @@ export default function WaitlistForm({
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mx-auto max-w-md space-y-6 text-left">
-      <div className="space-y-4">
+    <form onSubmit={handleSubmit} className="mx-auto max-w-md space-y-5 text-left">
+      <div className="space-y-3">
         {[
-          { name: "name" as const, placeholder: "Your name", type: "text" },
-          { name: "email" as const, placeholder: "Work email", type: "email" },
+          { name: "name" as const, placeholder: "Enter your first and last name", type: "text", label: "Full name" },
+          { name: "email" as const, placeholder: "you@company.com", type: "email", label: "Work email" },
         ].map((field) => (
-          <div key={field.name} className="relative">
+          <div key={field.name} className="relative space-y-2">
+            <label htmlFor={field.name} className="text-sm font-medium text-slate-700">
+              {field.label}
+            </label>
             <input
               type={field.type}
+              id={field.name}
               placeholder={field.placeholder}
               value={formData[field.name]}
               onChange={(e) => handleInputChange(field.name, e.target.value)}
               onFocus={() => setFocusedField(field.name)}
               onBlur={() => setFocusedField(null)}
               className={cn(
-                "w-full rounded-xl border px-4 py-3 text-slate-900 shadow-sm transition-all",
+                "h-12 w-full rounded-xl border px-4 text-slate-900 shadow-sm transition-all",
                 "focus:outline-none focus:ring-4",
                 focusedField === field.name
                   ? "border-sky-400 bg-sky-50/50 ring-sky-200"
@@ -92,15 +96,19 @@ export default function WaitlistForm({
         ))}
       </div>
 
-      <div className="space-y-4">
-        <div className="relative">
+      <div className="space-y-3">
+        <div className="relative space-y-2">
+          <label htmlFor="userType" className="text-sm font-medium text-slate-700">
+            I&apos;m signing up as
+          </label>
           <select
             value={formData.userType}
             onChange={(e) => handleInputChange("userType", e.target.value)}
             onFocus={() => setFocusedField("userType")}
             onBlur={() => setFocusedField(null)}
+            id="userType"
             className={cn(
-              "w-full appearance-none rounded-xl border px-4 py-3 text-slate-900 shadow-sm transition-all",
+              "h-12 w-full appearance-none rounded-xl border px-4 text-slate-900 shadow-sm transition-all",
               "focus:outline-none focus:ring-4",
               focusedField === "userType"
                 ? "border-sky-400 bg-sky-50/50 ring-sky-200"
@@ -119,7 +127,10 @@ export default function WaitlistForm({
           ) : null}
         </div>
 
-        <div className="relative">
+        <div className="relative space-y-2">
+          <label htmlFor="location" className="text-sm font-medium text-slate-700">
+            Operating location
+          </label>
           <input
             type="text"
             placeholder="City, State"
@@ -127,8 +138,9 @@ export default function WaitlistForm({
             onChange={(e) => handleInputChange("location", e.target.value)}
             onFocus={() => setFocusedField("location")}
             onBlur={() => setFocusedField(null)}
+            id="location"
             className={cn(
-              "w-full rounded-xl border px-4 py-3 text-slate-900 shadow-sm transition-all",
+              "h-12 w-full rounded-xl border px-4 text-slate-900 shadow-sm transition-all",
               "focus:outline-none focus:ring-4",
               focusedField === "location"
                 ? "border-sky-400 bg-sky-50/50 ring-sky-200"
@@ -148,7 +160,7 @@ export default function WaitlistForm({
         type="submit"
         disabled={isSubmitting}
         className={cn(
-          "group relative w-full overflow-hidden rounded-full py-3 px-6 text-base font-semibold text-white transition-all",
+          "group relative w-full overflow-hidden rounded-full px-6 py-3 text-base font-semibold text-white transition-all",
           "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300",
           isSubmitting
             ? "cursor-not-allowed bg-slate-400"

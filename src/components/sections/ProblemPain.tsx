@@ -14,7 +14,7 @@ const SNAPSHOT = {
 export default function ProblemPain() {
   return (
     <motion.section
-      className="bg-slate-50 py-16"
+      className="bg-slate-50 py-12 sm:py-16"
       id="positioning"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -37,7 +37,7 @@ export default function ProblemPain() {
             Fairvia helps you look buttoned-up without hiring staff—every inspection, deduction, and tenant update happens on schedule and with proof in hand.
           </p>
 
-          <dl className="mt-8 grid gap-6 sm:grid-cols-2">
+          <dl className="mt-8 grid gap-6 md:grid-cols-2">
             <motion.div
               className="rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-sm"
               initial={{ opacity: 0, y: 16 }}
@@ -60,7 +60,7 @@ export default function ProblemPain() {
             </motion.div>
           </dl>
 
-          <div className="mt-6 grid gap-6 sm:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
+          <div className="mt-6 grid gap-6 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
             <motion.div
               className="rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-sm"
               initial={{ opacity: 0, y: 18 }}

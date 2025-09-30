@@ -19,7 +19,7 @@ const COMMUNICATION_POINTS = [
 export default function CommunicationSection() {
   return (
     <motion.section
-      className="bg-white py-16"
+      className="bg-white py-12 sm:py-16"
       id="communication"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -59,9 +59,9 @@ export default function CommunicationSection() {
               alt="Fairvia communication timeline with tenant confirmations"
               width={640}
               height={480}
-              sizes="(max-width: 1024px) 100vw, 45vw"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              loading="lazy"
               className="h-auto w-full"
-              priority={false}
             />
           </motion.div>
         </div>

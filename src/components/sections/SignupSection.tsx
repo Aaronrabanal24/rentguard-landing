@@ -28,7 +28,7 @@ export default function SignupSection() {
           </p>
           <p className="mt-4 max-w-xl text-base text-slate-600">Share your info and we&apos;ll ping you as new metros turn on.</p>
 
-          <dl className="mt-8 grid gap-4 text-sm text-slate-600 sm:grid-cols-2">
+          <dl className="mt-8 grid gap-4 text-sm text-slate-600 md:grid-cols-2">
             <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
               <dt className="font-semibold text-slate-900">Trust badge ready</dt>
               <dd className="mt-1">Show tenants you bank with licensed escrow.</dd>

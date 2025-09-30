@@ -26,7 +26,7 @@ export function BrandLogo({ size = "md", priority = false, className }: BrandLog
       height={height}
       priority={priority}
       className={cn("h-auto w-auto", className)}
-      sizes="(min-width: 1024px) 180px, 150px"
+      sizes="(max-width: 640px) 120px, (max-width: 1024px) 150px, 180px"
     />
   );
 }

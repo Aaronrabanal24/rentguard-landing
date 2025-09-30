@@ -4,7 +4,7 @@ import { pilotValuePromises } from "@/data/pilot-scope";
 export default function PilotValuePromisesSection() {
   return (
     <motion.section
-      className="bg-white py-16"
+      className="bg-white py-12 sm:py-16"
       id="pilot-promises"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -20,7 +20,7 @@ export default function PilotValuePromisesSection() {
           These promises define the pilot contract—if a feature doesn&apos;t deliver on them, it isn&apos;t in scope.
         </p>
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+        <div className="mt-8 grid gap-4 md:grid-cols-2">
           {pilotValuePromises.map((promise) => (
             <motion.div
               key={promise}

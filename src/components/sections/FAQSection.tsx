@@ -32,7 +32,7 @@ export default function FAQSection() {
       </Head>
 
       <motion.section
-        className="relative overflow-hidden bg-slate-100 py-20"
+        className="relative overflow-hidden bg-slate-100 py-12 sm:py-16 lg:py-20"
         id="faq"
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -40,20 +40,24 @@ export default function FAQSection() {
         transition={{ duration: 0.45, ease: "easeOut" }}
       >
         <div className="absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full bg-orange-300/25 blur-3xl" aria-hidden="true" />
-        <div className="mx-auto max-w-5xl px-4">
-          <div className="mb-12 text-center">
-            <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-orange-100 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-orange-600">
+        <div className="container-tight">
+          <div className="mb-10 text-center">
+            <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-orange-100 px-4 py-1 text-[11px] font-semibold uppercase tracking-widest text-orange-600">
               FAQ
             </span>
-            <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">Quick answers for California landlords under pressure</h2>
-            <p className="mt-4 text-base text-slate-600">See how Fairvia keeps you compliant, calms renters, and gives you hours back every move-out.</p>
+            <h2 className="text-[1.9rem] font-semibold text-slate-900 sm:text-4xl">
+              Quick answers for California landlords under pressure
+            </h2>
+            <p className="mt-4 text-base text-slate-600 sm:text-lg">
+              See how Fairvia keeps you compliant, calms renters, and gives you hours back every move-out.
+            </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-4 md:grid-cols-2">
             {faqItems.map((faq, index) => (
               <motion.button
                 type="button"
                 key={faq.question}
-                className={`text-left rounded-2xl border bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg ${
+                className={`tap w-full rounded-2xl border bg-white p-5 text-left shadow-sm transition hover:-translate-y-1 hover:shadow-lg md:rounded-3xl md:p-6 ${
                   openIndex === index ? "border-orange-300" : "border-slate-200"
                 }`}
                 initial={{ opacity: 0, y: 16 }}
@@ -68,28 +72,30 @@ export default function FAQSection() {
                   setOpenIndex(next);
                 }}
               >
-                <div className="mb-3 flex items-center justify-between text-orange-600">
-                  <div className="flex items-center gap-3">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-orange-100 text-sm font-semibold">{index + 1}</span>
-                    <h3 className="text-base font-semibold text-slate-900">{faq.question}</h3>
+                <div className="mb-3 flex items-start justify-between gap-3 text-orange-600">
+                  <div className="flex flex-1 items-center gap-3">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-100 text-sm font-semibold">{index + 1}</span>
+                    <h3 className="text-base font-semibold text-slate-900 sm:text-lg">{faq.question}</h3>
                   </div>
                   <span className="text-slate-400">{openIndex === index ? "-" : "+"}</span>
                 </div>
-                {openIndex === index && <p className="text-sm leading-relaxed text-slate-600">{faq.answer}</p>}
+                {openIndex === index ? (
+                  <p className="text-sm leading-relaxed text-slate-600 sm:text-base">{faq.answer}</p>
+                ) : null}
               </motion.button>
             ))}
           </div>
           <div className="mt-12 text-center">
-            <div className="rounded-2xl border border-orange-200 bg-orange-50 p-6">
+            <div className="rounded-2xl border border-orange-200 bg-orange-50 p-5 md:rounded-3xl md:p-6">
               <h3 className="mb-2 text-lg font-semibold text-orange-900">Need a deeper walkthrough?</h3>
-              <p className="mb-4 text-orange-700">Book a fast session with our compliance team and leave with a customized 21-day action plan.</p>
+              <p className="mb-4 text-orange-700 sm:text-base">Book a fast session with our compliance team and leave with a customized 21-day action plan.</p>
               <button
                 onClick={() => {
                   router.push("/signup").catch(() => {
                     /* noop */
                   });
                 }}
-                className="inline-flex items-center rounded-full bg-orange-600 px-6 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-[1px] hover:bg-orange-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-300"
+                className="tap inline-flex items-center justify-center rounded-full bg-orange-600 px-6 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-[1px] hover:bg-orange-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-300"
               >
                 Schedule my compliance session
               </button>

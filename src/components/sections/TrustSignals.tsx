@@ -49,7 +49,7 @@ export default function TrustSignals() {
             Fairvia makes compliance visible. Licensed escrow, documented timelines, and landlord outcomes move the conversation from “trust me” to “here’s the proof.”
           </p>
 
-          <div className="mt-6 grid gap-4 sm:grid-cols-3">
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
             {TRUST_MARKS.map((mark, index) => (
               <motion.div
                 key={mark.title}

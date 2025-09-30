@@ -35,7 +35,7 @@ export default function SocialProof() {
         >
           <h2 className="text-3xl font-semibold text-slate-900">What landlords and renters get during the pilot</h2>
           <p className="mt-2 text-sm text-slate-600">Fairvia keeps the pilot scoped to California deposits so we can deliver fast wins and measurable trust signals.</p>
-          <div className="mt-6 grid gap-4 sm:grid-cols-3">
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
             {SIGNALS.map((signal, index) => (
               <motion.div
                 key={signal.title}

@@ -25,12 +25,12 @@ export function HeroContent() {
 
   return (
     <div className="relative mx-auto max-w-xl space-y-6">
-      <span className="inline-flex items-center gap-2 rounded-full border border-sky-400/40 bg-gradient-to-r from-sky-50 to-teal-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-sky-700 shadow-sm shadow-sky-200/60 backdrop-blur-sm">
+      <span className="inline-flex items-center gap-2 rounded-full border border-sky-400/40 bg-gradient-to-r from-sky-50 to-teal-50 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.3em] text-sky-700 shadow-sm shadow-sky-200/60 backdrop-blur-sm">
         <span className="h-2 w-2 rounded-full bg-sky-500 animate-pulse" />
         {heroContent.eyebrow}
       </span>
 
-      <h1 className="text-balance text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+      <h1 className="text-[2rem] font-bold tracking-tight text-slate-900 sm:text-[2.75rem] lg:text-6xl">
         {headlineLead}
         {headlineAccent ? (
           <span className="bg-gradient-to-r from-sky-600 via-sky-500 to-teal-500 bg-clip-text text-transparent">
@@ -39,7 +39,7 @@ export function HeroContent() {
         ) : null}
       </h1>
 
-      <p className="max-w-prose text-lg leading-relaxed text-slate-600 sm:text-xl">
+      <p className="max-w-prose text-base leading-relaxed text-slate-600 sm:text-lg">
         {heroContent.subheadline}
       </p>
 
@@ -58,7 +58,7 @@ export function HeroContent() {
           </Button>
         </div>
 
-        <div className="flex flex-wrap items-center gap-4 text-xs text-slate-500">
+        <div className="flex flex-wrap items-center gap-3 text-xs text-slate-500">
           <div className="flex items-center gap-2">
             <div className="h-2 w-2 rounded-full bg-emerald-500" />
             <span>{heroContent.socialProof}</span>

@@ -4,7 +4,7 @@ import { pilotComplianceFocus } from "@/data/pilot-scope";
 export default function PilotComplianceFocusSection() {
   return (
     <motion.section
-      className="bg-slate-900 py-16 text-slate-100"
+      className="bg-slate-900 py-12 sm:py-16 text-slate-100"
       id="pilot-compliance"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}

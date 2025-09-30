@@ -4,7 +4,7 @@ import { pilotPersonas } from "@/data/pilot-scope";
 export default function PilotPersonasSection() {
   return (
     <motion.section
-      className="bg-slate-50 py-16"
+      className="bg-slate-50 py-12 sm:py-16"
       id="pilot-personas"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}

@@ -29,7 +29,7 @@ const MOBILE_TIPS = [
 export default function ValueAndForm() {
   return (
     <motion.section
-      className="bg-slate-900 py-16 text-slate-100"
+      className="bg-slate-900 py-12 sm:py-16 text-slate-100"
       id="how-it-works"
       initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -81,15 +81,15 @@ export default function ValueAndForm() {
               alt="Fairvia escrow and lease onboarding interface"
               width={640}
               height={480}
-              sizes="(max-width: 1024px) 100vw, 45vw"
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="h-auto w-full"
-              priority={false}
+              loading="lazy"
             />
           </motion.div>
         </div>
 
         <motion.div
-          className="mt-10 grid gap-6 rounded-3xl border border-slate-800 bg-slate-800/60 p-6 text-sm text-slate-300 sm:grid-cols-2"
+          className="mt-10 grid gap-6 rounded-3xl border border-slate-800 bg-slate-800/60 p-6 text-sm text-slate-300 md:grid-cols-2"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}

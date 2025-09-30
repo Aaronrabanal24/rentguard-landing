@@ -10,7 +10,7 @@ const SUBPOINTS = [
 export default function MarketOpportunity() {
   return (
     <motion.section
-      className="bg-white py-16"
+      className="bg-white py-12 sm:py-16"
       id="market"
       initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -32,7 +32,7 @@ export default function MarketOpportunity() {
           <p className="mt-3 max-w-3xl text-sm text-slate-600 sm:text-base">
             Independent landlords juggle inspections, deadlines, and anxious renters. Fairvia gives you a compliance command center that runs in the background while you focus on rent-ready units.
           </p>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
             {opportunities.map((item, index) => (
               <motion.div
                 key={item.challenge}
@@ -57,7 +57,7 @@ export default function MarketOpportunity() {
           transition={{ duration: 0.45, ease: "easeOut", delay: 0.1 }}
         >
           <h3 className="text-lg font-semibold text-slate-900">Why it matters now</h3>
-          <ul className="mt-3 grid gap-3 text-sm text-slate-600 sm:grid-cols-3">
+          <ul className="mt-3 grid gap-3 text-sm text-slate-600 md:grid-cols-3">
             {SUBPOINTS.map((point, index) => (
               <motion.li
                 key={point}

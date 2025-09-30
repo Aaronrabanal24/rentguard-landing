@@ -9,7 +9,7 @@ export function HeroSocialProof() {
     <div className="mx-auto max-w-6xl px-4 pb-16">
       <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
         <div className="grid gap-6 md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] md:items-center">
-          <div className="grid gap-4 text-center sm:grid-cols-3 sm:text-left">
+          <div className="grid gap-4 text-center md:grid-cols-3 sm:text-left">
             {STATS.map((stat) => (
               <div key={stat.label} className="rounded-2xl border border-slate-100 bg-slate-50 p-4">
                 <p className="text-2xl font-semibold text-slate-900">{stat.number}</p>

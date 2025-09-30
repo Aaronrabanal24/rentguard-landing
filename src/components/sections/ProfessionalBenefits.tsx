@@ -6,7 +6,7 @@ const categories = Object.entries(professionalBenefits);
 export default function ProfessionalBenefits() {
   return (
     <motion.section
-      className="bg-white py-16"
+      className="bg-white py-12 sm:py-16"
       id="benefits"
       initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}

@@ -44,6 +44,8 @@ export default function Hero() {
 
 function HeroVisualSkeleton() {
   return (
-    <div className="media-16x9 w-full animate-pulse rounded-[32px] border border-slate-200/70 bg-white/60" />
+    <div className="hidden w-full animate-pulse rounded-[32px] border border-slate-200/70 bg-white/60 md:block">
+      <div className="media-16x9 w-full bg-slate-100" />
+    </div>
   );
 }

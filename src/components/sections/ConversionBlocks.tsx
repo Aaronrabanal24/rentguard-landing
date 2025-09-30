@@ -5,7 +5,7 @@ import { track } from "@/lib/tracking";
 export default function ConversionBlocks() {
   return (
     <motion.section
-      className="bg-white py-16"
+      className="bg-white py-12 sm:py-16"
       id="get-started"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}

@@ -22,7 +22,7 @@ const FEATURES = [
 export default function CompetitiveEdge() {
   return (
     <motion.section
-      className="bg-slate-100 py-16"
+      className="bg-slate-100 py-12 sm:py-16"
       id="edge"
       initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -44,7 +44,7 @@ export default function CompetitiveEdge() {
           <p className="mt-3 max-w-3xl text-sm text-slate-600 sm:text-base">
             Fairvia turns manual landlord chores into &ldquo;set and forget&rdquo; workflows so you can spend your time on rent-ready units and new acquisitions.
           </p>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
             {FEATURES.map((item, index) => (
               <motion.div
                 key={item.title}

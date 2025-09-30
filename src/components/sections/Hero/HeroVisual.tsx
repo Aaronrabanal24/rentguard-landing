@@ -37,7 +37,7 @@ export function HeroVisual() {
 
   return (
     <motion.div
-      className="mx-auto w-full max-w-3xl rounded-[32px] border border-white/60 bg-white/80 p-5 shadow-[0_40px_80px_-45px_rgba(15,23,42,0.4)] backdrop-blur-lg sm:p-6"
+      className="hidden w-full max-w-3xl rounded-[32px] border border-white/60 bg-white/80 p-5 shadow-[0_40px_80px_-45px_rgba(15,23,42,0.4)] backdrop-blur-lg md:block md:p-6"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.45, ease: "easeOut" }}
@@ -94,7 +94,7 @@ export function HeroVisual() {
               type="button"
               onClick={() => setActiveIndex(index)}
               className={cn(
-                "tap snap-child flex min-w-[160px] flex-col rounded-2xl border px-4 py-3 text-left text-xs transition",
+                "tap snap-child flex min-w-[180px] flex-col rounded-2xl border px-4 py-3 text-left text-xs transition",
                 isActive
                   ? "border-slate-900 bg-slate-900 text-white shadow-sm"
                   : "border-slate-200 bg-white text-slate-600 hover:border-slate-300"
@@ -164,7 +164,7 @@ function StepOneCard() {
 function StepTwoCard() {
   return (
     <div className="grid gap-4 text-sm text-slate-600">
-      <div className="grid gap-3 rounded-2xl border border-white/60 bg-white/85 p-4 shadow-inner sm:grid-cols-3">
+      <div className="grid gap-3 rounded-2xl border border-white/60 bg-white/85 p-4 shadow-inner md:grid-cols-3">
         <div className="rounded-xl border border-slate-200 bg-white px-3 py-3">
           <p className="text-[11px] uppercase tracking-[0.25em] text-slate-400">Lease pack</p>
           <p className="mt-1 text-base font-semibold text-slate-900">Signed by both parties</p>
@@ -252,7 +252,7 @@ function StepFourCard() {
         </div>
       </div>
 
-      <div className="grid gap-3 sm:grid-cols-2">
+      <div className="grid gap-3 md:grid-cols-2">
         <div className="rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-700">
           <p className="text-xs uppercase tracking-[0.25em] text-emerald-500">Escrow status</p>
           <p className="mt-1 font-semibold text-emerald-800">Release confirmed ✔</p>

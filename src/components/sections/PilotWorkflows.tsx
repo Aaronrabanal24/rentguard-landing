@@ -268,7 +268,7 @@ const CORE_FLOW_CARDS = [
 
 export default function PilotWorkflows() {
   return (
-    <section className="bg-slate-900 py-16 text-slate-100" id="pilot-workflows">
+    <section className="bg-slate-900 py-12 sm:py-16 text-slate-100" id="pilot-workflows">
       <div className="mx-auto max-w-6xl px-4">
         <div className="max-w-3xl">
           <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em]">

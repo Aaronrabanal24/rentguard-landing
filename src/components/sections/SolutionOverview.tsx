@@ -89,7 +89,7 @@ export default function SolutionOverview() {
 
   return (
     <motion.section
-      className="bg-slate-900 py-16 text-slate-100"
+      className="bg-slate-900 py-12 sm:py-16 text-slate-100"
       id="solution"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}

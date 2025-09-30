@@ -7,7 +7,7 @@ const EMBED_TYPES = listingAssistDefinition.embedTypes;
 export default function ListingAssistSection() {
   return (
     <motion.section
-      className="bg-white py-16"
+      className="bg-white py-12 sm:py-16"
       id="listing-assist"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
