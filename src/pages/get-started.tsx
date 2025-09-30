@@ -1,19 +1,19 @@
 import Image from "next/image";
 import { PageContainer } from "@/components/layout/PageContainer";
-import ConversionBlocks from "@/components/sections/ConversionBlocks";
+import { WaitlistForm } from "@/components";
 
 export default function GetStartedPage() {
   return (
-    <PageContainer title="Fairvia — Get Started" description="Request a landlord demo or enroll in the Fairvia pilot program.">
+    <PageContainer title="Fairvia — Get Started" description="Get your free unit link and start capturing leads instantly.">
       <section className="bg-white py-10 text-slate-900">
         <div className="mx-auto flex max-w-5xl flex-col items-center gap-8 px-4 text-center md:flex-row md:items-center md:text-left">
           <div className="flex-1">
             <span className="inline-flex items-center gap-2 rounded-full bg-sky-100 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-sky-600">
               Get Started
             </span>
-            <h1 className="mt-4 text-3xl font-semibold sm:text-4xl">Apply to the Fairvia pilot or join the renter waitlist</h1>
+            <h1 className="mt-4 text-3xl font-semibold sm:text-4xl">Get Your Free Unit Link</h1>
             <p className="mt-3 text-sm text-slate-600 sm:text-base">
-              Independent California landlords get a guided compliance review and Listing Assist setup. Renters can raise their hand to receive neutral escrow updates when their landlord enrolls.
+              Start capturing leads with instant precheck, automated timeline tracking, and weekly ROI reports for your owners.
             </p>
           </div>
           <div className="flex justify-center md:justify-end">
@@ -27,7 +27,11 @@ export default function GetStartedPage() {
           </div>
         </div>
       </section>
-      <ConversionBlocks />
+      <section className="bg-slate-50 py-16">
+        <div className="mx-auto max-w-2xl px-4">
+          <WaitlistForm />
+        </div>
+      </section>
     </PageContainer>
   );
 }
