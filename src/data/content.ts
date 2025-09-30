@@ -1,11 +1,11 @@
 export const heroContent = {
-  eyebrow: "For California Landlords",
-  headline: "Never miss California's 21-day deposit deadline.",
+  eyebrow: "For California Landlords & Renters",
+  headline: "Deposits Done Right",
   subheadline:
-    "Automated 21-day workflow with neutral escrow and court-ready packet. Stop forfeiting deposits to missed deadlines and tenant disputes.",
-  primaryCta: "See the Workflow",
-  secondaryCta: "Talk to a Specialist",
-  socialProof: "147 deposits processed • 100% on-time release rate",
+    "Legal compliance, neutral escrow, and transparent communication that protects both landlords and renters. Never forfeit deposits to missed deadlines or disputes again.",
+  primaryCta: "Start Now – It's Free to Join",
+  secondaryCta: "See How It Works",
+  socialProof: "147 deposits processed • 100% on-time release rate • DFPI-licensed escrow",
 } as const;
 
 export const lawPoints = [

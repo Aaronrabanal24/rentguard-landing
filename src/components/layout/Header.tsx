@@ -17,7 +17,7 @@ export default function Header() {
     { href: "/how-it-works", label: "How It Works" },
     { href: "/features", label: "Features" },
     { href: "/pricing", label: "Pricing" },
-    { href: "/get-started", label: "Get Started" },
+    { href: "/demo", label: "Demo" },
   ];
 
   const handleCTA = () => {
@@ -47,7 +47,7 @@ export default function Header() {
             onClick={handleCTA}
             className="tap rounded-full bg-gradient-to-r from-sky-500 to-teal-500 px-5 py-2 text-sm font-semibold text-white shadow-sm shadow-sky-200/80 transition hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
           >
-            Start Free Trial
+            Start Now – It&apos;s Free
           </button>
         </nav>
 
@@ -135,7 +135,7 @@ function MobileMenu({ navLinks, onSelectNav }: { navLinks: NavLink[]; onSelectNa
                   }}
                   className="tap w-full rounded-full bg-gradient-to-r from-sky-400 via-sky-500 to-teal-500 px-5 py-3 text-base font-semibold text-white shadow-sm transition hover:-translate-y-[1px] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
                 >
-                  Start Free Trial
+                  Start Now – It&apos;s Free
                 </button>
                 <p className="text-center text-sm text-slate-500">Built for California landlords under 50 units.</p>
               </div>
