@@ -6,3 +6,4 @@ export { Badge } from "./Badge";
 export { Separator } from "./Separator";
 export { Progress } from "./Progress";
 export { Tooltip } from "./Tooltip";
+export { MockupCard, StatCard, TimelineStep, MobileFrame, DepositItem } from "./ProductMockup";

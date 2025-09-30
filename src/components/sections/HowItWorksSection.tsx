@@ -1,4 +1,21 @@
 import { motion } from "@/lib/motion";
+import dynamic from "next/dynamic";
+
+const MobileRenterMockup = dynamic(() => import("@/components/mockups/MobileRenterMockup"), {
+  loading: () => <div className="h-96 animate-pulse rounded-2xl bg-slate-100" />,
+});
+
+const TimelineMockup = dynamic(() => import("@/components/mockups/TimelineMockup"), {
+  loading: () => <div className="h-96 animate-pulse rounded-2xl bg-slate-100" />,
+});
+
+const ROIBoardMockup = dynamic(() => import("@/components/mockups/ROIBoardMockup"), {
+  loading: () => <div className="h-96 animate-pulse rounded-2xl bg-slate-100" />,
+});
+
+const DepositMockup = dynamic(() => import("@/components/mockups/DepositMockup"), {
+  loading: () => <div className="h-96 animate-pulse rounded-2xl bg-slate-100" />,
+});
 
 const FEATURES = [
   {
@@ -10,7 +27,7 @@ const FEATURES = [
       "Built-in precheck and trust page",
       "UTM tracking for every inquiry",
     ],
-    visual: "🔗",
+    mockup: MobileRenterMockup,
   },
   {
     number: 2,
@@ -21,7 +38,7 @@ const FEATURES = [
       "Book tours with qualified prospects",
       "Shareable timeline link for owners",
     ],
-    visual: "📊",
+    mockup: TimelineMockup,
   },
   {
     number: 3,
@@ -32,7 +49,7 @@ const FEATURES = [
       "Show days listed, inquiries, tours, and lease status",
       "Build trust and prove operational excellence",
     ],
-    visual: "📈",
+    mockup: ROIBoardMockup,
   },
   {
     number: 4,
@@ -43,7 +60,7 @@ const FEATURES = [
       "Photo sets and receipts auto-attached",
       "Export audit-ready records anytime",
     ],
-    visual: "✅",
+    mockup: DepositMockup,
   },
 ];
 
@@ -101,13 +118,8 @@ export default function HowItWorksSection() {
               </div>
 
               <div className={index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""}>
-                <div className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-br from-white via-sky-50/30 to-slate-50 p-8 shadow-lg transition-shadow hover:shadow-xl">
-                  <div className="absolute inset-0 bg-gradient-to-br from-sky-500/5 to-teal-500/5 opacity-0 transition-opacity group-hover:opacity-100" />
-                  <div className="relative flex items-center justify-center">
-                    <div className="flex h-64 w-full items-center justify-center rounded-xl bg-white/50 backdrop-blur-sm">
-                      <div className="text-8xl transition-transform group-hover:scale-110">{feature.visual}</div>
-                    </div>
-                  </div>
+                <div className="flex items-center justify-center">
+                  <feature.mockup />
                 </div>
               </div>
             </motion.div>
