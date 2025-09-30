@@ -37,27 +37,27 @@ interface ProductDefinition {
 
 const FAIRVIA_PRODUCTS: ProductDefinition[] = [
   {
-    slug: "discover",
-    name: "Discover",
-    tagline: "Trust profiles that attract qualified renters and show clear trust controls",
-    badge: "Step 1",
+    slug: "property-profile",
+    name: "Property Profile",
+    tagline: "SEO-optimized profiles that attract renters with built-in trust signals",
+    badge: "Component 1",
     features: [
-      { label: "Schema-enhanced property profiles", detail: "City and neighborhood tags with clean titles and RentalProperty schema" },
-      { label: "Trust signals upfront", detail: "Show escrow and verification before first contact" },
-      { label: "FAQ block with schema", detail: "Plain language answers that emit structured data" },
-      { label: "Photo gallery with room labels", detail: "Alt text prompts and professional presentation" },
-      { label: "Short link and QR codes", detail: "Easy sharing for flyers and marketplace listings" },
-      { label: "Simple analytics dashboard", detail: "Track impressions by query and city, measure actions" },
+      { label: "Schema-enhanced property listings", detail: "City and neighborhood optimization with RentalProperty schema" },
+      { label: "Fairvia badge integration", detail: "Links to proof timeline and verification status" },
+      { label: "Trust signals upfront", detail: "Show escrow protection and compliance before contact" },
+      { label: "QR codes and short links", detail: "Easy sharing across marketplaces and social media" },
+      { label: "Analytics dashboard", detail: "Track impressions, clicks, and inquiry quality" },
+      { label: "FAQ automation", detail: "Answer common questions with structured data" },
     ],
     benefits: [
-      { label: "Higher quality clicks", detail: "Attract serious renters who understand your process" },
-      { label: "Better search visibility", detail: "Structured data and local optimization" },
-      { label: "Reduced message volume", detail: "FAQ answers common questions before contact" },
-      { label: "Trust before contact", detail: "Escrow and verification badges build confidence" },
+      { label: "Attract qualified renters", detail: "Trust signals filter for serious applicants" },
+      { label: "Better search visibility", detail: "Structured data improves local search ranking" },
+      { label: "Reduced message volume", detail: "FAQ and transparency reduce back-and-forth" },
+      { label: "Professional presentation", detail: "Stand out from generic listings" },
     ],
-    why: "Independent California landlords get better click quality and fewer back and forth messages by showing trust controls upfront in schema-enhanced profiles.",
+    why: "Helps landlords attract renters with a Fairvia badge linking to proof timeline and verification.",
     visual: {
-      headline: "Trust profiles with renter-verifiable signals",
+      headline: "SEO-optimized profiles with trust signals",
       caption: "Attract qualified renters who understand your process",
       spotlightClassName: "bg-sky-400/20",
       layers: [
@@ -67,9 +67,9 @@ const FAIRVIA_PRODUCTS: ProductDefinition[] = [
             "bg-gradient-to-br from-sky-500 via-indigo-500 to-emerald-500 text-white shadow-[0_48px_96px_-44px_rgba(14,116,144,0.8)]",
           content: (
             <div className="space-y-2">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-white/70">Discover</p>
-              <p className="text-lg font-semibold">Trust signals</p>
-              <p className="text-xs text-white/75">Show escrow protection before contact.</p>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-white/70">🏷️ Profile</p>
+              <p className="text-lg font-semibold">Trust badges</p>
+              <p className="text-xs text-white/75">Show verification before contact.</p>
             </div>
           ),
         },
@@ -81,20 +81,20 @@ const FAIRVIA_PRODUCTS: ProductDefinition[] = [
             <div className="space-y-2">
               <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-slate-400">Search</p>
               <p className="text-sm font-semibold text-slate-900">Local SEO</p>
-              <p className="text-xs text-slate-500">City and neighborhood optimization.</p>
+              <p className="text-xs text-slate-500">Better search visibility.</p>
             </div>
           ),
         },
       ],
     },
-    ctaHref: "/how-it-works-landlords",
-    ctaLabel: "See discovery workflow",
+    ctaHref: "/demo",
+    ctaLabel: "See profile in action",
   },
   {
-    slug: "comply",
-    name: "Comply",
-    tagline: "Identity escrow and lease pack with guided setup and shared records",
-    badge: "Step 2",
+    slug: "timeline-relay",
+    name: "Timeline & Relay",
+    tagline: "Every action logged and visible with landlord's existing email + SMS",
+    badge: "Component 2",
     features: [
       { label: "Identity verification", detail: "Confirm identity on both landlord and renter sides" },
       { label: "California lease pack", detail: "E-signature with read only copies for both parties" },
@@ -262,10 +262,10 @@ export default function FeaturesPage() {
     <PageContainer title="Fairvia Features" animateMain={false}>
       <Section background="gradient-primary" padding="xl">
         <SectionHeader>
-          <SectionBadge>Complete Suite</SectionBadge>
-          <SectionTitle size="xl">The Complete Fairvia System</SectionTitle>
+          <SectionBadge>Six Core Components</SectionBadge>
+          <SectionTitle size="xl">Tied to Every Moment in the Rental Lifecycle</SectionTitle>
           <SectionSubtitle size="lg">
-            From discovery to deposit return—everything California landlords need for professional rental management with neutral escrow protection and compliance automation.
+            Your platform is composed of six core components, each designed to remove ambiguity and protect both landlords and renters through the entire deposit process.
           </SectionSubtitle>
         </SectionHeader>
       </Section>

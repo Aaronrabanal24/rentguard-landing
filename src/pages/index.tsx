@@ -9,43 +9,92 @@ import { motion } from "@/lib/motion";
 import Link from "next/link";
 import { Section, SectionHeader, SectionTitle, SectionSubtitle, Card, CardTitle, Grid } from "@/components/ui";
 
-// Benefits Section - "Why Fairvia?"
-function BenefitsSection() {
-  const benefits = [
+// Problem & Solution Section
+function ProblemSolutionSection() {
+  const problems = [
     {
-      icon: "✅",
-      title: "Legal Compliance, Simplified",
-      description: "Tracks 21-day rule. Automates letters.",
-      color: "emerald"
+      title: "Landlord Problems",
+      items: [
+        "Missed refund deadlines create legal exposure",
+        "Poor documentation leads to disputes",
+        "Conflict during move-out with documentation gaps"
+      ]
     },
     {
-      icon: "🔒",
-      title: "Escrow & Timeline Transparency",
-      description: "Neutral third-party holding. Trust from both sides.",
+      title: "Renter Problems",
+      items: [
+        "No visibility into deposit status",
+        "Surprise deductions without explanation",
+        "Can't prove condition or see when refund is sent"
+      ]
+    }
+  ];
+
+  return (
+    <Section background="gradient-secondary" padding="xl">
+      <SectionHeader>
+        <SectionTitle size="lg">The Problem We Solve</SectionTitle>
+        <SectionSubtitle>
+          A shared proof-first timeline + neutral escrow removes ambiguity and protects both parties.
+        </SectionSubtitle>
+      </SectionHeader>
+
+      <Grid cols={2} gap="lg" className="max-w-4xl mx-auto">
+        {problems.map((problem, index) => (
+          <Card key={index} variant="elevated" padding="lg">
+            <CardTitle level={3} className="text-slate-900 mb-4">{problem.title}</CardTitle>
+            <ul className="space-y-3">
+              {problem.items.map((item, idx) => (
+                <li key={idx} className="flex items-start gap-3">
+                  <span className="text-rose-500 mt-1">⚠️</span>
+                  <span className="text-slate-600">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </Card>
+        ))}
+      </Grid>
+    </Section>
+  );
+}
+
+// Six Core Components Section
+function SixCoreComponents() {
+  const components = [
+    {
+      icon: "🏷️",
+      title: "SEO-Optimized Property Profile",
+      description: "Helps landlords attract renters. Includes a Fairvia badge linking to proof timeline.",
       color: "sky"
     },
     {
-      icon: "📤",
-      title: "Full Case Exports",
-      description: "Defensible, shareable PDFs and JSONs.",
+      icon: "🧾",
+      title: "Timeline & Message Relay",
+      description: "Every action logged and visible. Uses landlord's existing email + SMS. Templates and scheduling built in.",
+      color: "emerald"
+    },
+    {
+      icon: "🖊️",
+      title: "E-Sign Lease Flow",
+      description: "5 envelopes/month. Seamless document storage. Renter and co-signer verified before signing.",
       color: "amber"
     },
     {
-      icon: "📨",
-      title: "Message Smart. Everywhere.",
-      description: "Built-in email + SMS relay.",
+      icon: "💰",
+      title: "Secure Deposit & Escrow",
+      description: "Funds stored neutrally. Escrow events logged. Deduction tool generates itemized letters with receipt validation.",
       color: "purple"
     },
     {
-      icon: "🌟",
-      title: "Reputation Badge",
-      description: "Boosts listing conversion via public proof.",
+      icon: "🧠",
+      title: "Compliance Templates & Letters",
+      description: "Built for AB 2801. Smart fields guide landlords. Reduce risk of legal noncompliance.",
       color: "rose"
     },
     {
-      icon: "🛠️",
-      title: "CA Compliance Built-in",
-      description: "Hardwired to AB 2801 and landlord law.",
+      icon: "📤",
+      title: "PDF & JSON Export",
+      description: "Locked, timestamped proof. Ready for court or insurance. Ideal for future renter handoff or audits.",
       color: "teal"
     }
   ];
@@ -53,22 +102,123 @@ function BenefitsSection() {
   return (
     <Section background="white" padding="xl">
       <SectionHeader>
-        <SectionTitle size="lg">Why Fairvia?</SectionTitle>
+        <SectionTitle size="lg">Six Core Components</SectionTitle>
         <SectionSubtitle>
-          Each feature delivers concrete, risk-reducing value that protects both landlords and renters.
+          Your platform is composed of six core components, each tied to a moment in the rental lifecycle.
         </SectionSubtitle>
       </SectionHeader>
 
       <Grid cols={3} gap="lg" className="max-w-6xl mx-auto">
-        {benefits.map((benefit, index) => (
+        {components.map((component, index) => (
           <Card key={index} variant="default" padding="lg" hover>
             <div className="flex items-start gap-4">
-              <div className="text-3xl">{benefit.icon}</div>
+              <div className="text-3xl">{component.icon}</div>
               <div>
-                <CardTitle level={3} className="text-slate-900 mb-2">{benefit.title}</CardTitle>
-                <p className="text-slate-600">{benefit.description}</p>
+                <CardTitle level={3} className="text-slate-900 mb-2">{component.title}</CardTitle>
+                <p className="text-slate-600">{component.description}</p>
               </div>
             </div>
+          </Card>
+        ))}
+      </Grid>
+    </Section>
+  );
+}
+
+// Competitive Advantages Section
+function CompetitiveAdvantages() {
+  const advantages = [
+    {
+      icon: "🚫",
+      title: "No Renter Marketplace Distractions",
+      description: "Pure focus on deposit compliance, not rental listings or marketplace features."
+    },
+    {
+      icon: "✅",
+      title: "True California Compliance Focus (AB 2801)",
+      description: "Built specifically for California laws with automated AB 2801 photo documentation."
+    },
+    {
+      icon: "🔄",
+      title: "Works with What Landlords Already Use",
+      description: "Integrates with existing email + SMS workflows. No platform switching required."
+    },
+    {
+      icon: "🧾",
+      title: "Public Badge Boosts Inquiries and Trust",
+      description: "Fairvia verification badge increases listing quality and renter confidence."
+    },
+    {
+      icon: "📚",
+      title: "Built for Defensibility — Not Just Convenience",
+      description: "Court-ready documentation and audit trails that protect against disputes."
+    }
+  ];
+
+  return (
+    <Section background="gradient-primary" padding="xl">
+      <SectionHeader>
+        <SectionTitle size="lg">Why Choose Fairvia</SectionTitle>
+        <SectionSubtitle>
+          Purpose-built for California landlords who want compliance, not complexity.
+        </SectionSubtitle>
+      </SectionHeader>
+
+      <Grid cols={2} gap="lg" className="max-w-5xl mx-auto lg:grid-cols-3">
+        {advantages.map((advantage, index) => (
+          <Card key={index} variant="glass" padding="lg" hover>
+            <div className="text-center">
+              <div className="text-4xl mb-4">{advantage.icon}</div>
+              <CardTitle level={3} className="text-slate-900 mb-3">{advantage.title}</CardTitle>
+              <p className="text-slate-600">{advantage.description}</p>
+            </div>
+          </Card>
+        ))}
+      </Grid>
+    </Section>
+  );
+}
+
+// Metrics & Performance Section
+function MetricsSection() {
+  const metrics = [
+    {
+      value: ">90%",
+      label: "On-time deposit return rate",
+      description: "We track every deadline to ensure compliance"
+    },
+    {
+      value: "<72hrs",
+      label: "Median time to escrow",
+      description: "Fast setup gets protection in place quickly"
+    },
+    {
+      value: "<5%",
+      label: "Dispute rate",
+      description: "Transparency prevents most conflicts"
+    },
+    {
+      value: "+15%",
+      label: "Inquiry lift with badge",
+      description: "Trust signals attract better renters"
+    }
+  ];
+
+  return (
+    <Section background="dark" padding="xl">
+      <SectionHeader>
+        <SectionTitle size="lg" className="text-white">Proven Results</SectionTitle>
+        <SectionSubtitle className="text-slate-300">
+          Real metrics from California landlords using Fairvia.
+        </SectionSubtitle>
+      </SectionHeader>
+
+      <Grid cols={4} gap="lg" className="max-w-5xl mx-auto">
+        {metrics.map((metric, index) => (
+          <Card key={index} variant="glass" padding="lg" className="text-center border-slate-600">
+            <div className="text-4xl font-bold text-sky-400 mb-2">{metric.value}</div>
+            <CardTitle level={4} className="text-white mb-2 text-sm">{metric.label}</CardTitle>
+            <p className="text-slate-400 text-sm">{metric.description}</p>
           </Card>
         ))}
       </Grid>
@@ -152,51 +302,6 @@ function HowItWorks() {
   );
 }
 
-// What You Prevent Section
-function WhatYouPrevent() {
-  return (
-    <section className="bg-rose-50 py-16">
-      <div className="container-tight">
-        <h2 className="text-3xl font-bold text-slate-900 text-center mb-12">
-          What You Prevent
-        </h2>
-        <div className="grid gap-6 md:grid-cols-3 max-w-4xl mx-auto">
-          <div className="bg-white p-6 rounded-xl border border-rose-200">
-            <h3 className="font-semibold text-slate-900 mb-2">Forfeited Deposits</h3>
-            <p className="text-sm text-slate-600 mb-3">Miss the day-21 deadline and California law says you forfeit the entire deposit—no matter how bad the damage was.</p>
-            <p className="text-xs font-medium text-emerald-600">How Fairvia prevents this: Automated countdown with day 16/19/20 nudges</p>
-          </div>
-          <div className="bg-white p-6 rounded-xl border border-rose-200">
-            <h3 className="font-semibold text-slate-900 mb-2">Tenant Disputes</h3>
-            <p className="text-sm text-slate-600 mb-3">Without photo proof and proper documentation, legitimate deductions turn into costly disputes.</p>
-            <p className="text-xs font-medium text-emerald-600">How Fairvia prevents this: AB 2801 photo workflow with timestamps that support deductions</p>
-          </div>
-          <div className="bg-white p-6 rounded-xl border border-rose-200">
-            <h3 className="font-semibold text-slate-900 mb-2">Compliance Panic</h3>
-            <p className="text-sm text-slate-600 mb-3">California laws keep changing. One missing requirement can cost you thousands in legal fees.</p>
-            <p className="text-xs font-medium text-emerald-600">How Fairvia prevents this: Court-ready packet with itemization, receipts, photos, timestamps</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// Trust Strip Section
-function TrustStrip() {
-  return (
-    <section className="bg-slate-900 py-8">
-      <div className="container-tight text-center">
-        <p className="text-slate-300 text-sm">
-          Deposits held by DFPI-licensed partners • Shared timeline and receipts • Same packet for landlord and tenant
-        </p>
-        <p className="text-slate-500 text-xs mt-2">
-          Fairvia is not a bank, escrow agent, or law firm. Deposits are held by DFPI-licensed partners.
-        </p>
-      </div>
-    </section>
-  );
-}
 
 // Pricing Section
 function PricingSection() {
@@ -411,10 +516,11 @@ export default function Home() {
         </header>
 
         <main className="safe-bot pb-32">
-          <BenefitsSection />
+          <ProblemSolutionSection />
+          <SixCoreComponents />
+          <CompetitiveAdvantages />
+          <MetricsSection />
           <HowItWorks />
-          <WhatYouPrevent />
-          <TrustStrip />
           <PricingSection />
           <TestimonialsSection />
           <ForRentersSection />

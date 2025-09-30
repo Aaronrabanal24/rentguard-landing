@@ -2,10 +2,10 @@ export const heroContent = {
   eyebrow: "For California Landlords & Renters",
   headline: "Deposits Done Right",
   subheadline:
-    "Legal compliance, neutral escrow, and transparent communication that protects both landlords and renters. Never forfeit deposits to missed deadlines or disputes again.",
-  primaryCta: "Start Now – It's Free to Join",
-  secondaryCta: "See How It Works",
-  socialProof: "147 deposits processed • 100% on-time release rate • DFPI-licensed escrow",
+    "A shared, structured deposit timeline with escrow integration and two-sided transparency. Stay compliant, save hours, and get proof in place.",
+  primaryCta: "Stay Compliant. Save Hours. Get Proof in Place.",
+  secondaryCta: "Track Your Deposit Timeline",
+  socialProof: "147 deposits processed • >90% on-time return rate • <5% dispute rate • DFPI-licensed escrow",
 } as const;
 
 export const lawPoints = [

@@ -4,14 +4,14 @@ import HomeCTA from "@/components/sections/HomeCTA";
 import { Section, SectionHeader, SectionTitle, SectionSubtitle, SectionBadge, Card, CardHeader, CardTitle, CardContent, Grid, Button } from "@/components/ui";
 
 const PLAN_FEATURES = [
-  "5 Active Cases",
-  "5 E-sign Envelopes",
-  "Message Relay",
-  "Deduction Tools + Templates",
-  "Full Exports",
-  "DFPI Escrow Partners",
+  "Up to 5 active cases",
+  "5 e-sign envelopes/month",
+  "Timeline, export, and smart deduction letter generation",
+  "Email + SMS relay (included)",
+  "PDF + JSON exports",
+  "DFPI-licensed escrow integration",
   "21-day countdown automation",
-  "AB 2801 photo compliance",
+  "AB 2801 compliance templates",
 ];
 
 export default function PricingPage() {
@@ -19,10 +19,10 @@ export default function PricingPage() {
     <PageContainer title="Fairvia Pricing" animateMain={false}>
       <Section background="gradient-primary" padding="xl">
         <SectionHeader>
-          <SectionBadge>Updated Pricing</SectionBadge>
-          <SectionTitle size="xl">Simple, Transparent Pricing</SectionTitle>
+          <SectionBadge>Flat Pricing</SectionBadge>
+          <SectionTitle size="xl">$69/month. That&apos;s it.</SectionTitle>
           <SectionSubtitle size="lg">
-            Professional deposit management with neutral escrow, automated compliance, and court-ready documentation.
+            No add-ons, no upsells — simple and flat. Everything California landlords need for compliant deposit management.
           </SectionSubtitle>
         </SectionHeader>
 
@@ -41,7 +41,7 @@ export default function PricingPage() {
                   <CardTitle level={2} className="text-5xl font-bold text-slate-900">
                     $69<span className="text-xl font-medium text-slate-500">/month</span>
                   </CardTitle>
-                  <p className="text-slate-600 mt-2">Everything you need to get started</p>
+                  <p className="text-slate-600 mt-2">No add-ons, no upsells — simple and flat</p>
                 </div>
                 <div className="text-sm text-slate-600">
                   <p>• Price-locked for 12 months</p>
@@ -66,7 +66,7 @@ export default function PricingPage() {
 
             <div className="mt-8 flex flex-col items-stretch gap-4 sm:flex-row sm:items-center">
               <Button variant="primary" size="lg" className="w-full">
-                Start Now – It&apos;s Free to Join
+                Stay Compliant. Save Hours. Get Proof in Place.
               </Button>
               <Button variant="secondary" size="lg" className="w-full">
                 Talk to a Specialist
@@ -104,9 +104,9 @@ export default function PricingPage() {
           <Grid cols={1} gap="md">
             <Card variant="default" padding="lg" hover>
               <CardHeader>
-                <CardTitle level={3}>Why this pricing structure?</CardTitle>
+                <CardTitle level={3}>Why only one plan?</CardTitle>
               </CardHeader>
-              <p className="text-slate-600">Transparent pricing that scales with your business. Everything you need included, with clear add-ons for growth.</p>
+              <p className="text-slate-600">No add-ons, no upsells — simple and flat. Everything California landlords need for compliant deposit management included.</p>
             </Card>
             <Card variant="default" padding="lg" hover>
               <CardHeader>
