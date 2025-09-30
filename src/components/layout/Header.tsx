@@ -12,16 +12,14 @@ export default function Header() {
   const router = useRouter();
 
   const navLinks: NavLink[] = [
-    { href: "/why-fairvia", label: "Why Fairvia" },
-    { href: "/how-it-works", label: "How It Works" },
     { href: "/features", label: "Features" },
-    { href: "/trust", label: "Trust" },
-    { href: "/get-started", label: "Get Started" },
+    { href: "/how-it-works", label: "How It Works" },
+    { href: "/pricing", label: "Pricing" },
     { href: "/faq", label: "FAQ" },
   ];
 
   const handleCTA = () => {
-    track("click_cta", { role: "landlord", location: "nav", label: "request_demo" });
+    track("click_cta", { role: "landlord", location: "nav", label: "get_started" });
     router.push("/get-started").catch(() => {
       /* noop */
     });
@@ -50,7 +48,7 @@ export default function Header() {
               onClick={handleCTA}
               className="tap rounded-full bg-gradient-to-r from-sky-500 to-teal-500 px-5 py-2 text-sm font-semibold text-white shadow-sm shadow-sky-200/80 transition hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
             >
-              Request a demo
+              Get Started
             </button>
           </nav>
         </div>
@@ -75,7 +73,7 @@ export default function Header() {
             onClick={handleCTA}
             className="tap w-full rounded-full bg-gradient-to-r from-sky-500 to-teal-500 px-5 py-3 text-base font-semibold text-white shadow-sm transition hover:-translate-y-[1px] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
           >
-            Request a demo
+            Get Started
           </button>
         </div>
       </nav>

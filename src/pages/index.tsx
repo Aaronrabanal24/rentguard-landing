@@ -1,25 +1,14 @@
 import dynamic from "next/dynamic";
-import "@/content/homepage";
 import {
   Footer,
   Hero,
   HomeCTA,
-  TrustSignals,
+  ResultsSection,
   PainSection,
-  SolutionOverview,
-  ValueAndForm,
-  CompetitiveEdge,
-  ProfessionalBenefits,
-  ListingAssistSection,
-  CommunicationSection,
-  ReleaseSection,
+  HowItWorksSection,
   StickyCTA,
 } from "@/components";
 import { motion } from "@/lib/motion";
-
-const SocialProof = dynamic(() => import("@/components/sections/SocialProof"), {
-  loading: () => <div className="mt-16 h-[320px] animate-pulse rounded-3xl bg-slate-100" aria-hidden />,
-});
 
 const FAQSection = dynamic(() => import("@/components/sections/FAQSection"), {
   loading: () => <div className="mt-16 h-[400px] animate-pulse rounded-3xl bg-slate-100" aria-hidden />,
@@ -36,16 +25,9 @@ export default function Home() {
         </header>
 
         <main className="safe-bot pb-32">
-          <SolutionOverview />
+          <ResultsSection />
           <PainSection />
-          <ListingAssistSection />
-          <ValueAndForm />
-          <CommunicationSection />
-          <ReleaseSection />
-          <TrustSignals />
-          <CompetitiveEdge />
-          <ProfessionalBenefits />
-          <SocialProof />
+          <HowItWorksSection />
           <FAQSection />
           <HomeCTA />
         </main>

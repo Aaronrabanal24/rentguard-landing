@@ -7,47 +7,63 @@ export default function Footer() {
     <footer className="relative overflow-hidden bg-slate-950 text-slate-200">
       <div className="absolute inset-0 bg-gradient-to-tr from-slate-950 via-slate-900 to-indigo-950" aria-hidden="true" />
       <div className="relative mx-auto max-w-6xl px-4 py-16">
-        <div className="grid gap-12 md:grid-cols-[1.25fr_1fr_1fr_1fr]">
+        <div className="grid gap-12 md:grid-cols-[1.25fr_1fr_1fr_1fr_1fr]">
           <div>
             <Link href="/" aria-label="Fairvia home" className="mb-6 inline-flex items-center">
               <BrandLogo size="lg" className="drop-shadow-lg" />
             </Link>
             <p className="mb-6 max-w-sm text-sm leading-relaxed text-slate-300">
-              We bring transparency, verification, and speed to every rental interaction so trustworthy people can find each other faster.
+              Your leasing layer. Fill faster, stay compliant, prove the work.
             </p>
-            <div className="flex flex-wrap items-center gap-3 text-xs text-slate-400">
-              <span className="rounded-full border border-white/10 bg-white/10 px-3 py-1">Escrow protection</span>
-              <span className="rounded-full border border-white/10 bg-white/10 px-3 py-1">Instant verification</span>
-              <span className="rounded-full border border-white/10 bg-white/10 px-3 py-1">AI matching</span>
-            </div>
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-widest text-slate-300">Explore</h4>
+            <h4 className="text-sm font-semibold uppercase tracking-widest text-slate-300">Product</h4>
             <ul className="mt-4 space-y-3 text-sm text-slate-400">
-              <li>
-                <Link href="/why-fairvia" className="transition hover:text-white">
-                  Why Fairvia
-                </Link>
-              </li>
-              <li>
-                <Link href="/how-it-works" className="transition hover:text-white">
-                  How it works
-                </Link>
-              </li>
               <li>
                 <Link href="/features" className="transition hover:text-white">
                   Features
                 </Link>
               </li>
               <li>
-                <Link href="/trust" className="transition hover:text-white">
-                  Trust &amp; security
+                <Link href="/how-it-works" className="transition hover:text-white">
+                  How It Works
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="transition hover:text-white">
-                  FAQ
+                <Link href="/pricing" className="transition hover:text-white">
+                  Pricing
+                </Link>
+              </li>
+              <li>
+                <Link href="/roadmap" className="transition hover:text-white">
+                  Roadmap
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold uppercase tracking-widest text-slate-300">Resources</h4>
+            <ul className="mt-4 space-y-3 text-sm text-slate-400">
+              <li>
+                <Link href="/help" className="transition hover:text-white">
+                  Help Center
+                </Link>
+              </li>
+              <li>
+                <Link href="/docs" className="transition hover:text-white">
+                  Documentation
+                </Link>
+              </li>
+              <li>
+                <Link href="/templates" className="transition hover:text-white">
+                  Templates
+                </Link>
+              </li>
+              <li>
+                <Link href="/api" className="transition hover:text-white">
+                  API Docs
                 </Link>
               </li>
             </ul>
@@ -67,15 +83,20 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/pricing" className="transition hover:text-white">
-                  Pricing
+                <Link href="/careers" className="transition hover:text-white">
+                  Careers
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="transition hover:text-white">
+                  Blog
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-widest text-slate-300">Policies</h4>
+            <h4 className="text-sm font-semibold uppercase tracking-widest text-slate-300">Legal</h4>
             <ul className="mt-4 space-y-3 text-sm text-slate-400">
               <li>
                 <Link href="/privacy" className="transition hover:text-white">
@@ -87,18 +108,23 @@ export default function Footer() {
                   Terms
                 </Link>
               </li>
+              <li>
+                <Link href="/trust" className="transition hover:text-white">
+                  Security
+                </Link>
+              </li>
+              <li>
+                <Link href="/compliance" className="transition hover:text-white">
+                  Compliance
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
 
         <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-8 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p>&copy; {new Date().getFullYear()} {COMPANY.name}. All rights reserved.</p>
-            <p>Pilot availability: California only while we onboard landlords.</p>
-            <p>
-              {COMPANY.name} is not a bank, law firm, or escrow agent. All escrow accounts are managed by licensed California partners.
-              Lease templates are reviewed for California compliance but do not substitute for legal advice.
-            </p>
+            <p>&copy; {new Date().getFullYear()} {COMPANY.name}. All rights reserved. Built for property operators • Made with care</p>
           </div>
           <div className="flex gap-6">
             <Link href="/privacy" className="transition hover:text-white">
