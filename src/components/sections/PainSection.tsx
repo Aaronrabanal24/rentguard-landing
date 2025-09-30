@@ -2,22 +2,22 @@ import { motion } from "@/lib/motion";
 
 const SCENARIOS = [
   {
-    title: "Leads go cold waiting for a reply.",
+    title: "Vacant units cost money every day",
     story:
-      "Prospects move on when responses take hours or days.",
-    icon: "📧",
+      "Slow inquiry responses mean prospects move on. Every delayed reply adds vacancy days and lost revenue.",
+    icon: "💸",
   },
   {
-    title: "Owners ask \"What's going on?\"",
+    title: "No weekly proof for owners",
     story:
-      "Constant check-ins drain your time and erode trust.",
-    icon: "💬",
+      "Constant check-ins drain your time and erode trust. Spreadsheets don't show effort — just empty cells.",
+    icon: "📊",
   },
   {
-    title: "Deposit letters cause drama and delays.",
+    title: "Deposit disputes and delays",
     story:
-      "Manual processes lead to disputes and legal headaches.",
-    icon: "📄",
+      "Manual deposit letters lead to fights. Missing photos, missed deadlines, and legal headaches you can't afford.",
+    icon: "⚖️",
   },
 ];
 
@@ -32,10 +32,10 @@ export default function PainSection() {
       transition={{ duration: 0.45, ease: "easeOut" }}
     >
       <div className="mx-auto max-w-5xl px-4">
-        <div className="max-w-3xl space-y-4 text-center">
-          <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">You lose money every day a unit sits vacant.</h2>
-          <p className="text-sm text-slate-600 sm:text-base">
-            Leads drop off. Owners ask questions. Deposit fights drag on.
+        <div className="mx-auto max-w-3xl space-y-4 text-center">
+          <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">Every vacant day costs you money</h2>
+          <p className="text-lg text-slate-600 sm:text-xl">
+            Slow replies. Spreadsheet overload. Deposit disputes. Sound familiar?
           </p>
         </div>
 

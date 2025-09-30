@@ -1,9 +1,9 @@
 export const heroContent = {
-  eyebrow: "Now Accepting Pilot Applications",
-  headline: "Stay Compliant. Fill Faster.",
+  eyebrow: "The Trust Layer for Rental Operations",
+  headline: "Reduce vacant days. Prove performance.",
   subheadline:
-    "One smart link per unit - with precheck, timeline, deposit tools, and an ROI board for your owners.",
-  primaryCta: "Get My Free Unit Link",
-  secondaryCta: "See a Demo Timeline",
-  socialProof: "Capture every inquiry. Precheck automatically. Show owners the work, without spreadsheets.",
+    "Fairvia helps landlords and property managers fill units faster, handle deposits cleanly, and prove operational excellence to owners — without asking anyone to learn new software.",
+  primaryCta: "Start with One Free Unit",
+  secondaryCta: "See How It Works",
+  socialProof: "One smart link per unit replaces 20 emails and ends deposit disputes before they begin.",
 } as const;

@@ -6,6 +6,8 @@ import {
   ResultsSection,
   PainSection,
   HowItWorksSection,
+  TargetCustomersSection,
+  MetricsSection,
   StickyCTA,
 } from "@/components";
 import { motion } from "@/lib/motion";
@@ -28,6 +30,8 @@ export default function Home() {
           <ResultsSection />
           <PainSection />
           <HowItWorksSection />
+          <TargetCustomersSection />
+          <MetricsSection />
           <FAQSection />
           <HomeCTA />
         </main>

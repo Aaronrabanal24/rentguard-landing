@@ -3,6 +3,8 @@ export { default as Hero } from "./sections/Hero";
 export { default as ResultsSection } from "./sections/ResultsSection";
 export { default as PainSection } from "./sections/PainSection";
 export { default as HowItWorksSection } from "./sections/HowItWorksSection";
+export { default as TargetCustomersSection } from "./sections/TargetCustomersSection";
+export { default as MetricsSection } from "./sections/MetricsSection";
 export { default as FAQSection } from "./sections/FAQSection";
 export { default as HomeCTA } from "./sections/HomeCTA";
 
