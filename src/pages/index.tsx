@@ -7,6 +7,7 @@ import {
 } from "@/components";
 import { motion } from "@/lib/motion";
 import Link from "next/link";
+import { Section, SectionHeader, SectionTitle, SectionSubtitle, Card, CardTitle, Grid } from "@/components/ui";
 
 // Benefits Section - "Why Fairvia?"
 function BenefitsSection() {
@@ -50,32 +51,28 @@ function BenefitsSection() {
   ];
 
   return (
-    <section className="bg-white py-16">
-      <div className="container-tight">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl mb-4">
-            Why Fairvia?
-          </h2>
-          <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-            Each feature delivers concrete, risk-reducing value that protects both landlords and renters.
-          </p>
-        </div>
+    <Section background="white" padding="xl">
+      <SectionHeader>
+        <SectionTitle size="lg">Why Fairvia?</SectionTitle>
+        <SectionSubtitle>
+          Each feature delivers concrete, risk-reducing value that protects both landlords and renters.
+        </SectionSubtitle>
+      </SectionHeader>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
-          {benefits.map((benefit, index) => (
-            <div key={index} className="bg-slate-50 p-6 rounded-xl border border-slate-200 hover:shadow-lg transition-shadow">
-              <div className="flex items-start gap-4">
-                <div className="text-3xl">{benefit.icon}</div>
-                <div>
-                  <h3 className="font-semibold text-slate-900 mb-2">{benefit.title}</h3>
-                  <p className="text-slate-600">{benefit.description}</p>
-                </div>
+      <Grid cols={3} gap="lg" className="max-w-6xl mx-auto">
+        {benefits.map((benefit, index) => (
+          <Card key={index} variant="default" padding="lg" hover>
+            <div className="flex items-start gap-4">
+              <div className="text-3xl">{benefit.icon}</div>
+              <div>
+                <CardTitle level={3} className="text-slate-900 mb-2">{benefit.title}</CardTitle>
+                <p className="text-slate-600">{benefit.description}</p>
               </div>
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
+          </Card>
+        ))}
+      </Grid>
+    </Section>
   );
 }
 
@@ -121,41 +118,37 @@ function HowItWorks() {
   ];
 
   return (
-    <section className="bg-slate-50 py-16">
-      <div className="container-tight">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl mb-4">
-            How It Works
-          </h2>
-          <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-            End-to-end simplicity that de-risks trying the platform. Each step ties to a Fairvia feature.
-          </p>
-        </div>
+    <Section background="slate" padding="xl">
+      <SectionHeader>
+        <SectionTitle size="lg">How It Works</SectionTitle>
+        <SectionSubtitle>
+          End-to-end simplicity that de-risks trying the platform. Each step ties to a Fairvia feature.
+        </SectionSubtitle>
+      </SectionHeader>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
-          {steps.map((step, index) => (
-            <div key={index} className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-              <div className="flex items-start gap-4 mb-4">
-                <div className={`w-12 h-12 text-white rounded-full flex items-center justify-center font-bold text-lg ${
-                  step.color === 'sky' ? 'bg-sky-500' :
-                  step.color === 'emerald' ? 'bg-emerald-500' :
-                  step.color === 'amber' ? 'bg-amber-500' :
-                  step.color === 'purple' ? 'bg-purple-500' :
-                  step.color === 'rose' ? 'bg-rose-500' :
-                  step.color === 'teal' ? 'bg-teal-500' : 'bg-slate-500'
-                }`}>
-                  {step.number}
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-semibold text-slate-900 mb-2">{step.title}</h3>
-                </div>
+      <Grid cols={3} gap="lg" className="max-w-6xl mx-auto">
+        {steps.map((step, index) => (
+          <Card key={index} variant="elevated" padding="lg">
+            <div className="flex items-start gap-4 mb-4">
+              <div className={`w-12 h-12 text-white rounded-full flex items-center justify-center font-bold text-lg ${
+                step.color === 'sky' ? 'bg-sky-500' :
+                step.color === 'emerald' ? 'bg-emerald-500' :
+                step.color === 'amber' ? 'bg-amber-500' :
+                step.color === 'purple' ? 'bg-purple-500' :
+                step.color === 'rose' ? 'bg-rose-500' :
+                step.color === 'teal' ? 'bg-teal-500' : 'bg-slate-500'
+              }`}>
+                {step.number}
               </div>
-              <p className="text-slate-600">{step.description}</p>
+              <div className="flex-1">
+                <CardTitle level={3} className="text-slate-900 mb-2">{step.title}</CardTitle>
+              </div>
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
+            <p className="text-slate-600">{step.description}</p>
+          </Card>
+        ))}
+      </Grid>
+    </Section>
   );
 }
 

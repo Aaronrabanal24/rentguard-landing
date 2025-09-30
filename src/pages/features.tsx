@@ -1,6 +1,7 @@
 import { useState, type ReactNode } from "react";
 import { PageContainer } from "@/components/layout/PageContainer";
 import HomeCTA from "@/components/sections/HomeCTA";
+import { Section, SectionHeader, SectionTitle, SectionSubtitle, SectionBadge, Card, CardHeader, CardTitle, CardContent, Grid, Button } from "@/components/ui";
 
 interface FeatureLayer {
   content: ReactNode;
@@ -259,41 +260,34 @@ export default function FeaturesPage() {
 
   return (
     <PageContainer title="Fairvia Features" animateMain={false}>
-      {/* Hero Section */}
-      <section className="bg-white py-16 text-slate-900">
-        <div className="container-tight text-center">
-          <span className="inline-flex items-center gap-2 rounded-full bg-sky-100 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-sky-600 mb-4">
-            Four Step Suite
-          </span>
-          <h1 className="text-4xl font-bold sm:text-5xl">The Complete Fairvia System</h1>
-          <p className="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">
+      <Section background="gradient-primary" padding="xl">
+        <SectionHeader>
+          <SectionBadge>Complete Suite</SectionBadge>
+          <SectionTitle size="xl">The Complete Fairvia System</SectionTitle>
+          <SectionSubtitle size="lg">
             From discovery to deposit return—everything California landlords need for professional rental management with neutral escrow protection and compliance automation.
-          </p>
-        </div>
-      </section>
+          </SectionSubtitle>
+        </SectionHeader>
+      </Section>
 
-      {/* Product Showcase */}
-      <section className="bg-slate-50 py-16">
-        <div className="container-tight">
+      <Section background="slate" padding="xl">
           {/* Product Navigation */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             {FAIRVIA_PRODUCTS.map((product, index) => (
-              <button
+              <Button
                 key={product.slug}
+                variant={activeProduct === index ? "primary" : "secondary"}
+                size="md"
                 onClick={() => setActiveProduct(index)}
-                className={`px-6 py-3 rounded-full text-sm font-semibold transition-all ${
-                  activeProduct === index
-                    ? "bg-sky-500 text-white shadow-lg"
-                    : "bg-white text-slate-600 hover:bg-slate-100 border border-slate-200"
-                }`}
+                className="transition-all"
               >
                 {product.name}
-              </button>
+              </Button>
             ))}
           </div>
 
           {/* Active Product Display */}
-          <div className="bg-white rounded-3xl p-8 shadow-lg border border-slate-200">
+          <Card variant="elevated" padding="xl" radius="xl">
             <div className="flex flex-col lg:flex-row gap-8 items-center">
               {/* Visual */}
               <div className="flex-1">
@@ -327,48 +321,48 @@ export default function FeaturesPage() {
                 <p className="text-slate-700">{currentProduct.why}</p>
 
                 {currentProduct.ctaHref && (
-                  <a
-                    href={currentProduct.ctaHref}
-                    className="inline-flex items-center gap-2 bg-sky-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-sky-600 transition-colors"
-                  >
+                  <Button variant="primary" size="lg" className="inline-flex items-center gap-2">
                     {currentProduct.ctaLabel || "Learn more"}
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
-                  </a>
+                  </Button>
                 )}
               </div>
             </div>
 
             {/* Features & Benefits Grid */}
-            <div className="mt-12 grid gap-8 lg:grid-cols-2">
-              <div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-4">Key Features</h3>
-                <div className="space-y-3">
+            <Grid cols={2} gap="xl" className="mt-12">
+              <Card variant="glass" padding="lg">
+                <CardHeader>
+                  <CardTitle level={3} className="text-xl text-slate-900">Key Features</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
                   {currentProduct.features.map((feature, index) => (
                     <div key={index} className="border-l-2 border-sky-200 pl-4">
-                      <h4 className="font-medium text-slate-900">{feature.label}</h4>
+                      <h4 className="font-medium text-slate-900 mb-1">{feature.label}</h4>
                       <p className="text-sm text-slate-600">{feature.detail}</p>
                     </div>
                   ))}
-                </div>
-              </div>
+                </CardContent>
+              </Card>
 
-              <div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-4">Benefits</h3>
-                <div className="space-y-3">
+              <Card variant="glass" padding="lg">
+                <CardHeader>
+                  <CardTitle level={3} className="text-xl text-slate-900">Benefits</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
                   {currentProduct.benefits.map((benefit, index) => (
                     <div key={index} className="border-l-2 border-emerald-200 pl-4">
-                      <h4 className="font-medium text-slate-900">{benefit.label}</h4>
+                      <h4 className="font-medium text-slate-900 mb-1">{benefit.label}</h4>
                       <p className="text-sm text-slate-600">{benefit.detail}</p>
                     </div>
                   ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+                </CardContent>
+              </Card>
+            </Grid>
+          </Card>
+      </Section>
 
       <HomeCTA />
     </PageContainer>
