@@ -8,14 +8,12 @@ type FormState = Omit<WaitlistData, "userType"> & { userType: WaitlistData["user
 
 interface WaitlistFormProps {
   defaultRole?: "renter" | "landlord";
-  lockRole?: boolean;
   source?: string;
   ctaLabel?: string;
 }
 
 export default function WaitlistForm({
   defaultRole,
-  lockRole = false,
   source = "signup_section",
   ctaLabel = "Join the waitlist",
 }: WaitlistFormProps) {

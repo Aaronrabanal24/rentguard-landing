@@ -42,7 +42,7 @@ export default function HowItWorksSection() {
         </div>
 
         <div className="mt-16 space-y-20">
-          {SECTIONS.map((section, index) => (
+          {SECTIONS.map((section) => (
             <motion.div
               key={section.title}
               className="grid gap-8 lg:grid-cols-2 lg:gap-12"
