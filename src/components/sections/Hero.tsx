@@ -52,6 +52,9 @@ export default function Hero() {
               <p className="text-sm font-medium text-sky-900">
                 ⚡ {heroContent.microPromise}
               </p>
+              <p className="text-xs text-sky-700 mt-2">
+                {heroContent.nextSteps}
+              </p>
             </div>
 
             {/* CTA Buttons - Primary action dominant, secondary low-contrast */}
@@ -75,19 +78,25 @@ export default function Hero() {
               </button>
             </div>
 
-            {/* Trust badges - escrow partners */}
+            {/* Trust badges - escrow partners & testimonial */}
             <div className="mb-6 rounded-lg bg-white border border-slate-200 px-4 py-3">
               <p className="text-xs font-medium text-slate-600 mb-2">
-                🔒 {heroContent.trustLine}
+                {heroContent.trustLine}
               </p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 mb-3">
                 <span className="inline-flex items-center rounded-full bg-emerald-50 border border-emerald-200 px-3 py-1 text-xs font-medium text-emerald-700">
                   ✓ DFPI Licensed
                 </span>
                 <span className="inline-flex items-center rounded-full bg-sky-50 border border-sky-200 px-3 py-1 text-xs font-medium text-sky-700">
                   ✓ AB 2801 Compliant
                 </span>
+                <span className="inline-flex items-center rounded-full bg-purple-50 border border-purple-200 px-3 py-1 text-xs font-medium text-purple-700">
+                  ✓ SOC 2 Type II
+                </span>
               </div>
+              <p className="text-xs italic text-slate-600 border-t border-slate-100 pt-2">
+                &ldquo;Fairvia saved me from a deposit dispute&rdquo; — Sarah M., Oakland
+              </p>
             </div>
 
             {/* Proof bar - Above the fold on 390px-wide phones */}

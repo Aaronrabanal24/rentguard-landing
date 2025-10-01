@@ -2,10 +2,10 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { motion } from "@/lib/motion";
-import { FAQ_DATA } from "@/lib/constants";
+import { faqContent } from "@/data/content";
 import { track } from "@/lib/tracking";
 
-const faqItems = FAQ_DATA;
+const faqItems = faqContent;
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -43,8 +43,11 @@ export default function FAQSection() {
         <div className="container-tight">
           <div className="mb-10 text-left max-w-3xl">
             <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-              FAQ
+              Common Questions & Objections
             </h2>
+            <p className="mt-3 text-lg text-slate-600">
+              Clear answers to help you decide with confidence
+            </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
             {faqItems.map((faq, index) => (

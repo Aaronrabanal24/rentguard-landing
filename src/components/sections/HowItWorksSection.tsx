@@ -19,18 +19,21 @@ const SECTIONS = [
   {
     title: howItWorksContent.sections[0].title,
     description: howItWorksContent.sections[0].description,
+    benefit: howItWorksContent.sections[0].benefit,
     items: howItWorksContent.sections[0].items,
     Mockup: MobileRenterMockup,
   },
   {
     title: howItWorksContent.sections[1].title,
     description: howItWorksContent.sections[1].description,
+    benefit: howItWorksContent.sections[1].benefit,
     items: howItWorksContent.sections[1].items,
     Mockup: DepositMockup,
   },
   {
     title: howItWorksContent.sections[2].title,
     description: howItWorksContent.sections[2].description,
+    benefit: howItWorksContent.sections[2].benefit,
     items: howItWorksContent.sections[2].items,
     Mockup: ROIBoardMockup,
   },
@@ -43,7 +46,7 @@ export default function HowItWorksSection() {
   };
 
   return (
-    <section className="relative bg-gradient-to-b from-slate-50 to-white py-16 sm:py-24" id="how-it-works">
+    <section className="relative bg-white py-16 sm:py-24" id="how-it-works">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="text-left max-w-3xl">
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
@@ -66,6 +69,9 @@ export default function HowItWorksSection() {
                   {section.title}
                 </h3>
                 <p className="mt-2 text-lg text-slate-600">{section.description}</p>
+                <div className="mt-3 inline-flex items-center rounded-full bg-emerald-50 border border-emerald-200 px-3 py-1">
+                  <span className="text-sm font-semibold text-emerald-800">→ {section.benefit}</span>
+                </div>
                 <ul className="mt-6 space-y-3">
                   {section.items.map((item) => (
                     <li key={item} className="flex items-start gap-3">

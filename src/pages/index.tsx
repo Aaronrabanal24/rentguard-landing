@@ -9,6 +9,9 @@ import Header from "@/components/layout/Header";
 import PainPointsSection from "@/components/sections/PainPointsSection";
 import ValueROISection from "@/components/sections/ValueROISection";
 import TrustCredibilitySection from "@/components/sections/TrustCredibilitySection";
+import TenantExperienceSection from "@/components/sections/TenantExperienceSection";
+import PricingReminderSection from "@/components/sections/PricingReminderSection";
+import FAQSection from "@/components/sections/FAQSection";
 import { StickyCTA } from "@/components/layout/StickyCTA";
 import { motion } from "@/lib/motion";
 import { organizationSchema, softwareSchema } from "@/lib/structuredData";
@@ -66,8 +69,11 @@ export default function Home() {
         <main id="main-content" className="safe-bot pb-32">
           <PainPointsSection />
           <HowItWorksSection />
+          <TenantExperienceSection />
           <ValueROISection />
+          <PricingReminderSection />
           <TrustCredibilitySection />
+          <FAQSection />
           <HomeCTA />
         </main>
 

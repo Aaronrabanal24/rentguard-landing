@@ -1,12 +1,13 @@
 export const heroContent = {
   eyebrow: "California Deposit Compliance",
-  headline: "Deposits & Leasing Compliance Done Right in California",
+  headline: "Every Lease, Handled with Trust, Speed & Clarity",
   subheadline:
-    "From smart links to deposit release, Fairvia keeps you compliant, transparent, and protected.",
+    "Escrow-backed, compliant, zero spreadsheets. From smart links to deposit release, Fairvia keeps you protected.",
   microPromise: "Set up in 5 minutes. Free for your first unit.",
+  nextSteps: "Set up your unit, invite your tenant, and start the deposit timeline — all in under 5 minutes.",
   primaryCta: "Start free unit",
   secondaryCta: "See how it works",
-  trustLine: "Deposits held by DFPI-licensed escrow partners",
+  trustLine: "🔒 Escrow-backed & DFPI-licensed",
   proofBar: [
     { icon: "🔗", label: "Smart unit link" },
     { icon: "✓", label: "Trust and precheck" },
@@ -60,6 +61,7 @@ export const howItWorksContent = {
     {
       title: "Create a Smart Unit Link",
       description: "Capture and track inquiries",
+      benefit: "Avoid lost leads",
       items: [
         "Post on Zillow, Craigslist, or show QR at unit",
         "Built-in precheck and trust page",
@@ -69,15 +71,17 @@ export const howItWorksContent = {
     {
       title: "Handle Deposits Compliantly",
       description: "Timed workflows, receipts, dispute tools",
+      benefit: "Eliminate guesswork",
       items: [
         "AB 2801 compliant 21-day timers",
-        "Itemized deductions with photo proof",
+        "Itemized deductions with timestamped photos & receipts",
         "Exportable archive for legal defense",
       ],
     },
     {
       title: "Show Your ROI",
       description: "Exportable proof for owners & investors",
+      benefit: "Stop losing deposits in legal fights",
       items: [
         "Automated weekly summary emails",
         "Days listed, inquiries, tours, lease status",
@@ -151,12 +155,12 @@ export const pricingContent = {
 
 export const valueProps = [
   {
-    metric: "$800",
-    description: "Average savings per avoided dispute",
+    metric: "$500+",
+    description: "Avoid disputes per unit per year",
   },
   {
-    metric: "12 hours",
-    description: "Saved per property per move-out",
+    metric: "70%",
+    description: "Reduce move-out admin time",
   },
   {
     metric: "100%",
@@ -169,27 +173,25 @@ export const trustBadges = {
   compliance: ["DFPI Licensed", "AB 2801 Compliant", "SOC 2 Type II"],
 } as const;
 
-export const faqContent = {
-  questions: [
-    {
-      question: "What if the tenant doesn't respond to deductions?",
-      answer: "Fairvia's system includes automatic reminders and default timelines. If no response within 7 days, the system documents non-response and proceeds with the landlord's deductions as legally defensible.",
-    },
-    {
-      question: "Is this legally binding?",
-      answer: "Yes. Fairvia generates state-compliant deposit letters with timestamps, receipts, and photo documentation. The exportable archive serves as legal proof in court.",
-    },
-    {
-      question: "Does this integrate with my property management software?",
-      answer: "Fairvia works standalone with CSV import/export in SMB Pro. Enterprise tier offers API integration with major PMS platforms.",
-    },
-    {
-      question: "How do deposit timelines work?",
-      answer: "California requires 21-day return windows (AB 2801). Florida requires 15 days if no claim, 30 days if deductions. Fairvia automates countdown timers and compliance notifications.",
-    },
-    {
-      question: "What if I have properties in multiple states?",
-      answer: "Enterprise tier includes multi-state template libraries with automatic compliance rules for California, Florida, Texas, New York, and Illinois.",
-    },
-  ],
-} as const;
+export const faqContent = [
+  {
+    question: "What if the tenant doesn't respond to deductions?",
+    answer: "Fairvia's system includes automatic reminders and default timelines. If no response within 7 days, the system documents non-response and proceeds with the landlord's deductions as legally defensible.",
+  },
+  {
+    question: "Is this legally binding in California?",
+    answer: "Yes. Fairvia templates are built on AB 2801 and Civil Code 1950.5. All timelines, receipts, and notices meet California legal standards. Your exports include timestamped audit trails for court if needed.",
+  },
+  {
+    question: "Do I need to switch from my current tools?",
+    answer: "No. Fairvia works alongside your existing systems. You can keep using your property management software — Fairvia just handles the compliance-heavy deposit workflows and gives you exportable proof.",
+  },
+  {
+    question: "How long before I see value?",
+    answer: "Immediately. Your first unit is free forever. You'll see value on day one: cleaner documentation, automatic timers, and a shareable status link your tenant can access without calls or emails.",
+  },
+  {
+    question: "What if a dispute escalates to court?",
+    answer: "Fairvia's timestamped photo evidence, itemized deductions, and complete audit trail have been designed with legal defense in mind. You can export a complete package for your attorney in one click.",
+  },
+] as const;

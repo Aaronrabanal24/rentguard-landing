@@ -3,7 +3,7 @@ import { valueProps } from "@/data/content";
 
 export default function ValueROISection() {
   return (
-    <section className="relative bg-gradient-to-b from-emerald-50 to-white py-12 sm:py-16">
+    <section className="relative bg-slate-50 py-12 sm:py-16">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">
