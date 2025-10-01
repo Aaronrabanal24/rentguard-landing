@@ -1,4 +1,5 @@
 import { Footer } from "@/components";
+import Header from "@/components/layout/Header";
 import { motion } from "@/lib/motion";
 import { Button } from "@/components/ui/Button";
 import { pricingContent } from "@/data/content";
@@ -33,6 +34,8 @@ export default function PricingPage() {
       </Head>
 
       <div className="min-h-full bg-slate-50 text-slate-900">
+        <Header />
+
         <main id="main-content" className="safe-bot pb-32">
           {/* Hero Section */}
           <section className="bg-gradient-to-b from-white to-slate-50 py-16 text-slate-900">

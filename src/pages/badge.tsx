@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { Footer } from "@/components";
+import Header from "@/components/layout/Header";
 import { Button } from "@/components/ui/Button";
 import { useRouter } from "next/router";
 
@@ -44,6 +45,8 @@ export default function BadgePage() {
       </Head>
 
       <div className="min-h-full bg-slate-50 text-slate-900">
+        <Header />
+
         <main id="main-content" className="safe-bot pb-32">
           <section className="relative overflow-hidden bg-gradient-to-b from-blue-50 to-white px-6 py-16 sm:py-20">
             <div className="mx-auto max-w-4xl">

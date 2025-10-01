@@ -1,11 +1,11 @@
 export const heroContent = {
   eyebrow: "California Deposit Compliance",
-  headline: "Trust, speed, and clarity for every lease.",
+  headline: "Deposits & Leasing Compliance Done Right in California",
   subheadline:
-    "One smart link connects listings, leasing steps, and deposits into a shareable timeline so owners see progress, renters see status, and disputes drop.",
-  primaryCta: "Start free unit",
+    "From smart links to deposit release, Fairvia keeps you compliant, transparent, and protected.",
+  primaryCta: "Start free for one unit",
   secondaryCta: "See how it works",
-  microTrust: "California-ready templates, timers, and an exportable archive included.",
+  microTrust: "Free for your first unit. Scales with you.",
   proofBar: [
     { icon: "🔗", label: "Smart unit link" },
     { icon: "✓", label: "Trust and precheck" },
@@ -13,6 +13,24 @@ export const heroContent = {
     { icon: "📁", label: "Exportable archive" },
   ],
 } as const;
+
+export const problemSolutionContent = [
+  {
+    problem: "Missed leads",
+    solution: "Smart unit links track every inquiry",
+    icon: "🔗",
+  },
+  {
+    problem: "Dispute risk",
+    solution: "Timed deposit workflows with receipts",
+    icon: "✅",
+  },
+  {
+    problem: "Owner demands",
+    solution: "ROI board shows leasing activity",
+    icon: "📊",
+  },
+] as const;
 
 export const aboutContent = {
   subhead: "Fairvia is a lightweight operational layer that connects listings, leasing workflows, and deposit processes into one smart, shareable unit link.",
@@ -24,32 +42,30 @@ export const aboutContent = {
 export const howItWorksContent = {
   sections: [
     {
-      title: "List and capture",
+      title: "Create a Smart Unit Link",
+      description: "Capture and track inquiries",
       items: [
-        "Smart unit link with QR",
-        "Trust and precheck page",
-        "Timeline view from inquiry to lease",
+        "Post on Zillow, Craigslist, or show QR at unit",
+        "Built-in precheck and trust page",
+        "UTM tracking for every inquiry",
       ],
     },
     {
-      title: "Show proof to owners",
+      title: "Handle Deposits Compliantly",
+      description: "Timed workflows, receipts, dispute tools",
       items: [
-        "ROI board and owner share link",
+        "AB 2801 compliant 21-day timers",
+        "Itemized deductions with photo proof",
+        "Exportable archive for legal defense",
       ],
     },
     {
-      title: "Deposit closeout",
+      title: "Show Your ROI",
+      description: "Exportable proof for owners & investors",
       items: [
-        "State specific templates and countdown timers",
-        "Itemized letters with photos and receipts",
-        "Exportable archive as ZIP",
-      ],
-    },
-    {
-      title: "Renter experience",
-      items: [
-        "Read only status timeline with no login",
-        "Optional satisfaction pulse after lease",
+        "Automated weekly summary emails",
+        "Days listed, inquiries, tours, lease status",
+        "Export-ready KPI dashboard",
       ],
     },
   ],

@@ -5,6 +5,8 @@ import {
   HomeCTA,
   HowItWorksSection,
 } from "@/components";
+import Header from "@/components/layout/Header";
+import ProblemSolutionSection from "@/components/sections/ProblemSolutionSection";
 import { StickyCTA } from "@/components/layout/StickyCTA";
 import { motion } from "@/lib/motion";
 import { organizationSchema, softwareSchema } from "@/lib/structuredData";
@@ -53,13 +55,14 @@ export default function Home() {
       </Head>
 
       <div className="min-h-full bg-slate-50 text-slate-900">
-        <header>
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4 }}>
-            <Hero />
-          </motion.div>
-        </header>
+        <Header />
+
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4 }}>
+          <Hero />
+        </motion.div>
 
         <main id="main-content" className="safe-bot pb-32">
+          <ProblemSolutionSection />
           <HowItWorksSection />
           <HomeCTA />
         </main>

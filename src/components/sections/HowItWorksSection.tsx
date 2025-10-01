@@ -3,10 +3,6 @@ import { Button } from "@/components/ui/Button";
 import { howItWorksContent } from "@/data/content";
 import dynamic from "next/dynamic";
 
-const TimelineMockup = dynamic(() => import("@/components/mockups/TimelineMockup"), {
-  loading: () => <div className="h-96 animate-pulse rounded-2xl bg-slate-100" />,
-});
-
 const ROIBoardMockup = dynamic(() => import("@/components/mockups/ROIBoardMockup"), {
   loading: () => <div className="h-96 animate-pulse rounded-2xl bg-slate-100" />,
 });
@@ -21,24 +17,22 @@ const MobileRenterMockup = dynamic(() => import("@/components/mockups/MobileRent
 
 const SECTIONS = [
   {
-    title: howItWorksContent.sections[0].title, // "List and capture"
+    title: howItWorksContent.sections[0].title,
+    description: howItWorksContent.sections[0].description,
     items: howItWorksContent.sections[0].items,
-    Mockup: MobileRenterMockup, // Smart unit link with QR, Trust page
+    Mockup: MobileRenterMockup,
   },
   {
-    title: howItWorksContent.sections[1].title, // "Show proof to owners"
+    title: howItWorksContent.sections[1].title,
+    description: howItWorksContent.sections[1].description,
     items: howItWorksContent.sections[1].items,
-    Mockup: ROIBoardMockup, // ROI board
+    Mockup: DepositMockup,
   },
   {
-    title: howItWorksContent.sections[2].title, // "Deposit closeout"
+    title: howItWorksContent.sections[2].title,
+    description: howItWorksContent.sections[2].description,
     items: howItWorksContent.sections[2].items,
-    Mockup: DepositMockup, // Templates, itemized letters
-  },
-  {
-    title: howItWorksContent.sections[3].title, // "Renter experience"
-    items: howItWorksContent.sections[3].items,
-    Mockup: TimelineMockup, // Timeline view
+    Mockup: ROIBoardMockup,
   },
 ];
 
@@ -71,6 +65,7 @@ export default function HowItWorksSection() {
                 <h3 className="text-2xl font-bold text-slate-900">
                   {section.title}
                 </h3>
+                <p className="mt-2 text-lg text-slate-600">{section.description}</p>
                 <ul className="mt-6 space-y-3">
                   {section.items.map((item) => (
                     <li key={item} className="flex items-start gap-3">
