@@ -15,10 +15,12 @@ export function HeroContent() {
   };
 
   const handleSecondaryClick = () => {
-    track("click_cta", { role: "landlord", location: "hero", label: "view_listing_assist" });
-    router.push("/how-it-works").catch(() => {
-      /* noop */
-    });
+    track("click_cta", { role: "landlord", location: "hero", label: "scroll_to_how_it_works" });
+    // Scroll to how it works section on homepage
+    const element = document.getElementById("how-it-works");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   const [headlineLead, headlineAccent] = splitHeadline(heroContent.headline);

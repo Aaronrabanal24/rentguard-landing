@@ -7,13 +7,13 @@ export default function Footer() {
     <footer className="safe-bottom relative overflow-hidden bg-slate-950 text-slate-200">
       <div className="absolute inset-0 bg-gradient-to-tr from-slate-950 via-slate-900 to-indigo-950" aria-hidden="true" />
       <div className="relative mx-auto max-w-6xl px-4 py-16">
-        <div className="grid gap-12 md:grid-cols-[1.25fr_1fr_1fr_1fr_1fr]">
+        <div className="grid gap-12 md:grid-cols-[1.5fr_1fr_1fr_1fr_1fr]">
           <div>
             <Link href="/" aria-label="Fairvia home" className="mb-6 inline-flex items-center">
               <BrandLogo size="md" className="w-[140px] sm:w-[152px] lg:w-[180px] drop-shadow-lg" />
             </Link>
             <p className="mb-6 max-w-sm text-sm leading-relaxed text-slate-300">
-              Your leasing layer. Fill faster, stay compliant, prove the work.
+              Deposits done right in California. Stay compliant with AB 2801.
             </p>
           </div>
 
@@ -21,34 +21,8 @@ export default function Footer() {
             <h4 className="text-sm font-semibold uppercase tracking-widest text-slate-300">Product</h4>
             <ul className="mt-4 space-y-3 text-sm text-slate-400">
               <li>
-                <Link href="/features" className="transition hover:text-white">
-                  Features
-                </Link>
-              </li>
-              <li>
-                <Link href="/how-it-works" className="transition hover:text-white">
-                  How It Works
-                </Link>
-              </li>
-              <li>
                 <Link href="/pricing" className="transition hover:text-white">
                   Pricing
-                </Link>
-              </li>
-              <li>
-                <Link href="/roadmap" className="transition hover:text-white">
-                  Roadmap
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-sm font-semibold uppercase tracking-widest text-slate-300">Resources</h4>
-            <ul className="mt-4 space-y-3 text-sm text-slate-400">
-              <li>
-                <Link href="/demo" className="transition hover:text-white">
-                  Live Demo
                 </Link>
               </li>
               <li>
@@ -56,41 +30,16 @@ export default function Footer() {
                   About
                 </Link>
               </li>
-              <li>
-                <span className="text-slate-500 cursor-not-allowed">
-                  Help Center (Coming Soon)
-                </span>
-              </li>
-              <li>
-                <span className="text-slate-500 cursor-not-allowed">
-                  Documentation (Coming Soon)
-                </span>
-              </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-widest text-slate-300">Company</h4>
+            <h4 className="text-sm font-semibold uppercase tracking-widest text-slate-300">Trust</h4>
             <ul className="mt-4 space-y-3 text-sm text-slate-400">
               <li>
-                <Link href="/contact" className="transition hover:text-white">
-                  Contact
+                <Link href="/security" className="transition hover:text-white">
+                  Security
                 </Link>
-              </li>
-              <li>
-                <Link href="/pricing" className="transition hover:text-white">
-                  Pricing
-                </Link>
-              </li>
-              <li>
-                <span className="text-slate-500 cursor-not-allowed">
-                  Careers (Coming Soon)
-                </span>
-              </li>
-              <li>
-                <span className="text-slate-500 cursor-not-allowed">
-                  Blog (Coming Soon)
-                </span>
               </li>
             </ul>
           </div>
@@ -108,15 +57,16 @@ export default function Footer() {
                   Terms
                 </Link>
               </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold uppercase tracking-widest text-slate-300">Contact</h4>
+            <ul className="mt-4 space-y-3 text-sm text-slate-400">
               <li>
-                <span className="text-slate-500 cursor-not-allowed">
-                  Security (Coming Soon)
-                </span>
-              </li>
-              <li>
-                <span className="text-slate-500 cursor-not-allowed">
-                  Compliance Docs (Coming Soon)
-                </span>
+                <Link href="/contact" className="transition hover:text-white">
+                  Get In Touch
+                </Link>
               </li>
             </ul>
           </div>
@@ -136,7 +86,7 @@ export default function Footer() {
             <Link href="/terms" className="tap inline-flex items-center rounded-full border border-white/10 px-4 py-2 text-xs font-semibold text-white transition hover:border-white/30">
               Terms
             </Link>
-            <Link href="/trust" className="tap inline-flex items-center rounded-full border border-white/10 px-4 py-2 text-xs font-semibold text-white transition hover:border-white/30">
+            <Link href="/security" className="tap inline-flex items-center rounded-full border border-white/10 px-4 py-2 text-xs font-semibold text-white transition hover:border-white/30">
               Security
             </Link>
           </div>

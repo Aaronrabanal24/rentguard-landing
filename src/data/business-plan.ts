@@ -24,34 +24,40 @@ export const coreProduct = {
 } as const;
 
 export const featureTiers = {
-  commonCore: {
-    name: "Common Core",
-    subtitle: "Available to all tiers",
+  starter: {
+    name: "Starter",
+    subtitle: "Perfect for trying Fairvia",
+    price: "Free",
+    priceDetail: "One unit, forever",
     features: [
-      "Smart unit link with QR code (shareable property link)",
-      "Trust and precheck page (verify identity and readiness)",
-      "Timeline view from inquiry to lease (complete activity history)",
-      "ROI board and owner share link (weekly performance reports)",
-      "Exportable summary and archive (court-ready documentation)",
+      "Smart unit link with QR code",
+      "Trust and precheck page",
+      "Timeline view from inquiry to move-out",
+      "ROI board and owner share link",
+      "Exportable summary and archive",
     ],
   },
-  smbPro: {
-    name: "SMB Pro",
-    subtitle: "For small to medium property teams",
-    price: "$69/month",
-    includes: "Everything in Common Core, plus:",
+  pro: {
+    name: "Pro",
+    subtitle: "For active property managers",
+    price: "$49",
+    priceDetail: "per unit per month",
+    includes: "Everything in Starter, plus:",
     features: [
-      "Deposit intent marker (track deposit commitments)",
-      "CSV import and export (bulk operations)",
-      "Basic fraud protection (identity verification)",
-      "Weekly owner update email (automated reporting)",
+      "Unlimited units",
+      "Deposit workflow with AB 2801 compliance",
+      "Itemized deduction builder with receipt upload",
+      "Countdown timers for deposit deadlines",
+      "Weekly owner update emails",
+      "CSV import and export",
     ],
   },
   enterprise: {
     name: "Enterprise",
     subtitle: "For large property management companies",
     price: "Custom pricing",
-    includes: "Everything in SMB Pro, plus:",
+    priceDetail: "Contact for quote",
+    includes: "Everything in Pro, plus:",
     features: [
       "Role-based permissions for org, region, and unit levels",
       "SSO and directory sync (Active Directory, Okta)",

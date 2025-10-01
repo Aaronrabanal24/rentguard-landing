@@ -1,9 +1,9 @@
 export const heroContent = {
-  eyebrow: "The Smart Link for Leasing and Deposits",
-  headline: "Fill units faster. Reduce disputes. Stay compliant.",
+  eyebrow: "California Deposit Compliance",
+  headline: "Deposits done right in California.",
   subheadline:
-    "One smart unit link connects your listings, leasing workflows, and deposit processes. No heavy systems. No complex onboarding. Just results.",
-  primaryCta: "Start with One Free Unit",
+    "Stay ahead of AB 2801's 21-day rule. Hold deposits neutrally. Return them on time—or document valid deductions with proof.",
+  primaryCta: "Start Free (One Unit)",
   secondaryCta: "See How It Works",
-  socialProof: "Designed to complement your existing property management system, not replace it.",
+  socialProof: "Trusted by independent operators across California",
 } as const;

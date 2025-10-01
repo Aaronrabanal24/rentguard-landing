@@ -4,7 +4,7 @@ import HomeCTA from "@/components/sections/HomeCTA";
 import { featureTiers } from "@/data/business-plan";
 
 export default function PricingPage() {
-  const { commonCore, smbPro, enterprise } = featureTiers;
+  const { starter, pro, enterprise } = featureTiers;
 
   return (
     <PageContainer title="Fairvia Pricing" animateMain={false}>
@@ -25,7 +25,7 @@ export default function PricingPage() {
       <section className="bg-slate-50 py-16">
         <div className="container-tight">
           <div className="grid gap-8 md:grid-cols-3 max-w-6xl mx-auto">
-            {/* Free Tier (Common Core) */}
+            {/* Starter Tier */}
             <motion.div
               className="rounded-2xl border-2 border-slate-200 bg-white p-8 shadow-sm"
               initial={{ opacity: 0, y: 20 }}
@@ -34,15 +34,15 @@ export default function PricingPage() {
               transition={{ duration: 0.4 }}
             >
               <h3 className="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-2">
-                {commonCore.name}
+                {starter.name}
               </h3>
               <div className="mb-6">
-                <div className="text-4xl font-bold text-slate-900">Free</div>
-                <p className="text-sm text-slate-600 mt-2">{commonCore.subtitle}</p>
+                <div className="text-4xl font-bold text-slate-900">{starter.price}</div>
+                <p className="text-sm text-slate-600 mt-2">{starter.priceDetail}</p>
               </div>
 
               <ul className="space-y-3 mb-8">
-                {commonCore.features.map((feature) => (
+                {starter.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-3">
                     <span className="text-emerald-500 mt-1">✓</span>
                     <span className="text-sm leading-relaxed text-slate-700">{feature}</span>
@@ -55,7 +55,7 @@ export default function PricingPage() {
               </button>
             </motion.div>
 
-            {/* SMB Pro */}
+            {/* Pro Tier */}
             <motion.div
               className="rounded-2xl border-2 border-sky-500 bg-white p-8 shadow-xl relative"
               initial={{ opacity: 0, y: 20 }}
@@ -70,21 +70,21 @@ export default function PricingPage() {
               </div>
 
               <h3 className="text-xs font-semibold uppercase tracking-widest text-sky-600 mb-2">
-                {smbPro.name}
+                {pro.name}
               </h3>
               <div className="mb-6">
                 <div className="text-4xl font-bold text-slate-900">
-                  $69<span className="text-lg font-medium text-slate-500">/month</span>
+                  {pro.price}<span className="text-lg font-medium text-slate-500">/{pro.priceDetail}</span>
                 </div>
-                <p className="text-sm text-slate-600 mt-2">{smbPro.subtitle}</p>
+                <p className="text-sm text-slate-600 mt-2">{pro.subtitle}</p>
               </div>
 
               <div className="mb-4">
-                <p className="text-sm font-semibold text-slate-700 mb-3">{smbPro.includes}</p>
+                <p className="text-sm font-semibold text-slate-700 mb-3">{pro.includes}</p>
               </div>
 
               <ul className="space-y-3 mb-8">
-                {smbPro.features.map((feature) => (
+                {pro.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-3">
                     <span className="text-sky-500 mt-1">✓</span>
                     <span className="text-sm leading-relaxed text-slate-700">{feature}</span>
@@ -93,7 +93,7 @@ export default function PricingPage() {
               </ul>
 
               <button className="w-full rounded-lg bg-gradient-to-r from-sky-500 to-teal-500 px-6 py-3 text-sm font-semibold text-white hover:from-sky-600 hover:to-teal-600 transition-colors shadow-sm">
-                Start with One Free Unit
+                Start Free (One Unit)
               </button>
 
               <div className="mt-6 rounded-lg bg-emerald-50 border border-emerald-200 p-4">
@@ -107,7 +107,7 @@ export default function PricingPage() {
               </div>
             </motion.div>
 
-            {/* Enterprise */}
+            {/* Enterprise Tier */}
             <motion.div
               className="rounded-2xl border-2 border-slate-200 bg-white p-8 shadow-sm"
               initial={{ opacity: 0, y: 20 }}
@@ -119,8 +119,8 @@ export default function PricingPage() {
                 {enterprise.name}
               </h3>
               <div className="mb-6">
-                <div className="text-4xl font-bold text-slate-900">Custom</div>
-                <p className="text-sm text-slate-600 mt-2">{enterprise.subtitle}</p>
+                <div className="text-4xl font-bold text-slate-900">{enterprise.price}</div>
+                <p className="text-sm text-slate-600 mt-2">{enterprise.priceDetail}</p>
               </div>
 
               <div className="mb-4">

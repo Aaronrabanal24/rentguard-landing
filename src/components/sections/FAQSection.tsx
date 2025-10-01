@@ -91,13 +91,13 @@ export default function FAQSection() {
               <p className="mb-4 text-orange-700 sm:text-base">Book a fast session with our compliance team and leave with a customized 21-day action plan.</p>
               <button
                 onClick={() => {
-                  router.push("/signup").catch(() => {
+                  router.push("/get-started").catch(() => {
                     /* noop */
                   });
                 }}
                 className="tap inline-flex items-center justify-center rounded-full bg-orange-600 px-6 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-[1px] hover:bg-orange-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-300"
               >
-                Schedule my compliance session
+                Get Started Free
               </button>
             </div>
           </div>

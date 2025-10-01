@@ -15,7 +15,7 @@ export const FAQ_DATA = [
   {
     question: "How much does Fairvia cost?",
     answer:
-      "Our SMB Pro tier is $69/month and includes smart unit links, timeline tracking, ROI reporting, deposit workflows, and compliance automation. Your first unit is free to try. Enterprise pricing is available for larger property management companies needing multi-state templates, SSO, and API access.",
+      "Starter is free forever for one unit. Pro is $49 per unit per month with unlimited units, full deposit workflows, and AB 2801 compliance. Enterprise pricing is available for larger property management companies needing multi-state templates, SSO, and API access.",
   },
   {
     question: "Does Fairvia replace my property management system?",
