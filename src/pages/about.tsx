@@ -1,20 +1,19 @@
 import Image from "next/image";
 import { PageContainer } from "@/components/layout/PageContainer";
 import { motion } from "@/lib/motion";
-import { pilotFocus, pilotGuardrails, pilotPersonas } from "@/data/pilot-scope";
 
 const HIGHLIGHTS = [
   {
-    title: "Pilot focus",
-    detail: pilotFocus.focus,
+    title: "Our Mission",
+    detail: "Bring trust, speed, and clarity to residential leasing and deposits.",
   },
   {
-    title: "Who we build for first",
-    detail: `${pilotPersonas[0]?.name ?? "Owner-operators"} need professional compliance without adding headcount.`,
+    title: "Who We Serve",
+    detail: "Property teams who want to fill units faster, reduce disputes, and simplify compliance without heavy systems.",
   },
   {
-    title: "What stays out for now",
-    detail: pilotGuardrails[3] ?? "Pilot scope stays tight so we deliver a finished deposit workflow.",
+    title: "Our Approach",
+    detail: "A lightweight operational layer that connects listings, leasing workflows, and deposits into one smart, shareable unit link.",
   },
 ];
 
@@ -28,9 +27,9 @@ export default function AboutPage() {
               <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-slate-600">
                 About
               </span>
-              <h1 className="mt-4 text-3xl font-semibold sm:text-4xl">Meet the team behind Fairvia&apos;s California pilot</h1>
-              <p className="mt-3 text-sm text-slate-600 sm:text-base">
-                We&apos;re narrowing scope to deposits so independent landlords get escrow, compliance, and renter visibility without adding staff or extra software.
+              <h1 className="mt-4 text-3xl font-semibold sm:text-4xl">About Fairvia</h1>
+              <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
+                We help property teams fill units faster, reduce disputes, and simplify compliance through smart unit links that connect listings, leasing workflows, and deposit processes.
               </p>
             </div>
             <div className="flex justify-center md:justify-end">

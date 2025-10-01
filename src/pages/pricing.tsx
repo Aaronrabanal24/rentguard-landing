@@ -1,153 +1,201 @@
 import { PageContainer } from "@/components/layout/PageContainer";
 import { motion } from "@/lib/motion";
 import HomeCTA from "@/components/sections/HomeCTA";
-import { Section, SectionHeader, SectionTitle, SectionSubtitle, SectionBadge, Card, CardHeader, CardTitle, CardContent, Grid, Button } from "@/components/ui";
-
-const PLAN_FEATURES = [
-  "Up to 5 active cases",
-  "5 e-sign envelopes/month",
-  "Timeline, export, and smart deduction letter generation",
-  "Email + SMS relay (included)",
-  "PDF + JSON exports",
-  "DFPI-licensed escrow integration",
-  "21-day countdown automation",
-  "AB 2801 compliance templates",
-];
+import { featureTiers } from "@/data/business-plan";
 
 export default function PricingPage() {
+  const { commonCore, smbPro, enterprise } = featureTiers;
+
   return (
     <PageContainer title="Fairvia Pricing" animateMain={false}>
-      <Section background="gradient-primary" padding="xl">
-        <SectionHeader>
-          <SectionBadge>Flat Pricing</SectionBadge>
-          <SectionTitle size="xl">$69/month. That&apos;s it.</SectionTitle>
-          <SectionSubtitle size="lg">
-            No add-ons, no upsells — simple and flat. Everything California landlords need for compliant deposit management.
-          </SectionSubtitle>
-        </SectionHeader>
+      {/* Hero Section */}
+      <section className="bg-gradient-to-b from-white to-slate-50 py-16 text-slate-900">
+        <div className="container-tight text-center">
+          <span className="inline-flex items-center gap-2 rounded-full bg-sky-100 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-sky-600 mb-4">
+            Pricing
+          </span>
+          <h1 className="text-4xl font-bold sm:text-5xl mb-4">Simple, transparent pricing</h1>
+          <p className="mt-4 text-lg leading-relaxed text-slate-600 max-w-3xl mx-auto">
+            Start with your first unit free. Upgrade as you grow. Enterprise solutions available for larger portfolios.
+          </p>
+        </div>
+      </section>
 
-        <motion.div
-          className="mx-auto mt-10 max-w-4xl"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
-        >
-          <Card variant="elevated" padding="xl" radius="xl" className="bg-gradient-to-br from-white via-slate-50 to-white">
-            <CardHeader>
-              <div className="flex flex-col items-start gap-6 text-left sm:flex-row sm:items-center sm:justify-between">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400 mb-2">Starter Plan</p>
-                  <CardTitle level={2} className="text-5xl font-bold text-slate-900">
-                    $69<span className="text-xl font-medium text-slate-500">/month</span>
-                  </CardTitle>
-                  <p className="text-slate-600 mt-2">No add-ons, no upsells — simple and flat</p>
+      {/* Pricing Tiers */}
+      <section className="bg-slate-50 py-16">
+        <div className="container-tight">
+          <div className="grid gap-8 md:grid-cols-3 max-w-6xl mx-auto">
+            {/* Free Tier (Common Core) */}
+            <motion.div
+              className="rounded-2xl border-2 border-slate-200 bg-white p-8 shadow-sm"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4 }}
+            >
+              <h3 className="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-2">
+                {commonCore.name}
+              </h3>
+              <div className="mb-6">
+                <div className="text-4xl font-bold text-slate-900">Free</div>
+                <p className="text-sm text-slate-600 mt-2">{commonCore.subtitle}</p>
+              </div>
+
+              <ul className="space-y-3 mb-8">
+                {commonCore.features.map((feature) => (
+                  <li key={feature} className="flex items-start gap-3">
+                    <span className="text-emerald-500 mt-1">✓</span>
+                    <span className="text-sm leading-relaxed text-slate-700">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <button className="w-full rounded-lg bg-slate-100 px-6 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-200 transition-colors">
+                Start Free
+              </button>
+            </motion.div>
+
+            {/* SMB Pro */}
+            <motion.div
+              className="rounded-2xl border-2 border-sky-500 bg-white p-8 shadow-xl relative"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+            >
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                <span className="inline-flex items-center rounded-full bg-sky-500 px-4 py-1 text-xs font-semibold text-white">
+                  Most Popular
+                </span>
+              </div>
+
+              <h3 className="text-xs font-semibold uppercase tracking-widest text-sky-600 mb-2">
+                {smbPro.name}
+              </h3>
+              <div className="mb-6">
+                <div className="text-4xl font-bold text-slate-900">
+                  $69<span className="text-lg font-medium text-slate-500">/month</span>
                 </div>
-                <div className="text-sm text-slate-600">
-                  <p>• Price-locked for 12 months</p>
-                  <p>• Month-to-month billing</p>
-                  <p>• Cancel anytime</p>
+                <p className="text-sm text-slate-600 mt-2">{smbPro.subtitle}</p>
+              </div>
+
+              <div className="mb-4">
+                <p className="text-sm font-semibold text-slate-700 mb-3">{smbPro.includes}</p>
+              </div>
+
+              <ul className="space-y-3 mb-8">
+                {smbPro.features.map((feature) => (
+                  <li key={feature} className="flex items-start gap-3">
+                    <span className="text-sky-500 mt-1">✓</span>
+                    <span className="text-sm leading-relaxed text-slate-700">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <button className="w-full rounded-lg bg-gradient-to-r from-sky-500 to-teal-500 px-6 py-3 text-sm font-semibold text-white hover:from-sky-600 hover:to-teal-600 transition-colors shadow-sm">
+                Start with One Free Unit
+              </button>
+
+              <div className="mt-6 rounded-lg bg-emerald-50 border border-emerald-200 p-4">
+                <p className="text-xs font-semibold text-emerald-900 mb-1">Proven Results</p>
+                <div className="grid grid-cols-2 gap-2 text-xs text-emerald-800">
+                  <span>• 147 deposits processed</span>
+                  <span>• 100% on-time releases</span>
+                  <span>• 6.2 hrs saved per unit</span>
+                  <span>• Zero forfeitures</span>
                 </div>
               </div>
-            </CardHeader>
+            </motion.div>
 
-            <CardContent>
-              <Grid cols={2} gap="sm">
-                {PLAN_FEATURES.map((feature) => (
-                  <Card key={feature} variant="glass" padding="sm" radius="lg" className="border border-slate-100/50">
-                    <div className="flex items-start gap-3">
-                      <span className="mt-1 text-emerald-500 text-lg">✓</span>
-                      <span className="text-sm text-slate-700">{feature}</span>
-                    </div>
-                  </Card>
+            {/* Enterprise */}
+            <motion.div
+              className="rounded-2xl border-2 border-slate-200 bg-white p-8 shadow-sm"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.2 }}
+            >
+              <h3 className="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-2">
+                {enterprise.name}
+              </h3>
+              <div className="mb-6">
+                <div className="text-4xl font-bold text-slate-900">Custom</div>
+                <p className="text-sm text-slate-600 mt-2">{enterprise.subtitle}</p>
+              </div>
+
+              <div className="mb-4">
+                <p className="text-sm font-semibold text-slate-700 mb-3">{enterprise.includes}</p>
+              </div>
+
+              <ul className="space-y-3 mb-8">
+                {enterprise.features.map((feature) => (
+                  <li key={feature} className="flex items-start gap-3">
+                    <span className="text-purple-500 mt-1">✓</span>
+                    <span className="text-sm leading-relaxed text-slate-700">{feature}</span>
+                  </li>
                 ))}
-              </Grid>
-            </CardContent>
+              </ul>
 
-            <div className="mt-8 flex flex-col items-stretch gap-4 sm:flex-row sm:items-center">
-              <Button variant="primary" size="lg" className="w-full">
-                Start with One Free Unit
-              </Button>
-            </div>
-
-            <Card variant="gradient" padding="md" radius="lg" className="mt-6 border-emerald-200">
-              <CardHeader>
-                <CardTitle level={4} className="text-emerald-800">Proven Results</CardTitle>
-              </CardHeader>
-              <Grid cols={2} gap="sm" className="text-sm leading-relaxed text-slate-700">
-                <span>• 147 deposits processed</span>
-                <span>• 100% released on time</span>
-                <span>• 6.2 hours saved per move-out</span>
-                <span>• Zero deposit forfeitures</span>
-              </Grid>
-            </Card>
-
-            <Card variant="default" padding="md" radius="lg" className="mt-6 border-amber-200 bg-amber-50">
-              <CardHeader>
-                <CardTitle level={4} className="text-amber-900">On-time Guarantee</CardTitle>
-              </CardHeader>
-              <p className="text-sm text-amber-800">Packet generated and payout initiated by day 21 when documentation is completed in-app.</p>
-            </Card>
-          </Card>
-        </motion.div>
-
-      </Section>
-
-      <Section background="white" padding="xl">
-        <SectionHeader>
-          <SectionTitle size="lg">Frequently Asked Questions</SectionTitle>
-        </SectionHeader>
-        <div className="max-w-3xl mx-auto">
-          <Grid cols={1} gap="md">
-            <Card variant="default" padding="lg" hover>
-              <CardHeader>
-                <CardTitle level={3}>Why only one plan?</CardTitle>
-              </CardHeader>
-              <p className="text-slate-600">No add-ons, no upsells — simple and flat. Everything California landlords need for compliant deposit management included.</p>
-            </Card>
-            <Card variant="default" padding="lg" hover>
-              <CardHeader>
-                <CardTitle level={3}>Will the price change?</CardTitle>
-              </CardHeader>
-              <p className="text-slate-600">Early customers are price-locked for 12 months. We believe in rewarding our early supporters.</p>
-            </Card>
-            <Card variant="default" padding="lg" hover>
-              <CardHeader>
-                <CardTitle level={3}>What counts as &apos;on-time&apos;?</CardTitle>
-              </CardHeader>
-              <p className="text-slate-600">When documentation is completed in-app by day 21, we generate the packet and initiate payout automatically.</p>
-            </Card>
-            <Card variant="default" padding="lg" hover>
-              <CardHeader>
-                <CardTitle level={3}>Can I cancel anytime?</CardTitle>
-              </CardHeader>
-              <p className="text-slate-600">Yes—month-to-month billing with the ability to cancel anytime before the next billing period.</p>
-            </Card>
-          </Grid>
+              <button className="w-full rounded-lg border-2 border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-colors">
+                Contact Sales
+              </button>
+            </motion.div>
+          </div>
         </div>
+      </section>
 
-        <Card variant="gradient" padding="xl" radius="xl" className="max-w-2xl mx-auto text-center mt-12">
-          <CardHeader>
-            <CardTitle level={3} className="text-xl">Enterprise Solutions</CardTitle>
-            <p className="text-slate-600">Managing 50+ doors? Talk to a specialist about volume pricing and advanced reporting.</p>
-          </CardHeader>
-          <Button variant="outline" size="lg">
-            Contact Sales
-          </Button>
-        </Card>
-
-      </Section>
-
-      <Section background="dark" padding="lg">
-        <div className="text-center">
-          <p className="text-slate-300 text-sm mb-2">
-            Deposits held by DFPI-licensed partners • Shared timeline and receipts • Same packet for landlord and tenant
-          </p>
-          <p className="text-slate-500 text-xs">
-            Fairvia is not a bank, escrow agent, or law firm. Deposits are held by DFPI-licensed partners.
-          </p>
+      {/* Feature Comparison */}
+      <section className="bg-white py-16">
+        <div className="container-tight">
+          <h2 className="text-3xl font-bold text-slate-900 text-center mb-12">All plans include</h2>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 max-w-5xl mx-auto">
+            {[
+              { icon: "🔗", title: "Smart Unit Links", description: "QR codes and shareable links for each property" },
+              { icon: "📊", title: "Timeline View", description: "Complete activity history from inquiry to move-out" },
+              { icon: "📈", title: "ROI Reporting", description: "Weekly owner updates with performance metrics" },
+              { icon: "⚖️", title: "Compliance Engine", description: "State-specific templates and countdown timers" },
+            ].map((item, index) => (
+              <div key={item.title} className="text-center">
+                <div className="text-4xl mb-4">{item.icon}</div>
+                <h3 className="text-lg font-semibold text-slate-900 mb-2">{item.title}</h3>
+                <p className="text-sm leading-relaxed text-slate-600">{item.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      </Section>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-slate-50 py-16">
+        <div className="container-tight max-w-3xl">
+          <h2 className="text-3xl font-bold text-slate-900 text-center mb-12">Frequently Asked Questions</h2>
+          <div className="space-y-6">
+            {[
+              {
+                q: "What's included in the free tier?",
+                a: "The Common Core features are free forever and include smart unit links, trust pages, timeline views, ROI boards, and exportable archives. Perfect for trying Fairvia with your first unit.",
+              },
+              {
+                q: "Can I upgrade or downgrade anytime?",
+                a: "Yes. You can upgrade from free to SMB Pro anytime, and downgrade with 30 days notice. Your data is always accessible and exportable.",
+              },
+              {
+                q: "What makes Enterprise different?",
+                a: "Enterprise adds role-based permissions, SSO, multi-state templates, immutable audit logs, legal hold features, and API access. It's designed for property management companies with 50+ units.",
+              },
+              {
+                q: "Do you offer discounts for annual billing?",
+                a: "Yes. SMB Pro customers get 2 months free when paying annually ($690/year vs $828). Enterprise pricing is customized based on your needs.",
+              },
+            ].map((item, index) => (
+              <div key={index} className="rounded-xl border border-slate-200 bg-white p-6">
+                <h3 className="text-lg font-semibold text-slate-900 mb-2">{item.q}</h3>
+                <p className="text-sm leading-relaxed text-slate-600">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <HomeCTA />
     </PageContainer>
