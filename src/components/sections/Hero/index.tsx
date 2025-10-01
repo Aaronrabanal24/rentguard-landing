@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import dynamic from "next/dynamic";
 import Header from "@/components/layout/Header";
 import { HeroContent } from "./HeroContent";
-import { HeroSocialProof } from "./HeroSocialProof";
 import { track } from "@/lib/tracking";
 
 const HeroVisual = dynamic(async () => {
@@ -35,8 +34,6 @@ export default function Hero() {
             </div>
           </div>
         </div>
-
-        <HeroSocialProof />
       </div>
     </section>
   );
