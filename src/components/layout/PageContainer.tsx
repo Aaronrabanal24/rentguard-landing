@@ -21,7 +21,7 @@ export function PageContainer({
   children,
 }: PropsWithChildren<PageContainerProps>) {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900">
+    <div className="min-dvh-100 bg-slate-50 text-slate-900">
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />

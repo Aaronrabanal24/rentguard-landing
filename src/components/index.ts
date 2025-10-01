@@ -1,17 +1,10 @@
 // Sections
 export { default as Hero } from "./sections/Hero";
-export { default as TrustSignals } from "./sections/TrustSignals";
-export { default as CoreBenefits } from "./sections/CoreBenefits";
+export { default as ResultsSection } from "./sections/ResultsSection";
 export { default as PainSection } from "./sections/PainSection";
-export { default as SolutionOverview } from "./sections/SolutionOverview";
-export { default as ValueAndForm } from "./sections/ValueAndForm";
-export { default as ListingAssistSection } from "./sections/ListingAssistSection";
-export { default as CommunicationSection } from "./sections/CommunicationSection";
-export { default as ReleaseSection } from "./sections/ReleaseSection";
-export { default as CompetitiveEdge } from "./sections/CompetitiveEdge";
-export { default as ProfessionalBenefits } from "./sections/ProfessionalBenefits";
-export { default as SocialProof } from "./sections/SocialProof";
-export { default as ConversionBlocks } from "./sections/ConversionBlocks";
+export { default as HowItWorksSection } from "./sections/HowItWorksSection";
+export { default as TargetCustomersSection } from "./sections/TargetCustomersSection";
+export { default as MetricsSection } from "./sections/MetricsSection";
 export { default as FAQSection } from "./sections/FAQSection";
 export { default as HomeCTA } from "./sections/HomeCTA";
 
