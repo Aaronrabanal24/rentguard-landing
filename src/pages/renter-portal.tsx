@@ -1,6 +1,5 @@
 import Head from "next/head";
 import { Footer } from "@/components";
-import Image from "next/image";
 
 export default function RenterPortalPage() {
   const milestones = [

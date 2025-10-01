@@ -96,6 +96,7 @@ export const pricingContent = {
     {
       name: "Starter",
       price: "Free",
+      priceDetail: "",
       description: "Free first unit",
       cta: "Start free unit",
     },
