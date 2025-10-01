@@ -41,16 +41,10 @@ export default function FAQSection() {
       >
         <div className="absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full bg-orange-300/25 blur-3xl" aria-hidden="true" />
         <div className="container-tight">
-          <div className="mb-10 text-center">
-            <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-orange-100 px-4 py-1 text-[11px] font-semibold uppercase tracking-widest text-orange-600">
+          <div className="mb-10 text-left max-w-3xl">
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
               FAQ
-            </span>
-            <h2 className="text-[1.9rem] font-semibold text-slate-900 sm:text-4xl">
-              Quick answers for California landlords under pressure
             </h2>
-            <p className="mt-4 text-base text-slate-600 sm:text-lg">
-              See how Fairvia keeps you compliant, calms renters, and gives you hours back every move-out.
-            </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
             {faqItems.map((faq, index) => (

@@ -31,12 +31,11 @@ export default function WaitlistForm({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.userType) return;
 
     await submitWaitlist({
       email: formData.email,
       name: formData.name,
-      userType: formData.userType,
+      userType: formData.userType || "landlord",
       location: formData.location,
     });
   };
@@ -65,8 +64,9 @@ export default function WaitlistForm({
     <form onSubmit={handleSubmit} className="mx-auto max-w-md space-y-5 text-left">
       <div className="space-y-3">
         {[
-          { name: "name" as const, placeholder: "Enter your first and last name", type: "text", label: "Full name" },
-          { name: "email" as const, placeholder: "you@company.com", type: "email", label: "Work email" },
+          { name: "name" as const, placeholder: "Your full name", type: "text", label: "Name" },
+          { name: "email" as const, placeholder: "you@example.com", type: "email", label: "Email" },
+          { name: "location" as const, placeholder: "How many units do you manage?", type: "text", label: "Units" },
         ].map((field) => (
           <div key={field.name} className="relative space-y-2">
             <label htmlFor={field.name} className="text-sm font-medium text-slate-700">
@@ -99,56 +99,25 @@ export default function WaitlistForm({
       <div className="space-y-3">
         <div className="relative space-y-2">
           <label htmlFor="userType" className="text-sm font-medium text-slate-700">
-            I&apos;m signing up as
+            Link to listing (optional)
           </label>
-          <select
+          <input
+            type="url"
+            placeholder="https://..."
             value={formData.userType}
             onChange={(e) => handleInputChange("userType", e.target.value)}
             onFocus={() => setFocusedField("userType")}
             onBlur={() => setFocusedField(null)}
             id="userType"
             className={cn(
-              "h-12 w-full appearance-none rounded-xl border px-4 text-slate-900 shadow-sm transition-all",
+              "h-12 w-full rounded-xl border px-4 text-slate-900 shadow-sm transition-all",
               "focus:outline-none focus:ring-4",
               focusedField === "userType"
                 ? "border-sky-400 bg-sky-50/50 ring-sky-200"
-                : "border-slate-200 bg-white hover:border-slate-300",
-              lockRole && "cursor-not-allowed opacity-60"
-            )}
-            required
-            disabled={lockRole}
-          >
-            <option value="">I&apos;m a...</option>
-            <option value="renter">Renter looking for a home</option>
-            <option value="landlord">Landlord with available units</option>
-          </select>
-          {focusedField === "userType" ? (
-            <div className="absolute -right-2 top-1/2 h-3 w-3 -translate-y-1/2 rounded-full bg-sky-500 animate-pulse" />
-          ) : null}
-        </div>
-
-        <div className="relative space-y-2">
-          <label htmlFor="location" className="text-sm font-medium text-slate-700">
-            Operating location
-          </label>
-          <input
-            type="text"
-            placeholder="City, State"
-            value={formData.location}
-            onChange={(e) => handleInputChange("location", e.target.value)}
-            onFocus={() => setFocusedField("location")}
-            onBlur={() => setFocusedField(null)}
-            id="location"
-            className={cn(
-              "h-12 w-full rounded-xl border px-4 text-slate-900 shadow-sm transition-all",
-              "focus:outline-none focus:ring-4",
-              focusedField === "location"
-                ? "border-sky-400 bg-sky-50/50 ring-sky-200"
                 : "border-slate-200 bg-white hover:border-slate-300"
             )}
-            required
           />
-          {focusedField === "location" ? (
+          {focusedField === "userType" ? (
             <div className="absolute -right-2 top-1/2 h-3 w-3 -translate-y-1/2 rounded-full bg-sky-500 animate-pulse" />
           ) : null}
         </div>

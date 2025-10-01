@@ -13,7 +13,13 @@ export default function Footer() {
               <BrandLogo size="md" className="w-[140px] sm:w-[152px] lg:w-[180px] drop-shadow-lg" />
             </Link>
             <p className="mb-6 max-w-sm text-sm leading-relaxed text-slate-300">
-              Deposits done right in California. Stay compliant with AB 2801.
+              Trust, speed, and clarity for every lease.
+            </p>
+            <p className="mb-2 text-xs text-slate-400">
+              California and Florida compliance built in.
+            </p>
+            <p className="mb-2 text-xs text-slate-400">
+              Exportable archive for all records.
             </p>
           </div>
 
@@ -26,19 +32,24 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="transition hover:text-white">
-                  About
+                <Link href="/features" className="transition hover:text-white">
+                  Features
+                </Link>
+              </li>
+              <li>
+                <Link href="/badge" className="transition hover:text-white">
+                  Badge
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-widest text-slate-300">Trust</h4>
+            <h4 className="text-sm font-semibold uppercase tracking-widest text-slate-300">For renters</h4>
             <ul className="mt-4 space-y-3 text-sm text-slate-400">
               <li>
-                <Link href="/security" className="transition hover:text-white">
-                  Security
+                <Link href="/renter-portal" className="transition hover:text-white">
+                  Renter portal
                 </Link>
               </li>
             </ul>

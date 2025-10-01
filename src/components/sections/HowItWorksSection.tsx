@@ -1,104 +1,62 @@
 import { motion } from "@/lib/motion";
-import dynamic from "next/dynamic";
+import { Button } from "@/components/ui/Button";
+import { howItWorksContent } from "@/data/content";
+import Image from "next/image";
 
-const MobileRenterMockup = dynamic(() => import("@/components/mockups/MobileRenterMockup"), {
-  loading: () => <div className="h-96 animate-pulse rounded-2xl bg-slate-100" />,
-});
-
-const TimelineMockup = dynamic(() => import("@/components/mockups/TimelineMockup"), {
-  loading: () => <div className="h-96 animate-pulse rounded-2xl bg-slate-100" />,
-});
-
-const ROIBoardMockup = dynamic(() => import("@/components/mockups/ROIBoardMockup"), {
-  loading: () => <div className="h-96 animate-pulse rounded-2xl bg-slate-100" />,
-});
-
-const DepositMockup = dynamic(() => import("@/components/mockups/DepositMockup"), {
-  loading: () => <div className="h-96 animate-pulse rounded-2xl bg-slate-100" />,
-});
-
-const FEATURES = [
+const SECTIONS = [
   {
-    number: 1,
-    title: "Smart Unit Link + QR",
-    subtitle: "Listing-specific link with lead capture. Share anywhere, no login needed.",
-    description: [
-      "Post on Zillow, Apartments.com, or show QR at unit",
-      "Built-in precheck and trust page",
-      "UTM tracking for every inquiry",
-    ],
-    mockup: MobileRenterMockup,
+    title: howItWorksContent.sections[0].title,
+    items: howItWorksContent.sections[0].items,
+    image: "/visuals/list-capture.svg",
   },
   {
-    number: 2,
-    title: "Lead-to-Lease Timeline",
-    subtitle: "Track every step from inquiry to lease signing — timestamped and shareable.",
-    description: [
-      "See inquiries, tours, and applications in one view",
-      "Book tours with qualified prospects",
-      "Shareable timeline link for owners",
-    ],
-    mockup: TimelineMockup,
+    title: howItWorksContent.sections[1].title,
+    items: howItWorksContent.sections[1].items,
+    image: "/visuals/roi-board.svg",
   },
   {
-    number: 3,
-    title: "Owner ROI Board",
-    subtitle: "Auto-generated weekly proof of work — no spreadsheets, no late-night texts.",
-    description: [
-      "Automated weekly summary emails",
-      "Show days listed, inquiries, tours, and lease status",
-      "Build trust and prove operational excellence",
-    ],
-    mockup: ROIBoardMockup,
+    title: howItWorksContent.sections[2].title,
+    items: howItWorksContent.sections[2].items,
+    image: "/visuals/deposit-closeout.svg",
   },
   {
-    number: 4,
-    title: "Deposit Closeout",
-    subtitle: "State-compliant templates with photo documentation and immutable archives.",
-    description: [
-      "Legal-proof deposit letters (starting CA)",
-      "Photo sets and receipts auto-attached",
-      "Export audit-ready records anytime",
-    ],
-    mockup: DepositMockup,
+    title: howItWorksContent.sections[3].title,
+    items: howItWorksContent.sections[3].items,
+    image: "/visuals/renter-timeline.svg",
   },
 ];
 
 export default function HowItWorksSection() {
+  const handleCTA = () => {
+    const ctaSection = document.querySelector('#get-started');
+    ctaSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section className="relative bg-gradient-to-b from-slate-50 to-white py-16 sm:py-24" id="how-it-works">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
+        <div className="text-left max-w-3xl">
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            How It Works
+            How it works
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-600">
-            One Link Handles It All
-          </p>
         </div>
 
-        <div className="mt-16 space-y-16">
-          {FEATURES.map((feature, index) => (
+        <div className="mt-16 space-y-20">
+          {SECTIONS.map((section, index) => (
             <motion.div
-              key={feature.title}
-              className={`grid gap-12 lg:grid-cols-2 lg:items-center ${
-                index % 2 === 1 ? "lg:grid-flow-dense" : ""
-              }`}
+              key={section.title}
+              className="grid gap-8 lg:grid-cols-2 lg:gap-12"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.45, ease: "easeOut" }}
             >
-              <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
-                <div className="inline-flex items-center justify-center rounded-full bg-sky-100 px-4 py-2 text-sm font-semibold text-sky-700">
-                  Step {feature.number}
-                </div>
-                <h3 className="mt-4 text-2xl font-bold text-slate-900 sm:text-3xl">
-                  {feature.title}
+              <div>
+                <h3 className="text-2xl font-bold text-slate-900">
+                  {section.title}
                 </h3>
-                <p className="mt-2 text-lg text-slate-600">{feature.subtitle}</p>
                 <ul className="mt-6 space-y-3">
-                  {feature.description.map((item) => (
+                  {section.items.map((item) => (
                     <li key={item} className="flex items-start gap-3">
                       <svg
                         className="mt-1 h-5 w-5 flex-shrink-0 text-sky-500"
@@ -115,12 +73,26 @@ export default function HowItWorksSection() {
                     </li>
                   ))}
                 </ul>
+                <div className="mt-8">
+                  <Button
+                    size="md"
+                    onClick={handleCTA}
+                    className="min-h-[44px] min-w-[44px] px-6"
+                    aria-label="Start your free unit"
+                  >
+                    Start free unit
+                  </Button>
+                </div>
               </div>
 
-              <div className={index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""}>
-                <div className="flex items-center justify-center">
-                  <feature.mockup />
-                </div>
+              <div className="flex items-center justify-center">
+                <Image
+                  src={section.image}
+                  alt={`${section.title} illustration`}
+                  width={500}
+                  height={375}
+                  className="h-auto w-full max-w-md drop-shadow-lg"
+                />
               </div>
             </motion.div>
           ))}

@@ -4,12 +4,9 @@ import {
   Footer,
   Hero,
   HomeCTA,
-  ResultsSection,
-  PainSection,
   HowItWorksSection,
-  TargetCustomersSection,
-  MetricsSection,
 } from "@/components";
+import { StickyCTA } from "@/components/layout/StickyCTA";
 import { motion } from "@/lib/motion";
 import { organizationSchema, softwareSchema } from "@/lib/structuredData";
 
@@ -68,15 +65,12 @@ export default function Home() {
         </header>
 
         <main id="main-content" className="safe-bot pb-32">
-          <ResultsSection />
-          <PainSection />
           <HowItWorksSection />
-          <TargetCustomersSection />
-          <MetricsSection />
           <FAQSection />
           <HomeCTA />
         </main>
 
+        <StickyCTA />
         <Footer />
       </div>
     </>

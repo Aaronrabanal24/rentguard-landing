@@ -14,20 +14,10 @@ export function StickyCTA() {
   }, [router]);
 
   return (
-    <div className="pointer-events-none fixed inset-x-0 bottom-0 z-[70]">
-      <div className="pointer-events-auto safe-bottom safe-inline mx-auto flex w-full max-w-4xl flex-col gap-3 rounded-t-3xl border border-slate-200 bg-white px-3 py-3 shadow-lg shadow-slate-900/10 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-5 sm:py-4">
-        <div className="flex-1 text-sm text-slate-600">
-          <p className="text-sm font-semibold text-slate-900">
-            <span className="sm:hidden">Stay deposit ready.</span>
-            <span className="hidden sm:inline">Stay ahead of day-21 deadlines.</span>
-          </p>
-          <p className="mt-1 text-xs text-slate-500 sm:text-sm">
-            <span className="sm:hidden">Fairvia tracks escrow + releases in one timeline.</span>
-            <span className="hidden sm:inline">See how Fairvia walks deposits from trust badge to compliant release.</span>
-          </p>
-        </div>
-        <Button onClick={handleClick} size="lg" className="tap w-full whitespace-nowrap sm:w-auto">
-          Start Free Trial
+    <div className="pointer-events-none fixed inset-x-0 bottom-0 z-[70] sm:hidden">
+      <div className="pointer-events-auto safe-bottom safe-inline mx-auto flex w-full flex-col gap-3 border-t border-slate-200 bg-white px-4 py-3 shadow-lg shadow-slate-900/10">
+        <Button onClick={handleClick} size="lg" className="tap w-full min-h-[44px]">
+          Start free unit
         </Button>
       </div>
     </div>

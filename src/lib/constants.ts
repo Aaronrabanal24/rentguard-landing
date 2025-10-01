@@ -13,23 +13,23 @@ export const FEATURES = {
 
 export const FAQ_DATA = [
   {
-    question: "How much does Fairvia cost?",
+    question: "How do deposit timelines work?",
     answer:
-      "Starter is free forever for one unit. Pro is $49 per unit per month with unlimited units, full deposit workflows, and AB 2801 compliance. Enterprise pricing is available for larger property management companies needing multi-state templates, SSO, and API access.",
+      "California has a 21 day return window. Florida has a 15 day return if no claim, 30 day notice if deduction. All timelines include countdown timers and exportable archive for compliance.",
   },
   {
-    question: "Does Fairvia replace my property management system?",
+    question: "What visibility do renters get?",
     answer:
-      "No. Fairvia is designed to complement your existing PMS. We focus specifically on listings, leasing workflows, and deposits — the areas where transparency and speed matter most. We integrate with your current tools rather than replacing them.",
-  },
-  {
-    question: "What states does Fairvia support?",
-    answer:
-      "We currently support California and Florida (Q4 2025), with Texas, New York, and Illinois coming in Q1 2026. Each state has specific compliance templates built-in, including California's AB 2801 (21-day deposit return) and state-specific deduction requirements.",
+      "No login read only status timeline for key milestones.",
   },
   {
     question: "Do renters and owners need to create accounts?",
     answer:
-      "No. Renters and owners access their information through secure smart unit links — no login required. This makes adoption instant and reduces friction for everyone involved.",
+      "No. Renters and owners access their information through secure smart unit links with no login required. This makes adoption instant and reduces friction for everyone involved.",
+  },
+  {
+    question: "What states does Fairvia support?",
+    answer:
+      "We currently support California and Florida, with Texas, New York, and Illinois coming soon. Each state has specific compliance templates built in, including California's 21 day deposit return window and state specific deduction requirements.",
   },
 ] as const;

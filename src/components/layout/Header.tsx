@@ -12,9 +12,10 @@ export default function Header() {
   const router = useRouter();
 
   const navLinks: NavLink[] = [
-    { href: "/", label: "Home" },
+    { href: "/#how-it-works", label: "How it works" },
+    { href: "/badge", label: "Badge" },
     { href: "/pricing", label: "Pricing" },
-    { href: "/about", label: "About" },
+    { href: "/#faq", label: "FAQ" },
   ];
 
   const handleCTA = () => {
