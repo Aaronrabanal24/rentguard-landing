@@ -21,24 +21,24 @@ const MobileRenterMockup = dynamic(() => import("@/components/mockups/MobileRent
 
 const SECTIONS = [
   {
-    title: howItWorksContent.sections[0].title,
+    title: howItWorksContent.sections[0].title, // "List and capture"
     items: howItWorksContent.sections[0].items,
-    Mockup: TimelineMockup,
+    Mockup: MobileRenterMockup, // Smart unit link with QR, Trust page
   },
   {
-    title: howItWorksContent.sections[1].title,
+    title: howItWorksContent.sections[1].title, // "Show proof to owners"
     items: howItWorksContent.sections[1].items,
-    Mockup: ROIBoardMockup,
+    Mockup: ROIBoardMockup, // ROI board
   },
   {
-    title: howItWorksContent.sections[2].title,
+    title: howItWorksContent.sections[2].title, // "Deposit closeout"
     items: howItWorksContent.sections[2].items,
-    Mockup: DepositMockup,
+    Mockup: DepositMockup, // Templates, itemized letters
   },
   {
-    title: howItWorksContent.sections[3].title,
+    title: howItWorksContent.sections[3].title, // "Renter experience"
     items: howItWorksContent.sections[3].items,
-    Mockup: MobileRenterMockup,
+    Mockup: TimelineMockup, // Timeline view
   },
 ];
 
