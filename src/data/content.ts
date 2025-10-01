@@ -3,9 +3,10 @@ export const heroContent = {
   headline: "Deposits & Leasing Compliance Done Right in California",
   subheadline:
     "From smart links to deposit release, Fairvia keeps you compliant, transparent, and protected.",
-  primaryCta: "Start free for one unit",
+  microPromise: "Set up in 5 minutes. Free for your first unit.",
+  primaryCta: "Start free unit",
   secondaryCta: "See how it works",
-  microTrust: "Free for your first unit. Scales with you.",
+  trustLine: "Deposits held by DFPI-licensed escrow partners",
   proofBar: [
     { icon: "🔗", label: "Smart unit link" },
     { icon: "✓", label: "Trust and precheck" },
@@ -13,6 +14,21 @@ export const heroContent = {
     { icon: "📁", label: "Exportable archive" },
   ],
 } as const;
+
+export const painPoints = [
+  {
+    pain: "Deposit disputes cost money and time",
+    stat: "Average dispute: $800 + 12 hours",
+  },
+  {
+    pain: "Tenants push back without documentation",
+    stat: "40% of deductions challenged",
+  },
+  {
+    pain: "AB 2801 compliance deadlines missed",
+    stat: "21-day window = legal liability",
+  },
+] as const;
 
 export const problemSolutionContent = [
   {
@@ -133,15 +149,47 @@ export const pricingContent = {
   ],
 } as const;
 
+export const valueProps = [
+  {
+    metric: "$800",
+    description: "Average savings per avoided dispute",
+  },
+  {
+    metric: "12 hours",
+    description: "Saved per property per move-out",
+  },
+  {
+    metric: "100%",
+    description: "On-time deposit returns with timers",
+  },
+] as const;
+
+export const trustBadges = {
+  escrowPartners: ["North American Title Company", "Pacific Escrow Services"],
+  compliance: ["DFPI Licensed", "AB 2801 Compliant", "SOC 2 Type II"],
+} as const;
+
 export const faqContent = {
   questions: [
     {
-      question: "How do deposit timelines work?",
-      answer: "California has a 21 day return window. Florida has a 15 day return if no claim, 30 day notice if deduction. All timelines include countdown timers and exportable archive for compliance.",
+      question: "What if the tenant doesn't respond to deductions?",
+      answer: "Fairvia's system includes automatic reminders and default timelines. If no response within 7 days, the system documents non-response and proceeds with the landlord's deductions as legally defensible.",
     },
     {
-      question: "What visibility do renters get?",
-      answer: "No login read only status timeline for key milestones.",
+      question: "Is this legally binding?",
+      answer: "Yes. Fairvia generates state-compliant deposit letters with timestamps, receipts, and photo documentation. The exportable archive serves as legal proof in court.",
+    },
+    {
+      question: "Does this integrate with my property management software?",
+      answer: "Fairvia works standalone with CSV import/export in SMB Pro. Enterprise tier offers API integration with major PMS platforms.",
+    },
+    {
+      question: "How do deposit timelines work?",
+      answer: "California requires 21-day return windows (AB 2801). Florida requires 15 days if no claim, 30 days if deductions. Fairvia automates countdown timers and compliance notifications.",
+    },
+    {
+      question: "What if I have properties in multiple states?",
+      answer: "Enterprise tier includes multi-state template libraries with automatic compliance rules for California, Florida, Texas, New York, and Illinois.",
     },
   ],
 } as const;

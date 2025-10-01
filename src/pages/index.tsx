@@ -6,7 +6,9 @@ import {
   HowItWorksSection,
 } from "@/components";
 import Header from "@/components/layout/Header";
-import ProblemSolutionSection from "@/components/sections/ProblemSolutionSection";
+import PainPointsSection from "@/components/sections/PainPointsSection";
+import ValueROISection from "@/components/sections/ValueROISection";
+import TrustCredibilitySection from "@/components/sections/TrustCredibilitySection";
 import { StickyCTA } from "@/components/layout/StickyCTA";
 import { motion } from "@/lib/motion";
 import { organizationSchema, softwareSchema } from "@/lib/structuredData";
@@ -62,8 +64,10 @@ export default function Home() {
         </motion.div>
 
         <main id="main-content" className="safe-bot pb-32">
-          <ProblemSolutionSection />
+          <PainPointsSection />
           <HowItWorksSection />
+          <ValueROISection />
+          <TrustCredibilitySection />
           <HomeCTA />
         </main>
 

@@ -47,6 +47,13 @@ export default function Hero() {
               {heroContent.subheadline}
             </p>
 
+            {/* Micro-promise / Onboarding line */}
+            <div className="mb-4 rounded-lg bg-sky-50 border border-sky-200 px-4 py-3">
+              <p className="text-sm font-medium text-sky-900">
+                ⚡ {heroContent.microPromise}
+              </p>
+            </div>
+
             {/* CTA Buttons - Primary action dominant, secondary low-contrast */}
             <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center">
               <Button
@@ -68,20 +75,30 @@ export default function Hero() {
               </button>
             </div>
 
+            {/* Trust badges - escrow partners */}
+            <div className="mb-6 rounded-lg bg-white border border-slate-200 px-4 py-3">
+              <p className="text-xs font-medium text-slate-600 mb-2">
+                🔒 {heroContent.trustLine}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="inline-flex items-center rounded-full bg-emerald-50 border border-emerald-200 px-3 py-1 text-xs font-medium text-emerald-700">
+                  ✓ DFPI Licensed
+                </span>
+                <span className="inline-flex items-center rounded-full bg-sky-50 border border-sky-200 px-3 py-1 text-xs font-medium text-sky-700">
+                  ✓ AB 2801 Compliant
+                </span>
+              </div>
+            </div>
+
             {/* Proof bar - Above the fold on 390px-wide phones */}
-            <div className="mb-6 grid grid-cols-2 gap-4 sm:grid-cols-4" role="list" aria-label="Key features">
+            <div className="mb-4 grid grid-cols-2 gap-3 sm:grid-cols-4" role="list" aria-label="Key features">
               {heroContent.proofBar.map((item) => (
                 <div key={item.label} className="flex items-center gap-2" role="listitem">
-                  <span className="text-2xl" aria-hidden="true">{item.icon}</span>
-                  <span className="text-sm font-medium text-slate-700">{item.label}</span>
+                  <span className="text-xl" aria-hidden="true">{item.icon}</span>
+                  <span className="text-xs font-medium text-slate-700">{item.label}</span>
                 </div>
               ))}
             </div>
-
-            {/* Micro-trust line */}
-            <p className="text-sm text-slate-600">
-              {heroContent.microTrust}
-            </p>
           </div>
 
           {/* Right column: Hero mockup */}
