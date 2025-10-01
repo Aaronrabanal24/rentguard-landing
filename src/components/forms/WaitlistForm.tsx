@@ -33,7 +33,7 @@ export default function WaitlistForm({
     await submitWaitlist({
       email: formData.email,
       name: formData.name,
-      userType: formData.userType || "landlord",
+      userType: defaultRole || "landlord", // Use the defaultRole prop or fallback to landlord
       location: formData.location,
     });
   };
