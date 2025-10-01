@@ -1,28 +1,44 @@
 import { motion } from "@/lib/motion";
 import { Button } from "@/components/ui/Button";
 import { howItWorksContent } from "@/data/content";
-import Image from "next/image";
+import dynamic from "next/dynamic";
+
+const TimelineMockup = dynamic(() => import("@/components/mockups/TimelineMockup"), {
+  loading: () => <div className="h-96 animate-pulse rounded-2xl bg-slate-100" />,
+});
+
+const ROIBoardMockup = dynamic(() => import("@/components/mockups/ROIBoardMockup"), {
+  loading: () => <div className="h-96 animate-pulse rounded-2xl bg-slate-100" />,
+});
+
+const DepositMockup = dynamic(() => import("@/components/mockups/DepositMockup"), {
+  loading: () => <div className="h-96 animate-pulse rounded-2xl bg-slate-100" />,
+});
+
+const MobileRenterMockup = dynamic(() => import("@/components/mockups/MobileRenterMockup"), {
+  loading: () => <div className="h-96 animate-pulse rounded-2xl bg-slate-100" />,
+});
 
 const SECTIONS = [
   {
     title: howItWorksContent.sections[0].title,
     items: howItWorksContent.sections[0].items,
-    image: "/visuals/list-capture.svg",
+    Mockup: TimelineMockup,
   },
   {
     title: howItWorksContent.sections[1].title,
     items: howItWorksContent.sections[1].items,
-    image: "/visuals/roi-board.svg",
+    Mockup: ROIBoardMockup,
   },
   {
     title: howItWorksContent.sections[2].title,
     items: howItWorksContent.sections[2].items,
-    image: "/visuals/deposit-closeout.svg",
+    Mockup: DepositMockup,
   },
   {
     title: howItWorksContent.sections[3].title,
     items: howItWorksContent.sections[3].items,
-    image: "/visuals/renter-timeline.svg",
+    Mockup: MobileRenterMockup,
   },
 ];
 
@@ -86,13 +102,7 @@ export default function HowItWorksSection() {
               </div>
 
               <div className="flex items-center justify-center">
-                <Image
-                  src={section.image}
-                  alt={`${section.title} illustration`}
-                  width={500}
-                  height={375}
-                  className="h-auto w-full max-w-md drop-shadow-lg"
-                />
+                <section.Mockup />
               </div>
             </motion.div>
           ))}
