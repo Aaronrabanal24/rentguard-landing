@@ -15,7 +15,7 @@ export default function Header() {
     { href: "/#how-it-works", label: "How it works" },
     { href: "/badge", label: "Badge" },
     { href: "/pricing", label: "Pricing" },
-    { href: "/#faq", label: "FAQ" },
+    { href: "/features", label: "Features" },
   ];
 
   const handleCTA = () => {
@@ -42,21 +42,21 @@ export default function Header() {
             <BrandLogo priority className="drop-shadow-sm" />
           </Link>
           {/* Horizontal nav at sm+ */}
-          <nav className="hidden items-center gap-2 text-sm font-medium text-slate-600 sm:flex">
+          <nav className="hidden items-center gap-2 text-sm font-medium sm:flex">
             {navLinks.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="tap rounded-full px-4 py-2 transition-all hover:bg-sky-50 hover:text-slate-900 hover:shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
+                className="tap min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded-full bg-slate-100 px-5 py-2 text-slate-700 transition-all hover:bg-slate-200 hover:text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
               >
                 {item.label}
               </Link>
             ))}
             <button
               onClick={handleCTA}
-              className="tap rounded-full bg-gradient-to-r from-sky-500 to-teal-500 px-5 py-2 text-sm font-semibold text-white shadow-sm shadow-sky-200/80 transition hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
+              className="tap min-h-[44px] min-w-[44px] rounded-full bg-gradient-to-r from-sky-500 to-teal-500 px-5 py-2 text-sm font-semibold text-white shadow-sm shadow-sky-200/80 transition hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
             >
-              Start Free Unit
+              Start free unit
             </button>
           </nav>
         </div>
@@ -64,25 +64,16 @@ export default function Header() {
 
       {/* Always-visible vertical nav on mobile (in normal flow) */}
       <nav aria-label="Primary" className="sm:hidden">
-        <ul className="mx-auto max-w-7xl px-3 py-2">
+        <div className="mx-auto max-w-7xl px-3 py-2 flex flex-wrap gap-2">
           {navLinks.map((link) => (
-            <li key={link.href} className="py-1">
-              <Link
-                href={link.href}
-                className="tap block rounded-lg px-3 py-3 text-base font-medium text-slate-800 transition hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
-              >
-                {link.label}
-              </Link>
-            </li>
+            <Link
+              key={link.href}
+              href={link.href}
+              className="tap min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded-full bg-slate-100 px-4 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
+            >
+              {link.label}
+            </Link>
           ))}
-        </ul>
-        <div className="mx-auto max-w-7xl border-t border-slate-200 px-3 pb-3 pt-2 safe-bot">
-          <button
-            onClick={handleCTA}
-            className="tap w-full rounded-full bg-gradient-to-r from-sky-500 to-teal-500 px-5 py-3 text-base font-semibold text-white shadow-sm transition hover:-translate-y-[1px] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
-          >
-            Start with One Free Unit
-          </button>
         </div>
       </nav>
     </header>

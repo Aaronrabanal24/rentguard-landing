@@ -1,4 +1,3 @@
-import dynamic from "next/dynamic";
 import Head from "next/head";
 import {
   Footer,
@@ -9,10 +8,6 @@ import {
 import { StickyCTA } from "@/components/layout/StickyCTA";
 import { motion } from "@/lib/motion";
 import { organizationSchema, softwareSchema } from "@/lib/structuredData";
-
-const FAQSection = dynamic(() => import("@/components/sections/FAQSection"), {
-  loading: () => <div className="mt-16 h-[400px] animate-pulse rounded-3xl bg-slate-100" aria-hidden />,
-});
 
 export default function Home() {
   return (
@@ -66,7 +61,6 @@ export default function Home() {
 
         <main id="main-content" className="safe-bot pb-32">
           <HowItWorksSection />
-          <FAQSection />
           <HomeCTA />
         </main>
 
