@@ -81,6 +81,7 @@ interface ZohoLeadInput {
 interface ZohoLeadData {
   data: Array<{
     Last_Name: string;
+    First_Name?: string;
     Email: string;
     Lead_Source: string;
     Description?: string;
@@ -124,13 +125,13 @@ export async function upsertZohoLead(input: ZohoLeadInput, accessToken: string) 
     data: [
       {
         Last_Name: lastName,
-        ...(firstName && { First_Name: firstName }),
+        First_Name: firstName,
         Email: input.email,
         Lead_Source: input.utm?.source || "Website Waitlist",
         Description: description,
         City: input.location,
-        ...(input.utm?.content && { $gclid: input.utm.content }),
-      } as any,
+        $gclid: input.utm?.content,
+      },
     ],
     trigger: ["approval", "workflow", "blueprint"], // Auto-trigger workflows
   };
