@@ -24,7 +24,8 @@ export function useWaitlist({ source = "default" }: UseWaitlistConfig = {}) {
         return;
       }
 
-      const response = await fetch("/api/waitlist", {
+      // Send to Zoho CRM endpoint (also handles waitlist logic)
+      const response = await fetch("/api/zoho", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(validation.data),
