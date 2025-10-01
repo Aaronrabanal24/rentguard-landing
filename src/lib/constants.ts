@@ -14,7 +14,7 @@ export const FAQ_DATA = [
   {
     question: "How much does Fairvia cost?",
     answer:
-      "Fairvia is $49 per door per month with no long-term contract. That includes escrow, compliance automation, tenant communication, and live support. We also offer a free 30-minute compliance audit before you start so you can see the workflow in action.",
+      "Fairvia is $69/month for up to 5 active cases with no long-term contract. That includes neutral escrow (state-regulated deposit holding), AB 2801 compliance automation (California's 21-day deposit law), tenant communication, and live support. We also offer a free 30-minute compliance audit before you start so you can see the workflow in action.",
   },
   {
     question: "Is my tenant’s deposit actually safe?",

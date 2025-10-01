@@ -135,19 +135,19 @@ export default function DemoPage() {
       {/* Stats Section */}
       <section className="bg-slate-50 py-16">
         <div className="container-tight text-center">
-          <h2 className="text-3xl font-bold text-slate-900 mb-8">Early Results</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-8">Proven Results</h2>
           <div className="grid gap-8 md:grid-cols-3 max-w-2xl mx-auto">
             <div>
               <div className="text-4xl font-bold text-sky-600 mb-2">147</div>
-              <div className="text-slate-600">Trust profiles live</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-sky-600 mb-2">2.4x</div>
-              <div className="text-slate-600">Higher click quality</div>
+              <div className="text-slate-600 leading-relaxed">Deposits processed</div>
             </div>
             <div>
               <div className="text-4xl font-bold text-sky-600 mb-2">100%</div>
-              <div className="text-slate-600">On-time releases</div>
+              <div className="text-slate-600 leading-relaxed">Released on time</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-sky-600 mb-2">6.2 hrs</div>
+              <div className="text-slate-600 leading-relaxed">Saved per move-out</div>
             </div>
           </div>
         </div>

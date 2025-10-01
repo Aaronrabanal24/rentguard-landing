@@ -24,14 +24,14 @@ export default function HomeCTA() {
     >
       <div className="container-tight">
         <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-sky-50 via-white to-teal-50 px-6 py-10 text-center shadow-sm sm:rounded-3xl sm:px-8 sm:py-12">
-        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Pilot enrollment</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Get Started</p>
         <h2 className="mt-3 text-3xl font-semibold text-slate-900">Ready to run deposits the Fairvia way?</h2>
-        <p className="mt-3 text-sm text-slate-600">
+        <p className="mt-3 text-sm leading-relaxed text-slate-600">
           Share a current or upcoming move-in. We&apos;ll map it through Fairvia, enable Listing Assist, and leave you with the compliance checklist.
         </p>
         <div className="mt-6 flex justify-center">
           <Button onClick={handleClick} size="lg">
-            Apply for the Fairvia pilot
+            Start with One Free Unit
           </Button>
         </div>
         </div>

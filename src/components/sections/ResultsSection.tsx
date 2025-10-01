@@ -3,27 +3,27 @@ import { motion } from "@/lib/motion";
 export default function ResultsSection() {
   const results = [
     {
-      stat: "40%",
-      label: "Fewer vacancy days",
-      description: "Fill units faster with instant lead capture",
+      stat: "147",
+      label: "Deposits processed",
+      description: "Successfully managed through Fairvia",
       color: "from-sky-500 to-blue-600",
     },
     {
       stat: "100%",
-      label: "Leads captured",
-      description: "Never miss an inquiry, even at 2 AM",
+      label: "Released on time",
+      description: "Never miss California's 21-day deadline",
       color: "from-emerald-500 to-teal-600",
     },
     {
-      stat: "5hrs",
-      label: "Saved per week",
-      description: "Stop chasing owners for updates",
+      stat: "6.2 hrs",
+      label: "Saved per move-out",
+      description: "Automated workflows reduce manual work",
       color: "from-violet-500 to-purple-600",
     },
     {
       stat: "Zero",
-      label: "Deposit disputes",
-      description: "State-compliant templates prevent fights",
+      label: "Deposit forfeitures",
+      description: "State-compliant templates prevent losses",
       color: "from-amber-500 to-orange-600",
     },
   ];

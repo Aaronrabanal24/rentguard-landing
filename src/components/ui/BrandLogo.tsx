@@ -21,7 +21,7 @@ export function BrandLogo({ size = "md", priority = false, className }: BrandLog
   return (
     <Image
       src="/fairvia-logo.svg"
-      alt="Fairvia"
+      alt="Fairvia - Professional deposit management for California landlords"
       width={width}
       height={height}
       priority={priority}

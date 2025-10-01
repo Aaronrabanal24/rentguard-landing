@@ -66,22 +66,19 @@ export default function PricingPage() {
 
             <div className="mt-8 flex flex-col items-stretch gap-4 sm:flex-row sm:items-center">
               <Button variant="primary" size="lg" className="w-full">
-                Stay Compliant. Save Hours. Get Proof in Place.
-              </Button>
-              <Button variant="secondary" size="lg" className="w-full">
-                Talk to a Specialist
+                Start with One Free Unit
               </Button>
             </div>
 
             <Card variant="gradient" padding="md" radius="lg" className="mt-6 border-emerald-200">
               <CardHeader>
-                <CardTitle level={4} className="text-emerald-800">Proven ROI</CardTitle>
+                <CardTitle level={4} className="text-emerald-800">Proven Results</CardTitle>
               </CardHeader>
-              <Grid cols={2} gap="sm" className="text-sm text-slate-700">
-                <span>• Average 6.2 hours saved per move-out</span>
-                <span>• 147 deposits processed successfully</span>
-                <span>• Zero forfeitures from missed deadlines</span>
-                <span>• 100% on-time release rate</span>
+              <Grid cols={2} gap="sm" className="text-sm leading-relaxed text-slate-700">
+                <span>• 147 deposits processed</span>
+                <span>• 100% released on time</span>
+                <span>• 6.2 hours saved per move-out</span>
+                <span>• Zero deposit forfeitures</span>
               </Grid>
             </Card>
 

@@ -47,24 +47,24 @@ export default function Footer() {
             <h4 className="text-sm font-semibold uppercase tracking-widest text-slate-300">Resources</h4>
             <ul className="mt-4 space-y-3 text-sm text-slate-400">
               <li>
-                <Link href="/help" className="transition hover:text-white">
-                  Help Center
+                <Link href="/demo" className="transition hover:text-white">
+                  Live Demo
                 </Link>
               </li>
               <li>
-                <Link href="/docs" className="transition hover:text-white">
-                  Documentation
+                <Link href="/about" className="transition hover:text-white">
+                  About
                 </Link>
               </li>
               <li>
-                <Link href="/templates" className="transition hover:text-white">
-                  Templates
-                </Link>
+                <span className="text-slate-500 cursor-not-allowed">
+                  Help Center (Coming Soon)
+                </span>
               </li>
               <li>
-                <Link href="/api" className="transition hover:text-white">
-                  API Docs
-                </Link>
+                <span className="text-slate-500 cursor-not-allowed">
+                  Documentation (Coming Soon)
+                </span>
               </li>
             </ul>
           </div>
@@ -73,24 +73,24 @@ export default function Footer() {
             <h4 className="text-sm font-semibold uppercase tracking-widest text-slate-300">Company</h4>
             <ul className="mt-4 space-y-3 text-sm text-slate-400">
               <li>
-                <Link href="/about" className="transition hover:text-white">
-                  About
-                </Link>
-              </li>
-              <li>
                 <Link href="/contact" className="transition hover:text-white">
                   Contact
                 </Link>
               </li>
               <li>
-                <Link href="/careers" className="transition hover:text-white">
-                  Careers
+                <Link href="/pricing" className="transition hover:text-white">
+                  Pricing
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="transition hover:text-white">
-                  Blog
-                </Link>
+                <span className="text-slate-500 cursor-not-allowed">
+                  Careers (Coming Soon)
+                </span>
+              </li>
+              <li>
+                <span className="text-slate-500 cursor-not-allowed">
+                  Blog (Coming Soon)
+                </span>
               </li>
             </ul>
           </div>
@@ -109,14 +109,14 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/trust" className="transition hover:text-white">
-                  Security
-                </Link>
+                <span className="text-slate-500 cursor-not-allowed">
+                  Security (Coming Soon)
+                </span>
               </li>
               <li>
-                <Link href="/compliance" className="transition hover:text-white">
-                  Compliance
-                </Link>
+                <span className="text-slate-500 cursor-not-allowed">
+                  Compliance Docs (Coming Soon)
+                </span>
               </li>
             </ul>
           </div>
@@ -124,7 +124,10 @@ export default function Footer() {
 
         <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-8 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p>&copy; {new Date().getFullYear()} {COMPANY.name}. All rights reserved. Built for property operators • Made with care</p>
+            <p className="leading-relaxed">&copy; {new Date().getFullYear()} {COMPANY.name}. All rights reserved. Built for property operators • Made with care</p>
+            <p className="mt-2 text-xs leading-relaxed">
+              Deposits held by DFPI-licensed escrow partners including North American Title Company and Pacific Escrow Services
+            </p>
           </div>
           <div className="flex flex-wrap items-center gap-4">
             <Link href="/privacy" className="tap inline-flex items-center rounded-full border border-white/10 px-4 py-2 text-xs font-semibold text-white transition hover:border-white/30">

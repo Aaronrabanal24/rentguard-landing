@@ -19,7 +19,7 @@ export default function Header() {
   ];
 
   const handleCTA = () => {
-    track("click_cta", { role: "landlord", location: "nav", label: "get_started" });
+    track("click_cta", { role: "landlord", location: "nav", label: "start_free_unit" });
     router.push("/get-started").catch(() => {
       /* noop */
     });
@@ -48,7 +48,7 @@ export default function Header() {
               onClick={handleCTA}
               className="tap rounded-full bg-gradient-to-r from-sky-500 to-teal-500 px-5 py-2 text-sm font-semibold text-white shadow-sm shadow-sky-200/80 transition hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
             >
-              Get Started
+              Start Free Unit
             </button>
           </nav>
         </div>
@@ -73,7 +73,7 @@ export default function Header() {
             onClick={handleCTA}
             className="tap w-full rounded-full bg-gradient-to-r from-sky-500 to-teal-500 px-5 py-3 text-base font-semibold text-white shadow-sm transition hover:-translate-y-[1px] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
           >
-            Get Started
+            Start with One Free Unit
           </button>
         </div>
       </nav>
