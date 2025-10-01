@@ -1,6 +1,19 @@
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import { logPerformanceMetric, getWebVitalRating } from "@/lib/performance";
+import type { NextWebVitalsMetric } from "next/app";
 import "../styles/globals.css";
+
+export function reportWebVitals(metric: NextWebVitalsMetric) {
+  const { name, value } = metric;
+
+  logPerformanceMetric({
+    name,
+    value,
+    rating: getWebVitalRating(name, value),
+    id: metric.id,
+  });
+}
 
 export default function App({ Component, pageProps }: AppProps) {
   const isProduction = process.env.NODE_ENV === "production";

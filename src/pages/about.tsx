@@ -33,7 +33,15 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="flex justify-center md:justify-end">
-              <Image src="/visuals/hero-dashboard.svg" alt="Fairvia deposit management dashboard showing timeline and compliance features" width={320} height={220} className="h-auto w-full max-w-xs" />
+              <Image
+                src="/visuals/hero-dashboard.svg"
+                alt="Fairvia deposit management dashboard showing timeline and compliance features"
+                width={320}
+                height={220}
+                className="h-auto w-full max-w-xs"
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, 320px"
+              />
             </div>
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-3">

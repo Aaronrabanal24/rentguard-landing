@@ -19,10 +19,12 @@ export default function GetStartedPage() {
           <div className="flex justify-center md:justify-end">
             <Image
               src="/visuals/features-stack.svg"
-              alt="Fairvia onboarding"
+              alt="Fairvia feature stack showing lead capture, timeline tracking, and ROI reporting"
               width={300}
               height={220}
               className="h-auto w-full max-w-xs"
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 300px"
             />
           </div>
         </div>

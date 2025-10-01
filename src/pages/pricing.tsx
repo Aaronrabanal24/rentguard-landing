@@ -154,7 +154,7 @@ export default function PricingPage() {
               { icon: "📊", title: "Timeline View", description: "Complete activity history from inquiry to move-out" },
               { icon: "📈", title: "ROI Reporting", description: "Weekly owner updates with performance metrics" },
               { icon: "⚖️", title: "Compliance Engine", description: "State-specific templates and countdown timers" },
-            ].map((item, index) => (
+            ].map((item) => (
               <div key={item.title} className="text-center">
                 <div className="text-4xl mb-4">{item.icon}</div>
                 <h3 className="text-lg font-semibold text-slate-900 mb-2">{item.title}</h3>
