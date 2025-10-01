@@ -8,7 +8,6 @@ import {
   HowItWorksSection,
   TargetCustomersSection,
   MetricsSection,
-  StickyCTA,
 } from "@/components";
 import { motion } from "@/lib/motion";
 
@@ -38,7 +37,6 @@ export default function Home() {
 
         <Footer />
       </div>
-      <StickyCTA />
     </>
   );
 }
