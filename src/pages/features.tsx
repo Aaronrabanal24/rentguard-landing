@@ -99,16 +99,16 @@ export default function FeaturesPage() {
       <div className="min-h-full relative">
         <Header />
 
-        <main id="main-content" className="safe-bot pb-32" style={{ zIndex: 1 }}>
+        <main id="main-content" className="safe-bot pb-32 sm:pb-40" style={{ zIndex: 1 }}>
           {/* Hero Section */}
-          <section className="relative overflow-hidden bg-gradient-to-b from-slate-900/95 to-transparent px-6 py-16 sm:py-20">
+          <section className="relative overflow-hidden bg-gradient-to-b from-slate-900/95 to-transparent px-6 py-20 sm:py-28 lg:py-32">
             <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(14,165,233,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(14,165,233,0.1)_1px,transparent_1px)] bg-[size:40px_40px]" />
             <div className="mx-auto max-w-6xl relative">
               <div className="text-left max-w-3xl">
-                <h1 className="text-4xl font-bold tracking-tight bg-gradient-to-r from-white via-sky-100 to-purple-200 bg-clip-text text-transparent sm:text-5xl">
+                <h1 className="text-4xl font-bold tracking-tight bg-gradient-to-r from-white via-sky-100 to-purple-200 bg-clip-text text-transparent sm:text-5xl lg:text-6xl">
                   Features
                 </h1>
-                <p className="mt-6 text-lg leading-relaxed text-slate-200">
+                <p className="mt-6 sm:mt-8 text-lg sm:text-xl leading-relaxed text-slate-200">
                   A lightweight operations layer that connects listings, leasing, and deposits. No heavy PMS. Just proof, speed, and compliance.
                 </p>
               </div>
@@ -116,30 +116,30 @@ export default function FeaturesPage() {
           </section>
 
           {/* Core Features */}
-          <section className="relative bg-transparent py-16 px-6" style={{ zIndex: 1 }}>
+          <section className="relative bg-transparent py-20 sm:py-28 px-6" style={{ zIndex: 1 }}>
             <div className="mx-auto max-w-6xl">
-              <div className="mb-12">
-                <h2 className="text-2xl font-bold bg-gradient-to-r from-white to-sky-200 bg-clip-text text-transparent sm:text-3xl">
+              <div className="mb-14 sm:mb-16">
+                <h2 className="text-2xl font-bold bg-gradient-to-r from-white to-sky-200 bg-clip-text text-transparent sm:text-3xl lg:text-4xl">
                   Core Features
                 </h2>
-                <p className="mt-3 text-base text-slate-300">
+                <p className="mt-4 text-base sm:text-lg text-slate-300">
                   Available on the free tier and all paid plans
                 </p>
               </div>
 
-              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
                 {CORE_FEATURES.map((feature, index) => (
                   <motion.div
                     key={feature.title}
-                    className="rounded-xl bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-6 shadow-lg hover:border-sky-500/50 transition-colors"
+                    className="rounded-xl bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-7 sm:p-8 shadow-lg hover:border-sky-500/50 transition-colors"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: index * 0.05 }}
                   >
-                    <div className="text-4xl mb-4">{feature.icon}</div>
-                    <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
-                    <p className="text-base text-slate-200 leading-relaxed">{feature.description}</p>
+                    <div className="text-4xl sm:text-5xl mb-5">{feature.icon}</div>
+                    <h3 className="text-lg sm:text-xl font-bold text-white mb-3">{feature.title}</h3>
+                    <p className="text-base sm:text-lg text-slate-200 leading-relaxed">{feature.description}</p>
                   </motion.div>
                 ))}
               </div>
@@ -147,30 +147,30 @@ export default function FeaturesPage() {
           </section>
 
           {/* Advanced Features */}
-          <section className="relative bg-transparent py-16 px-6" style={{ zIndex: 1 }}>
+          <section className="relative bg-transparent py-20 sm:py-28 px-6" style={{ zIndex: 1 }}>
             <div className="mx-auto max-w-6xl">
-              <div className="mb-12">
-                <h2 className="text-2xl font-bold bg-gradient-to-r from-white via-purple-100 to-sky-200 bg-clip-text text-transparent sm:text-3xl">
+              <div className="mb-14 sm:mb-16">
+                <h2 className="text-2xl font-bold bg-gradient-to-r from-white via-purple-100 to-sky-200 bg-clip-text text-transparent sm:text-3xl lg:text-4xl">
                   Advanced Features
                 </h2>
-                <p className="mt-3 text-base text-slate-300">
+                <p className="mt-4 text-base sm:text-lg text-slate-300">
                   Available on Pilot plan ($99/month)
                 </p>
               </div>
 
-              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
                 {ADVANCED_FEATURES.map((feature, index) => (
                   <motion.div
                     key={feature.title}
-                    className="rounded-xl bg-slate-800/50 backdrop-blur-sm border border-purple-500/30 p-6 shadow-lg hover:border-purple-500/60 transition-colors"
+                    className="rounded-xl bg-slate-800/50 backdrop-blur-sm border border-purple-500/30 p-7 sm:p-8 shadow-lg hover:border-purple-500/60 transition-colors"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: index * 0.05 }}
                   >
-                    <div className="text-4xl mb-4">{feature.icon}</div>
-                    <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
-                    <p className="text-base text-slate-200 leading-relaxed">{feature.description}</p>
+                    <div className="text-4xl sm:text-5xl mb-5">{feature.icon}</div>
+                    <h3 className="text-lg sm:text-xl font-bold text-white mb-3">{feature.title}</h3>
+                    <p className="text-base sm:text-lg text-slate-200 leading-relaxed">{feature.description}</p>
                   </motion.div>
                 ))}
               </div>
@@ -178,19 +178,19 @@ export default function FeaturesPage() {
           </section>
 
           {/* CTA Section */}
-          <section className="relative bg-transparent py-16 px-6" style={{ zIndex: 1 }}>
+          <section className="relative bg-transparent py-20 sm:py-28 px-6" style={{ zIndex: 1 }}>
             <div className="mx-auto max-w-4xl text-center">
-              <div className="rounded-2xl border border-sky-500/30 bg-gradient-to-br from-sky-500/10 via-slate-800/50 to-purple-500/10 backdrop-blur-sm p-8 shadow-xl">
-                <h2 className="text-2xl font-bold bg-gradient-to-r from-white to-sky-200 bg-clip-text text-transparent mb-4">
+              <div className="rounded-2xl border border-sky-500/30 bg-gradient-to-br from-sky-500/10 via-slate-800/50 to-purple-500/10 backdrop-blur-sm p-10 sm:p-12 shadow-xl">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-white to-sky-200 bg-clip-text text-transparent mb-5 sm:mb-6">
                   Start with your first unit free
                 </h2>
-                <p className="text-base text-slate-300 mb-6 max-w-2xl mx-auto">
+                <p className="text-base sm:text-lg text-slate-300 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed">
                   No credit card required. Test every feature on your first property. Upgrade to Pilot ($99/month) when you&apos;re ready to scale.
                 </p>
                 <Button
                   size="lg"
                   onClick={handleCTA}
-                  className="min-h-[48px] min-w-[48px] px-8 py-3 text-base font-semibold shadow-md hover:shadow-lg"
+                  className="min-h-[48px] min-w-[48px] px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg font-semibold shadow-md hover:shadow-lg"
                   aria-label="Start your free unit today"
                 >
                   Start free unit

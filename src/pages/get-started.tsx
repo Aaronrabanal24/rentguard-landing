@@ -23,19 +23,19 @@ export default function GetStartedPage() {
       <div className="min-h-full bg-slate-50 text-slate-900">
         <Header />
 
-        <main id="main-content" className="safe-bot pb-32">
-          <section className="relative overflow-hidden bg-gradient-to-b from-blue-50 to-white px-6 py-16 sm:py-20">
+        <main id="main-content" className="safe-bot pb-32 sm:pb-40">
+          <section className="relative overflow-hidden bg-gradient-to-b from-blue-50 to-white px-6 py-24 sm:py-32 lg:py-36">
             <div className="mx-auto max-w-3xl">
               <div className="text-center">
-                <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+                <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
                   Start with one free unit
                 </h1>
-                <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-700">
+                <p className="mx-auto mt-8 sm:mt-10 max-w-2xl text-lg sm:text-xl leading-relaxed text-slate-700">
                   Join the pilot. We will follow up with a Calendly link for onboarding.
                 </p>
               </div>
 
-              <div className="mt-12">
+              <div className="mt-14 sm:mt-16 lg:mt-20">
                 <WaitlistForm ctaLabel="Join pilot" />
               </div>
             </div>

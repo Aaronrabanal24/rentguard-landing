@@ -47,93 +47,93 @@ export default function BadgePage() {
       <div className="min-h-full bg-slate-50 text-slate-900">
         <Header />
 
-        <main id="main-content" className="safe-bot pb-32">
-          <section className="relative overflow-hidden bg-gradient-to-b from-blue-50 to-white px-6 py-16 sm:py-20">
+        <main id="main-content" className="safe-bot pb-32 sm:pb-40">
+          <section className="relative overflow-hidden bg-gradient-to-b from-blue-50 to-white px-6 py-20 sm:py-28 lg:py-32">
             <div className="mx-auto max-w-4xl">
               <div className="text-center">
-                <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+                <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
                   Trust and precheck page
                 </h1>
-                <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-700">
+                <p className="mx-auto mt-8 sm:mt-10 max-w-2xl text-lg sm:text-xl leading-relaxed text-slate-700">
                   A lightweight verification layer that helps owners reduce spam and helps renters identify legitimate listings. No new system to learn.
                 </p>
               </div>
 
-              <div className="mt-12 rounded-2xl bg-white p-8 shadow-lg">
-                <div className="grid gap-12 lg:grid-cols-2">
+              <div className="mt-16 sm:mt-20 rounded-2xl bg-white p-8 sm:p-10 lg:p-12 shadow-lg">
+                <div className="grid gap-12 sm:gap-16 lg:grid-cols-2">
                   <div>
-                    <h2 className="text-2xl font-bold text-slate-900">What it shows</h2>
-                    <ul className="mt-6 space-y-4">
+                    <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">What it shows</h2>
+                    <ul className="mt-8 space-y-5">
                       <li className="flex items-start gap-3">
-                        <svg className="mt-1 h-5 w-5 flex-shrink-0 text-sky-500" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="mt-1 h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0 text-sky-500" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                         </svg>
-                        <span className="text-slate-700">Verified property details and photos</span>
+                        <span className="text-base sm:text-lg text-slate-700">Verified property details and photos</span>
                       </li>
                       <li className="flex items-start gap-3">
-                        <svg className="mt-1 h-5 w-5 flex-shrink-0 text-sky-500" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="mt-1 h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0 text-sky-500" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                         </svg>
-                        <span className="text-slate-700">Landlord contact information</span>
+                        <span className="text-base sm:text-lg text-slate-700">Landlord contact information</span>
                       </li>
                       <li className="flex items-start gap-3">
-                        <svg className="mt-1 h-5 w-5 flex-shrink-0 text-sky-500" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="mt-1 h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0 text-sky-500" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                         </svg>
-                        <span className="text-slate-700">Timeline of listing activity</span>
+                        <span className="text-base sm:text-lg text-slate-700">Timeline of listing activity</span>
                       </li>
                     </ul>
                   </div>
 
                   <div>
-                    <h2 className="text-2xl font-bold text-slate-900">Why owners like it</h2>
-                    <ul className="mt-6 space-y-4">
+                    <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">Why owners like it</h2>
+                    <ul className="mt-8 space-y-5">
                       <li className="flex items-start gap-3">
-                        <svg className="mt-1 h-5 w-5 flex-shrink-0 text-sky-500" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="mt-1 h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0 text-sky-500" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                         </svg>
-                        <span className="text-slate-700">Reduces spam and bot inquiries</span>
+                        <span className="text-base sm:text-lg text-slate-700">Reduces spam and bot inquiries</span>
                       </li>
                       <li className="flex items-start gap-3">
-                        <svg className="mt-1 h-5 w-5 flex-shrink-0 text-sky-500" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="mt-1 h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0 text-sky-500" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                         </svg>
-                        <span className="text-slate-700">Builds trust with serious renters</span>
+                        <span className="text-base sm:text-lg text-slate-700">Builds trust with serious renters</span>
                       </li>
                       <li className="flex items-start gap-3">
-                        <svg className="mt-1 h-5 w-5 flex-shrink-0 text-sky-500" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="mt-1 h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0 text-sky-500" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                         </svg>
-                        <span className="text-slate-700">Shows as part of unit link from day one</span>
+                        <span className="text-base sm:text-lg text-slate-700">Shows as part of unit link from day one</span>
                       </li>
                     </ul>
                   </div>
                 </div>
 
-                <div className="mt-12 rounded-lg bg-sky-50 p-6">
-                  <p className="text-center text-sm text-slate-700">
+                <div className="mt-14 sm:mt-16 rounded-lg bg-sky-50 p-8 sm:p-10">
+                  <p className="text-center text-base sm:text-lg text-slate-700 leading-relaxed">
                     <strong>No new system to learn.</strong> The Trust and precheck page is built into every smart unit link.
                   </p>
                 </div>
               </div>
 
-              <div className="mt-16">
-                <h2 className="text-3xl font-bold text-slate-900">Common questions</h2>
-                <div className="mt-8 space-y-8">
+              <div className="mt-20 sm:mt-24">
+                <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-2">Common questions</h2>
+                <div className="mt-10 sm:mt-12 space-y-10">
                   {faqItems.map((item) => (
                     <div key={item.question}>
-                      <h3 className="text-xl font-semibold text-slate-900">{item.question}</h3>
-                      <p className="mt-2 text-slate-700">{item.answer}</p>
+                      <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-3">{item.question}</h3>
+                      <p className="mt-3 text-base sm:text-lg text-slate-700 leading-relaxed">{item.answer}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="mt-12 text-center">
+              <div className="mt-16 sm:mt-20 text-center">
                 <Button
                   size="lg"
                   onClick={handleCTA}
-                  className="min-h-[48px] min-w-[48px] px-8 py-3 text-base font-semibold shadow-md hover:shadow-lg"
+                  className="min-h-[48px] min-w-[48px] px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg font-semibold shadow-md hover:shadow-lg"
                   aria-label="Start your free unit today"
                 >
                   Start free unit

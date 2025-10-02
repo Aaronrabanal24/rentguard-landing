@@ -20,15 +20,15 @@ const HIGHLIGHTS = [
 export default function AboutPage() {
   return (
     <PageContainer title="About Fairvia" includeFooter>
-      <section className="bg-white py-16 text-slate-900">
-        <div className="mx-auto max-w-5xl px-4">
-          <div className="flex flex-col items-center gap-6 text-center md:flex-row md:items-center md:text-left">
+      <section className="bg-white py-20 sm:py-28 lg:py-32 text-slate-900">
+        <div className="mx-auto max-w-5xl px-6">
+          <div className="flex flex-col items-center gap-8 sm:gap-10 text-center md:flex-row md:items-center md:text-left">
             <div className="flex-1">
-              <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-slate-600">
+              <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.3em] text-slate-600">
                 About
               </span>
-              <h1 className="mt-4 text-3xl font-semibold sm:text-4xl">About Fairvia</h1>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
+              <h1 className="mt-6 text-3xl font-semibold sm:text-4xl lg:text-5xl">About Fairvia</h1>
+              <p className="mt-5 sm:mt-6 text-base sm:text-lg leading-relaxed text-slate-600">
                 We help property teams fill units faster, reduce disputes, and simplify compliance through smart unit links that connect listings, leasing workflows, and deposit processes.
               </p>
             </div>
@@ -44,18 +44,18 @@ export default function AboutPage() {
               />
             </div>
           </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
+          <div className="mt-16 sm:mt-20 lg:mt-24 grid gap-8 sm:gap-10 md:grid-cols-3">
             {HIGHLIGHTS.map((item, index) => (
               <motion.div
                 key={item.title}
-                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+                className="rounded-2xl border border-slate-200 bg-white p-8 sm:p-10 shadow-sm"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.4, ease: "easeOut", delay: index * 0.05 }}
               >
-                <h2 className="text-lg font-semibold">{item.title}</h2>
-                <p className="mt-2 text-sm text-slate-600">{item.detail}</p>
+                <h2 className="text-lg sm:text-xl font-semibold mb-3">{item.title}</h2>
+                <p className="mt-3 text-base sm:text-lg text-slate-600 leading-relaxed">{item.detail}</p>
               </motion.div>
             ))}
           </div>
