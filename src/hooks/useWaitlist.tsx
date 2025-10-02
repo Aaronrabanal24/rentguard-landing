@@ -17,8 +17,10 @@ export function useWaitlist({ source = "default" }: UseWaitlistConfig = {}) {
     setError(null);
 
     try {
+      console.log("Form data being submitted:", data);
       const validation = waitlistSchema.safeParse(data);
       if (!validation.success) {
+        console.error("Validation errors:", validation.error.flatten());
         setError("Please check your details and try again.");
         track("waitlist_signup_failed", { error: "client_validation_failed", source });
         return;
