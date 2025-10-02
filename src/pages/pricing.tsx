@@ -9,7 +9,7 @@ import Head from "next/head";
 export default function PricingPage() {
   const router = useRouter();
 
-  const handleCTA = (tier: string) => {
+  const handleCTA = () => {
     router.push("/get-started").catch(() => {});
   };
 
@@ -103,7 +103,7 @@ export default function PricingPage() {
                     </div>
 
                     <Button
-                      onClick={() => handleCTA(tier.name)}
+                      onClick={handleCTA}
                       className="w-full min-h-[48px] min-w-[44px] mt-auto"
                       variant={tier.name === "Pilot" ? "primary" : "secondary"}
                     >

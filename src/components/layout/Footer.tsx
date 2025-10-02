@@ -12,9 +12,9 @@ export default function Footer() {
             <Link
               href="/"
               aria-label="Fairvia home"
-              className="mb-5 sm:mb-6 inline-flex items-center transition-transform hover:scale-105 active:scale-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-400 rounded-lg"
+              className="mb-5 sm:mb-6 inline-flex items-center focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-400 rounded-lg"
             >
-              <BrandLogo size="md" className="w-[140px] sm:w-[160px] lg:w-[180px] drop-shadow-lg" />
+              <BrandLogo size="md" variant="dark" />
             </Link>
             <p className="mb-5 sm:mb-6 max-w-sm text-base sm:text-lg leading-relaxed text-slate-200">
               Trust, speed, and clarity for every lease.
