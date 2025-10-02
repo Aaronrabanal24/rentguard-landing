@@ -46,19 +46,19 @@ export default function Header() {
             <BrandLogo priority className="drop-shadow-sm" />
           </Link>
           {/* Horizontal nav at sm+ */}
-          <nav className="hidden items-center gap-2.5 text-sm font-semibold sm:flex">
+          <nav className="hidden items-center gap-2.5 text-base font-semibold sm:flex">
             {navLinks.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="tap min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded-xl bg-slate-800/50 px-5 py-2.5 text-slate-300 font-semibold tracking-tight transition-all hover:bg-slate-700/50 hover:text-white hover:shadow-md hover:shadow-sky-500/20 active:scale-[0.98] border border-slate-700/50"
+                className="tap min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded-xl bg-slate-800/50 px-5 py-2.5 text-slate-200 font-semibold tracking-tight transition-all hover:bg-slate-700/50 hover:text-white hover:shadow-md hover:shadow-sky-500/20 active:scale-[0.98] border border-slate-700/50"
               >
                 {item.label}
               </Link>
             ))}
             <button
               onClick={handleCTA}
-              className="tap min-h-[44px] min-w-[44px] rounded-xl bg-gradient-to-r from-sky-500 via-cyan-500 to-purple-500 px-6 py-2.5 text-sm font-bold text-white tracking-tight shadow-lg shadow-sky-500/50 transition-all hover:shadow-xl hover:shadow-sky-500/70 hover:scale-[1.02] active:scale-[0.98] border border-sky-400/30"
+              className="tap min-h-[44px] min-w-[44px] rounded-xl bg-gradient-to-r from-sky-500 via-cyan-500 to-purple-500 px-6 py-2.5 text-base font-bold text-white tracking-tight shadow-lg shadow-sky-500/50 transition-all hover:shadow-xl hover:shadow-sky-500/70 hover:scale-[1.02] active:scale-[0.98] border border-sky-400/30"
             >
               Start free unit
             </button>
@@ -73,7 +73,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="tap min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded-xl bg-slate-800/50 px-4 py-2.5 text-sm font-semibold tracking-tight text-slate-300 transition-all hover:bg-slate-700/50 hover:text-white active:scale-[0.98] border border-slate-700/50"
+              className="tap min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded-xl bg-slate-800/50 px-4 py-2.5 text-base font-semibold tracking-tight text-slate-200 transition-all hover:bg-slate-700/50 hover:text-white active:scale-[0.98] border border-slate-700/50"
             >
               {link.label}
             </Link>

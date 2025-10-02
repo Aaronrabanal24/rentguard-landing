@@ -14,7 +14,7 @@
     text-rendering: optimizeLegibility;
   }
   body {
-    color: #0f172a;
+    color: #e2e8f0;
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
     background-attachment: fixed;
     min-height: 100%;
@@ -90,13 +90,13 @@
   p {
     max-width: 70ch;
     line-height: 1.75;
-    color: #475569;
+    color: #cbd5e1;
     font-feature-settings: "kern" 1;
   }
 
   strong, b {
     font-weight: 700;
-    color: #0f172a;
+    color: #f1f5f9;
   }
 
   button,

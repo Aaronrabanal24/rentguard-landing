@@ -94,7 +94,7 @@ export default function PricingPage() {
                                 clipRule="evenodd"
                               />
                             </svg>
-                            <span className={`text-sm ${feature.includes('Everything') ? 'font-semibold text-sky-300' : 'text-slate-300'}`}>
+                            <span className={`text-base ${feature.includes('Everything') ? 'font-semibold text-sky-300' : 'text-slate-200'}`}>
                               {feature}
                             </span>
                           </li>

@@ -16,15 +16,15 @@ export default function Footer() {
             >
               <BrandLogo size="md" className="w-[140px] sm:w-[160px] lg:w-[180px] drop-shadow-lg" />
             </Link>
-            <p className="mb-5 sm:mb-6 max-w-sm text-sm sm:text-base leading-relaxed text-slate-300">
+            <p className="mb-5 sm:mb-6 max-w-sm text-base sm:text-lg leading-relaxed text-slate-200">
               Trust, speed, and clarity for every lease.
             </p>
             <div className="space-y-2">
-              <p className="text-xs sm:text-sm text-slate-400 flex items-start gap-2">
+              <p className="text-sm sm:text-base text-slate-300 flex items-start gap-2">
                 <span className="text-emerald-400 flex-shrink-0">✓</span>
                 <span>California and Florida compliance built in.</span>
               </p>
-              <p className="text-xs sm:text-sm text-slate-400 flex items-start gap-2">
+              <p className="text-sm sm:text-base text-slate-300 flex items-start gap-2">
                 <span className="text-emerald-400 flex-shrink-0">✓</span>
                 <span>Exportable archive for all records.</span>
               </p>
@@ -32,8 +32,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-300 mb-3 sm:mb-4">Product</h4>
-            <ul className="space-y-2.5 sm:space-y-3 text-sm sm:text-base text-slate-400">
+            <h4 className="text-sm font-bold uppercase tracking-wider text-slate-200 mb-3 sm:mb-4">Product</h4>
+            <ul className="space-y-2.5 sm:space-y-3 text-base text-slate-300">
               <li>
                 <Link
                   href="/pricing"
@@ -62,8 +62,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-300 mb-3 sm:mb-4">For renters</h4>
-            <ul className="space-y-2.5 sm:space-y-3 text-sm sm:text-base text-slate-400">
+            <h4 className="text-sm font-bold uppercase tracking-wider text-slate-200 mb-3 sm:mb-4">For renters</h4>
+            <ul className="space-y-2.5 sm:space-y-3 text-base text-slate-300">
               <li>
                 <Link
                   href="/renter-portal"
@@ -76,8 +76,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-300 mb-3 sm:mb-4">Legal</h4>
-            <ul className="space-y-2.5 sm:space-y-3 text-sm sm:text-base text-slate-400">
+            <h4 className="text-sm font-bold uppercase tracking-wider text-slate-200 mb-3 sm:mb-4">Legal</h4>
+            <ul className="space-y-2.5 sm:space-y-3 text-base text-slate-300">
               <li>
                 <Link
                   href="/privacy"
@@ -98,8 +98,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-300 mb-3 sm:mb-4">Contact</h4>
-            <ul className="space-y-2.5 sm:space-y-3 text-sm sm:text-base text-slate-400">
+            <h4 className="text-sm font-bold uppercase tracking-wider text-slate-200 mb-3 sm:mb-4">Contact</h4>
+            <ul className="space-y-2.5 sm:space-y-3 text-base text-slate-300">
               <li>
                 <Link
                   href="/contact"
@@ -112,35 +112,35 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 sm:mt-12 flex flex-col gap-5 sm:gap-6 border-t border-white/20 pt-6 sm:pt-8 text-xs sm:text-sm text-slate-400">
+        <div className="mt-10 sm:mt-12 flex flex-col gap-5 sm:gap-6 border-t border-white/20 pt-6 sm:pt-8 text-sm sm:text-base text-slate-300">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
             <div className="flex-1">
-              <p className="leading-relaxed text-slate-400 mb-2">
+              <p className="leading-relaxed text-slate-300 mb-2">
                 &copy; {new Date().getFullYear()} {COMPANY.name}. All rights reserved.
               </p>
-              <p className="text-xs sm:text-sm leading-relaxed text-slate-500">
+              <p className="text-sm leading-relaxed text-slate-400">
                 Built for property operators • Made with care
               </p>
-              <p className="mt-3 text-xs leading-relaxed text-slate-500 max-w-2xl">
+              <p className="mt-3 text-sm leading-relaxed text-slate-400 max-w-2xl">
                 Deposits held by DFPI-licensed escrow partners including North American Title Company and Pacific Escrow Services
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-2 sm:gap-3">
               <Link
                 href="/privacy"
-                className="tap inline-flex items-center rounded-full border border-white/20 bg-white/5 px-4 py-2 text-xs font-semibold text-white transition-all hover:border-white/40 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-400"
+                className="tap inline-flex items-center rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition-all hover:border-white/40 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-400"
               >
                 Privacy
               </Link>
               <Link
                 href="/terms"
-                className="tap inline-flex items-center rounded-full border border-white/20 bg-white/5 px-4 py-2 text-xs font-semibold text-white transition-all hover:border-white/40 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-400"
+                className="tap inline-flex items-center rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition-all hover:border-white/40 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-400"
               >
                 Terms
               </Link>
               <Link
                 href="/security"
-                className="tap inline-flex items-center rounded-full border border-white/20 bg-white/5 px-4 py-2 text-xs font-semibold text-white transition-all hover:border-white/40 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-400"
+                className="tap inline-flex items-center rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition-all hover:border-white/40 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-400"
               >
                 Security
               </Link>

@@ -139,7 +139,7 @@ export default function FeaturesPage() {
                   >
                     <div className="text-4xl mb-4">{feature.icon}</div>
                     <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
-                    <p className="text-sm text-slate-300 leading-relaxed">{feature.description}</p>
+                    <p className="text-base text-slate-200 leading-relaxed">{feature.description}</p>
                   </motion.div>
                 ))}
               </div>
@@ -170,7 +170,7 @@ export default function FeaturesPage() {
                   >
                     <div className="text-4xl mb-4">{feature.icon}</div>
                     <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
-                    <p className="text-sm text-slate-300 leading-relaxed">{feature.description}</p>
+                    <p className="text-base text-slate-200 leading-relaxed">{feature.description}</p>
                   </motion.div>
                 ))}
               </div>
