@@ -43,7 +43,7 @@ export default function Header() {
             aria-label="Fairvia home"
             className="inline-flex items-center transition-all hover:scale-[1.02] hover:drop-shadow-md active:scale-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-400 rounded-lg"
           >
-            <BrandLogo priority className="drop-shadow-sm" />
+            <BrandLogo size="sm" className="drop-shadow-sm" />
           </Link>
           {/* Horizontal nav at sm+ */}
           <nav className="hidden items-center gap-2.5 text-base font-semibold sm:flex">
