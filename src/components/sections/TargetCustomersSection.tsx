@@ -56,19 +56,19 @@ export default function TargetCustomersSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+          <h2 className="text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl px-4">
             Built for property operators at every scale
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-300">
+          <p className="mx-auto mt-6 max-w-2xl text-lg sm:text-xl text-slate-200 font-medium px-4">
             From independent landlords to enterprise portfolios — we solve the same core problems
           </p>
         </motion.div>
 
-        <div className="mt-16 grid gap-8 lg:grid-cols-2">
+        <div className="mt-12 sm:mt-16 grid gap-6 sm:gap-8 lg:grid-cols-2">
           {CUSTOMER_SEGMENTS.map((segment, index) => (
             <motion.div
               key={segment.title}
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm"
+              className="group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-10 backdrop-blur-sm hover:scale-105 transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -78,26 +78,26 @@ export default function TargetCustomersSection() {
               <div className={`absolute inset-0 bg-gradient-to-br ${segment.color} opacity-0 transition-opacity group-hover:opacity-10`} />
 
               <div className="relative">
-                <div className="flex items-start gap-4">
-                  <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-white/10 text-4xl">
+                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 text-center sm:text-left">
+                  <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-full bg-white/10 text-5xl sm:text-4xl">
                     {segment.icon}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold">{segment.title}</h3>
-                    <p className="mt-1 text-slate-300">{segment.subtitle}</p>
-                    <p className="mt-2 text-sm font-medium text-slate-400">{segment.profile}</p>
+                    <h3 className="text-2xl sm:text-3xl font-black">{segment.title}</h3>
+                    <p className="mt-2 text-base sm:text-lg text-slate-200 font-medium">{segment.subtitle}</p>
+                    <p className="mt-3 text-sm sm:text-base font-semibold text-slate-300">{segment.profile}</p>
                   </div>
                 </div>
 
-                <div className="mt-6 space-y-6">
+                <div className="mt-8 space-y-8">
                   <div>
-                    <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-400">
+                    <h4 className="text-base font-bold uppercase tracking-wider text-slate-300 mb-4">
                       Pain Points
                     </h4>
-                    <ul className="mt-3 space-y-2">
+                    <ul className="space-y-3">
                       {segment.painPoints.map((point) => (
-                        <li key={point} className="flex items-start gap-2 text-sm text-slate-300">
-                          <span className="mt-1 text-rose-400">✗</span>
+                        <li key={point} className="flex items-start gap-3 text-base sm:text-lg text-slate-200">
+                          <span className="mt-1 text-rose-400 text-xl">✗</span>
                           <span>{point}</span>
                         </li>
                       ))}
@@ -105,13 +105,13 @@ export default function TargetCustomersSection() {
                   </div>
 
                   <div>
-                    <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-400">
+                    <h4 className="text-base font-bold uppercase tracking-wider text-slate-300 mb-4">
                       Buying Triggers
                     </h4>
-                    <ul className="mt-3 space-y-2">
+                    <ul className="space-y-3">
                       {segment.triggers.map((trigger) => (
-                        <li key={trigger} className="flex items-start gap-2 text-sm text-slate-300">
-                          <span className="mt-1 text-emerald-400">→</span>
+                        <li key={trigger} className="flex items-start gap-3 text-base sm:text-lg text-slate-200">
+                          <span className="mt-1 text-emerald-400 text-xl">→</span>
                           <span>{trigger}</span>
                         </li>
                       ))}
@@ -124,13 +124,13 @@ export default function TargetCustomersSection() {
         </div>
 
         <motion.div
-          className="mt-12 rounded-2xl border border-white/10 bg-white/5 p-8 text-center backdrop-blur-sm"
+          className="mt-12 sm:mt-16 rounded-2xl sm:rounded-3xl border-2 border-sky-500/30 bg-gradient-to-br from-sky-500/10 to-purple-500/10 p-8 sm:p-12 text-center backdrop-blur-sm shadow-xl shadow-sky-500/10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <p className="text-lg font-medium text-slate-200">
+          <p className="text-xl sm:text-2xl font-black text-white leading-relaxed px-4">
             We&apos;re not replacing your PMS. We&apos;re the trust layer between your listings, your owners, and your renters.
           </p>
         </motion.div>
