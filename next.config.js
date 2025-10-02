@@ -40,13 +40,16 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      { source: "/market", destination: "/why-fairvia", permanent: true },
-      { source: "/positioning", destination: "/why-fairvia", permanent: true },
-      { source: "/momentum", destination: "/why-fairvia", permanent: true },
+      { source: "/market", destination: "/", permanent: true },
+      { source: "/positioning", destination: "/about", permanent: true },
+      { source: "/momentum", destination: "/", permanent: true },
+      { source: "/why-fairvia", destination: "/about", permanent: true },
       { source: "/workflows", destination: "/features", permanent: true },
       { source: "/benefits", destination: "/features", permanent: true },
       { source: "/legal", destination: "/features", permanent: true },
       { source: "/conversion", destination: "/get-started", permanent: true },
+      { source: "/signup", destination: "/get-started", permanent: true },
+      { source: "/join", destination: "/get-started", permanent: true },
     ];
   },
 };
