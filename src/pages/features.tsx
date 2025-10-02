@@ -2,7 +2,8 @@ import Head from "next/head";
 import { Footer } from "@/components";
 import Header from "@/components/layout/Header";
 import { Button } from "@/components/ui/Button";
-import { featuresContent } from "@/data/content";
+import { pricingContent } from "@/data/content";
+import { motion } from "@/lib/motion";
 import { useRouter } from "next/router";
 
 export default function FeaturesPage() {
@@ -45,18 +46,36 @@ export default function FeaturesPage() {
                 </p>
               </div>
 
-              <div className="mt-16 grid gap-12 lg:grid-cols-3">
-                {featuresContent.tiers.map((tier) => (
-                  <div
+              <div className="mt-16 grid gap-8 lg:grid-cols-3">
+                {pricingContent.tiers.map((tier, index) => (
+                  <motion.div
                     key={tier.name}
-                    className="rounded-2xl bg-white p-8 shadow-lg ring-1 ring-slate-200"
+                    className={`rounded-2xl bg-white p-8 shadow-lg ring-2 ${
+                      tier.name === "SMB Pro" ? "ring-sky-500 scale-105" : "ring-slate-200"
+                    }`}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
                   >
+                    {tier.name === "SMB Pro" && (
+                      <div className="mb-4 -mt-4 -mx-4 bg-sky-500 text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-t-xl text-center">
+                        Most Popular
+                      </div>
+                    )}
                     <h2 className="text-2xl font-bold text-slate-900">{tier.name}</h2>
-                    <ul className="mt-8 space-y-4">
-                      {tier.items.map((item) => (
+                    <div className="mt-2 mb-6">
+                      <div className="text-3xl font-bold text-slate-900">{tier.price}</div>
+                      {tier.priceDetail && (
+                        <div className="text-sm text-slate-500 mt-1">{tier.priceDetail}</div>
+                      )}
+                      <p className="text-sm text-slate-600 mt-2">{tier.description}</p>
+                    </div>
+                    <ul className="space-y-3">
+                      {tier.features?.map((item) => (
                         <li key={item} className="flex items-start gap-3">
                           <svg
-                            className="mt-1 h-5 w-5 flex-shrink-0 text-sky-500"
+                            className="mt-0.5 h-5 w-5 flex-shrink-0 text-sky-500"
                             fill="currentColor"
                             viewBox="0 0 20 20"
                           >
@@ -66,11 +85,13 @@ export default function FeaturesPage() {
                               clipRule="evenodd"
                             />
                           </svg>
-                          <span className="text-slate-700">{item}</span>
+                          <span className={`text-sm ${item.includes('Everything') ? 'font-semibold text-slate-700' : 'text-slate-600'}`}>
+                            {item}
+                          </span>
                         </li>
                       ))}
                     </ul>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
 

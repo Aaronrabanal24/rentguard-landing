@@ -1,33 +1,33 @@
 export const heroContent = {
-  eyebrow: "California Deposit Compliance",
-  headline: "Every Lease, Handled with Trust, Speed & Clarity",
+  eyebrow: "Leasing & Deposit Operations Layer",
+  headline: "Fill Units Faster, Handle Deposits Cleanly, Prove Your Work",
   subheadline:
-    "Escrow-backed, compliant, zero spreadsheets. From smart links to deposit release, Fairvia keeps you protected.",
-  microPromise: "Set up in 5 minutes. Free for your first unit.",
-  nextSteps: "Set up your unit, invite your tenant, and start the deposit timeline — all in under 5 minutes.",
+    "A lightweight layer that connects listings, leasing workflows, and deposit processes into one smart, shareable unit link. No heavy PMS. No complex onboarding.",
+  microPromise: "Start free. First unit forever. Setup in 5 minutes.",
+  nextSteps: "Create your smart unit link, track every inquiry, and handle deposits with CA-compliant workflows — all in one timeline.",
   primaryCta: "Start free unit",
   secondaryCta: "See how it works",
-  trustLine: "🔒 Escrow-backed & DFPI-licensed",
+  trustLine: "Trusted by property teams • CA AB 2801 Compliant",
   proofBar: [
     { icon: "🔗", label: "Smart unit link" },
-    { icon: "✓", label: "Trust and precheck" },
-    { icon: "📊", label: "Shared timeline" },
-    { icon: "📁", label: "Exportable archive" },
+    { icon: "✓", label: "Lead tracking" },
+    { icon: "📊", label: "ROI proof" },
+    { icon: "📁", label: "Compliant deposits" },
   ],
 } as const;
 
 export const painPoints = [
   {
-    pain: "Deposit disputes cost money and time",
-    stat: "Average dispute: $800 + 12 hours",
+    pain: "Vacant units cost thousands in lost rent",
+    stat: "Slow replies = missed leads = $$$",
   },
   {
-    pain: "Tenants push back without documentation",
-    stat: "40% of deductions challenged",
+    pain: "Owners demand proof of leasing effort",
+    stat: "Spreadsheets don't cut it",
   },
   {
-    pain: "AB 2801 compliance deadlines missed",
-    stat: "21-day window = legal liability",
+    pain: "Deposits mishandled = disputes & delays",
+    stat: "Legal risk + reputation damage",
   },
 ] as const;
 
@@ -132,26 +132,66 @@ export const pricingContent = {
     {
       name: "Starter",
       price: "Free",
-      priceDetail: "",
-      description: "Free first unit",
+      priceDetail: "Forever",
+      description: "Perfect for trying Fairvia",
       cta: "Start free unit",
+      features: [
+        "Smart unit link with QR code",
+        "Trust and precheck page",
+        "Timeline view from inquiry to move-out",
+        "ROI board and owner share link",
+        "Exportable summary and archive",
+      ],
     },
     {
       name: "SMB Pro",
       price: "$49-$149",
       priceDetail: "per month",
-      description: "For small property managers",
+      description: "For active property managers (3-100 units)",
       cta: "Get started",
+      features: [
+        "Everything in Starter, plus:",
+        "Unlimited units",
+        "Deposit workflow with AB 2801 compliance",
+        "Itemized deduction builder with receipts",
+        "Countdown timers for deposit deadlines",
+        "Weekly owner update emails",
+        "CSV import and export",
+      ],
     },
     {
       name: "Enterprise",
       price: "$1",
-      priceDetail: "per unit per month + platform + onboarding",
-      description: "For larger portfolios",
+      priceDetail: "per unit/month + platform fee",
+      description: "For large portfolios (regional/national)",
       cta: "Contact sales",
+      features: [
+        "Everything in Pro, plus:",
+        "Role-based permissions (org, region, unit)",
+        "SSO and directory sync (Okta, AD)",
+        "Multi-state template library (CA, TX, NY, FL, IL)",
+        "Immutable audit trail",
+        "Legal hold and archive export",
+        "Event API and webhooks",
+      ],
     },
   ],
 } as const;
+
+export const targetCustomers = [
+  {
+    category: "SMB Landlords",
+    description: "Independent landlords with 3-20 units. Small PMs with 10-100 units. One owner + lean team.",
+    painPoints: ["Slow leasing", "No proof for owners", "Manual deposit tracking"],
+    value: "Free first unit. Fast ROI board. Simple setup.",
+  },
+  {
+    category: "Enterprise Portfolios",
+    description: "Regional and national portfolios. Central ops + onsite teams. Existing PMS (Yardi, MRI, AppFolio).",
+    painPoints: ["No leasing visibility", "Multi-state compliance", "Performance tracking"],
+    value: "Role permissions. Multi-state templates. API integration.",
+  },
+] as const;
 
 export const valueProps = [
   {
@@ -172,6 +212,34 @@ export const trustBadges = {
   escrowPartners: ["North American Title Company", "Pacific Escrow Services"],
   compliance: ["DFPI Licensed", "AB 2801 Compliant", "SOC 2 Type II"],
 } as const;
+
+export const competitiveAdvantages = [
+  {
+    title: "Zero-training interface",
+    description: "Works immediately, no onboarding needed",
+    icon: "⚡",
+  },
+  {
+    title: "Complements your PMS",
+    description: "No need to replace existing systems",
+    icon: "🔗",
+  },
+  {
+    title: "Built-in compliance",
+    description: "State-specific rules, not bolted on",
+    icon: "✅",
+  },
+  {
+    title: "Works everywhere",
+    description: "Smart links across all listing platforms",
+    icon: "🌐",
+  },
+  {
+    title: "Owner proof, instantly",
+    description: "ROI reporting without heavy dashboards",
+    icon: "📊",
+  },
+] as const;
 
 export const faqContent = [
   {
