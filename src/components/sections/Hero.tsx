@@ -73,7 +73,7 @@ export default function Hero() {
               {/* Secondary CTA as text link (low visual competition) */}
               <button
                 onClick={handleSecondaryCTA}
-                className="min-h-[48px] w-full sm:w-auto px-4 text-base font-semibold text-slate-700 underline-offset-4 hover:text-slate-900 hover:underline transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-400 rounded-lg"
+                className="min-h-[48px] w-full sm:w-auto px-4 text-base font-semibold text-slate-200 underline-offset-4 hover:text-white hover:underline transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-400 rounded-lg"
                 aria-label="Learn how Fairvia works"
               >
                 {heroContent.secondaryCta}
@@ -104,9 +104,9 @@ export default function Hero() {
             {/* Proof bar - Above the fold on 390px-wide phones */}
             <div className="grid grid-cols-2 gap-3 sm:gap-4 sm:grid-cols-4" role="list" aria-label="Key features">
               {heroContent.proofBar.map((item) => (
-                <div key={item.label} className="flex items-center gap-2 bg-slate-50/50 rounded-lg p-2 sm:bg-transparent sm:p-0" role="listitem">
+                <div key={item.label} className="flex items-center gap-2 bg-slate-800/50 border border-slate-700/50 rounded-lg p-2 sm:bg-transparent sm:border-0 sm:p-0" role="listitem">
                   <span className="text-xl sm:text-2xl flex-shrink-0" aria-hidden="true">{item.icon}</span>
-                  <span className="text-xs sm:text-sm font-semibold text-slate-700 leading-tight">{item.label}</span>
+                  <span className="text-xs sm:text-sm font-semibold text-slate-200 leading-tight">{item.label}</span>
                 </div>
               ))}
             </div>
