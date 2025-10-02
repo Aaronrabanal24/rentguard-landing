@@ -32,22 +32,22 @@ export default function PricingPage() {
       <div className="min-h-full relative">
         <Header />
 
-        <main id="main-content" className="safe-bot pb-32" style={{ zIndex: 1 }}>
+        <main id="main-content" className="safe-bot pb-20 space-y-16 sm:space-y-20" style={{ zIndex: 1 }}>
           {/* Hero Section */}
-          <section className="bg-gradient-to-b from-slate-900/95 to-transparent py-16 relative">
+          <section className="bg-gradient-to-b from-slate-900/95 to-transparent py-20 sm:py-24 relative">
             <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(14,165,233,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(14,165,233,0.1)_1px,transparent_1px)] bg-[size:40px_40px]" />
             <div className="mx-auto max-w-4xl px-6 text-center relative">
-              <h1 className="text-4xl font-bold sm:text-5xl mb-4 bg-gradient-to-r from-white via-sky-100 to-purple-200 bg-clip-text text-transparent">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black mb-6 bg-gradient-to-r from-white via-sky-100 to-purple-200 bg-clip-text text-transparent leading-tight">
                 Simple, Transparent Pricing
               </h1>
-              <p className="mt-4 text-lg leading-relaxed text-slate-300 max-w-3xl mx-auto">
+              <p className="mt-6 text-xl sm:text-2xl leading-relaxed text-slate-200 max-w-3xl mx-auto font-medium">
                 Start free. Join our pilot at $99/month. No hidden fees. Cancel anytime.
               </p>
             </div>
           </section>
 
           {/* Pricing Tiers */}
-          <section className="bg-transparent py-16">
+          <section className="bg-transparent py-4">
             <div className="mx-auto max-w-7xl px-6">
               <div className="grid gap-8 md:grid-cols-3">
                 {pricingContent.tiers.map((tier, index) => (

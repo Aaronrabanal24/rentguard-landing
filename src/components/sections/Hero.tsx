@@ -15,7 +15,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative overflow-hidden bg-gradient-to-b from-slate-900/95 via-slate-800/90 to-transparent px-4 py-12 sm:px-6 sm:py-16 lg:py-24"
+      className="relative overflow-hidden bg-gradient-to-b from-slate-900/95 via-slate-800/90 to-transparent px-4 py-16 sm:px-6 sm:py-20 lg:py-28 xl:py-32"
       aria-label="Hero section"
       style={{ zIndex: 1 }}
     >
@@ -26,7 +26,7 @@ export default function Hero() {
 
       <div className="mx-auto max-w-7xl">
         {/* F-pattern layout: left-aligned text block with generous white space */}
-        <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
+        <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 xl:gap-20 items-center">
           {/* Left column: Text content */}
           <div className="flex flex-col justify-center">
             {/* Eyebrow */}
@@ -39,12 +39,12 @@ export default function Hero() {
             </div>
 
             {/* H1 - Bold, top-left eye entry point */}
-            <h1 className="mb-4 sm:mb-6 text-4xl font-bold tracking-tight bg-gradient-to-r from-white via-sky-100 to-purple-200 bg-clip-text text-transparent sm:text-5xl lg:text-6xl">
+            <h1 className="mb-5 sm:mb-7 text-4xl font-black tracking-tight bg-gradient-to-r from-white via-sky-100 to-purple-200 bg-clip-text text-transparent sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.1]">
               {heroContent.headline}
             </h1>
 
             {/* Subheadline - 4.5:1 contrast ratio */}
-            <p className="mb-6 sm:mb-8 text-base sm:text-lg lg:text-xl leading-relaxed text-slate-300 max-w-2xl">
+            <p className="mb-7 sm:mb-9 text-lg sm:text-xl lg:text-2xl leading-relaxed text-slate-200 max-w-2xl font-medium">
               {heroContent.subheadline}
             </p>
 
@@ -59,21 +59,21 @@ export default function Hero() {
               </p>
             </div>
 
-            {/* CTA Buttons - Primary action dominant, secondary low-contrast */}
-            <div className="mb-6 sm:mb-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+            {/* CTA Buttons - Enhanced structure with better prominence */}
+            <div className="mb-8 sm:mb-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-5">
               <Button
                 size="lg"
                 onClick={handlePrimaryCTA}
-                className="w-full sm:w-auto shadow-lg hover:shadow-xl"
+                className="w-full sm:w-auto px-8 py-4 text-lg font-bold shadow-2xl hover:shadow-[0_0_40px_rgba(56,189,248,0.5)] hover:scale-105 transition-all duration-300"
                 aria-label="Start your free unit today"
               >
-                {heroContent.primaryCta}
+                {heroContent.primaryCta} →
               </Button>
 
-              {/* Secondary CTA as text link (low visual competition) */}
+              {/* Secondary CTA with improved visibility */}
               <button
                 onClick={handleSecondaryCTA}
-                className="min-h-[48px] w-full sm:w-auto px-4 text-base font-semibold text-slate-200 underline-offset-4 hover:text-white hover:underline transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-400 rounded-lg"
+                className="min-h-[48px] w-full sm:w-auto px-6 py-3 text-base font-bold text-slate-100 bg-slate-800/50 border-2 border-slate-700/50 rounded-xl hover:bg-slate-700/50 hover:border-sky-500/50 hover:text-white transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-400"
                 aria-label="Learn how Fairvia works"
               >
                 {heroContent.secondaryCta}
@@ -112,19 +112,24 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right column: Hero mockup */}
+          {/* Right column: Hero mockup - Enhanced for mobile */}
           <div className="flex items-center justify-center lg:justify-end order-first lg:order-last">
-            <div className="relative w-full max-w-lg">
-              <Image
-                src="/visuals/hero-dashboard.svg"
-                alt="Timeline view showing deposit workflow from received to return sent with compliance tracking"
-                width={600}
-                height={450}
-                priority
-                loading="eager"
-                className="h-auto w-full drop-shadow-2xl rounded-2xl"
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
-              />
+            <div className="relative w-full max-w-lg lg:max-w-xl">
+              {/* Glow effect behind image */}
+              <div className="absolute inset-0 bg-gradient-to-br from-sky-500/20 to-purple-500/20 blur-3xl opacity-50 animate-pulse" aria-hidden="true" />
+
+              <div className="relative">
+                <Image
+                  src="/visuals/hero-dashboard.svg"
+                  alt="Timeline view showing deposit workflow from received to return sent with compliance tracking"
+                  width={600}
+                  height={450}
+                  priority
+                  loading="eager"
+                  className="h-auto w-full drop-shadow-2xl rounded-2xl ring-1 ring-white/10 transition-transform duration-500 hover:scale-105"
+                  sizes="(max-width: 640px) 95vw, (max-width: 1024px) 50vw, 600px"
+                />
+              </div>
             </div>
           </div>
         </div>

@@ -68,7 +68,7 @@ export default function Home() {
           <Hero />
         </motion.div>
 
-        <main id="main-content" className="safe-bot pb-32">
+        <main id="main-content" className="safe-bot pb-20 space-y-16 sm:space-y-20 lg:space-y-24">
           <PainPointsSection />
           <TargetCustomersSection />
           <HowItWorksSection />
