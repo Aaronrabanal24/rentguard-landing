@@ -4,8 +4,6 @@ import type { WaitlistData } from "@/lib/types";
 import { track } from "@/lib/tracking";
 import { cn } from "@/lib/utils";
 
-type FormState = Omit<WaitlistData, "userType"> & { userType: WaitlistData["userType"] | "" };
-
 interface WaitlistFormProps {
   defaultRole?: "renter" | "landlord";
   source?: string;
@@ -13,17 +11,16 @@ interface WaitlistFormProps {
 }
 
 export default function WaitlistForm({
-  defaultRole,
+  defaultRole = "landlord",
   source = "signup_section",
   ctaLabel = "Join the waitlist",
 }: WaitlistFormProps) {
-  const [formData, setFormData] = useState<FormState>({
+  const [formData, setFormData] = useState({
     email: "",
     name: "",
-    userType: defaultRole || "",
     location: "",
   });
-  const [focusedField, setFocusedField] = useState<keyof FormState | null>(null);
+  const [focusedField, setFocusedField] = useState<string | null>(null);
 
   const { isSubmitting, isSubmitted, error, submitWaitlist } = useWaitlist({ source });
 
@@ -33,12 +30,12 @@ export default function WaitlistForm({
     await submitWaitlist({
       email: formData.email,
       name: formData.name,
-      userType: defaultRole || "landlord", // Use the defaultRole prop or fallback to landlord
+      userType: defaultRole,
       location: formData.location,
     });
   };
 
-  const handleInputChange = (field: keyof FormState, value: string) => {
+  const handleInputChange = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
     track("waitlist_field_interaction", { field, hasValue: value.length > 0 });
   };
@@ -62,9 +59,9 @@ export default function WaitlistForm({
     <form onSubmit={handleSubmit} className="mx-auto max-w-md space-y-5 text-left">
       <div className="space-y-3">
         {[
-          { name: "name" as const, placeholder: "Your full name", type: "text", label: "Name" },
-          { name: "email" as const, placeholder: "you@example.com", type: "email", label: "Email" },
-          { name: "location" as const, placeholder: "How many units do you manage?", type: "text", label: "Units" },
+          { name: "name", placeholder: "Your full name", type: "text", label: "Name" },
+          { name: "email", placeholder: "you@example.com", type: "email", label: "Email" },
+          { name: "location", placeholder: "City or region", type: "text", label: "Location" },
         ].map((field) => (
           <div key={field.name} className="relative space-y-2">
             <label htmlFor={field.name} className="text-sm font-medium text-slate-700">
@@ -74,7 +71,7 @@ export default function WaitlistForm({
               type={field.type}
               id={field.name}
               placeholder={field.placeholder}
-              value={formData[field.name]}
+              value={formData[field.name as keyof typeof formData]}
               onChange={(e) => handleInputChange(field.name, e.target.value)}
               onFocus={() => setFocusedField(field.name)}
               onBlur={() => setFocusedField(null)}
@@ -92,33 +89,6 @@ export default function WaitlistForm({
             ) : null}
           </div>
         ))}
-      </div>
-
-      <div className="space-y-3">
-        <div className="relative space-y-2">
-          <label htmlFor="userType" className="text-sm font-medium text-slate-700">
-            Link to listing (optional)
-          </label>
-          <input
-            type="url"
-            placeholder="https://..."
-            value={formData.userType}
-            onChange={(e) => handleInputChange("userType", e.target.value)}
-            onFocus={() => setFocusedField("userType")}
-            onBlur={() => setFocusedField(null)}
-            id="userType"
-            className={cn(
-              "h-12 w-full rounded-xl border px-4 text-slate-900 shadow-sm transition-all",
-              "focus:outline-none focus:ring-4",
-              focusedField === "userType"
-                ? "border-sky-400 bg-sky-50/50 ring-sky-200"
-                : "border-slate-200 bg-white hover:border-slate-300"
-            )}
-          />
-          {focusedField === "userType" ? (
-            <div className="absolute -right-2 top-1/2 h-3 w-3 -translate-y-1/2 rounded-full bg-sky-500 animate-pulse" />
-          ) : null}
-        </div>
       </div>
 
       {error ? <div className="rounded-lg bg-rose-500/10 p-3 text-center text-sm text-rose-500">{error}</div> : null}
