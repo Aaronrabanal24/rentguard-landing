@@ -31,17 +31,18 @@ export default function FeaturesPage() {
         <meta property="og:url" content="https://fairvia.com/features" />
       </Head>
 
-      <div className="min-h-full bg-slate-50 text-slate-900">
+      <div className="min-h-full relative">
         <Header />
 
-        <main id="main-content" className="safe-bot pb-32">
-          <section className="relative overflow-hidden bg-gradient-to-b from-blue-50 to-white px-6 py-16 sm:py-20">
-            <div className="mx-auto max-w-6xl">
+        <main id="main-content" className="safe-bot pb-32" style={{ zIndex: 1 }}>
+          <section className="relative overflow-hidden bg-gradient-to-b from-slate-900/95 to-transparent px-6 py-16 sm:py-20">
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(14,165,233,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(14,165,233,0.1)_1px,transparent_1px)] bg-[size:40px_40px]" />
+            <div className="mx-auto max-w-6xl relative">
               <div className="text-left max-w-3xl">
-                <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+                <h1 className="text-4xl font-bold tracking-tight bg-gradient-to-r from-white via-sky-100 to-purple-200 bg-clip-text text-transparent sm:text-5xl">
                   Features
                 </h1>
-                <p className="mt-6 text-lg leading-relaxed text-slate-700">
+                <p className="mt-6 text-lg leading-relaxed text-slate-300">
                   Everything you need to manage listings, leasing, and deposits with trust, speed, and clarity.
                 </p>
               </div>
@@ -50,32 +51,32 @@ export default function FeaturesPage() {
                 {pricingContent.tiers.map((tier, index) => (
                   <motion.div
                     key={tier.name}
-                    className={`rounded-2xl bg-white p-8 shadow-lg ring-2 ${
-                      tier.name === "SMB Pro" ? "ring-sky-500 scale-105" : "ring-slate-200"
+                    className={`rounded-2xl bg-slate-800/50 backdrop-blur-sm p-8 shadow-xl ring-2 ${
+                      tier.name === "Pilot" ? "ring-sky-500 scale-105" : "ring-slate-700/50"
                     }`}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
                   >
-                    {tier.name === "SMB Pro" && (
-                      <div className="mb-4 -mt-4 -mx-4 bg-sky-500 text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-t-xl text-center">
-                        Most Popular
+                    {tier.name === "Pilot" && (
+                      <div className="mb-4 -mt-4 -mx-4 bg-gradient-to-r from-sky-500 to-purple-500 text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-t-xl text-center">
+                        Limited Spots
                       </div>
                     )}
-                    <h2 className="text-2xl font-bold text-slate-900">{tier.name}</h2>
+                    <h2 className="text-2xl font-bold bg-gradient-to-r from-white to-sky-200 bg-clip-text text-transparent">{tier.name}</h2>
                     <div className="mt-2 mb-6">
-                      <div className="text-3xl font-bold text-slate-900">{tier.price}</div>
+                      <div className="text-3xl font-bold bg-gradient-to-r from-white to-sky-200 bg-clip-text text-transparent">{tier.price}</div>
                       {tier.priceDetail && (
-                        <div className="text-sm text-slate-500 mt-1">{tier.priceDetail}</div>
+                        <div className="text-sm text-slate-400 mt-1">{tier.priceDetail}</div>
                       )}
-                      <p className="text-sm text-slate-600 mt-2">{tier.description}</p>
+                      <p className="text-sm text-slate-300 mt-2">{tier.description}</p>
                     </div>
                     <ul className="space-y-3">
                       {tier.features?.map((item) => (
                         <li key={item} className="flex items-start gap-3">
                           <svg
-                            className="mt-0.5 h-5 w-5 flex-shrink-0 text-sky-500"
+                            className="mt-0.5 h-5 w-5 flex-shrink-0 text-sky-400"
                             fill="currentColor"
                             viewBox="0 0 20 20"
                           >
@@ -85,7 +86,7 @@ export default function FeaturesPage() {
                               clipRule="evenodd"
                             />
                           </svg>
-                          <span className={`text-sm ${item.includes('Everything') ? 'font-semibold text-slate-700' : 'text-slate-600'}`}>
+                          <span className={`text-sm ${item.includes('Everything') ? 'font-semibold text-sky-300' : 'text-slate-300'}`}>
                             {item}
                           </span>
                         </li>

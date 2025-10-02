@@ -46,10 +46,10 @@ export default function HowItWorksSection() {
   };
 
   return (
-    <section className="relative bg-white py-16 sm:py-24" id="how-it-works">
+    <section className="relative bg-transparent py-16 sm:py-24" id="how-it-works" style={{ zIndex: 1 }}>
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="text-left max-w-3xl">
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight bg-gradient-to-r from-white via-sky-100 to-cyan-200 bg-clip-text text-transparent sm:text-4xl">
             How it works
           </h2>
         </div>
@@ -65,18 +65,18 @@ export default function HowItWorksSection() {
               transition={{ duration: 0.45, ease: "easeOut" }}
             >
               <div>
-                <h3 className="text-2xl font-bold text-slate-900">
+                <h3 className="text-2xl font-bold bg-gradient-to-r from-white to-sky-200 bg-clip-text text-transparent">
                   {section.title}
                 </h3>
-                <p className="mt-2 text-lg text-slate-600">{section.description}</p>
-                <div className="mt-3 inline-flex items-center rounded-full bg-emerald-50 border border-emerald-200 px-3 py-1">
-                  <span className="text-sm font-semibold text-emerald-800">→ {section.benefit}</span>
+                <p className="mt-2 text-lg text-slate-300">{section.description}</p>
+                <div className="mt-3 inline-flex items-center rounded-full bg-emerald-500/20 border border-emerald-400/30 backdrop-blur-sm px-3 py-1">
+                  <span className="text-sm font-semibold text-emerald-300">→ {section.benefit}</span>
                 </div>
                 <ul className="mt-6 space-y-3">
                   {section.items.map((item) => (
                     <li key={item} className="flex items-start gap-3">
                       <svg
-                        className="mt-1 h-5 w-5 flex-shrink-0 text-sky-500"
+                        className="mt-1 h-5 w-5 flex-shrink-0 text-sky-400"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                       >
@@ -86,7 +86,7 @@ export default function HowItWorksSection() {
                           clipRule="evenodd"
                         />
                       </svg>
-                      <span className="text-slate-700">{item}</span>
+                      <span className="text-slate-300">{item}</span>
                     </li>
                   ))}
                 </ul>

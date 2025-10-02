@@ -15,11 +15,12 @@ export default function Hero() {
 
   return (
     <section
-      className="relative overflow-hidden bg-gradient-to-b from-blue-50/80 via-sky-50/40 to-white px-4 py-12 sm:px-6 sm:py-16 lg:py-24"
+      className="relative overflow-hidden bg-gradient-to-b from-slate-900/95 via-slate-800/90 to-transparent px-4 py-12 sm:px-6 sm:py-16 lg:py-24"
       aria-label="Hero section"
+      style={{ zIndex: 1 }}
     >
       <div
-        className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"
+        className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,rgba(14,165,233,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(14,165,233,0.1)_1px,transparent_1px)] bg-[size:40px_40px]"
         aria-hidden="true"
       />
 
@@ -30,7 +31,7 @@ export default function Hero() {
           <div className="flex flex-col justify-center">
             {/* Eyebrow */}
             <div
-              className="mb-4 sm:mb-6 inline-flex w-fit items-center rounded-full bg-blue-100 border border-blue-200 px-4 py-2 text-sm font-semibold text-blue-900"
+              className="mb-4 sm:mb-6 inline-flex w-fit items-center rounded-full bg-gradient-to-r from-sky-500/20 to-purple-500/20 border border-sky-400/30 backdrop-blur-sm px-4 py-2 text-sm font-semibold text-sky-300"
               role="text"
               aria-label={`Category: ${heroContent.eyebrow}`}
             >
@@ -38,22 +39,22 @@ export default function Hero() {
             </div>
 
             {/* H1 - Bold, top-left eye entry point */}
-            <h1 className="mb-4 sm:mb-6 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+            <h1 className="mb-4 sm:mb-6 text-4xl font-bold tracking-tight bg-gradient-to-r from-white via-sky-100 to-purple-200 bg-clip-text text-transparent sm:text-5xl lg:text-6xl">
               {heroContent.headline}
             </h1>
 
             {/* Subheadline - 4.5:1 contrast ratio */}
-            <p className="mb-6 sm:mb-8 text-base sm:text-lg lg:text-xl leading-relaxed text-slate-600 max-w-2xl">
+            <p className="mb-6 sm:mb-8 text-base sm:text-lg lg:text-xl leading-relaxed text-slate-300 max-w-2xl">
               {heroContent.subheadline}
             </p>
 
             {/* Micro-promise / Onboarding line */}
-            <div className="mb-5 sm:mb-6 rounded-xl bg-gradient-to-br from-sky-50 to-sky-100/50 border border-sky-200 px-4 sm:px-5 py-3.5 sm:py-4 shadow-sm">
-              <p className="text-sm sm:text-base font-semibold text-sky-900 flex items-start gap-2">
+            <div className="mb-5 sm:mb-6 rounded-xl bg-gradient-to-br from-sky-500/10 to-purple-500/10 border border-sky-400/30 backdrop-blur-sm px-4 sm:px-5 py-3.5 sm:py-4 shadow-lg shadow-sky-500/10">
+              <p className="text-sm sm:text-base font-semibold text-sky-200 flex items-start gap-2">
                 <span className="text-lg flex-shrink-0">⚡</span>
                 <span>{heroContent.microPromise}</span>
               </p>
-              <p className="text-xs sm:text-sm text-slate-600 mt-2 ml-7">
+              <p className="text-xs sm:text-sm text-slate-400 mt-2 ml-7">
                 {heroContent.nextSteps}
               </p>
             </div>
@@ -80,23 +81,23 @@ export default function Hero() {
             </div>
 
             {/* Trust badges - escrow partners & testimonial */}
-            <div className="mb-5 sm:mb-6 rounded-xl bg-white border border-slate-200 px-4 sm:px-5 py-3.5 sm:py-4 shadow-sm">
-              <p className="text-xs sm:text-sm font-semibold text-slate-700 mb-3">
+            <div className="mb-5 sm:mb-6 rounded-xl bg-slate-800/50 border border-slate-700/50 backdrop-blur-sm px-4 sm:px-5 py-3.5 sm:py-4 shadow-lg">
+              <p className="text-xs sm:text-sm font-semibold text-slate-300 mb-3">
                 {heroContent.trustLine}
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
-                <span className="inline-flex items-center rounded-full bg-emerald-50 border border-emerald-300 px-3 py-1.5 text-xs font-semibold text-emerald-800">
+                <span className="inline-flex items-center rounded-full bg-emerald-500/20 border border-emerald-400/30 px-3 py-1.5 text-xs font-semibold text-emerald-300">
                   ✓ DFPI Licensed
                 </span>
-                <span className="inline-flex items-center rounded-full bg-sky-50 border border-sky-300 px-3 py-1.5 text-xs font-semibold text-sky-800">
+                <span className="inline-flex items-center rounded-full bg-sky-500/20 border border-sky-400/30 px-3 py-1.5 text-xs font-semibold text-sky-300">
                   ✓ AB 2801 Compliant
                 </span>
-                <span className="inline-flex items-center rounded-full bg-purple-50 border border-purple-300 px-3 py-1.5 text-xs font-semibold text-purple-800">
+                <span className="inline-flex items-center rounded-full bg-purple-500/20 border border-purple-400/30 px-3 py-1.5 text-xs font-semibold text-purple-300">
                   ✓ SOC 2 Type II
                 </span>
               </div>
-              <p className="text-xs sm:text-sm italic text-slate-600 border-t border-slate-200 pt-3">
-                &ldquo;Fairvia saved me from a deposit dispute&rdquo; — <strong className="font-semibold text-slate-800">Sarah M., Oakland</strong>
+              <p className="text-xs sm:text-sm italic text-slate-400 border-t border-slate-700/50 pt-3">
+                &ldquo;Fairvia saved me from a deposit dispute&rdquo; — <strong className="font-semibold text-slate-200">Sarah M., Oakland</strong>
               </p>
             </div>
 

@@ -36,7 +36,7 @@ export default function Header() {
       </a>
 
       {/* Sticky top bar */}
-      <div className="sticky top-0 z-50 border-b border-slate-200/60 bg-white/98 backdrop-blur-2xl shadow-sm safe-top">
+      <div className="sticky top-0 z-50 border-b border-slate-700/50 bg-slate-900/95 backdrop-blur-2xl shadow-lg shadow-black/20 safe-top">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6 sm:py-4">
           <Link
             href="/"
@@ -51,14 +51,14 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="tap min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded-xl bg-slate-50/80 px-5 py-2.5 text-slate-700 font-semibold tracking-tight transition-all hover:bg-slate-100 hover:text-slate-900 hover:shadow-sm active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-400 focus-visible:ring-2 focus-visible:ring-sky-200/50"
+                className="tap min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded-xl bg-slate-800/50 px-5 py-2.5 text-slate-300 font-semibold tracking-tight transition-all hover:bg-slate-700/50 hover:text-white hover:shadow-md hover:shadow-sky-500/20 active:scale-[0.98] border border-slate-700/50"
               >
                 {item.label}
               </Link>
             ))}
             <button
               onClick={handleCTA}
-              className="tap min-h-[44px] min-w-[44px] rounded-xl bg-gradient-to-r from-sky-500 via-cyan-500 to-teal-500 px-6 py-2.5 text-sm font-bold text-white tracking-tight shadow-lg shadow-sky-300/40 transition-all hover:shadow-xl hover:shadow-sky-400/50 hover:from-sky-600 hover:via-cyan-600 hover:to-teal-600 active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-400 focus-visible:ring-4 focus-visible:ring-sky-200/50 border border-white/20"
+              className="tap min-h-[44px] min-w-[44px] rounded-xl bg-gradient-to-r from-sky-500 via-cyan-500 to-purple-500 px-6 py-2.5 text-sm font-bold text-white tracking-tight shadow-lg shadow-sky-500/50 transition-all hover:shadow-xl hover:shadow-sky-500/70 hover:scale-[1.02] active:scale-[0.98] border border-sky-400/30"
             >
               Start free unit
             </button>
@@ -67,13 +67,13 @@ export default function Header() {
       </div>
 
       {/* Always-visible vertical nav on mobile (in normal flow) */}
-      <nav aria-label="Primary" className="sm:hidden border-b border-slate-100 bg-white">
+      <nav aria-label="Primary" className="sm:hidden border-b border-slate-700/50 bg-slate-900/95">
         <div className="mx-auto max-w-7xl px-4 py-3 flex flex-wrap gap-2">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="tap min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded-xl bg-slate-50/80 px-4 py-2.5 text-sm font-semibold tracking-tight text-slate-700 transition-all hover:bg-slate-100 hover:shadow-sm active:bg-slate-200 active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-400 focus-visible:ring-2 focus-visible:ring-sky-200/50"
+              className="tap min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded-xl bg-slate-800/50 px-4 py-2.5 text-sm font-semibold tracking-tight text-slate-300 transition-all hover:bg-slate-700/50 hover:text-white active:scale-[0.98] border border-slate-700/50"
             >
               {link.label}
             </Link>

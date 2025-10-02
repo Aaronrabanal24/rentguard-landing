@@ -24,11 +24,11 @@ export const coreProduct = {
 } as const;
 
 export const featureTiers = {
-  starter: {
-    name: "Starter",
-    subtitle: "Perfect for trying Fairvia",
+  free: {
+    name: "Free",
+    subtitle: "Your first unit, always free",
     price: "Free",
-    priceDetail: "One unit, forever",
+    priceDetail: "Forever",
     features: [
       "Smart unit link with QR code",
       "Trust and precheck page",
@@ -37,12 +37,12 @@ export const featureTiers = {
       "Exportable summary and archive",
     ],
   },
-  pro: {
-    name: "Pro",
-    subtitle: "For active property managers",
-    price: "$49",
-    priceDetail: "per unit per month",
-    includes: "Everything in Starter, plus:",
+  pilot: {
+    name: "Pilot",
+    subtitle: "Early access pilot pricing",
+    price: "$99",
+    priceDetail: "per month",
+    includes: "Everything in Free, plus:",
     features: [
       "Unlimited units",
       "Deposit workflow with AB 2801 compliance",
@@ -50,21 +50,8 @@ export const featureTiers = {
       "Countdown timers for deposit deadlines",
       "Weekly owner update emails",
       "CSV import and export",
-    ],
-  },
-  enterprise: {
-    name: "Enterprise",
-    subtitle: "For large property management companies",
-    price: "Custom pricing",
-    priceDetail: "Contact for quote",
-    includes: "Everything in Pro, plus:",
-    features: [
-      "Role-based permissions for org, region, and unit levels",
-      "SSO and directory sync (Active Directory, Okta)",
-      "Multi-state template library (California, Texas, New York, Florida, Illinois)",
-      "Audit trail and immutable logs (compliance-ready)",
-      "Legal hold and archive export (litigation support)",
-      "Event API and webhooks (integration with existing systems)",
+      "Multi-state template library",
+      "Priority support",
     ],
   },
 } as const;

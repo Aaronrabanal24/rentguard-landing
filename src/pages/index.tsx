@@ -61,7 +61,7 @@ export default function Home() {
         />
       </Head>
 
-      <div className="min-h-full bg-slate-50 text-slate-900">
+      <div className="min-h-full relative">
         <Header />
 
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4 }}>
