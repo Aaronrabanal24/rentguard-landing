@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useWaitlist } from "@/hooks/useWaitlist";
-import type { WaitlistData } from "@/lib/types";
 import { track } from "@/lib/tracking";
 import { cn } from "@/lib/utils";
 
