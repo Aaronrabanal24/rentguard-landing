@@ -93,10 +93,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       zohoResponse,
     });
   } catch (error) {
-    console.error("Zoho CRM error:", error);
+    console.error("Zoho CRM error - Full details:", error);
+    console.error("Error stack:", error instanceof Error ? error.stack : "No stack trace");
     return res.status(500).json({
       message: "Failed to sync to Zoho CRM",
       error: error instanceof Error ? error.message : "Unknown error",
+      details: error instanceof Error ? error.stack : String(error),
     });
   }
 }
