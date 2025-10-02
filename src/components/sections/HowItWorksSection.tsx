@@ -54,59 +54,98 @@ export default function HowItWorksSection() {
           </h2>
         </div>
 
-        <div className="mt-16 space-y-20">
-          {SECTIONS.map((section) => (
-            <motion.div
-              key={section.title}
-              className="grid gap-8 lg:grid-cols-2 lg:gap-12"
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.45, ease: "easeOut" }}
-            >
-              <div>
-                <h3 className="text-2xl font-bold bg-gradient-to-r from-white to-sky-200 bg-clip-text text-transparent">
-                  {section.title}
-                </h3>
-                <p className="mt-2 text-lg text-slate-300">{section.description}</p>
-                <div className="mt-3 inline-flex items-center rounded-full bg-emerald-500/20 border border-emerald-400/30 backdrop-blur-sm px-3 py-1">
-                  <span className="text-sm font-semibold text-emerald-300">→ {section.benefit}</span>
-                </div>
-                <ul className="mt-6 space-y-3">
-                  {section.items.map((item) => (
-                    <li key={item} className="flex items-start gap-3">
-                      <svg
-                        className="mt-1 h-5 w-5 flex-shrink-0 text-sky-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                      <span className="text-slate-300">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-8">
-                  <Button
-                    size="md"
-                    onClick={handleCTA}
-                    className="min-h-[44px] min-w-[44px] px-6"
-                    aria-label="Start your free unit"
-                  >
-                    Start free unit
-                  </Button>
-                </div>
-              </div>
+        <div className="mt-16 sm:mt-20 space-y-24 sm:space-y-32">
+          {SECTIONS.map((section, index) => {
+            const isEven = index % 2 === 0;
 
-              <div className="flex items-center justify-center">
-                <section.Mockup />
-              </div>
-            </motion.div>
-          ))}
+            return (
+              <motion.div
+                key={section.title}
+                className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-center"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.45, ease: "easeOut" }}
+              >
+                {/* Text Content */}
+                <div className={`${isEven ? 'lg:order-1' : 'lg:order-2'} space-y-6`}>
+                  {/* Step Number Badge */}
+                  <div className="inline-flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-sky-500 to-purple-500 text-white font-black text-lg shadow-lg shadow-sky-500/50">
+                      {index + 1}
+                    </div>
+                    <span className="text-sm font-bold uppercase tracking-wider text-sky-300">
+                      Step {index + 1}
+                    </span>
+                  </div>
+
+                  <h3 className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-white to-sky-200 bg-clip-text text-transparent leading-tight">
+                    {section.title}
+                  </h3>
+
+                  <p className="text-lg sm:text-xl text-slate-200 leading-relaxed font-medium">
+                    {section.description}
+                  </p>
+
+                  <div className="inline-flex items-center gap-2 rounded-xl bg-emerald-500/15 border-2 border-emerald-400/40 backdrop-blur-sm px-4 py-2.5 shadow-lg shadow-emerald-500/10">
+                    <svg className="h-5 w-5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-base font-bold text-emerald-300">{section.benefit}</span>
+                  </div>
+
+                  <ul className="space-y-4 pt-2">
+                    {section.items.map((item) => (
+                      <li key={item} className="flex items-start gap-4">
+                        <svg
+                          className="mt-1 h-6 w-6 flex-shrink-0 text-sky-400"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                        <span className="text-base sm:text-lg text-slate-200 leading-relaxed">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="pt-4">
+                    <Button
+                      size="lg"
+                      onClick={handleCTA}
+                      className="min-h-[48px] px-8 py-3 text-base font-bold shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                      aria-label="Start your free unit"
+                    >
+                      Start free unit →
+                    </Button>
+                  </div>
+                </div>
+
+                {/* Image/Mockup - Alternates sides based on index */}
+                <div className={`${isEven ? 'lg:order-2' : 'lg:order-1'} flex items-center justify-center`}>
+                  <div className="relative w-full max-w-lg">
+                    {/* Glow effect */}
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-br ${
+                        index === 0 ? 'from-sky-500/20 to-cyan-500/20' :
+                        index === 1 ? 'from-purple-500/20 to-pink-500/20' :
+                        'from-emerald-500/20 to-teal-500/20'
+                      } blur-3xl opacity-40 animate-pulse`}
+                      aria-hidden="true"
+                    />
+
+                    <div className="relative transform transition-transform duration-500 hover:scale-105">
+                      <section.Mockup />
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
