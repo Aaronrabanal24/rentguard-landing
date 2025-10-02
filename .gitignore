@@ -7,3 +7,4 @@ out/
 .env.production
 .env.test
 .DS_Store
+.vercel
