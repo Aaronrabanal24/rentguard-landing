@@ -9,6 +9,9 @@ import {
   CTASection,
   Footer,
 } from "@/components";
+import { TrustAnchorBar } from "@/components/TrustAnchorBar";
+import { StickyCTA } from "@/components/StickyCTA";
+import { FAQ } from "@/components/FAQ";
 import { organizationSchema, softwareSchema } from "@/lib/structuredData";
 
 export default function Home() {
@@ -36,12 +39,15 @@ export default function Home() {
       </Head>
 
       <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 text-white">
+        <StickyCTA />
         <Header />
         <PlatformHero />
+        <TrustAnchorBar />
         <HowItWorks />
         <Features />
         <ROISection />
         <TrustProof />
+        <FAQ />
         <CTASection />
         <Footer />
       </div>

@@ -44,14 +44,14 @@ export function PlatformHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center mb-10 sm:mb-12 max-w-md mx-auto sm:max-w-none px-4"
+          className="flex flex-col items-center gap-4 mb-10 sm:mb-12 px-4"
         >
-          <Button size="lg" variant="primary" className="w-full sm:w-auto sm:min-w-[180px] text-base font-semibold">
-            Join the Pilot →
+          <Button size="lg" variant="primary" className="w-full sm:w-auto sm:min-w-[220px] text-base sm:text-lg font-semibold shadow-xl shadow-teal-500/20 hover:shadow-2xl hover:shadow-teal-500/30 transition-shadow">
+            Start Free Unit →
           </Button>
-          <Button size="lg" variant="secondary" className="w-full sm:w-auto sm:min-w-[180px] text-base font-semibold">
-            Watch Demo
-          </Button>
+          <button className="text-sm text-gray-400 hover:text-teal-300 transition-colors underline underline-offset-4">
+            See how it works
+          </button>
         </motion.div>
 
         {/* Trust Indicators */}
@@ -63,15 +63,15 @@ export function PlatformHero() {
         >
           <div className="flex items-center gap-2">
             <CheckCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-teal-400 flex-shrink-0" />
-            <span>Deposit tracking</span>
+            <span>Zero-training interface</span>
           </div>
           <div className="flex items-center gap-2">
             <CheckCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-teal-400 flex-shrink-0" />
-            <span>Audit-ready</span>
+            <span>Built-in compliance</span>
           </div>
           <div className="flex items-center gap-2">
             <CheckCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-teal-400 flex-shrink-0" />
-            <span>No heavy PMS</span>
+            <span>Owner proof ready</span>
           </div>
         </motion.div>
       </div>

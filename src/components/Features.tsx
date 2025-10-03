@@ -3,7 +3,7 @@ import { DollarSign, AlertCircle } from "lucide-react";
 
 export function Features() {
   return (
-    <section className="px-4 py-16 sm:py-20 lg:py-24">
+    <section className="px-4 py-16 sm:py-20 lg:py-24 bg-slate-900">
       <div className="mx-auto max-w-6xl">
         <ScrollReveal>
           <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 border border-slate-700">
