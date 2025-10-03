@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import { organizationSchema, softwareSchema } from "@/lib/structuredData";
 
 export default function Home() {
@@ -326,9 +327,9 @@ export default function Home() {
               <div>
                 <h4 className="mb-4 font-semibold text-white">Legal</h4>
                 <ul className="space-y-2 text-gray-400">
-                  <li><a href="/privacy" className="hover:text-white">Privacy</a></li>
-                  <li><a href="/terms" className="hover:text-white">Terms</a></li>
-                  <li><a href="/security" className="hover:text-white">Security</a></li>
+                  <li><Link href="/privacy" className="hover:text-white">Privacy</Link></li>
+                  <li><Link href="/terms" className="hover:text-white">Terms</Link></li>
+                  <li><Link href="/security" className="hover:text-white">Security</Link></li>
                 </ul>
               </div>
             </div>
