@@ -3,35 +3,17 @@
 import { motion } from "framer-motion";
 import { Shield, CheckCircle, Lock } from "lucide-react";
 import { Button } from "./ui/Button";
-import { useEffect, useRef } from "react";
+import HeroVideoBg from "./HeroVideoBg";
 
 export function PlatformHero() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    // Force video to play on mount (helps with autoplay restrictions)
-    if (videoRef.current) {
-      videoRef.current.play().catch((error) => {
-        console.log("Video autoplay prevented:", error);
-      });
-    }
-  }, []);
-
   return (
     <section className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden pt-24 sm:pt-28 lg:pt-32 pb-8 sm:pb-12 lg:pb-16 px-4">
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
-        <video
-          ref={videoRef}
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          className="w-full h-full object-cover opacity-20"
-        >
-          <source src="https://res.cloudinary.com/dmbzcxknh/video/upload/v1738627009/fairvia-demo_r0uo2t.mp4" type="video/mp4" />
-        </video>
+        <HeroVideoBg
+          mp4Src="https://res.cloudinary.com/dmbzcxknh/video/upload/v1738627009/fairvia-demo_r0uo2t.mp4"
+          reduceMotionFallback={true}
+        />
         {/* Gradient overlay for better text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/70 to-slate-900"></div>
       </div>
