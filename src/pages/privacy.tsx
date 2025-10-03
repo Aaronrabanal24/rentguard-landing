@@ -1,9 +1,9 @@
-import { PageContainer } from "@/components/layout/PageContainer";
+import { PageContainer } from "@/components/PageContainer";
 import { COMPANY } from "@/lib/constants";
 
 export default function PrivacyPage() {
   return (
-    <PageContainer title="Privacy Policy" animateMain={false}>
+    <PageContainer title="Privacy Policy">
       <section className="bg-white py-16 text-slate-900">
         <div className="container-tight max-w-4xl">
           <h1 className="text-4xl font-bold mb-4">Privacy Policy</h1>

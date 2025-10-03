@@ -1,8 +1,8 @@
-import { PageContainer } from "@/components/layout/PageContainer";
+import { PageContainer } from "@/components/PageContainer";
 
 export default function TermsPage() {
   return (
-    <PageContainer title="Fairvia Terms of Service" includeFooter>
+    <PageContainer title="Fairvia Terms of Service">
       <section className="bg-white py-16 text-slate-900">
         <div className="mx-auto max-w-4xl px-4">
           <h1 className="text-3xl font-semibold sm:text-4xl">Terms of Service</h1>
