@@ -18,7 +18,10 @@ export default function HeroVideoBg({
   reduceMotionFallback = true,
 }: Props) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const [shouldRenderVideo, setShouldRenderVideo] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
 
   // Respect prefers-reduced-motion (don't render video at all)
   useEffect(() => {
@@ -30,10 +33,29 @@ export default function HeroVideoBg({
     return () => mq.removeEventListener("change", apply);
   }, [reduceMotionFallback]);
 
+  // Lazy load video when container is near viewport
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "100px" }
+    );
+
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, []);
+
   // Autoplay coercion with iOS/Safari quirks
   useEffect(() => {
     const el = videoRef.current;
-    if (!el || !shouldRenderVideo) return;
+    if (!el || !shouldRenderVideo || !isVisible) return;
 
     // iOS needs attributes stamped before source is parsed
     el.setAttribute("muted", ""); // ensures muted=true at parse-time
@@ -41,6 +63,13 @@ export default function HeroVideoBg({
     el.defaultMuted = true;
     el.setAttribute("playsinline", "");
     el.setAttribute("webkit-playsinline", ""); // iOS Safari alias
+
+    // Track loading state
+    const handleLoadStart = () => setIsLoading(true);
+    const handleCanPlay = () => setIsLoading(false);
+
+    el.addEventListener("loadstart", handleLoadStart);
+    el.addEventListener("canplay", handleCanPlay);
 
     // Don't call .play() until we have enough data
     const tryPlay = async () => {
@@ -68,13 +97,23 @@ export default function HeroVideoBg({
     }, { threshold: 0.05 });
     io.observe(el);
 
-    return () => { clearTimeout(t); io.disconnect(); };
-  }, [shouldRenderVideo]);
+    return () => {
+      clearTimeout(t);
+      io.disconnect();
+      el.removeEventListener("loadstart", handleLoadStart);
+      el.removeEventListener("canplay", handleCanPlay);
+    };
+  }, [shouldRenderVideo, isVisible]);
 
   return (
-    <>
+    <div ref={containerRef} className="absolute inset-0">
+      {/* Loading skeleton */}
+      {isLoading && shouldRenderVideo && (
+        <div className="absolute inset-0 bg-slate-800/50 animate-pulse" aria-hidden="true" />
+      )}
+
       {/* Video layer */}
-      {shouldRenderVideo ? (
+      {shouldRenderVideo && isVisible ? (
         <video
           ref={videoRef}
           // Order matters: keep muted first, then autoplay, etc.
@@ -82,11 +121,14 @@ export default function HeroVideoBg({
           autoPlay
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           poster={poster}
           disablePictureInPicture
           controlsList="nodownload nofullscreen noremoteplayback"
-          className={`absolute inset-0 h-full w-full object-cover opacity-20 ${className}`}
+          className={`absolute inset-0 h-full w-full object-cover opacity-20 transition-opacity duration-700 ${
+            isLoading ? "opacity-0" : "opacity-20"
+          } ${className}`}
+          aria-label="Background video showcasing Fairvia platform"
         >
           {/* Prefer WebM when available, then MP4 */}
           {webmSrc ? <source src={webmSrc} type="video/webm" /> : null}
@@ -96,12 +138,12 @@ export default function HeroVideoBg({
         // Fallback poster for reduced motion users
         <img
           src={poster}
-          alt=""
+          alt="Fairvia platform preview"
           className={`absolute inset-0 h-full w-full object-cover opacity-20 ${className}`}
           loading="eager"
           decoding="async"
         />
       ) : null}
-    </>
+    </div>
   );
 }

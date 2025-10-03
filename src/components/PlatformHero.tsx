@@ -14,8 +14,10 @@ export function PlatformHero() {
           mp4Src="https://res.cloudinary.com/dmbzcxknh/video/upload/v1738627009/fairvia-demo_r0uo2t.mp4"
           reduceMotionFallback={true}
         />
-        {/* Gradient overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/70 to-slate-900"></div>
+        {/* Enhanced gradient overlay for better text readability and depth */}
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/90 via-slate-900/80 via-slate-800/70 to-slate-900"></div>
+        {/* Subtle vignette for focus */}
+        <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-slate-900/40"></div>
       </div>
 
       <div className="relative z-10 mx-auto max-w-4xl text-center">
