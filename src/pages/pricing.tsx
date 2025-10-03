@@ -19,12 +19,12 @@ export default function PricingPage() {
         <title>Pricing - Fairvia</title>
         <meta
           name="description"
-          content="Simple, transparent pricing. Start with your first unit free. SMB Pro from $49 to $149 per month. Enterprise at $1 per unit per month."
+          content="Pilot Pricing: 1 Unit Free, then $99/month for unlimited units. No hidden fees. Cancel anytime."
         />
         <link rel="canonical" href="https://fairvia.com/pricing" />
 
         <meta property="og:title" content="Pricing - Fairvia" />
-        <meta property="og:description" content="Simple, transparent pricing. Start with your first unit free." />
+        <meta property="og:description" content="Pilot Pricing: 1 Unit Free, then $99/month for unlimited units." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://fairvia.com/pricing" />
       </Head>
@@ -41,7 +41,7 @@ export default function PricingPage() {
                 Simple, Transparent Pricing
               </h1>
               <p className="mt-6 sm:mt-8 text-xl sm:text-2xl leading-relaxed text-slate-200 max-w-3xl mx-auto font-medium">
-                Start free. Join our pilot at $99/month. No hidden fees. Cancel anytime.
+                Pilot Pricing: 1 Unit Free • $99/month for unlimited units
               </p>
             </div>
           </section>
