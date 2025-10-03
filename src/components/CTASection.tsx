@@ -76,20 +76,20 @@ export function CTASection() {
   }
 
   return (
-    <section className="px-4 py-20">
+    <section className="px-4 py-16 sm:py-20 lg:py-24">
       <ScrollReveal>
         <div className="mx-auto max-w-4xl">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white">
+          <div className="text-center mb-10 sm:mb-12">
+            <h2 className="font-bold mb-4 sm:mb-5 text-white px-4">
               Start with one free unit
             </h2>
-            <p className="text-xl text-gray-300">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto px-4">
               Join property managers who are building trust through clear, compliant deposit management.
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="bg-slate-800 border border-slate-700 rounded-2xl p-6 sm:p-8">
-            <div className="grid gap-6 md:grid-cols-2 mb-6">
+          <form onSubmit={handleSubmit} className="bg-slate-800 border border-slate-700 rounded-xl sm:rounded-2xl p-5 sm:p-8 lg:p-10">
+            <div className="grid gap-5 sm:gap-6 md:grid-cols-2 mb-6 sm:mb-8">
               {/* Name */}
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
