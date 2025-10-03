@@ -7,16 +7,18 @@ export function Footer() {
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-8 md:grid-cols-4 mb-8">
           <div>
-            <Link href="/" className="flex items-center mb-4">
+            <Link href="/" className="inline-block mb-4 hover:opacity-80 transition-opacity">
               <Image
                 src="/fairvia-logo.svg"
                 alt="Fairvia"
-                width={120}
-                height={32}
-                className="h-8 w-auto"
+                width={140}
+                height={36}
+                className="h-9 w-auto"
               />
             </Link>
-            <p className="text-gray-400 text-sm">Plain form, trust by design</p>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Plain form, trust by design
+            </p>
           </div>
 
           <div>
