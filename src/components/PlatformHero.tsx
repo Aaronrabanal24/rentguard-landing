@@ -5,7 +5,22 @@ import { Button } from "./ui/Button";
 export function PlatformHero() {
   return (
     <section className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden pt-24 sm:pt-28 lg:pt-32 pb-8 sm:pb-12 lg:pb-16 px-4">
-      <div className="relative z-10 mx-auto max-w-6xl text-center">
+      {/* Background Video */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-20"
+        >
+          <source src="https://res.cloudinary.com/dmbzcxknh/video/upload/v1738627009/fairvia-demo_r0uo2t.mp4" type="video/mp4" />
+        </video>
+        {/* Gradient overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/70 to-slate-900"></div>
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-4xl text-center">
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -13,7 +28,7 @@ export function PlatformHero() {
           transition={{ duration: 0.6 }}
           className="flex justify-center mb-8 sm:mb-10"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-teal-500/10 border border-teal-500/30 text-teal-300 text-xs sm:text-sm font-medium">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-teal-500/10 border border-teal-500/30 text-teal-300 text-xs sm:text-sm font-medium backdrop-blur-sm">
             <Shield className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
             <span>Transparent Leasing Platform</span>
           </div>
@@ -75,32 +90,11 @@ export function PlatformHero() {
           </div>
         </motion.div>
 
-        {/* Demo Video */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="mb-8 sm:mb-10"
-        >
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-700/50 bg-slate-800/50 backdrop-blur-sm">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-auto"
-            >
-              <source src="https://res.cloudinary.com/dmbzcxknh/video/upload/v1738627009/fairvia-demo_r0uo2t.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </motion.div>
-
         {/* Trust Anchor Bar - Integrated */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
           className="bg-slate-800/80 border border-slate-700/50 backdrop-blur-sm rounded-xl py-4 px-4 sm:px-6"
         >
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs sm:text-sm">
