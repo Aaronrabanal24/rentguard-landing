@@ -133,7 +133,7 @@ export default function PricingPage() {
                   Trusted by Property Teams
                 </h2>
                 <p className="text-lg text-slate-300">
-                  Join landlords and property managers who've simplified their deposit workflows
+                  Join landlords and property managers who&apos;ve simplified their deposit workflows
                 </p>
               </motion.div>
 

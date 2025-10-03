@@ -135,6 +135,7 @@ export const pricingContent = {
       priceDetail: "Forever",
       description: "Perfect to get started — no commitment",
       cta: "Claim free unit",
+      badge: undefined,
       features: [
         "1 unit, always free",
         "Smart link with QR code",
@@ -167,6 +168,7 @@ export const pricingContent = {
       priceDetail: "per month",
       description: "For portfolios with 100+ units",
       cta: "Contact sales",
+      badge: undefined,
       features: [
         "Everything in Pro, plus:",
         "SSO & role permissions",

@@ -60,7 +60,7 @@ export default function BadgePage() {
                   What is the Fairvia Badge?
                 </h1>
                 <p className="mx-auto mt-8 sm:mt-10 max-w-2xl text-lg sm:text-xl leading-relaxed text-slate-700">
-                  <strong>You're seeing this badge because this listing uses Fairvia to manage deposits and timelines.</strong>
+                  <strong>You&apos;re seeing this badge because this listing uses Fairvia to manage deposits and timelines.</strong>
                 </p>
                 <p className="mx-auto mt-4 max-w-2xl text-base sm:text-lg leading-relaxed text-slate-600">
                   It signals compliance, transparency, and photo-documented accountability between landlords and renters.
@@ -95,7 +95,7 @@ export default function BadgePage() {
 
               {/* What's Included Checklist */}
               <div className="mt-16 sm:mt-20 rounded-2xl bg-white p-8 sm:p-10 lg:p-12 shadow-lg">
-                <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-8 text-center">What's included in this badge?</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-8 text-center">What&apos;s included in this badge?</h2>
 
                 <div className="grid gap-6 sm:grid-cols-2">
                   {[
@@ -182,7 +182,7 @@ export default function BadgePage() {
                           </svg>
                           <div>
                             <span className="text-lg font-semibold text-slate-900">Verified landlord identity</span>
-                            <p className="text-slate-600 mt-1">Know you're dealing with a legitimate property owner</p>
+                            <p className="text-slate-600 mt-1">Know you&apos;re dealing with a legitimate property owner</p>
                           </div>
                         </li>
                       </ul>
