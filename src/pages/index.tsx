@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 import { Shield, Clock, FileCheck, BarChart3, Check, ArrowRight } from "lucide-react";
 import { organizationSchema, softwareSchema } from "@/lib/structuredData";
 
@@ -57,7 +57,7 @@ export default function Home() {
                 <a href="#how-it-works" className="text-gray-700 hover:text-fairvia-teal transition-colors">How It Works</a>
                 <a href="#pricing" className="text-gray-700 hover:text-fairvia-teal transition-colors">Pricing</a>
               </div>
-              <Button size="sm">Get Started</Button>
+              <Button size="sm" variant="primary">Get Started</Button>
             </div>
           </div>
         </nav>
@@ -130,11 +130,11 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="flex flex-col items-center justify-center gap-4 sm:flex-row"
             >
-              <Button size="lg" className="group">
+              <Button size="lg" variant="primary" className="group">
                 Plain form, trust by design
                 <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button size="lg" variant="outline">
+              <Button size="lg" variant="secondary">
                 Watch Demo
               </Button>
             </motion.div>
@@ -328,7 +328,7 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-                <Button variant="ghost" className="w-full">
+                <Button variant="secondary" className="w-full">
                   Start Free
                 </Button>
               </div>
@@ -358,7 +358,7 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-                <Button className="w-full">Get Started</Button>
+                <Button variant="primary" className="w-full">Get Started</Button>
               </div>
             </ScrollReveal>
 
@@ -383,7 +383,7 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-                <Button variant="ghost" className="w-full">
+                <Button variant="secondary" className="w-full">
                   Contact Sales
                 </Button>
               </div>
@@ -408,7 +408,7 @@ export default function Home() {
                     placeholder="Enter your email"
                     className="flex-1 px-6 py-3 text-gray-900 bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-white"
                   />
-                  <Button type="submit" className="px-8 py-3 font-medium bg-white text-fairvia-teal hover:bg-gray-100">
+                  <Button type="submit" variant="secondary" className="px-8 py-3 font-medium bg-white text-fairvia-teal hover:bg-gray-100">
                     Join
                   </Button>
                 </div>
