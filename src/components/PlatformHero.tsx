@@ -1,17 +1,33 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Shield, CheckCircle, Lock } from "lucide-react";
 import { Button } from "./ui/Button";
+import { useEffect, useRef } from "react";
 
 export function PlatformHero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    // Force video to play on mount (helps with autoplay restrictions)
+    if (videoRef.current) {
+      videoRef.current.play().catch((error) => {
+        console.log("Video autoplay prevented:", error);
+      });
+    }
+  }, []);
+
   return (
     <section className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden pt-24 sm:pt-28 lg:pt-32 pb-8 sm:pb-12 lg:pb-16 px-4">
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
         <video
+          ref={videoRef}
           autoPlay
           loop
           muted
           playsInline
+          preload="auto"
           className="w-full h-full object-cover opacity-20"
         >
           <source src="https://res.cloudinary.com/dmbzcxknh/video/upload/v1738627009/fairvia-demo_r0uo2t.mp4" type="video/mp4" />
