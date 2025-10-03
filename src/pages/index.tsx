@@ -9,7 +9,6 @@ import {
   CTASection,
   Footer,
 } from "@/components";
-import { TrustAnchorBar } from "@/components/TrustAnchorBar";
 import { StickyCTA } from "@/components/StickyCTA";
 import { FAQ } from "@/components/FAQ";
 import { organizationSchema, softwareSchema } from "@/lib/structuredData";
@@ -42,7 +41,6 @@ export default function Home() {
         <StickyCTA />
         <Header />
         <PlatformHero />
-        <TrustAnchorBar />
         <HowItWorks />
         <Features />
         <ROISection />

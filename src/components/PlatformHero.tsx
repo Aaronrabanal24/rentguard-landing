@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import { Shield, CheckCircle } from "lucide-react";
+import { Shield, CheckCircle, Lock } from "lucide-react";
 import { Button } from "./ui/Button";
 
 export function PlatformHero() {
   return (
-    <section className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24 px-4">
+    <section className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden pt-24 sm:pt-28 lg:pt-32 pb-8 sm:pb-12 lg:pb-16 px-4">
       <div className="relative z-10 mx-auto max-w-4xl text-center">
         {/* Badge */}
         <motion.div
@@ -59,7 +59,7 @@ export function PlatformHero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex flex-wrap justify-center gap-5 sm:gap-8 text-xs sm:text-sm text-gray-400 px-4"
+          className="flex flex-wrap justify-center gap-5 sm:gap-8 text-xs sm:text-sm text-gray-400 px-4 mb-8 sm:mb-10"
         >
           <div className="flex items-center gap-2">
             <CheckCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-teal-400 flex-shrink-0" />
@@ -72,6 +72,29 @@ export function PlatformHero() {
           <div className="flex items-center gap-2">
             <CheckCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-teal-400 flex-shrink-0" />
             <span>Owner proof ready</span>
+          </div>
+        </motion.div>
+
+        {/* Trust Anchor Bar - Integrated */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="bg-slate-800/80 border border-slate-700/50 backdrop-blur-sm rounded-xl py-4 px-4 sm:px-6"
+        >
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs sm:text-sm">
+            <div className="flex items-center gap-2 text-gray-300">
+              <Shield className="w-4 h-4 text-teal-400 flex-shrink-0" />
+              <span className="font-medium">DFPI Licensed</span>
+            </div>
+            <div className="flex items-center gap-2 text-gray-300">
+              <CheckCircle className="w-4 h-4 text-teal-400 flex-shrink-0" />
+              <span className="font-medium">AB 2801 Compliant</span>
+            </div>
+            <div className="flex items-center gap-2 text-gray-300">
+              <Lock className="w-4 h-4 text-teal-400 flex-shrink-0" />
+              <span className="font-medium">SOC 2 Type II</span>
+            </div>
           </div>
         </motion.div>
       </div>
