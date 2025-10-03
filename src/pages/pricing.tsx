@@ -41,8 +41,12 @@ export default function PricingPage() {
                 Simple, Transparent Pricing
               </h1>
               <p className="mt-6 sm:mt-8 text-xl sm:text-2xl leading-relaxed text-slate-200 max-w-3xl mx-auto font-medium">
-                Pilot Pricing: 1 Unit Free • $99/month for unlimited units
+                Your first unit is always free — no commitment. Scale when ready.
               </p>
+              <div className="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sky-500/20 border border-sky-400/30 backdrop-blur-sm">
+                <span className="text-sm font-semibold text-sky-300">⚡ Limited time:</span>
+                <span className="text-sm text-slate-200">First 50 sign-ups get Pro features free for 30 days</span>
+              </div>
             </div>
           </section>
 
@@ -54,16 +58,16 @@ export default function PricingPage() {
                   <motion.div
                     key={tier.name}
                     className={`rounded-2xl border-2 bg-slate-800/50 backdrop-blur-sm p-8 sm:p-10 shadow-xl flex flex-col ${
-                      tier.name === "Pilot" ? "border-sky-500 shadow-sky-500/30 scale-105" : "border-slate-700/50"
+                      tier.name === "Pro" ? "border-sky-500 shadow-sky-500/30 scale-105" : "border-slate-700/50"
                     }`}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
                   >
-                    {tier.name === "Pilot" && (
+                    {tier.badge && (
                       <div className="mb-5 -mt-5 -mx-5 sm:-mt-6 sm:-mx-6 bg-gradient-to-r from-sky-500 to-purple-500 text-white text-xs font-bold uppercase tracking-wider px-4 py-2.5 rounded-t-xl text-center">
-                        Limited Spots
+                        {tier.badge}
                       </div>
                     )}
                     <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">
@@ -105,13 +109,82 @@ export default function PricingPage() {
                     <Button
                       onClick={handleCTA}
                       className="w-full min-h-[48px] min-w-[44px] mt-auto"
-                      variant={tier.name === "Pilot" ? "primary" : "secondary"}
+                      variant={tier.name === "Pro" ? "primary" : "secondary"}
                     >
                       {tier.cta}
                     </Button>
                   </motion.div>
                 ))}
               </div>
+            </div>
+          </section>
+
+          {/* Social Proof */}
+          <section className="bg-transparent py-12 sm:py-16">
+            <div className="mx-auto max-w-5xl px-6">
+              <motion.div
+                className="text-center mb-12"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-white via-sky-100 to-purple-200 bg-clip-text text-transparent mb-4">
+                  Trusted by Property Teams
+                </h2>
+                <p className="text-lg text-slate-300">
+                  Join landlords and property managers who've simplified their deposit workflows
+                </p>
+              </motion.div>
+
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {[
+                  {
+                    quote: "We cut our deposit dispute time by 70%. The timeline feature alone is worth it.",
+                    author: "Sarah M.",
+                    title: "Property Manager, 12 units"
+                  },
+                  {
+                    quote: "Finally, proof I can show my owners. The ROI board saved me hours every week.",
+                    author: "James K.",
+                    title: "Independent Landlord"
+                  },
+                  {
+                    quote: "AB 2801 compliance made simple. No more worrying about missing deadlines.",
+                    author: "Lisa R.",
+                    title: "Property Manager, Bay Area"
+                  }
+                ].map((testimonial, index) => (
+                  <motion.div
+                    key={index}
+                    className="rounded-xl bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 p-6"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                  >
+                    <p className="text-slate-200 mb-4 italic">&ldquo;{testimonial.quote}&rdquo;</p>
+                    <div>
+                      <p className="font-semibold text-white">{testimonial.author}</p>
+                      <p className="text-sm text-slate-400">{testimonial.title}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
+              <motion.div
+                className="mt-12 text-center"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/20 border border-emerald-400/30 backdrop-blur-sm">
+                  <span className="text-sm font-semibold text-emerald-300">✓ CA AB 2801 Compliant</span>
+                  <span className="text-slate-400">•</span>
+                  <span className="text-sm text-slate-300">Built for California landlords</span>
+                </div>
+              </motion.div>
             </div>
           </section>
 

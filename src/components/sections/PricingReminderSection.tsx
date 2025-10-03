@@ -22,28 +22,28 @@ export default function PricingReminderSection() {
           </div>
 
           <h2 className="text-2xl font-bold bg-gradient-to-r from-white via-sky-100 to-purple-200 bg-clip-text text-transparent sm:text-3xl mb-4">
-            Pilot Pricing: 1 Unit Free
+            First Unit Free, Forever
           </h2>
 
           <p className="text-lg text-slate-300 mb-6 max-w-2xl mx-auto">
-            No credit card required. Start with 1 free unit forever. Scale at $99/month for unlimited units.
+            No credit card required. No software to install. No lease headaches. Just clean, compliant deposits.
           </p>
 
           <div className="rounded-lg bg-slate-800/50 backdrop-blur-sm border-2 border-sky-500 p-6 shadow-lg shadow-sky-500/20 max-w-md mx-auto mb-8">
             <div className="text-4xl font-bold bg-gradient-to-r from-white to-sky-200 bg-clip-text text-transparent mb-2">1 Unit Free</div>
-            <div className="text-lg text-slate-300 mb-3">Then $99/month for unlimited units</div>
-            <div className="text-xs text-slate-400 uppercase tracking-wider">Pilot Pricing</div>
+            <div className="text-lg text-slate-300 mb-3">Scale at $99/mo when ready</div>
+            <div className="text-xs text-emerald-400 font-semibold">⚡ First 50 users get 30 days Pro free</div>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link href="/get-started">
               <Button size="lg" className="min-w-[200px]">
-                Start Free Unit
+                Claim Your Free Unit
               </Button>
             </Link>
             <Link href="/pricing">
               <Button variant="outline" size="lg">
-                See Full Pricing
+                See All Plans
               </Button>
             </Link>
           </div>
