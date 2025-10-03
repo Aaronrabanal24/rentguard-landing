@@ -5,6 +5,7 @@ import {
   HowItWorks,
   Features,
   ROISection,
+  TrustProof,
   CTASection,
   Footer,
 } from "@/components";
@@ -40,6 +41,7 @@ export default function Home() {
         <HowItWorks />
         <Features />
         <ROISection />
+        <TrustProof />
         <CTASection />
         <Footer />
       </div>
