@@ -40,13 +40,15 @@ export default function Home() {
       <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 text-white">
         <StickyCTA />
         <Header />
-        <PlatformHero />
+        <main id="main-content">
+          <PlatformHero />
         <HowItWorks />
         <Features />
         <ROISection />
         <TrustProof />
         <FAQ />
         <CTASection />
+        </main>
         <Footer />
       </div>
     </>

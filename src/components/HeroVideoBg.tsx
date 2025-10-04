@@ -52,55 +52,48 @@ export default function HeroVideoBg({
     return () => observer.disconnect();
   }, []);
 
-  // Autoplay coercion with iOS/Safari quirks
+  // Autoplay handling
   useEffect(() => {
     const el = videoRef.current;
     if (!el || !shouldRenderVideo || !isVisible) return;
 
-    // iOS needs attributes stamped before source is parsed
-    el.setAttribute("muted", ""); // ensures muted=true at parse-time
+    // Set attributes before loading
     el.muted = true;
     el.defaultMuted = true;
-    el.setAttribute("playsinline", "");
-    el.setAttribute("webkit-playsinline", ""); // iOS Safari alias
+    el.playsInline = true;
 
-    // Track loading state
-    const handleLoadStart = () => setIsLoading(true);
-    const handleCanPlay = () => setIsLoading(false);
+    const handleLoadedMetadata = () => {
+      setIsLoading(false);
+    };
 
-    el.addEventListener("loadstart", handleLoadStart);
-    el.addEventListener("canplay", handleCanPlay);
-
-    // Don't call .play() until we have enough data
-    const tryPlay = async () => {
+    const handleCanPlay = async () => {
       try {
-        // If source changed before we got here, wait for canplay
-        if (el.readyState < 2) await new Promise<void>(res => {
-          const onCanPlay = () => { el.removeEventListener("canplay", onCanPlay); res(); };
-          el.addEventListener("canplay", onCanPlay, { once: true });
-        });
         await el.play();
       } catch (err) {
-        // Soft failure logging; avoid throwing inside effects
         console.debug("[HeroVideoBg] autoplay blocked:", err);
       }
     };
 
-    // iOS sometimes needs a microtask before play()
-    const t = setTimeout(tryPlay, 0);
+    el.addEventListener("loadedmetadata", handleLoadedMetadata);
+    el.addEventListener("canplay", handleCanPlay);
 
-    // Pause when scrolled off-screen to save CPU
-    const io = new IntersectionObserver(([entry]) => {
-      if (!el) return;
-      if (entry.isIntersecting) { el.play().catch(() => {}); }
-      else { el.pause(); }
-    }, { threshold: 0.05 });
+    // Pause when scrolled off-screen
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (!el) return;
+        if (entry.isIntersecting) {
+          el.play().catch(() => {});
+        } else {
+          el.pause();
+        }
+      },
+      { threshold: 0.05 }
+    );
     io.observe(el);
 
     return () => {
-      clearTimeout(t);
       io.disconnect();
-      el.removeEventListener("loadstart", handleLoadStart);
+      el.removeEventListener("loadedmetadata", handleLoadedMetadata);
       el.removeEventListener("canplay", handleCanPlay);
     };
   }, [shouldRenderVideo, isVisible]);
@@ -121,11 +114,10 @@ export default function HeroVideoBg({
           autoPlay
           loop
           playsInline
-          preload="metadata"
+          preload="auto"
           poster={poster}
           disablePictureInPicture
-          controlsList="nodownload nofullscreen noremoteplayback"
-          className={`absolute inset-0 h-full w-full object-cover opacity-20 transition-opacity duration-700 ${
+          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
             isLoading ? "opacity-0" : "opacity-20"
           } ${className}`}
           aria-label="Background video showcasing Fairvia platform"

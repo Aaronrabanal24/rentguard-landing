@@ -7,11 +7,11 @@ export function StickyCTA() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Show sticky CTA after scrolling past hero (roughly 100vh)
+      // Show sticky CTA after scrolling past 50% of hero
       const heroHeight = window.innerHeight;
       const scrollPosition = window.scrollY;
 
-      setIsVisible(scrollPosition > heroHeight * 0.8);
+      setIsVisible(scrollPosition > heroHeight * 0.5);
     };
 
     window.addEventListener("scroll", handleScroll);

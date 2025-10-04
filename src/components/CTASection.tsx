@@ -13,6 +13,25 @@ export function CTASection() {
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
+
+  const validateField = (fieldName: string, value: string) => {
+    const errors: Record<string, string> = {};
+
+    if (fieldName === "email" && value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+      errors.email = "Please enter a valid email address";
+    }
+
+    if (fieldName === "name" && value && value.length < 2) {
+      errors.name = "Name must be at least 2 characters";
+    }
+
+    if (fieldName === "location" && value && value.length < 2) {
+      errors.location = "Please enter a valid location";
+    }
+
+    setFieldErrors((prev) => ({ ...prev, [fieldName]: errors[fieldName] || "" }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -99,11 +118,24 @@ export function CTASection() {
                   type="text"
                   id="name"
                   value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  onChange={(e) => {
+                    setName(e.target.value);
+                    validateField("name", e.target.value);
+                  }}
+                  onBlur={(e) => validateField("name", e.target.value)}
                   required
-                  className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  className={`w-full px-4 py-3 bg-slate-900 border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent ${
+                    fieldErrors.name ? "border-red-500" : "border-slate-600"
+                  }`}
                   placeholder="John Smith"
+                  aria-invalid={!!fieldErrors.name}
+                  aria-describedby={fieldErrors.name ? "name-error" : undefined}
                 />
+                {fieldErrors.name && (
+                  <p id="name-error" className="mt-1 text-sm text-red-400">
+                    {fieldErrors.name}
+                  </p>
+                )}
               </div>
 
               {/* Email */}
@@ -115,11 +147,24 @@ export function CTASection() {
                   type="email"
                   id="email"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    validateField("email", e.target.value);
+                  }}
+                  onBlur={(e) => validateField("email", e.target.value)}
                   required
-                  className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  className={`w-full px-4 py-3 bg-slate-900 border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent ${
+                    fieldErrors.email ? "border-red-500" : "border-slate-600"
+                  }`}
                   placeholder="john@example.com"
+                  aria-invalid={!!fieldErrors.email}
+                  aria-describedby={fieldErrors.email ? "email-error" : undefined}
                 />
+                {fieldErrors.email && (
+                  <p id="email-error" className="mt-1 text-sm text-red-400">
+                    {fieldErrors.email}
+                  </p>
+                )}
               </div>
 
               {/* Location */}
@@ -131,11 +176,24 @@ export function CTASection() {
                   type="text"
                   id="location"
                   value={location}
-                  onChange={(e) => setLocation(e.target.value)}
+                  onChange={(e) => {
+                    setLocation(e.target.value);
+                    validateField("location", e.target.value);
+                  }}
+                  onBlur={(e) => validateField("location", e.target.value)}
                   required
-                  className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  className={`w-full px-4 py-3 bg-slate-900 border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent ${
+                    fieldErrors.location ? "border-red-500" : "border-slate-600"
+                  }`}
                   placeholder="Austin, TX"
+                  aria-invalid={!!fieldErrors.location}
+                  aria-describedby={fieldErrors.location ? "location-error" : undefined}
                 />
+                {fieldErrors.location && (
+                  <p id="location-error" className="mt-1 text-sm text-red-400">
+                    {fieldErrors.location}
+                  </p>
+                )}
               </div>
 
               {/* User Type */}
