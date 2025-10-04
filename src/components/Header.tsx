@@ -13,14 +13,14 @@ export function Header() {
       </a>
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          <Link href="/" className="flex items-center py-2">
+          <Link href="/" className="flex items-center py-2 hover:opacity-90 transition-opacity">
             <Image
               src="/fairvia-logo.svg"
               alt="Fairvia"
-              width={140}
-              height={36}
+              width={160}
+              height={41}
               priority
-              className="h-9 w-auto sm:h-10"
+              className="h-8 w-auto sm:h-10 lg:h-11"
             />
           </Link>
           <div className="flex items-center gap-3 sm:gap-4">
