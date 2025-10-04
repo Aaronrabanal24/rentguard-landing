@@ -76,7 +76,7 @@ export function CTASection() {
   }
 
   return (
-    <section className="px-4 py-16 sm:py-20 lg:py-24">
+    <section id="lead-form" className="px-4 py-16 sm:py-20 lg:py-24">
       <ScrollReveal>
         <div className="mx-auto max-w-4xl">
           <div className="text-center mb-10 sm:mb-12">

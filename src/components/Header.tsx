@@ -18,10 +18,21 @@ export function Header() {
             />
           </Link>
           <div className="flex items-center gap-3 sm:gap-4">
-            <Button size="sm" variant="secondary" className="hidden sm:inline-flex">
+            <Button
+              size="sm"
+              variant="secondary"
+              className="hidden sm:inline-flex"
+              onClick={() => document.getElementById('lead-form')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Watch Demo
             </Button>
-            <Button size="sm" variant="primary">Join the Pilot</Button>
+            <Button
+              size="sm"
+              variant="primary"
+              onClick={() => document.getElementById('lead-form')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Join the Pilot
+            </Button>
           </div>
         </div>
       </div>

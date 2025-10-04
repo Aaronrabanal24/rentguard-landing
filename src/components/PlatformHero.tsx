@@ -61,10 +61,18 @@ export function PlatformHero() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="flex flex-col items-center gap-4 mb-10 sm:mb-12 px-4"
         >
-          <Button size="lg" variant="primary" className="w-full sm:w-auto sm:min-w-[220px] text-base sm:text-lg font-semibold shadow-xl shadow-teal-500/20 hover:shadow-2xl hover:shadow-teal-500/30 transition-shadow">
+          <Button
+            size="lg"
+            variant="primary"
+            className="w-full sm:w-auto sm:min-w-[220px] text-base sm:text-lg font-semibold shadow-xl shadow-teal-500/20 hover:shadow-2xl hover:shadow-teal-500/30 transition-shadow"
+            onClick={() => document.getElementById('lead-form')?.scrollIntoView({ behavior: 'smooth' })}
+          >
             Start Free Unit →
           </Button>
-          <button className="text-sm text-gray-400 hover:text-teal-300 transition-colors underline underline-offset-4">
+          <button
+            className="text-sm text-gray-400 hover:text-teal-300 transition-colors underline underline-offset-4"
+            onClick={() => document.getElementById('lead-form')?.scrollIntoView({ behavior: 'smooth' })}
+          >
             See how it works
           </button>
         </motion.div>
